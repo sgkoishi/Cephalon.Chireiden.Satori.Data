@@ -3,6 +3,24 @@ using System.Collections.Generic;
 
 namespace Cephalon.Chireiden.Satori.Warframe
 {
+    public class MTranslation
+    {
+        public List<string> Input;
+        public List<string> Output;
+
+        public string InputName
+        {
+            get => Input[0];
+            set => Input = new List<string> {value};
+        }
+
+        public string OutputName
+        {
+            get => Output[0];
+            set => Output = new List<string> {value};
+        }
+    }
+
     public partial class GameData
     {
         public static Dictionary<string, string> Acolyst;
@@ -21,8 +39,11 @@ namespace Cephalon.Chireiden.Satori.Warframe
         public static Dictionary<string, string> Tileset;
         public static Dictionary<VoidModifier, string> VoidModifier;
         public static Dictionary<string, List<string>> WeaponAlias;
+        public static Dictionary<string, List<string>> WarframeAlias;
         public static Dictionary<WeaponType, List<string>> WeaponTypes;
         public static Dictionary<string, Reward> BountyRewards;
+        public static List<List<string>> ModList;
+        public static List<MTranslation> WarframeMarket;
 
         public static void Init()
         {
@@ -34,11 +55,12 @@ namespace Cephalon.Chireiden.Satori.Warframe
             InitSorties();
             InitAcolysts();
             InitConclaves();
-            InitWeaponAlias();
+            InitAlias();
             InitTilesets();
             InitRivens();
             InitStndicates();
             InitBounty();
+            InitTranslation();
             Instance.Load();
             foreach (var item in Instance.GameNodes)
             {
@@ -56,6 +78,53 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     Console.WriteLine($"Node missing: {item.UniqueName} ({name})");
                 }
             }
+        }
+
+        private static void InitTranslation()
+        {
+            WarframeMarket = new List<MTranslation>
+            {
+                new MTranslation
+                {
+                    Input = new List<string> {"蓝图", "图", "bp"},
+                    OutputName = "Blueprint"
+                },
+                new MTranslation {InputName = "护手", OutputName = "Guard"},
+                new MTranslation {InputName = "握柄", Output = new List<string> {"Hilt", "Handle"}},
+                new MTranslation {InputName = "圆盘", OutputName = "Disc"},
+                new MTranslation {InputName = "刀刃", OutputName = "Blade"},
+                new MTranslation {InputName = "饰物", OutputName = "Ornament"},
+                new MTranslation {InputName = "左拳套", OutputName = "Left Gauntlet"},
+                new MTranslation {InputName = "右拳套", OutputName = "Right Gauntlet"},
+                new MTranslation {InputName = "拳套", OutputName = "Gauntlet"},
+                new MTranslation {InputName = "锤头", OutputName = "Head"},
+                new MTranslation {InputName = "枪管", OutputName = "Barrel"},
+                new MTranslation {InputName = "枪机", OutputName = "Receiver"},
+                new MTranslation {InputName = "枪托", OutputName = "Stock"},
+                new MTranslation {InputName = "上弓臂", OutputName = "Upper Limb"},
+                new MTranslation {InputName = "下弓臂", OutputName = "Lower Limb"},
+                new MTranslation {InputName = "弓臂", OutputName = "Limbs"},
+                new MTranslation {InputName = "弓身", OutputName = "Grip"},
+                new MTranslation {InputName = "弓弦", OutputName = "String"},
+                new MTranslation {InputName = "连接器", OutputName = "Link"},
+                new MTranslation {InputName = "镖袋", OutputName = "Pouch"},
+                new MTranslation {InputName = "散热器", OutputName = "Heatsink"},
+                new MTranslation {InputName = "盾", OutputName = "Aegis"},
+                new MTranslation
+                {
+                    Input = new List<string> {"头部神经光元", "头"},
+                    Output = new List<string> {"Neuroptics", "Cerebrum"}
+                },
+                new MTranslation {InputName = "机体", OutputName = "Chassis"},
+                new MTranslation {InputName = "系统", OutputName = "Systems"},
+                new MTranslation {InputName = "外壳", OutputName = "Carapace"},
+                new MTranslation {InputName = "机翼", OutputName = "Wings"},
+                new MTranslation {InputName = "外甲", OutputName = "Harness"},
+                new MTranslation {InputName = "机身", OutputName = "Fuselage"},
+                new MTranslation {InputName = "引擎", OutputName = "Engines"},
+                new MTranslation {InputName = "飞航系统", OutputName = "Acionics"},
+                new MTranslation {InputName = "套", OutputName = "Set"}
+            };
         }
 
         private static void InitBounty()
@@ -562,6 +631,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                         "GLAIVE PRIME",
                         "GLAIVE",
                         "GRAM",
+                        "GRAM PRIME",
                         "GUANDAO",
                         "GUNSEN",
                         "HALIKAR",
@@ -853,6 +923,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                         "QUARTAKK",
                         "RAKTA CERNOS",
                         "RUBICO",
+                        "RUBICO PRIME",
                         "SCOURGE",
                         "SECURA PENTA",
                         "SIMULOR",
@@ -1086,6 +1157,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 {"/Lotus/Types/Recipes/Weapons/WeaponParts/TwinVipersWraithReceiver", "双子蝰蛇亡魂 枪机"},
                 {"/Lotus/Types/Recipes/Weapons/WeaponParts/TwinVipersWraithStock", "双子蝰蛇亡魂 枪托"}
             };
+            ModList = new List<List<string>>();
         }
 
         private static void InitJobs()
@@ -2706,8 +2778,46 @@ namespace Cephalon.Chireiden.Satori.Warframe
             };
         }
 
-        private static void InitWeaponAlias()
+        private static void InitAlias()
         {
+            WarframeAlias = new Dictionary<string, List<string>>
+            {
+                {"WARFRAME_PLACEHOLDER", new List<string> {"official name", "prime name", "alias"}},
+                {"ASH", new List<string> {"ash", "ash prime", "ashp"}},
+                {"ATLAS", new List<string> {"atlas", "atlas prime", "土甲"}},
+                {"BANSHEE", new List<string> {"banshee", "banshee prime", "bansheep", "音妈", "音妈p"}},
+                {"CHROMA", new List<string> {"chroma", "chroma prime", "龙甲", "龙", "龙甲p", "龙p"}},
+                {"EMBER", new List<string> {"ember", "ember prime", "火鸡"}},
+                {"EQUINOX", new List<string> {"equinox", "equinox prime", "扶她", "阴阳"}},
+                {"EXCALIBUR", new List<string> {"excalibur", "excalibur prime", "咖喱", "圣剑"}},
+                {"FROST", new List<string> {"frost", "frost prime", "冰男", "冰", "冰队"}},
+                {"GARA", new List<string> {"gara", "gara prime", "玻璃"}},
+                {"HARROW", new List<string> {"harrow", "harrow prime", "主教"}},
+                {"HYDROID", new List<string> {"hydroid", "hydroid prime", "水男"}},
+                {"INAROS", new List<string> {"inaros", "inaros prime", "沙甲"}},
+                {"IVARA", new List<string> {"ivara", "ivara prime", "弓妹", "弓甲"}},
+                {"LIMBO", new List<string> {"limbo", "limbo prime", "小明", "李明博", "小明p", "李明博p"}},
+                {"LOKI", new List<string> {"loki", "loki prime", "弱鸡", "洛基", "弱鸡p", "洛基p"}},
+                {"MAG", new List<string> {"mag", "mag prime", "磁力", "磁妹"}},
+                {"MESA", new List<string> {"mesa", "mesa prime", "女枪"}},
+                {"MIRAGE", new List<string> {"mirage", "mirage prime", "小丑"}},
+                {"NEKROS", new List<string> {"nekros", "nekros prime", "摸尸", "死灵"}},
+                {"NEZHA", new List<string> {"nezha", "nezha prime", "哪吒"}},
+                {"NIDUS", new List<string> {"nidus", "nidus prime", "虫甲", "蛆甲", "蛆"}},
+                {"NOVA", new List<string> {"nova", "nova prime"}},
+                {"NYX", new List<string> {"nyx", "nyx prime", "脑淤血"}},
+                {"OBERON", new List<string> {"oberon", "oberon prime", "奶爸", "龙王", "奥博"}},
+                {"OCTAVIA", new List<string> {"octavia", "octavia prime", "dj", "音乐"}},
+                {"RHINO", new List<string> {"rhino", "rhino prime", "牛", "犀牛"}},
+                {"SARYN", new List<string> {"saryn", "saryn prime", "毒妈"}},
+                {"TITANIA", new List<string> {"titania", "titania prime", "蝶甲", "蝶妹"}},
+                {"TRINITY", new List<string> {"trinity", "trinity prime", "奶妈"}},
+                {"VALKYR", new List<string> {"valkyr", "valkyr prime", "瓦基尔", "女武神", "女汉子", "瓦喵"}},
+                {"VAUBAN", new List<string> {"vauban", "vauban prime", "工程"}},
+                {"VOLT", new List<string> {"volt", "volt prime", "电男", "电队"}},
+                {"WUKONG", new List<string> {"wukong", "wukong prime", "悟空", "大圣"}},
+                {"ZEPHYR", new List<string> {"zephyr", "zephyr prime", "鸟姐"}}
+            };
             WeaponAlias = new Dictionary<string, List<string>>
             {
                 {"ACK & BRUNT", new List<string> {"Ack & Brunt", "认知&冲击", "认知&冲击", "认知冲击"}},
@@ -2850,6 +2960,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 {"GORGON", new List<string> {"Gorgon", "蛇发女妖", "蛇发女妖"}},
                 {"GRAKATA", new List<string> {"Grakata", "葛拉卡达", "格拉达火舌"}},
                 {"GRAM", new List<string> {"Gram", "格拉姆", "格拉姆"}},
+                {"GRAM PRIME", new List<string> {"Gram Prime", "格拉姆Prime", "圣装格拉姆", "格拉姆P"}},
                 {"GRINLOK", new List<string> {"Grinlok", "葛恩火枪", "尖叫小丑"}},
                 {"GUANDAO", new List<string> {"Guandao", "关刀", "偃月刀"}},
                 {"GUNSEN", new List<string> {"Gunsen", "军扇", "军扇"}},
@@ -2886,7 +2997,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 {"KRAKEN", new List<string> {"Kraken", "北海巨妖", "北海巨妖"}},
                 {"KROHKUR", new List<string> {"Krohkur", "克鲁古尔", "克鲁古尔"}},
                 {"KRONEN", new List<string> {"Kronen", "皇家拐刃", "弧月刀", "皇家拐"}},
-                {"KRONEN PRIME", new List<string> {"Kronen Prime", "皇家拐刃Prime", "圣装弧月刀", "拐p"}},
+                {"KRONEN PRIME", new List<string> {"Kronen Prime", "皇家拐刃Prime", "圣装弧月刀", "皇家拐刃P", "拐p", "皇家拐p"}},
                 {"KRONSH", new List<string> {"Kronsh", "客隆什", "重弯刀"}},
                 {"KULSTAR", new List<string> {"Kulstar", "杀星", "集束鱼雷发射器"}},
                 {"KUNAI", new List<string> {"Kunai", "苦无", "苦无"}},
@@ -2969,7 +3080,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 {"PROVA VANDAL", new List<string> {"Prova Vandal", "普罗沃破坏者", "镇暴高压电棒"}},
                 {"PROVA", new List<string> {"Prova", "普罗沃", "高压电棒"}},
                 {"PYRANA", new List<string> {"Pyrana", "食人鱼", "派亚脊刺"}},
-                {"PYRANA PRIME", new List<string> {"Pyrana Prime", "食人鱼Prime", "圣装派亚脊刺"}},
+                {"PYRANA PRIME", new List<string> {"Pyrana Prime", "食人鱼Prime", "圣装派亚脊刺", "食人鱼P"}},
                 {"QUANTA VANDAL", new List<string> {"Quanta Vandal", "量子切割器破坏者", "镇暴光能量子", "莲花矿枪"}},
                 {"QUANTA", new List<string> {"Quanta", "量子切割器", "光能量子", "矿枪"}},
                 {"QUARTAKK", new List<string> {"Quartakk", "夸塔克", "夸塔克"}},
@@ -2980,6 +3091,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 {"REDEEMER", new List<string> {"Redeemer", "救赎者", "救赎者"}},
                 {"RIPKAS", new List<string> {"Ripkas", "锐卡斯", "覆海蛟"}},
                 {"RUBICO", new List<string> {"Rubico", "绝路", "绿陶狙击枪"}},
+                {"RUBICO PRIME", new List<string> {"Rubico Prime", "绝路Prime", "圣装绿陶狙击枪", "绝路p"}},
                 {
                     "SANCTI CASTANAS", new List<string>
                     {
