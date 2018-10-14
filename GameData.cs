@@ -60,34 +60,30 @@ namespace Cephalon.Chireiden.Satori.Warframe
             InitStndicates();
             InitBounty();
             InitTranslation();
-            //Instance.Load();
-            //foreach (var item in Instance.GameNodes)
-            //{
-            //    var name = _planet[item.SystemName] + item.Name;
-            //    if (Nodes.ContainsKey(item.UniqueName))
-            //    {
-            //        var k = Nodes[item.UniqueName];
-            //        if (name != k.ToString())
-            //        {
-            //            Console.WriteLine($"Name conflict: {item.UniqueName} ({name} - {k})");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine($"Node missing: {item.UniqueName} ({name})");
-            //    }
-            //}
+            //Instance.Load(); 
+            //foreach (var item in Instance.GameNodes) 
+            //{ 
+            //    var name = _planet[item.SystemName] + item.Name; 
+            //    if (Nodes.ContainsKey(item.UniqueName)) 
+            //    { 
+            //        var k = Nodes[item.UniqueName]; 
+            //        if (name != k.ToString()) 
+            //        { 
+            //            Console.WriteLine($"Name conflict: {item.UniqueName} ({name} - {k})"); 
+            //        } 
+            //    } 
+            //    else 
+            //    { 
+            //        Console.WriteLine($"Node missing: {item.UniqueName} ({name})"); 
+            //    } 
+            //} 
         }
 
         private static void InitTranslation()
         {
             WarframeMarket = new List<MTranslation>
             {
-                new MTranslation
-                {
-                    Input = new List<string> {"蓝图", "图", "bp"},
-                    OutputName = "Blueprint"
-                },
+                new MTranslation {Input = new List<string> {"蓝图", "图", "bp"}, OutputName = "Blueprint"},
                 new MTranslation {InputName = "护手", OutputName = "Guard"},
                 new MTranslation {InputName = "握柄", Output = new List<string> {"Hilt", "Handle"}},
                 new MTranslation {InputName = "圆盘", OutputName = "Disc"},
@@ -488,7 +484,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     "/Lotus/PVPChallengeTypes/PVPTimedChallengeKillsStreakDomination_MEDIUM",
                     ("支配", "击杀[num]名敌人, 并且不被他们击杀")
                 },
-                {"/Lotus/PVPChallengeTypes/PVPTimedChallengeKillsWhileInAirEasy", ("空袭", "滞留空中时击杀[num]个敌人")},
+                {"/Lotus/PVPChallengeTypes/PVPTimedChallengeKillsWhileInAirEASY", ("空袭", "滞留空中时击杀[num]个敌人")},
                 {"/Lotus/PVPChallengeTypes/PVPTimedChallengeKillsWhileInAirMEDIUM", ("空袭", "滞留空中时击杀[num]个敌人")},
                 {"/Lotus/PVPChallengeTypes/PVPTimedChallengeKillsWhileInAirHARD", ("专注空袭", "滞留空中时击杀[num]个敌人")},
                 {"/Lotus/PVPChallengeTypes/PVPTimedChallengeKillsTargetInAirEASY", ("反空袭", "击杀[num]个空中的敌人")},
@@ -820,10 +816,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     "发现一名Grineer的间谍潜藏在希图斯村中。对Grineer施加压力将那位间谍逼出来。"
                 },
                 {"/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyCache", "Grineer夺走了一件Orokin器物。找出他们已埋藏的器物。"},
-                {
-                    "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyCap",
-                    "一件对夜羽的重要道具已经被Grineer夺取。找出夺走器物的特工并捉住他。"
-                },
+                {"/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyCap", "一件对夜羽的重要道具已经被Grineer夺取。找出夺走器物的特工并捉住他。"},
                 {"/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyTheft", "夜羽表示Grineer偷走了一件珍贵的Orokin器物。把偷它回来。"},
                 {"/Lotus/Types/Gameplay/Eidolon/Jobs/RescueBountyResc", "一名Ostron人在平野上失踪了, 找到他们并带他们回家。"},
                 {"/Lotus/Types/Gameplay/Eidolon/Jobs/SabotageBountySab", "原型科技正要运送给Grineer。扫遍整个平野直到你找到为止！"},
@@ -1478,18 +1471,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     Prefix = "pleci",
                     Suffix = "nent",
                     Text = "滑行攻击有[{0:P2}到{1:P2}]的几率造成暴击",
-                    Alias = new List<string>
-                    {
-                        "滑暴",
-                        "滑爆",
-                        "划爆",
-                        "划暴",
-                        "滑砍",
-                        "划砍",
-                        "sl",
-                        "slat",
-                        "slatha"
-                    },
+                    Alias = new List<string> {"滑暴", "滑爆", "划爆", "划暴", "滑砍", "划砍", "sl", "slat", "slatha"},
                     CanCurse = true,
                     Scale = 90.0
                 },
@@ -1727,7 +1709,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "sati",
                     Suffix = "can",
                     Text = "[{0:P2}到{1:P2}]多重射击",
@@ -1737,7 +1719,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "visi",
                     Suffix = "ata",
                     Text = "[{0:P2}到{1:P2}]伤害",
@@ -1747,7 +1729,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "magna",
                     Suffix = "ton",
                     Text = "[{0:P2}到{1:P2}]冲击伤害",
@@ -1757,7 +1739,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "insi",
                     Suffix = "cak",
                     Text = "[{0:P2}到{1:P2}]穿刺伤害",
@@ -1767,7 +1749,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "sci",
                     Suffix = "sus",
                     Text = "[{0:P2}到{1:P2}]切割伤害",
@@ -1777,7 +1759,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "crita",
                     Suffix = "cron",
                     Text = "[{0:P2}到{1:P2}]暴击率",
@@ -1787,7 +1769,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "acri",
                     Suffix = "tis",
                     Text = "[{0:P2}到{1:P2}]暴击伤害",
@@ -1797,7 +1779,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "geli",
                     Suffix = "do",
                     Text = "[{0:P2}到{1:P2}]冰冻伤害",
@@ -1806,7 +1788,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "vexi",
                     Suffix = "tio",
                     Text = "[{0:P2}到{1:P2}]电击伤害",
@@ -1815,7 +1797,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "igni",
                     Suffix = "pha",
                     Text = "[{0:P2}到{1:P2}]火焰伤害",
@@ -1824,7 +1806,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "toxi",
                     Suffix = "tox",
                     Text = "[{0:P2}到{1:P2}]毒素伤害",
@@ -1833,7 +1815,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "hexa",
                     Suffix = "dex",
                     Text = "[{0:P2}到{1:P2}]触发几率",
@@ -1843,7 +1825,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "deci",
                     Suffix = "des",
                     Text = "[{0:P2}到{1:P2}]触发时间",
@@ -1853,7 +1835,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "manti",
                     Suffix = "tron",
                     Text = "[{0:P2}到{1:P2}]对Corpus伤害",
@@ -1863,7 +1845,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "argi",
                     Suffix = "con",
                     Text = "[{0:P2}到{1:P2}]对Grineer伤害",
@@ -1873,7 +1855,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "pura",
                     Suffix = "ada",
                     Text = "[{0:P2}到{1:P2}]对Infested伤害",
@@ -1883,7 +1865,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "croni",
                     Suffix = "dra",
                     Text = "[{0:P2}到{1:P2}]射速",
@@ -1893,7 +1875,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "arma",
                     Suffix = "tin",
                     Text = "[{0:P2}到{1:P2}]弹匣容量",
@@ -1903,7 +1885,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "ampi",
                     Suffix = "bin",
                     Text = "[{0:P2}到{1:P2}]弹药最大值",
@@ -1913,7 +1895,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "conci",
                     Suffix = "nak",
                     Text = "[{0:P2}到{1:P2}]弹道飞行速度",
@@ -1923,7 +1905,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "feva",
                     Suffix = "tak",
                     Text = "[{0:P2}到{1:P2}]装填速度",
@@ -1933,7 +1915,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "zeti",
                     Suffix = "mag",
                     Text = "[{0:P2}到{1:P2}]武器后坐力",
@@ -1943,7 +1925,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "hera",
                     Suffix = "lis",
                     Text = "[{0:P2}到{1:P2}]变焦",
@@ -1953,7 +1935,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new Riven.RivenAttribute
                 {
-                    Weapon = WeaponType.Pistol,
+                    Weapon = WeaponType.Secondary,
                     Prefix = "lexi",
                     Suffix = "nok",
                     Text = "[{0:F2}到{1:F2}]穿透",
@@ -2265,6 +2247,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 {"RAKTA BALLISTICA", "BALLISTICA"},
                 {"RAKTA CERNOS", "CERNOS"},
                 {"RAKTA DARK DAGGER", "DARK DAGGER"},
+                {"RUBICO PRIME", "RUBICO"},
                 {"REAPER PRIME", "REAPER"},
                 {"SANCTI CASTANAS", "CASTANAS"},
                 {"SANCTI MAGISTAR", "MAGISTAR"},
@@ -2377,6 +2360,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
             {
                 {"GrineerAsteroidTileset", "Grineer小行星"},
                 {"GrineerGalleonTileset", "Grineer巨舰"},
+                {"GrineerFortressTileset", "Grineer要塞"},
                 {"CorpusIcePlanetTilesetCaves", "Corpus冰原星球(洞穴)"},
                 {"CorpusIcePlanetTileset", "Corpus冰原星球"},
                 {"CorpusGasCityTileset", "Corpus燃气城市"},
@@ -2431,530 +2415,1045 @@ namespace Cephalon.Chireiden.Satori.Warframe
 
         public static void InitWeapons()
         {
+            // https://www.tutorialspoint.com/execute_lua_online.php 
+            // http://warframe.wikia.com/wiki/Module:Weapons/data?action=edit 
+            // function sum(t) 
+            //     local sum = 0 
+            //     for k,v in pairs(t) do 
+            //         sum = sum + v 
+            //     end 
+            //     return sum 
+            // end 
+            // for key,value in pairs(WeaponData["Weapons"]) 
+            // do 
+            //     if (value["ChargeAttack"] ~= nil) then 
+            //         print(key, value["Type"], sum(value["ChargeAttack"]["Damage"]), value["ChargeAttack"]["CritChance"], value["ChargeAttack"]["CritMultiplier"], value["ChargeAttack"]["StatusChance"], value["Mastery"]) 
+            //     else 
+            //         print(key, value["Type"], sum(value["NormalAttack"]["Damage"]), value["NormalAttack"]["CritChance"], value["NormalAttack"]["CritMultiplier"], value["NormalAttack"]["StatusChance"], value["Mastery"]) 
+            //     end 
+            // end  
+            // (.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*) 
+            // WeaponType.\2, \3, \4, \5, \6, \7, "\1" 
             Weapons = new Dictionary<string, Weapon>
             {
-                {"ACK & BRUNT", new Weapon(WeaponType.Melee, 50, 0.2, 2, 0.1, "Ack & Brunt", "认知&冲击", "认知&冲击", "认知冲击")},
-                {"ACRID", new Weapon(WeaponType.Pistol, 35, 0.05, 2, 0.1, "Acrid", "阿克里德", "刻薄毒镖")},
-                {"AFURIS", new Weapon(WeaponType.Pistol, 20, 0.05, 2, 0.12, "Afuris", "盗贼双枪", "双持弗里斯手枪")},
+                {
+                    "ACK & BRUNT",
+                    new Weapon(WeaponType.Melee, 50, 0.2, 2, 0.1, 0.9, 3, "Ack & Brunt", "认知&冲击", "认知&冲击", "认知冲击")
+                },
+                {"ACRID", new Weapon(WeaponType.Secondary, 35, 0.05, 2, 0.1, 1.33, 7, "Acrid", "阿克里德", "刻薄毒镖")},
+                {"AFURIS", new Weapon(WeaponType.Secondary, 20, 0.05, 2, 0.12, 1.39, 4, "Afuris", "盗贼双枪", "双持弗里斯手枪")},
                 {
                     "AKBOLTO PRIME",
-                    new Weapon(WeaponType.Pistol, 32, 0.36, 2.8, 0.14, "Akbolto Prime", "螺钉双枪Prime", "圣装双持角犀", "螺钉双枪P", "螺双")
+                    new Weapon(WeaponType.Secondary, 32.0, 0.36, 2.8, 0.14, 0.85, 13, "Akbolto Prime", "螺钉双枪Prime",
+                        "圣装双持角犀", "螺钉双枪P", "螺双")
                 },
-                {"AKBOLTO", new Weapon(WeaponType.Pistol, 40, 0.16, 2.4, 0.022, "Akbolto", "螺钉双枪", "双持角犀")},
+                {"AKBOLTO", new Weapon(WeaponType.Secondary, 40, 0.16, 2.4, 0.022, 0.85, 9, "Akbolto", "螺钉双枪", "双持角犀")},
                 {
                     "AKBRONCO PRIME",
-                    new Weapon(WeaponType.Pistol, 350, 0.06, 2, 0.3, "Akbronco Prime", "野马双枪Prime", "圣装双持布隆克烈驹", "野马双枪P")
+                    new Weapon(WeaponType.Secondary, 350, 0.06, 2, 0.3, 1.2, 10, "Akbronco Prime", "野马双枪Prime",
+                        "圣装双持布隆克烈驹", "野马双枪P")
                 },
-                {"AKBRONCO", new Weapon(WeaponType.Pistol, 280, 0.07, 2, 0.22, "Akbronco", "野马双枪", "双持布隆克烈驹")},
-                {"AKJAGARA", new Weapon(WeaponType.Pistol,300, 0.06, 2, 0.28, "Akjagara", "觉醒双枪", "觉醒双枪")},
-                {"AKLATO", new Weapon(WeaponType.Pistol, 0, 0, 0, 0, "Aklato", "拉托双枪", "双持拉托")},
+                {
+                    "AKBRONCO",
+                    new Weapon(WeaponType.Secondary, 280, 0.06, 2, 0.22, 1.2, 2, "Akbronco", "野马双枪", "双持布隆克烈驹")
+                },
+                {"AKJAGARA", new Weapon(WeaponType.Secondary, 300, 0.06, 2, 0.28, 1.43, 8, "Akjagara", "觉醒双枪", "觉醒双枪")},
+                {"AKLATO", new Weapon(WeaponType.Secondary, 30.0, 0.1, 1.8, 0.06, 1.52, 3, "Aklato", "拉托双枪", "双持拉托")},
                 {
                     "AKLEX PRIME",
-                    new Weapon(WeaponType.Pistol, 0, 0, 0, 0, "Aklex Prime", "雷克斯双枪Prime", "圣装双持秩序之握", "雷克斯双枪P", "雷双")
+                    new Weapon(WeaponType.Secondary, 150, 0.25, 2, 0.25, 1, 15, "Aklex Prime", "雷克斯双枪Prime", "圣装双持秩序之握",
+                        "雷克斯双枪P", "雷双")
                 },
-                {"AKLEX", new Weapon(WeaponType.Pistol, 0, 0, 0, 0, "Aklex", "雷克斯双枪", "双持秩序之握")},
-                {"AKMAGNUS", new Weapon(WeaponType.Pistol, 0, 0, 0, 0, "Akmagnus", "麦格努斯双枪", "猛犸双枪")},
-                {"AKSOMATI", new Weapon(WeaponType.Pistol, 0, 0, 0, 0, "Aksomati", "轻灵月神双枪", "轻灵索玛双枪")},
+                {"AKLEX", new Weapon(WeaponType.Secondary, 130, 0.2, 2, 0.1, 1, 4, "Aklex", "雷克斯双枪", "双持秩序之握")},
+                {
+                    "AKMAGNUS",
+                    new Weapon(WeaponType.Secondary, 76.0, 0.22, 2, 0.22, 1.28, 12, "Akmagnus", "麦格努斯双枪", "猛犸双枪")
+                },
+                {
+                    "AKSOMATI",
+                    new Weapon(WeaponType.Secondary, 18.0, 0.24, 3, 0.08, 1.26, 9, "Aksomati", "轻灵月神双枪", "轻灵索玛双枪")
+                },
                 {
                     "AKSTILETTO PRIME",
-                    new Weapon(WeaponType.Pistol, 36, 0.15, 2, 0.3, "Akstiletto Prime", "史提托双枪Prime", "圣装双持西提列托", "史提托双枪P", "史提托", "尸体拖")
+                    new Weapon(WeaponType.Secondary, 36.0, 0.15, 2, 0.3, 0.5, 10, "Akstiletto Prime", "史提托双枪Prime",
+                        "圣装双持西提列托", "史提托双枪P", "史提托", "尸体拖")
                 },
-                {"AKSTILETTO", new Weapon(WeaponType.Pistol, 0, 0, 0, 0, "Akstiletto", "史提托双枪", "双持西提列托")},
-                {"AKVASTO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Akvasto", "瓦斯托双枪", "瓦斯托双枪")},
-                {"AKZANI", new Weapon(WeaponType.None, 0, 0, 0, 0, "Akzani", "荒谬双枪", "双持欢喜丸")},
-                {"AMPHIS", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Amphis", "双头蛇", "安菲斯")},
-                {"AMPREX", new Weapon(WeaponType.Primary, 0, 0, 0, 0, "Amprex", "安培克斯", "安普斯雷电", "电枪")},
-                {"ANGSTRUM", new Weapon(WeaponType.Pistol, 0, 0, 0, 0, "Angstrum", "安格斯壮", "将军手持短炮")},
-                {"ANKU", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Anku", "夺魂死神", "噬魂镰")},
+                {
+                    "AKSTILETTO",
+                    new Weapon(WeaponType.Secondary, 28.0, 0.18, 1.8, 0.18, 0.5, 8, "Akstiletto", "史提托双枪", "双持西提列托")
+                },
+                {
+                    "AKVASTO",
+                    new Weapon(WeaponType.Secondary, 58.0, 0.16, 1.8, 0.12, 1.24, 8, "Akvasto", "瓦斯托双枪", "瓦斯托双枪")
+                },
+                {"AKZANI", new Weapon(WeaponType.Secondary, 12.0, 0.14, 2, 0.14, 1.52, 4, "Akzani", "荒谬双枪", "双持欢喜丸")},
+                {"AMPHIS", new Weapon(WeaponType.Melee, 55.0, 0.075, 1.5, 0.1, 1.5, 0, "Amphis", "双头蛇", "安菲斯")},
+                {
+                    "AMPREX",
+                    new Weapon(WeaponType.Primary, 22, 0.32, 2.2, 0.22, 0.965, 10, "Amprex", "安培克斯", "安普斯雷电", "电枪")
+                },
+                {
+                    "ANGSTRUM",
+                    new Weapon(WeaponType.Secondary, 200, 0.16, 2, 0.22, 1.4, 4, "Angstrum", "安格斯壮", "将军手持短炮")
+                },
+                {"ANKU", new Weapon(WeaponType.Melee, 70.0, 0.2, 2, 0.1, 1.46, 3, "Anku", "夺魂死神", "噬魂镰")},
                 {
                     "ANKYROS PRIME",
-                    new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Ankyros Prime", "甲龙双拳Prime", "圣装安奇洛斯拳套", "甲龙双拳P")
+                    new Weapon(WeaponType.Melee, 38.0, 0.2, 2, 0.15, 1.45, 0, "Ankyros Prime", "甲龙双拳Prime", "圣装安奇洛斯拳套",
+                        "甲龙双拳P")
                 },
-                {"ANKYROS", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Ankyros", "甲龙双拳", "安奇洛斯拳套")},
-                {"ARCA PLASMOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Arca Plasmor", "弧电离子枪", "弧电离子枪", "弧电喷")},
-                {"ARCA SCISCO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Arca Scisco", "弧电探知者", "弧电探知者")},
-                {"ARCA TITRON", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Arca Titron", "弧电振子锤", "弧电振子锤")},
-                {"ARGONAK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Argonak", "氩格纳克", "氩格纳克")},
-                {"ARTAX", new Weapon(WeaponType.None, 0, 0, 0, 0, "Artax", "阿塔克斯", "阿塔克斯")},
-                {"ASTILLA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Astilla", "碎裂者", "碎裂者", "玻璃炮")},
-                {"ATOMOS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Atomos", "原子矿融炮", "原子矿融炮")},
-                {"ATTERAX", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Atterax", "阿特拉克斯", "刑罚绞索", "G鞭")},
-                {"ATTICA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Attica", "阿提卡", "阿提卡重弩")},
-                {"AZIMA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Azima", "方位角", "日冕")},
-                {"BALLA", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Balla", "宝拉", "轻短刃")},
+                {"ANKYROS", new Weapon(WeaponType.Melee, 30.0, 0.2, 2, 0.1, 1.45, 0, "Ankyros", "甲龙双拳", "安奇洛斯拳套")},
+                {
+                    "ARCA PLASMOR",
+                    new Weapon(WeaponType.Primary, 600, 0.22, 1.6, 0.28, 0.9, 10, "Arca Plasmor", "弧电离子枪", "弧电离子枪",
+                        "弧电喷")
+                },
+                {
+                    "ARCA SCISCO",
+                    new Weapon(WeaponType.Secondary, 60, 0.18, 1.6, 0.26, 1, 10, "Arca Scisco", "弧电探知者", "弧电探知者")
+                },
+                {
+                    "ARCA TITRON",
+                    new Weapon(WeaponType.Melee, 180, 0.24, 2, 0.38, 1, 10, "Arca Titron", "弧电振子锤", "弧电振子锤")
+                },
+                {"ARGONAK", new Weapon(WeaponType.Primary, 57.0, 0.09, 1.5, 0.27, 1, 7, "Argonak", "氩格纳克", "氩格纳克")},
+                {"ARTAX", new Weapon(WeaponType.Primary, 5, 0.02, 1.5, 0.03, 1, 0, "Artax", "阿塔克斯", "阿塔克斯")},
+                {
+                    "ASTILLA",
+                    new Weapon(WeaponType.Primary, 70.0, 0.17, 1.9, 0.33, 1.2, 10, "Astilla", "碎裂者", "碎裂者", "玻璃炮")
+                },
+                {"ATOMOS", new Weapon(WeaponType.Secondary, 29, 0.15, 1.7, 0.21, 0.87, 5, "Atomos", "原子矿融炮", "原子矿融炮")},
+                {"ATTERAX", new Weapon(WeaponType.Melee, 45.0, 0.25, 3, 0.2, 0.5, 2, "Atterax", "阿特拉克斯", "刑罚绞索", "G鞭")},
+                {"ATTICA", new Weapon(WeaponType.Primary, 80, 0.25, 3, 0.1, 1.415, 7, "Attica", "阿提卡", "阿提卡重弩")},
+                {"AZIMA", new Weapon(WeaponType.Secondary, 20, 0.16, 2, 0.16, 1.35, 6, "Azima", "方位角", "日冕")},
+                {"BALLA", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Balla", "宝拉", "轻短刃")},
                 {
                     "BALLISTICA PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Ballistica Prime", "布里斯提卡Prime", "圣装惊惧手弩", "布里斯提卡P")
+                    new Weapon(WeaponType.Secondary, 304.0, 0.2, 2, 0.2, 0.85, 14, "Ballistica Prime", "布里斯提卡Prime",
+                        "圣装惊惧手弩", "布里斯提卡P")
                 },
-                {"BALLISTICA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ballistica", "布里斯提卡", "惊惧手弩")},
-                {"BAZA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Baza", "苍鹰", "苍鹰")},
-                {"BO PRIME", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Bo Prime", "珀之武杖Prime", "圣装破禅武杖", "珀之武杖P")},
-                {"BO", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Bo", "珀之武杖", "破禅武杖", "珀", "武杖")},
-                {"BOAR PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Boar Prime", "野猪Prime", "圣装雄猪霰弹枪", "野猪P")},
-                {"BOAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Boar", "野猪", "雄猪霰弹枪")},
-                {"BOLTACE", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Boltace", "螺钉拐刃", "螺钉弧月刀", "螺钉拐")},
-                {"BOLTO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Bolto", "螺钉手枪", "角犀")},
+                {
+                    "BALLISTICA",
+                    new Weapon(WeaponType.Secondary, 100, 0.15, 1.5, 0.1, 0.85, 2, "Ballistica", "布里斯提卡", "惊惧手弩")
+                },
+                {"BAZA", new Weapon(WeaponType.Primary, 16.0, 0.26, 3, 0.1, 1.1, 7, "Baza", "苍鹰", "苍鹰")},
+                {
+                    "BO PRIME",
+                    new Weapon(WeaponType.Melee, 75.0, 0.125, 2, 0.25, 1.29, 5, "Bo Prime", "珀之武杖Prime", "圣装破禅武杖",
+                        "珀之武杖P")
+                },
+                {"BO", new Weapon(WeaponType.Melee, 50, 0.125, 2, 0.2, 1.29, 0, "Bo", "珀之武杖", "破禅武杖", "珀", "武杖")},
+                {
+                    "BOAR PRIME",
+                    new Weapon(WeaponType.Primary, 320, 0.15, 2, 0.3, 1.34, 11, "Boar Prime", "野猪Prime", "圣装雄猪霰弹枪",
+                        "野猪P")
+                },
+                {"BOAR", new Weapon(WeaponType.Primary, 176.0, 0.1, 1.5, 0.2, 1.34, 2, "Boar", "野猪", "雄猪霰弹枪")},
+                {
+                    "BOLTACE",
+                    new Weapon(WeaponType.Melee, 85.0, 0.05, 1.5, 0.25, 1, 2, "Boltace", "螺钉拐刃", "螺钉弧月刀", "螺钉拐")
+                },
+                {"BOLTO", new Weapon(WeaponType.Secondary, 40, 0.16, 2.4, 0.022, 1.51, 7, "Bolto", "螺钉手枪", "角犀")},
                 {
                     "BOLTOR PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Boltor Prime", "螺钉步枪Prime", "圣装波尔托骨刺", "螺钉步枪P", "螺钉P",
-                        "鱼骨P")
+                    new Weapon(WeaponType.Primary, 46.0, 0.12, 2, 0.34, 0.79, 13, "Boltor Prime", "螺钉步枪Prime",
+                        "圣装波尔托骨刺",
+                        "螺钉步枪P", "螺钉P", "鱼骨P")
                 },
-                {"BOLTOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Boltor", "螺钉步枪", "波尔托骨刺", "鱼骨")},
-                {"BRAKK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Brakk", "布拉克", "布拉克")},
-                {"BRATON PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Braton Prime", "布莱顿Prime", "圣装制式步枪", "布莱顿P")},
-                {"BRATON VANDAL", new Weapon(WeaponType.None, 0, 0, 0, 0, "Braton Vandal", "布莱顿破坏者", "镇暴制式步枪")},
-                {"BRATON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Braton", "布莱顿", "制式步枪")},
-                {"BROKEN SCEPTER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Broken Scepter", "破损珽杖", "破碎权杖")},
-                {"BROKEN WAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Broken War", "破碎的战争之剑", "破碎战争", "破剑")},
-                {"BRONCO PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Bronco Prime", "野马Prime", "圣装布隆克烈驹", "野马P")},
-                {"BRONCO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Bronco", "野马", "布隆克烈驹")},
+                {
+                    "BOLTOR",
+                    new Weapon(WeaponType.Primary, 25.0, 0.1, 1.8, 0.14, 0.79, 2, "Boltor", "螺钉步枪", "波尔托骨刺", "鱼骨")
+                },
+                {"BRAKK", new Weapon(WeaponType.Secondary, 200, 0.17, 2, 0.17, 0.75, 6, "Brakk", "布拉克", "布拉克")},
+                {
+                    "BRATON PRIME",
+                    new Weapon(WeaponType.Primary, 35.0, 0.12, 2, 0.26, 0.965, 8, "Braton Prime", "布莱顿Prime", "圣装制式步枪",
+                        "布莱顿P")
+                },
+                {
+                    "BRATON VANDAL",
+                    new Weapon(WeaponType.Primary, 35.0, 0.16, 2, 0.16, 0.965, 4, "Braton Vandal", "布莱顿破坏者", "镇暴制式步枪")
+                },
+                {"BRATON", new Weapon(WeaponType.Primary, 24.0, 0.12, 1.6, 0.06, 0.965, 0, "Braton", "布莱顿", "制式步枪")},
+                {
+                    "BROKEN SCEPTER",
+                    new Weapon(WeaponType.Melee, 60, 0.1, 2, 0.3, 1.19, 5, "Broken Scepter", "破损珽杖", "破碎权杖")
+                },
+                {
+                    "BROKEN WAR",
+                    new Weapon(WeaponType.Melee, 90, 0.15, 1.5, 0.1, 0.79, 10, "Broken War", "破碎的战争之剑", "破碎战争", "破剑")
+                },
+                {
+                    "BRONCO PRIME",
+                    new Weapon(WeaponType.Secondary, 350, 0.06, 2, 0.3, 1.2, 4, "Bronco Prime", "野马Prime", "圣装布隆克烈驹",
+                        "野马P")
+                },
+                {"BRONCO", new Weapon(WeaponType.Secondary, 280, 0.06, 2, 0.22, 1.2, 0, "Bronco", "野马", "布隆克烈驹")},
                 {
                     "BURST LASER PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Burst Laser Prime", "棱晶激光点发", "棱晶激光发射器")
+                    new Weapon(WeaponType.Secondary, 7.0, 0.025, 1.3, 0.02, 1.45, 0, "Burst Laser Prime", "激光点发Prime",
+                        "圣装激光发射器")
                 },
-                {"BURST LASER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Burst Laser", "激光点发", "激光发射器")},
+                {
+                    "BURST LASER",
+                    new Weapon(WeaponType.Secondary, 7.0, 0.025, 1.3, 0.02, 1.45, 0, "Burst Laser", "激光点发", "激光发射器")
+                },
                 {
                     "BURSTON PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Burston Prime", "伯斯顿Prime", "圣装伯斯顿步枪", "伯斯顿P")
+                    new Weapon(WeaponType.Primary, 36.0, 0.18, 1.8, 0.3, 1.175, 12, "Burston Prime", "伯斯顿Prime",
+                        "圣装伯斯顿步枪",
+                        "伯斯顿P")
                 },
-                {"BURSTON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Burston", "伯斯顿", "伯斯顿步枪")},
-                {"BUZLOK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Buzlok", "巴兹火枪", "复仇黄鼬")},
-                {"CADUS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Cadus", "卡度斯", "卡度斯")},
-                {"CARMINE PENTA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Carmine Penta", "绯红五芒星", "绯红五芒星")},
-                {"CASSOWAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Cassowar", "鹤鸵长戟", "鹤鸵长戟")},
+                {"BURSTON", new Weapon(WeaponType.Primary, 30, 0.06, 1.6, 0.18, 1.175, 0, "Burston", "伯斯顿", "伯斯顿步枪")},
+                {"BUZLOK", new Weapon(WeaponType.Primary, 60, 0.23, 2.5, 0.21, 1.55, 11, "Buzlok", "巴兹火枪", "复仇黄鼬")},
+                {"CADUS", new Weapon(WeaponType.Melee, 50, 0.15, 2, 0.25, 1.29, 0, "Cadus", "卡度斯", "卡度斯")},
+                {
+                    "CARMINE PENTA",
+                    new Weapon(WeaponType.Primary, 425, 0.1, 2, 0.1, 1.175, 6, "Carmine Penta", "绯红五芒星", "绯红五芒星")
+                },
+                {"CASSOWAR", new Weapon(WeaponType.Melee, 70.0, 0.06, 1.4, 0.28, 1, 5, "Cassowar", "鹤鸵长戟", "鹤鸵长戟")},
                 {
                     "CASTANAS",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Castanas", "雷爆信镖", "分体式处理信标", "雷爆信标", "雷暴信镖", "雷暴信标")
+                    new Weapon(WeaponType.Secondary, 160, 0.08, 1.5, 0.22, 1.42, 3, "Castanas", "雷爆信镖", "分体式处理信标",
+                        "雷爆信标",
+                        "雷暴信镖", "雷暴信标")
                 },
-                {"CAUSTACYST", new Weapon(WeaponType.None, 0, 0, 0, 0, "Caustacyst", "灼蚀变体镰", "腐蚀寄生者")},
-                {"CERAMIC DAGGER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ceramic Dagger", "陶瓷匕首", "精瓷匕首")},
-                {"CERATA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Cerata", "裸鳃刃", "蛟鳃刃")},
+                {"CAUSTACYST", new Weapon(WeaponType.Melee, 75, 0.05, 2, 0.3, 1.3, 7, "Caustacyst", "灼蚀变体镰", "腐蚀寄生者")},
+                {
+                    "CERAMIC DAGGER",
+                    new Weapon(WeaponType.Melee, 35.0, 0.05, 1.5, 0.1, 1.43, 3, "Ceramic Dagger", "陶瓷匕首", "精瓷匕首")
+                },
+                {"CERATA", new Weapon(WeaponType.Melee, 44, 0.15, 2, 0.3, 1.36, 3, "Cerata", "裸鳃刃", "蛟鳃刃")},
                 {
                     "CERNOS PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Cernos Prime", "西诺斯Prime", "圣装瑟诺斯长弓", "西诺斯P")
+                    new Weapon(WeaponType.Primary, 360, 0.35, 2, 0.3, 0.86, 12, "Cernos Prime", "西诺斯Prime", "圣装瑟诺斯长弓",
+                        "西诺斯P")
                 },
-                {"CERNOS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Cernos", "西诺斯", "瑟诺斯长弓")},
-                {"CESTRA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Cestra", "锡斯特", "逆转聚能炮")},
-                {"CONVECTRIX", new Weapon(WeaponType.None, 0, 0, 0, 0, "Convectrix", "导热聚焦枪", "导热聚焦枪")},
-                {"CORINTH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Corinth", "科林斯", "科林斯")},
-                {"CRONUS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Cronus", "克洛诺斯", "克洛诺斯")},
-                {"CYATH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Cyath", "西亚什", "弯刃")},
-                {"CYCRON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Cycron", "循环离子枪", "循环式电浆手枪")},
-                {"DAIKYU", new Weapon(WeaponType.None, 0, 0, 0, 0, "Daikyu", "大久和弓", "大久和弓", "大久")},
-                {"DAKRA PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dakra Prime", "达克拉Prime", "圣装达克拉", "达克拉P")},
-                {"DARK DAGGER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dark Dagger", "暗黑匕首", "暗影匕首")},
+                {"CERNOS", new Weapon(WeaponType.Primary, 220, 0.36, 2, 0.18, 0.86, 6, "Cernos", "西诺斯", "瑟诺斯长弓")},
+                {"CESTRA", new Weapon(WeaponType.Secondary, 26.0, 0.06, 1.6, 0.2, 1.52, 4, "Cestra", "锡斯特", "逆转聚能炮")},
                 {
-                    "DARK SPLIT-SWORD",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Dark Split-Sword", "暗黑分合剑", "暗影子母剑", "暗黑分和剑")
+                    "CONVECTRIX",
+                    new Weapon(WeaponType.Primary, 24.0, 0.16, 2.4, 0.3, 1.46, 7, "Convectrix", "导热聚焦枪", "导热聚焦枪")
                 },
-                {"DARK SWORD", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dark Sword", "暗黑长剑", "暗影长剑")},
+                {"CORINTH", new Weapon(WeaponType.Primary, 540.0, 0.3, 2.8, 0.12, 1, 10, "Corinth", "科林斯", "科林斯")},
+                {"CRONUS", new Weapon(WeaponType.Melee, 35.0, 0.05, 1.5, 0.1, 1.48, 0, "Cronus", "克洛诺斯", "克洛诺斯")},
+                {"CYATH", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Cyath", "西亚什", "弯刃")},
+                {"CYCRON", new Weapon(WeaponType.Secondary, 23, 0.12, 1.8, 0.3, 1, 8, "Cycron", "循环离子枪", "循环式电浆手枪")},
+                {"DAIKYU", new Weapon(WeaponType.Primary, 460, 0.2, 2, 0.5, 1.21, 10, "Daikyu", "大久和弓", "大久和弓", "大久")},
+                {
+                    "DAKRA PRIME",
+                    new Weapon(WeaponType.Melee, 60, 0.15, 1.5, 0.1, 1.15, 6, "Dakra Prime", "达克拉Prime", "圣装达克拉",
+                        "达克拉P")
+                },
+                {
+                    "DARK DAGGER",
+                    new Weapon(WeaponType.Melee, 35, 0.05, 1.5, 0.1, 0.5, 0, "Dark Dagger", "暗黑匕首", "暗影匕首")
+                },
+                {
+                    "DARK SPLIT-SWORD DUAL SWORDS",
+                    new Weapon(WeaponType.Melee, 65, 0.25, 2.5, 0.15, 1.21, 5, "Dark Split-Sword", "暗黑分合剑双剑", "暗影子母剑",
+                        "暗黑分和剑")
+                },
+                {
+                    "DARK SPLIT-SWORD HEAVY BLADE",
+                    new Weapon(WeaponType.Melee, 90, 0.1, 2, 0.25, 1.21, 5, "Dark Split-Sword", "暗黑分合剑巨刃", "暗影子母剑",
+                        "暗黑分和剑")
+                },
+                {"DARK SWORD", new Weapon(WeaponType.Melee, 37, 0.05, 1.5, 0.1, 1.48, 0, "Dark Sword", "暗黑长剑", "暗影长剑")},
                 {
                     "DECONSTRUCTOR PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Deconstructor Prime", "分离Prime", "圣装爆能分解", "分离P")
+                    new Weapon(WeaponType.Melee, 75, 0, 0, 0.25, 1.25, 8, "Deconstructor Prime", "分离Prime", "圣装爆能分解",
+                        "分离P")
                 },
-                {"DECONSTRUCTOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Deconstructor", "分离", "爆能分解")},
-                {"DEHTAT", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dehtat", "德塔特", "轻刺刃")},
-                {"DERA VANDAL", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dera Vandal", "德拉破坏者", "镇暴德拉")},
-                {"DERA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dera", "德拉", "德拉")},
-                {"DESPAIR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Despair", "绝望", "绝望")},
-                {"DESTREZA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Destreza", "技巧之剑", "护手刺剑")},
-                {"DESTREZA PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Destreza Prime", "技巧之剑Prime", "圣装护手刺剑")},
+                {"DECONSTRUCTOR", new Weapon(WeaponType.Melee, 50, 0, 0, 0.25, 1.25, 0, "Deconstructor", "分离", "爆能分解")},
+                {"DEHTAT", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Dehtat", "德塔特", "轻刺刃")},
+                {
+                    "DERA VANDAL",
+                    new Weapon(WeaponType.Primary, 32.0, 0.08, 2, 0.3, 1.245, 7, "Dera Vandal", "德拉破坏者", "镇暴德拉")
+                },
+                {"DERA", new Weapon(WeaponType.Primary, 30.0, 0.08, 1.6, 0.22, 1.245, 4, "Dera", "德拉", "德拉")},
+                {"DESPAIR", new Weapon(WeaponType.Secondary, 58.0, 0.16, 1.6, 0.16, 1.24, 4, "Despair", "绝望", "绝望")},
+                {"DESTREZA", new Weapon(WeaponType.Melee, 75.1, 0.2, 2, 0.05, 1.14, 7, "Destreza", "技巧之剑", "护手刺剑")},
+                {
+                    "DESTREZA PRIME",
+                    new Weapon(WeaponType.Melee, 76.0, 0.24, 3, 0.18, 1.14, 10, "Destreza Prime", "技巧之剑Prime", "圣装护手刺剑")
+                },
                 {
                     "DETH MACHINE RIFLE PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Deth Machine Rifle Prime", "死亡机枪Prime", "圣装致死机枪", "死亡机枪P")
+                    new Weapon(WeaponType.Primary, 5.1, 0.05, 2, 0.01, 1.455, 0, "Deth Machine Rifle Prime",
+                        "死亡机枪Prime",
+                        "圣装致死机枪", "死亡机枪P")
                 },
-                {"DETH MACHINE RIFLE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Deth Machine Rifle", "死亡机枪", "致死机枪")},
-                {"DETRON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Detron", "德特昂", "迪特隆")},
-                {"DEX DAKRA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dex Dakra", "Dex达克拉双剑", "灵敏达克拉")},
-                {"DEX FURIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dex Furis", "Dex盗贼双枪", "灵敏弗里斯双枪")},
-                {"DEX SYBARIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dex Sybaris", "Dex席巴莉丝", "灵敏远古丧钟")},
-                {"DRAGON NIKANA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dragon Nikana", "龙之侍刃", "龙之侍刃", "龙刀")},
-                {"DRAKGOON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Drakgoon", "龙骑兵", "龙息匣炮")},
-                {"DREAD", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dread", "恐惧", "恐惧")},
-                {"DUAL CESTRA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Cestra", "锡斯特双枪", "双持逆转聚能炮")},
-                {"DUAL CLEAVERS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Cleavers", "斩肉双刀", "起义者")},
-                {"DUAL ETHER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Ether", "苍穹双剑", "苍穹双剑")},
-                {"DUAL HEAT SWORDS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Heat Swords", "烈焰双剑", "烈焰双剑")},
-                {"DUAL ICHOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Ichor", "恶脓双斧", "恶脓双斧")},
+                {
+                    "DETH MACHINE RIFLE",
+                    new Weapon(WeaponType.Primary, 5.1, 0.05, 2, 0.01, 1.455, 0, "Deth Machine Rifle", "死亡机枪", "致死机枪")
+                },
+                {"DETRON", new Weapon(WeaponType.Secondary, 280, 0.04, 1.5, 0.3, 1, 6, "Detron", "德特昂", "迪特隆")},
+                {
+                    "DEX DAKRA",
+                    new Weapon(WeaponType.Melee, 65.0, 0.1, 2, 0.2, 1.15, 0, "Dex Dakra", "Dex达克拉双剑", "灵敏达克拉")
+                },
+                {
+                    "DEX FURIS",
+                    new Weapon(WeaponType.Secondary, 16.0, 0.14, 2, 0.28, 1.39, 10, "Dex Furis", "Dex盗贼双枪", "灵敏弗里斯双枪")
+                },
+                {
+                    "DEX SYBARIS",
+                    new Weapon(WeaponType.Primary, 75.0, 0.35, 2, 0.1, 0.895, 7, "Dex Sybaris", "Dex席巴莉丝", "灵敏远古丧钟")
+                },
+                {"DOKRAHM", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Dokrahm", "多克拉姆", "多克拉姆")},
+                {
+                    "DRAGON NIKANA",
+                    new Weapon(WeaponType.Melee, 85.0, 0.15, 2, 0.15, 1.35, 8, "Dragon Nikana", "龙之侍刃", "龙之侍刃", "龙刀")
+                },
+                {"DRAKGOON", new Weapon(WeaponType.Primary, 700, 0.075, 2, 0.23, 1.48, 5, "Drakgoon", "龙骑兵", "龙息匣炮")},
+                {"DREAD", new Weapon(WeaponType.Primary, 200, 0.5, 2, 0.2, 0.825, 5, "Dread", "恐惧", "恐惧")},
+                {
+                    "DUAL CESTRA",
+                    new Weapon(WeaponType.Secondary, 26.0, 0.06, 1.6, 0.2, 1.35, 7, "Dual Cestra", "锡斯特双枪", "双持逆转聚能炮")
+                },
+                {
+                    "DUAL CLEAVERS",
+                    new Weapon(WeaponType.Melee, 35.0, 0.25, 3, 0.1, 1, 3, "Dual Cleavers", "斩肉双刀", "起义者")
+                },
+                {"DUAL ETHER", new Weapon(WeaponType.Melee, 40, 0.05, 1.5, 0.1, 1.45, 0, "Dual Ether", "苍穹双剑", "苍穹双剑")},
+                {
+                    "DUAL HEAT SWORDS",
+                    new Weapon(WeaponType.Melee, 45.0, 0.05, 1.5, 0.1, 1.44, 0, "Dual Heat Swords", "烈焰双剑", "烈焰双剑")
+                },
+                {"DUAL ICHOR", new Weapon(WeaponType.Melee, 35, 0.25, 3, 0.15, 1.16, 6, "Dual Ichor", "恶脓双斧", "恶脓双斧")},
                 {
                     "DUAL KAMAS PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Kamas Prime", "双短柄战镰Prime", "圣装迦摩双镰", "双短柄战镰P")
+                    new Weapon(WeaponType.Melee, 42.0, 0.05, 1.5, 0.075, 0.81, 1, "Dual Kamas", "双短柄战镰Prime", "圣装迦摩双镰",
+                        "双短柄战镰P")
                 },
-                {"DUAL KAMAS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Kamas", "双短柄战镰", "迦摩双镰")},
-                {"DUAL KERES", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Keres", "双持凯瑞斯", "双持凯瑞斯")},
-                {"DUAL RAZA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Raza", "锋月双斧", "锋月双斧")},
-                {"DUAL SKANA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Skana", "空刃双刀", "空灵双刃")},
-                {"DUAL TOXOCYST", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Toxocyst", "毒囊双枪", "毒刺双枪")},
-                {"DUAL ZOREN", new Weapon(WeaponType.None, 0, 0, 0, 0, "Dual Zoren", "佐伦双斧", "索伦双斧")},
-                {"EMBOLIST", new Weapon(WeaponType.None, 0, 0, 0, 0, "Embolist", "安伯勒斯", "蛇颅")},
-                {"ENDURA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Endura", "三叶坚韧", "苦行刺剑")},
-                {"ETHER DAGGERS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ether Daggers", "苍穹匕首", "苍穹匕首")},
-                {"ETHER REAPER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ether Reaper", "苍穹死神", "苍穹死神")},
-                {"ETHER SWORD", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ether Sword", "苍穹之剑", "苍穹之剑")},
-                {"EUPHONA PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Euphona Prime", "悦音Prime", "圣装仙乐奏鸣", "悦音P")},
-                {"FANG PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Fang Prime", "狼牙Prime", "圣装狼牙双刃", "狼牙P")},
-                {"FANG", new Weapon(WeaponType.None, 0, 0, 0, 0, "Fang", "狼牙", "狼牙双刃")},
-                {"FERROX", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ferrox", "铁晶磁轨炮", "铁磁式激光矛枪", "C矛")},
-                {"FLUX RIFLE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Flux Rifle", "通量射线步枪", "热能步枪")},
+                {
+                    "DUAL KAMAS",
+                    new Weapon(WeaponType.Melee, 70.0, 0.15, 2, 0.2, 0.81, 6, "Dual Kamas Prime", "双短柄战镰", "迦摩双镰")
+                },
+                {
+                    "DUAL KERES",
+                    new Weapon(WeaponType.Melee, 44.0, 0.28, 2.6, 0.14, 1.48, 7, "Dual Keres", "双持凯瑞斯", "双持凯瑞斯")
+                },
+                {"DUAL RAZA", new Weapon(WeaponType.Melee, 48.0, 0.2, 3, 0.05, 1.4, 6, "Dual Raza", "锋月双斧", "锋月双斧")},
+                {
+                    "DUAL SKANA",
+                    new Weapon(WeaponType.Melee, 32.0, 0.05, 1.5, 0.1, 1.48, 0, "Dual Skana", "空刃双刀", "空灵双刃")
+                },
+                {
+                    "DUAL TOXOCYST",
+                    new Weapon(WeaponType.Secondary, 75.0, 0.05, 2, 0.37, 1.19, 11, "Dual Toxocyst", "毒囊双枪", "毒刺双枪")
+                },
+                {
+                    "DUAL ZOREN",
+                    new Weapon(WeaponType.Melee, 30.0, 0.25, 3, 0.05, 1.44, 2, "Dual Zoren", "佐伦双斧", "索伦双斧")
+                },
+                {"EMBOLIST", new Weapon(WeaponType.Secondary, 35, 0.03, 1.5, 0.41, 1.45, 9, "Embolist", "安伯勒斯", "蛇颅")},
+                {"ENDURA", new Weapon(WeaponType.Melee, 95.0, 0.05, 2, 0.25, 1, 7, "Endura", "三叶坚韧", "苦行刺剑")},
+                {
+                    "ETHER DAGGERS",
+                    new Weapon(WeaponType.Melee, 45.1, 0.05, 1.5, 0.15, 1.49, 0, "Ether Daggers", "苍穹匕首", "苍穹匕首")
+                },
+                {
+                    "ETHER REAPER",
+                    new Weapon(WeaponType.Melee, 65.1, 0.15, 2, 0.15, 1.45, 3, "Ether Reaper", "苍穹死神", "苍穹死神")
+                },
+                {
+                    "ETHER SWORD",
+                    new Weapon(WeaponType.Melee, 37.0, 0.05, 1.5, 0.1, 1.44, 0, "Ether Sword", "苍穹之剑", "苍穹之剑")
+                },
+                {
+                    "EUPHONA PRIME",
+                    new Weapon(WeaponType.Secondary, 325.0, 0.3, 2.5, 0.02, 0.75, 14, "Euphona Prime", "悦音Prime",
+                        "圣装仙乐奏鸣",
+                        "悦音P")
+                },
+                {
+                    "FANG PRIME",
+                    new Weapon(WeaponType.Melee, 36.0, 0.05, 1.5, 0.05, 1.36, 0, "Fang Prime", "狼牙Prime", "圣装狼牙双刃",
+                        "狼牙P")
+                },
+                {"FANG", new Weapon(WeaponType.Melee, 30.0, 0.05, 1.5, 0.08, 1.36, 0, "Fang", "狼牙", "狼牙双刃")},
+                {
+                    "FERROX",
+                    new Weapon(WeaponType.Primary, 350, 0.32, 2.8, 0.1, 1, 14, "Ferrox", "铁晶磁轨炮", "铁磁式激光矛枪", "C矛")
+                },
+                {
+                    "FLUX RIFLE",
+                    new Weapon(WeaponType.Primary, 22.0, 0.1, 2, 0.24, 1.55, 6, "Flux Rifle", "通量射线步枪", "热能步枪")
+                },
                 {
                     "FRAGOR PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Fragor Prime", "重击巨锤Prime", "圣装悲悯", "重击巨锤P", "大锤P")
+                    new Weapon(WeaponType.Melee, 130.0, 0.35, 2.5, 0.1, 0.96, 7, "Fragor Prime", "重击巨锤Prime", "圣装悲悯",
+                        "重击巨锤P", "大锤P")
                 },
-                {"FRAGOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Fragor", "重击巨锤", "悲悯", "大锤")},
-                {"FURAX WRAITH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Furax Wraith", "弗拉克斯亡魂", "亡魂寄居蟹手刺")},
-                {"FURAX", new Weapon(WeaponType.None, 0, 0, 0, 0, "Furax", "弗拉克斯", "寄居蟹手刺")},
-                {"FURIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Furis", "盗贼", "盗贼")},
-                {"FUSILAI", new Weapon(WeaponType.None, 0, 0, 0, 0, "Fusilai", "齐射玻刃", "齐射玻刃", "玻璃飞刀")},
+                {"FRAGOR", new Weapon(WeaponType.Melee, 115.0, 0.2, 2, 0.1, 0.96, 2, "Fragor", "重击巨锤", "悲悯", "大锤")},
+                {
+                    "FURAX WRAITH",
+                    new Weapon(WeaponType.Melee, 35.0, 0.25, 2.5, 0.1, 1.38, 0, "Furax Wraith", "弗拉克斯亡魂", "亡魂寄居蟹手刺")
+                },
+                {"FURAX", new Weapon(WeaponType.Melee, 35.0, 0.2, 2, 0.1, 1.38, 0, "Furax", "弗拉克斯", "寄居蟹手刺")},
+                {"FURIS", new Weapon(WeaponType.Secondary, 20, 0.05, 2, 0.12, 1.35, 2, "Furis", "盗贼", "盗贼")},
+                {
+                    "FUSILAI",
+                    new Weapon(WeaponType.Secondary, 77.0, 0.23, 1.7, 0.29, 1.2, 7, "Fusilai", "齐射玻刃", "齐射玻刃", "玻璃飞刀")
+                },
                 {
                     "GALATINE PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Galatine Prime", "迦伦提恩Prime", "圣装加拉丁暗影", "迦伦提恩P", "大剑P")
+                    new Weapon(WeaponType.Melee, 125.0, 0.1, 2, 0.2, 0.5, 3, "Galatine Prime", "迦伦提恩Prime", "圣装加拉丁暗影",
+                        "迦伦提恩P",
+                        "大剑P")
                 },
-                {"GALATINE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Galatine", "迦伦提恩", "加拉丁暗影", "大剑")},
-                {"GAMMACOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Gammacor", "伽马腕甲枪", "射线发生仪")},
-                {"GAZAL MACHETE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Gazal Machete", "加扎勒反曲刀", "加扎尔精英阔刀")},
-                {"GLAIVE PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Glaive Prime", "战刃Prime", "圣装回旋刃", "战刃P")},
-                {"GLAIVE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Glaive", "战刃", "回旋刃")},
+                {
+                    "GALATINE",
+                    new Weapon(WeaponType.Melee, 165.0, 0.2, 2, 0.2, 0.5, 13, "Galatine", "迦伦提恩", "加拉丁暗影", "大剑")
+                },
+                {
+                    "GAMMACOR",
+                    new Weapon(WeaponType.Secondary, 16, 0.08, 1.8, 0.2, 0.53, 2, "Gammacor", "伽马腕甲枪", "射线发生仪")
+                },
+                {
+                    "GAZAL MACHETE",
+                    new Weapon(WeaponType.Melee, 52.0, 0.1, 2, 0.25, 1.35, 5, "Gazal Machete", "加扎勒反曲刀", "加扎尔精英阔刀")
+                },
+                {
+                    "GLAIVE PRIME",
+                    new Weapon(WeaponType.Melee, 50.0, 0.15, 2, 0.3, 1.22, 10, "Glaive Prime", "战刃Prime", "圣装回旋刃",
+                        "战刃P")
+                },
+                {"GLAIVE", new Weapon(WeaponType.Melee, 35.0, 0.1, 2, 0.1, 1.22, 1, "Glaive", "战刃", "回旋刃")},
                 {
                     "GLAXION",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Glaxion", "冷冻光束步枪", "急冻冰枪", "冷冻射线步枪", "冰冻射线步枪", "冰冻光束步枪")
+                    new Weapon(WeaponType.Primary, 26, 0.08, 2, 0.34, 1.35, 8, "Glaxion", "冷冻光束步枪", "急冻冰枪", "冷冻射线步枪",
+                        "冰冻射线步枪", "冰冻光束步枪")
                 },
-                {"GORGON WRAITH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Gorgon Wraith", "蛇发女妖亡魂", "亡魂蛇发女妖")},
-                {"GORGON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Gorgon", "蛇发女妖", "蛇发女妖")},
-                {"GRAKATA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Grakata", "葛拉卡达", "格拉达火舌")},
-                {"GRAM", new Weapon(WeaponType.None, 0, 0, 0, 0, "Gram", "格拉姆", "格拉姆")},
-                {"GRAM PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Gram Prime", "格拉姆Prime", "圣装格拉姆", "格拉姆P")},
-                {"GRINLOK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Grinlok", "葛恩火枪", "尖叫小丑")},
-                {"GUANDAO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Guandao", "关刀", "偃月刀")},
-                {"GUNSEN", new Weapon(WeaponType.None, 0, 0, 0, 0, "Gunsen", "军扇", "军扇")},
-                {"HALIKAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Halikar", "哈利卡", "喷射飞锤")},
-                {"HARPAK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Harpak", "哈帕克", "哈帕克")},
-                {"HATE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Hate", "憎恨", "憎恨")},
-                {"HEAT DAGGER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Heat Dagger", "烈焰匕首", "烈焰匕首")},
-                {"HEAT SWORD", new Weapon(WeaponType.None, 0, 0, 0, 0, "Heat Sword", "烈焰长剑", "烈焰长剑")},
-                {"HEK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Hek", "海克", "恶婴")},
-                {"HELIOCOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Heliocor", "赫利俄光锤", "太阳神锤", "扫描锤")},
-                {"HEMA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Hema", "血肢", "希玛嗜血体")},
-                {"HIKOU PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Hikou Prime", "飞扬Prime", "圣装星镖", "飞扬P")},
-                {"HIKOU", new Weapon(WeaponType.None, 0, 0, 0, 0, "Hikou", "飞扬", "星镖")},
-                {"HIND", new Weapon(WeaponType.None, 0, 0, 0, 0, "Hind", "雌鹿", "雌鹿半自动步枪")},
-                {"HIRUDO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Hirudo", "蚂蝗", "血蛭")},
-                {"HYSTRIX", new Weapon(WeaponType.None, 0, 0, 0, 0, "Hystrix", "猬刺", "猬刺")},
-                {"IGNIS WRAITH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ignis Wraith", "伊格尼斯亡魂", "亡魂爆燃喷射器", "喷火器P")},
-                {"IGNIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ignis", "伊格尼斯", "爆燃喷射器", "喷火器")},
-                {"JAT KITTAG", new Weapon(WeaponType.None, 0, 0, 0, 0, "Jat Kittag", "喷射战锤", "氪金狼牙棒")},
-                {"JAT KUSAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Jat Kusar", "喷射锁镰", "喷射锁镰")},
-                {"JAVLOK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Javlok", "燃焰标枪", "爆燃矛枪", "G矛")},
-                {"JAW SWORD", new Weapon(WeaponType.None, 0, 0, 0, 0, "Jaw Sword", "蛇颚刀", "蛇颚刀")},
-                {"KAMA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kama", "短柄战镰", "迦摩天战镰")},
-                {"KARAK WRAITH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Karak Wraith", "卡拉克亡魂", "亡魂超体步枪")},
-                {"KARAK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Karak", "卡拉克", "超体步枪")},
-                {"KARYST", new Weapon(WeaponType.None, 0, 0, 0, 0, "Karyst", "凯洛斯特", "困惑之刃")},
-                {"KESHEG", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kesheg", "怯薛", "禁卫长戟")},
-                {"KESTREL", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kestrel", "红隼", "红隼")},
-                {"KNELL", new Weapon(WeaponType.None, 0, 0, 0, 0, "Knell", "丧钟", "噩兆")},
-                {"KOGAKE PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kogake Prime", "科加基Prime", "圣装牢笼拳套", "科加基P")},
-                {"KOGAKE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kogake", "科加基", "牢笼拳套")},
-                {"KOHM", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kohm", "寇恩热能枪", "聚能瓦斯炮", "吹风机")},
-                {"KOHMAK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kohmak", "寇恩霰机枪", "寇恩热能炮")},
-                {"KRAKEN", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kraken", "北海巨妖", "北海巨妖")},
-                {"KROHKUR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Krohkur", "克鲁古尔", "克鲁古尔")},
-                {"KRONEN", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kronen", "皇家拐刃", "弧月刀", "皇家拐")},
+                {
+                    "GORGON WRAITH",
+                    new Weapon(WeaponType.Primary, 25.0, 0.17, 1.5, 0.09, 1.175, 3, "Gorgon Wraith", "蛇发女妖亡魂", "亡魂蛇发女妖")
+                },
+                {
+                    "GORGON",
+                    new Weapon(WeaponType.Primary, 27.0, 0.15, 1.9, 0.21, 1.175, 7, "Gorgon", "蛇发女妖", "蛇发女妖")
+                },
+                {"GRAKATA", new Weapon(WeaponType.Primary, 11.0, 0.25, 2, 0.2, 1.105, 5, "Grakata", "葛拉卡达", "格拉达火舌")},
+                {"GRAM", new Weapon(WeaponType.Melee, 100, 0.15, 2, 0.15, 1.44, 2, "Gram", "格拉姆", "格拉姆")},
+                {
+                    "GRAM PRIME",
+                    new Weapon(WeaponType.Melee, 180, 0.32, 2.6, 0.32, 1.44, 14, "Gram Prime", "格拉姆Prime", "圣装格拉姆",
+                        "格拉姆P")
+                },
+                {
+                    "GRINLOK",
+                    new Weapon(WeaponType.Primary, 187.0, 0.15, 2.5, 0.35, 1.245, 7, "Grinlok", "葛恩火枪", "尖叫小丑")
+                },
+                {"GUANDAO", new Weapon(WeaponType.Melee, 90.0, 0.24, 2.2, 0.04, 1, 4, "Guandao", "关刀", "偃月刀")},
+                {"GUNSEN", new Weapon(WeaponType.Melee, 50, 0.16, 2, 0.28, 1, 10, "Gunsen", "军扇", "军扇")},
+                {"HALIKAR", new Weapon(WeaponType.Melee, 45.0, 0.1, 2, 0.2, 1.44, 7, "Halikar", "哈利卡", "喷射飞锤")},
+                {"HARPAK", new Weapon(WeaponType.Primary, 50.0, 0.2, 2.3, 0.17, 1.55, 7, "Harpak", "哈帕克", "哈帕克")},
+                {"HATE", new Weapon(WeaponType.Melee, 70.0, 0.2, 2.5, 0.15, 1.36, 2, "Hate", "憎恨", "憎恨")},
+                {
+                    "HEAT DAGGER",
+                    new Weapon(WeaponType.Melee, 45.0, 0.05, 1.5, 0.05, 1.44, 0, "Heat Dagger", "烈焰匕首", "烈焰匕首")
+                },
+                {
+                    "HEAT SWORD",
+                    new Weapon(WeaponType.Melee, 44.0, 0.05, 1.5, 0.2, 1.48, 0, "Heat Sword", "烈焰长剑", "烈焰长剑")
+                },
+                {"HEK", new Weapon(WeaponType.Primary, 525.0, 0.1, 2, 0.25, 0.55, 4, "Hek", "海克", "恶婴")},
+                {
+                    "HELIOCOR",
+                    new Weapon(WeaponType.Melee, 140, 0.25, 2, 0.025, 0.96, 9, "Heliocor", "赫利俄光锤", "太阳神锤", "扫描锤")
+                },
+                {"HEMA", new Weapon(WeaponType.Primary, 47, 0.11, 2, 0.25, 1, 7, "Hema", "血肢", "希玛嗜血体")},
+                {
+                    "HIKOU PRIME",
+                    new Weapon(WeaponType.Secondary, 36.0, 0.06, 1.8, 0.28, 0.69, 4, "Hikou Prime", "飞扬Prime", "圣装星镖",
+                        "飞扬P")
+                },
+                {"HIKOU", new Weapon(WeaponType.Secondary, 26.0, 0.04, 1.6, 0.1, 0.69, 2, "Hikou", "飞扬", "星镖")},
+                {"HIND", new Weapon(WeaponType.Primary, 30.0, 0.07, 1.5, 0.15, 1.42, 0, "Hind", "雌鹿", "雌鹿半自动步枪")},
+                {"HIRUDO", new Weapon(WeaponType.Melee, 55.0, 0.15, 3, 0.05, 0.5, 7, "Hirudo", "蚂蝗", "血蛭")},
+                {"HYSTRIX", new Weapon(WeaponType.Secondary, 36.1, 0.24, 2.2, 0.1, 1, 7, "Hystrix", "豪猪", "猬刺")},
+                {
+                    "IGNIS WRAITH",
+                    new Weapon(WeaponType.Primary, 35, 0.17, 2.5, 0.29, 0.79, 9, "Ignis Wraith", "伊格尼斯亡魂", "亡魂爆燃喷射器",
+                        "喷火器亡魂", "亡魂喷火器")
+                },
+                {"IGNIS", new Weapon(WeaponType.Primary, 33, 0.11, 2, 0.27, 0.79, 5, "Ignis", "伊格尼斯", "爆燃喷射器", "喷火器")},
+                {
+                    "JAT KITTAG",
+                    new Weapon(WeaponType.Melee, 130.0, 0.15, 2, 0.25, 0.75, 5, "Jat Kittag", "喷射战锤", "氪金狼牙棒")
+                },
+                {"JAT KUSAR", new Weapon(WeaponType.Melee, 80, 0.35, 2.5, 0.05, 0.81, 10, "Jat Kusar", "喷射锁镰", "喷射锁镰")},
+                {"JAVLOK", new Weapon(WeaponType.Primary, 230, 0.2, 2, 0.25, 1, 7, "Javlok", "燃焰标枪", "爆燃矛枪", "G矛")},
+                {"JAW SWORD", new Weapon(WeaponType.Melee, 44.0, 0.05, 1.5, 0.1, 1.47, 1, "Jaw Sword", "蛇颚刀", "蛇颚刀")},
+                {"KAMA", new Weapon(WeaponType.Melee, 45.0, 0.05, 1.5, 0.02, 1.47, 1, "Kama", "短柄战镰", "迦摩天战镰")},
+                {
+                    "KARAK WRAITH",
+                    new Weapon(WeaponType.Primary, 31.2, 0.13, 2, 0.25, 1.28, 7, "Karak Wraith", "卡拉克亡魂", "亡魂超体步枪")
+                },
+                {"KARAK", new Weapon(WeaponType.Primary, 29.0, 0.09, 1.5, 0.15, 1.28, 1, "Karak", "卡拉克", "超体步枪")},
+                {"KARYST", new Weapon(WeaponType.Melee, 50, 0.1, 2, 0.15, 1.29, 0, "Karyst", "凯洛斯特", "困惑之刃")},
+                {"KESHEG", new Weapon(WeaponType.Melee, 105.0, 0.075, 2.5, 0.1, 1.24, 7, "Kesheg", "怯薛", "禁卫长戟")},
+                {"KESTREL", new Weapon(WeaponType.Melee, 35.0, 0.1, 2, 0.1, 1.45, 0, "Kestrel", "红隼", "红隼")},
+                {"KNELL", new Weapon(WeaponType.Secondary, 150, 0.2, 1.5, 0.05, 1, 10, "Knell", "丧钟", "噩兆")},
+                {
+                    "KOGAKE PRIME",
+                    new Weapon(WeaponType.Melee, 70.0, 0.16, 1.8, 0.34, 1.46, 10, "Kogake Prime", "科加基Prime", "圣装牢笼拳套",
+                        "科加基P")
+                },
+                {"KOGAKE", new Weapon(WeaponType.Melee, 35.0, 0.2, 2, 0.1, 1.46, 0, "Kogake", "科加基", "牢笼拳套")},
+                {"KOHM", new Weapon(WeaponType.Primary, 360, 0.11, 2.3, 0.25, 1.4, 5, "Kohm", "寇恩热能枪", "聚能瓦斯炮", "吹风机")},
+                {"KOHMAK", new Weapon(WeaponType.Secondary, 150, 0.11, 2, 0.23, 1.2, 5, "Kohmak", "寇恩霰机枪", "寇恩热能炮")},
+                {"KRAKEN", new Weapon(WeaponType.Secondary, 49.0, 0.05, 2, 0.13, 1.53, 0, "Kraken", "北海巨妖", "北海巨妖")},
+                {"KROHKUR", new Weapon(WeaponType.Melee, 70.0, 0.29, 1.7, 0.19, 1.22, 5, "Krohkur", "克鲁古尔", "克鲁古尔")},
+                {"KRONEN", new Weapon(WeaponType.Melee, 65.0, 0.05, 1.5, 0.2, 1.43, 3, "Kronen", "皇家拐刃", "弧月刀", "皇家拐")},
                 {
                     "KRONEN PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Kronen Prime", "皇家拐刃Prime", "圣装弧月刀", "皇家拐刃P", "拐p", "皇家拐p")
+                    new Weapon(WeaponType.Melee, 66.0, 0.12, 2, 0.24, 1.43, 8, "Kronen Prime", "皇家拐刃Prime", "圣装弧月刀",
+                        "皇家拐刃P", "拐p", "皇家拐p")
                 },
-                {"KRONSH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kronsh", "客隆什", "重弯刀")},
-                {"KULSTAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kulstar", "杀星", "集束鱼雷发射器")},
-                {"KUNAI", new Weapon(WeaponType.None, 0, 0, 0, 0, "Kunai", "苦无", "苦无")},
-                {"LACERA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Lacera", "悲痛之刃", "绝情双剪", "悲痛")},
-                {"LANKA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Lanka", "兰卡", "兰卡原能加速枪")},
-                {"LASER RIFLE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Laser Rifle", "激光步枪", "激光步枪")},
-                {"LATO PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Lato Prime", "拉托Prime", "圣装拉托", "拉托P")},
-                {"LATO VANDAL", new Weapon(WeaponType.None, 0, 0, 0, 0, "Lato Vandal", "拉托破坏者", "镇暴拉托")},
-                {"LATO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Lato", "拉托", "拉托")},
+                {"KRONSH", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Kronsh", "客隆什", "重弯刀")},
+                {"KULSTAR", new Weapon(WeaponType.Secondary, 200, 0.17, 2.3, 0.19, 1.1, 5, "Kulstar", "杀星", "集束鱼雷发射器")},
+                {"KUNAI", new Weapon(WeaponType.Secondary, 46.0, 0.08, 1.6, 0.08, 1.51, 2, "Kunai", "苦无", "苦无")},
+                {"LACERA", new Weapon(WeaponType.Melee, 80, 0.025, 2, 0.45, 1.31, 7, "Lacera", "悲痛之刃", "绝情双剪", "悲痛")},
+                {"LANKA", new Weapon(WeaponType.Primary, 525, 0.25, 2, 0.25, 1.105, 10, "Lanka", "兰卡", "兰卡原能加速枪")},
+                {
+                    "LASER RIFLE",
+                    new Weapon(WeaponType.Primary, 8.0, 0.025, 1.3, 0.02, 1.21, 0, "Laser Rifle", "激光步枪", "激光步枪")
+                },
+                {
+                    "LATO PRIME",
+                    new Weapon(WeaponType.Secondary, 48.0, 0.3, 2, 0.2, 1.51, 14, "Lato Prime", "拉托Prime", "圣装拉托",
+                        "拉托P")
+                },
+                {
+                    "LATO VANDAL",
+                    new Weapon(WeaponType.Secondary, 46.0, 0.26, 2.4, 0.1, 1.51, 7, "Lato Vandal", "拉托破坏者", "镇暴拉托")
+                },
+                {"LATO", new Weapon(WeaponType.Secondary, 30.0, 0.1, 1.8, 0.06, 1.51, 0, "Lato", "拉托", "拉托")},
                 {
                     "LATRON PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Latron Prime", "拉特昂Prime", "圣装拉特龙半自动步枪", "拉特昂P")
+                    new Weapon(WeaponType.Primary, 90, 0.22, 2.8, 0.26, 1.07, 10, "Latron Prime", "拉特昂Prime",
+                        "圣装拉特龙半自动步枪",
+                        "拉特昂P")
                 },
-                {"LATRON WRAITH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Latron Wraith", "拉特昂亡魂", "亡魂拉特龙半自动步枪")},
-                {"LATRON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Latron", "拉特昂", "拉特龙半自动步枪")},
-                {"LECTA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Lecta", "勒克塔", "僵直电鞭", "电鞭")},
-                {"LENZ", new Weapon(WeaponType.None, 0, 0, 0, 0, "Lenz", "楞次弓", "楞次弓", "楞次")},
-                {"LESION", new Weapon(WeaponType.None, 0, 0, 0, 0, "Lesion", "病变", "病变")},
-                {"LEX PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Lex Prime", "雷克斯Prime", "圣装秩序之握", "雷克斯P")},
-                {"LEX", new Weapon(WeaponType.None, 0, 0, 0, 0, "Lex", "雷克斯", "秩序之握")},
-                {"MACHETE WRAITH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Machete Wraith", "马谢特砍刀亡魂", "亡魂精英阔刀")},
-                {"MACHETE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Machete", "马谢特砍刀", "精英阔刀")},
-                {"MAGISTAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Magistar", "执法者", "真理权杖")},
-                {"MAGNUS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Magnus", "麦格努斯", "猛犸手枪")},
-                {"MARA DETRON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Mara Detron", "苦痛德特昂", "苦痛德特昂")},
-                {"MARELOK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Marelok", "玛瑞火枪", "马洛克")},
-                {"MEWAN", new Weapon(WeaponType.None, 0, 0, 0, 0, "Mewan", "密丸", "重长刃", "蜜丸")},
-                {"MIOS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Mios", "牝狮神", "米奥斯鞭刃", "狮神")},
-                {"MIRE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Mire", "米尔", "米雷泥沼")},
-                {"MITER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Miter", "米特尔", "米特锯刃发射器")},
-                {"MK1-BO", new Weapon(WeaponType.None, 0, 0, 0, 0, "MK1-Bo", "MK1-珀之武杖", "MK1-破禅武杖")},
-                {"MK1-BRATON", new Weapon(WeaponType.None, 0, 0, 0, 0, "MK1-Braton", "MK1-布莱顿", "MK1-制式步枪")},
-                {"MK1-FURAX", new Weapon(WeaponType.None, 0, 0, 0, 0, "MK1-Furax", "MK1-弗拉克斯", "MK1-寄居蟹手刺")},
-                {"MK1-FURIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "MK1-Furis", "MK1-盗贼", "MK1-弗里斯手枪")},
-                {"MK1-KUNAI", new Weapon(WeaponType.None, 0, 0, 0, 0, "MK1-Kunai", "MK1-苦无", "MK1-苦无")},
-                {"MK1-PARIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "MK1-Paris", "MK1-帕里斯", "MK1-帕里斯长弓")},
-                {"MK1-STRUN", new Weapon(WeaponType.None, 0, 0, 0, 0, "MK1-Strun", "MK1-斯特昂", "MK1-斯特朗炮")},
-                {"MUTALIST CERNOS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Mutalist Cernos", "异融西诺斯", "异融瑟诺斯长弓")},
-                {"MUTALIST QUANTA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Mutalist Quanta", "异融量子枪", "异融光能量子")},
+                {
+                    "LATRON WRAITH",
+                    new Weapon(WeaponType.Primary, 60, 0.26, 2.8, 0.14, 1.07, 7, "Latron Wraith", "拉特昂亡魂", "亡魂拉特龙半自动步枪")
+                },
+                {"LATRON", new Weapon(WeaponType.Primary, 55.0, 0.12, 2, 0.12, 1.07, 0, "Latron", "拉特昂", "拉特龙半自动步枪")},
+                {"LECTA", new Weapon(WeaponType.Melee, 45, 0.05, 1.5, 0.25, 0.5, 0, "Lecta", "勒克塔", "僵直电鞭", "电鞭")},
+                {"LENZ", new Weapon(WeaponType.Primary, 50, 0.5, 2, 0.05, 0.9, 8, "Lenz", "楞次弓", "楞次弓", "楞次")},
+                {"LESION", new Weapon(WeaponType.Melee, 100, 0.05, 2, 0.3, 0.5, 7, "Lesion", "病变", "病变")},
+                {
+                    "LEX PRIME",
+                    new Weapon(WeaponType.Secondary, 150, 0.25, 2, 0.25, 0.5, 8, "Lex Prime", "雷克斯Prime", "圣装秩序之握",
+                        "雷克斯P")
+                },
+                {"LEX", new Weapon(WeaponType.Secondary, 130, 0.2, 2, 0.1, 0.5, 3, "Lex", "雷克斯", "秩序之握")},
+                {
+                    "MACHETE WRAITH",
+                    new Weapon(WeaponType.Melee, 45.0, 0.05, 1.5, 0.1, 1.45, 1, "Machete Wraith", "马谢特砍刀亡魂", "亡魂精英阔刀")
+                },
+                {"MACHETE", new Weapon(WeaponType.Melee, 25.0, 0.05, 1.5, 0.1, 1.45, 1, "Machete", "马谢特砍刀", "精英阔刀")},
+                {"MAGISTAR", new Weapon(WeaponType.Melee, 80, 0.2, 2, 0.1, 1.09, 1, "Magistar", "执法者", "真理权杖")},
+                {"MAGNUS", new Weapon(WeaponType.Secondary, 76.0, 0.22, 2, 0.22, 1.53, 10, "Magnus", "麦格努斯", "猛犸手枪")},
+                {
+                    "MARA DETRON",
+                    new Weapon(WeaponType.Secondary, 280, 0.08, 1.5, 0.32, 1, 9, "Mara Detron", "苦痛德特昂", "苦痛德特昂")
+                },
+                {"MARELOK", new Weapon(WeaponType.Secondary, 160, 0.15, 1.5, 0.3, 0.5, 7, "Marelok", "玛瑞火枪", "马洛克")},
+                {"MEWAN", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Mewan", "密丸", "重长刃", "蜜丸")},
+                {"MIOS", new Weapon(WeaponType.Melee, 80, 0.15, 2, 0.25, 0.95, 8, "Mios", "牝狮神", "米奥斯鞭刃", "狮神")},
+                {"MIRE", new Weapon(WeaponType.Melee, 35.0, 0.05, 1.5, 0.1, 1.43, 0, "Mire", "米尔", "米雷泥沼")},
+                {"MITER", new Weapon(WeaponType.Primary, 250.0, 0.1, 2, 0.5, 1.6, 6, "Miter", "米特尔", "米特锯刃发射器")},
+                {
+                    "MK1-BO",
+                    new Weapon(WeaponType.Melee, 45.0, 0.125, 2, 0.2, 1.29, 0, "MK1-Bo", "MK1-珀之武杖", "MK1-破禅武杖")
+                },
+                {
+                    "MK1-BRATON",
+                    new Weapon(WeaponType.Primary, 18.0, 0.08, 1.5, 0.05, 0.965, 0, "MK1-Braton", "MK1-布莱顿", "MK1-制式步枪")
+                },
+                {
+                    "MK1-FURAX",
+                    new Weapon(WeaponType.Melee, 30.0, 0.2, 2, 0.1, 1.38, 0, "MK1-Furax", "MK1-弗拉克斯", "MK1-寄居蟹手刺")
+                },
+                {
+                    "MK1-FURIS",
+                    new Weapon(WeaponType.Secondary, 13.0, 0.05, 2, 0.01, 1.35, 0, "MK1-Furis", "MK1-盗贼", "MK1-弗里斯手枪")
+                },
+                {
+                    "MK1-KUNAI",
+                    new Weapon(WeaponType.Secondary, 40, 0.05, 2, 0.025, 1.51, 0, "MK1-Kunai", "MK1-苦无", "MK1-苦无")
+                },
+                {
+                    "MK1-PARIS",
+                    new Weapon(WeaponType.Primary, 120, 0.3, 2, 0.15, 0.965, 0, "MK1-Paris", "MK1-帕里斯", "MK1-帕里斯长弓")
+                },
+                {
+                    "MK1-STRUN",
+                    new Weapon(WeaponType.Primary, 180, 0.075, 2, 0.2, 1.42, 0, "MK1-Strun", "MK1-斯特昂", "MK1-斯特朗炮")
+                },
+                {
+                    "MUTALIST CERNOS",
+                    new Weapon(WeaponType.Primary, 225.0, 0.15, 2, 0.49, 1.21, 7, "Mutalist Cernos", "异融西诺斯", "异融瑟诺斯长弓")
+                },
+                {
+                    "MUTALIST QUANTA",
+                    new Weapon(WeaponType.Primary, 25.0, 0.025, 1.5, 0.15, 1.55, 2, "Mutalist Quanta", "异融量子枪",
+                        "异融光能量子")
+                },
                 {
                     "NAMI SKYLA PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Nami Skyla Prime", "海波斯库拉对剑Prime", "圣装纳米斯凯拉", "海波斯库拉对剑P",
-                        "海波对剑P", "海波双剑P")
+                    new Weapon(WeaponType.Melee, 60, 0.2, 1.5, 0.3, 1.175, 11, "Nami Skyla Prime", "海波斯库拉对剑Prime",
+                        "圣装纳米斯凯拉", "海波斯库拉对剑P", "海波对剑P", "海波双剑P")
                 },
                 {
                     "NAMI SKYLA",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Nami Skyla", "海波斯库拉对剑", "纳米斯凯拉", "海波对剑", "海波双剑")
+                    new Weapon(WeaponType.Melee, 50.0, 0.05, 1.5, 0.1, 1.175, 0, "Nami Skyla", "海波斯库拉对剑", "纳米斯凯拉",
+                        "海波对剑",
+                        "海波双剑")
                 },
-                {"NAMI SOLO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Nami Solo", "海波单剑", "纳米索隆")},
+                {"NAMI SOLO", new Weapon(WeaponType.Melee, 35.0, 0.15, 2, 0.25, 1.43, 0, "Nami Solo", "海波单剑", "纳米索隆")},
                 {
                     "NIKANA PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Nikana Prime", "侍刃Prime", "圣装侍刃", "侍刃P", "装逼刀P")
+                    new Weapon(WeaponType.Melee, 95.0, 0.2, 2, 0.2, 0.5, 0, "Nikana Prime", "侍刃Prime", "圣装侍刃", "侍刃P",
+                        "装逼刀P")
                 },
-                {"NIKANA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Nikana", "侍刃", "虎之侍刃", "装逼刀")},
-                {"NINKONDI", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ninkondi", "降灵追猎者", "降灵追猎者", "降灵")},
-                {"NUKOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Nukor", "努寇微波枪", "努寇微波")},
-                {"OBEX", new Weapon(WeaponType.None, 0, 0, 0, 0, "Obex", "奥比克斯", "惩戒手刺")},
-                {"OGRIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ogris", "食人女魔", "奥基手持火箭炮")},
-                {"OHMA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ohma", "欧玛", "欧玛电击棍", "欧码")},
-                {"OKINA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Okina", "翁", "三叉刺")},
-                {"OOLTHA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Ooltha", "乌尔萨", "长刃")},
-                {"OPTICOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Opticor", "奥堤克光子枪", "热熔镭射炮", "O炮")},
+                {"NIKANA", new Weapon(WeaponType.Melee, 45.0, 0.1, 2, 0.1, 0.5, 4, "Nikana", "侍刃", "虎之侍刃", "装逼刀")},
+                {
+                    "NINKONDI",
+                    new Weapon(WeaponType.Melee, 45, 0.1, 2, 0.35, 1.41, 0, "Ninkondi", "降灵追猎者", "降灵追猎者", "降灵")
+                },
+                {"NUKOR", new Weapon(WeaponType.Secondary, 22, 0.03, 4, 0.29, 1.450, 4, "Nukor", "努寇微波枪", "努寇微波")},
+                {"OBEX", new Weapon(WeaponType.Melee, 25.0, 0.25, 2, 0.1, 1.10, 0, "Obex", "奥比克斯", "惩戒手刺")},
+                {"OGRIS", new Weapon(WeaponType.Primary, 100, 0.05, 2, 0.35, 01.245, 9, "Ogris", "食人女魔", "奥基手持火箭炮")},
+                {"OHMA", new Weapon(WeaponType.Melee, 100, 0.15, 2, 0.3, 01, 8, "Ohma", "欧玛", "欧玛电击棍", "欧码")},
+                {"OKINA", new Weapon(WeaponType.Melee, 40, 0.05, 2, 0.15, 01.31, 5, "Okina", "翁", "三叉刺")},
+                {"OOLTHA", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Ooltha", "乌尔萨", "长刃")},
+                {
+                    "OPTICOR",
+                    new Weapon(WeaponType.Primary, 1000, 0.2, 2.5, 0.2, 1.21, 14, "Opticor", "奥堤克光子枪", "热熔镭射炮", "O炮")
+                },
                 {
                     "ORTHOS PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Orthos Prime", "欧特鲁斯Prime", "圣装双尾鲨", "欧特鲁斯P", "OP")
+                    new Weapon(WeaponType.Melee, 65.0, 0.1, 2, 0.15, 0.5, 2, "Orthos Prime", "欧特鲁斯Prime", "圣装双尾鲨",
+                        "欧特鲁斯P", "OP")
                 },
-                {"ORTHOS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Orthos", "欧特鲁斯", "双尾鲨")},
-                {"ORVIUS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Orvius", "灵枢", "灵枢")},
-                {"PANDERO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Pandero", "手鼓", "潘德罗")},
-                {"PANGOLIN SWORD", new Weapon(WeaponType.None, 0, 0, 0, 0, "Pangolin Sword", "鲮鲤剑", "鲮鲤剑")},
-                {"PANTHERA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Panthera", "猎豹", "猎豹")},
-                {"PARACYST", new Weapon(WeaponType.None, 0, 0, 0, 0, "Paracyst", "附肢寄生者", "附肢寄生者")},
+                {"ORTHOS", new Weapon(WeaponType.Melee, 50.0, 0.05, 1.5, 0.15, 0.5, 2, "Orthos", "欧特鲁斯", "双尾鲨")},
+                {"ORVIUS", new Weapon(WeaponType.Melee, 70.0, 0.15, 2, 0.15, 1.15, 5, "Orvius", "灵枢", "灵枢")},
+                {"PANDERO", new Weapon(WeaponType.Secondary, 72, 0.3, 2.8, 0.1, 1, 8, "Pandero", "手鼓", "潘德罗")},
+                {
+                    "PANGOLIN SWORD",
+                    new Weapon(WeaponType.Melee, 37.0, 0.05, 1.5, 0.12, 1.47, 2, "Pangolin Sword", "鲮鲤剑", "鲮鲤剑")
+                },
+                {"PANTHERA", new Weapon(WeaponType.Primary, 100, 0.12, 2, 0.24, 1.55, 7, "Panthera", "猎豹", "猎豹")},
+                {"PARACYST", new Weapon(WeaponType.Primary, 33, 0.1, 2, 0.3, 1.315, 7, "Paracyst", "附肢寄生者", "附肢寄生者")},
                 {
                     "PARIS PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Paris Prime", "帕里斯Prime", "圣装帕里斯长弓", "帕里斯P", "PP")
+                    new Weapon(WeaponType.Primary, 260.0, 0.45, 2, 0.2, 0.965, 8, "Paris Prime", "帕里斯Prime", "圣装帕里斯长弓",
+                        "帕里斯P", "PP")
                 },
-                {"PARIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Paris", "帕里斯", "帕里斯长弓")},
-                {"PENTA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Penta", "潘塔", "五芒星榴弹炮")},
-                {"PHAGE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Phage", "噬菌者", "菲姬噬菌体")},
-                {"PHANTASMA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Phantasma", "幻离子", "幻离子")},
-                {"PLAGUE KEEWAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Plague Keewar", "瘟疫奇沃", "瘟疫奇沃", "奇沃")},
+                {"PARIS", new Weapon(WeaponType.Primary, 180, 0.3, 2, 0.1, 0.965, 3, "Paris", "帕里斯", "帕里斯长弓")},
+                {"PENTA", new Weapon(WeaponType.Primary, 425, 0.1, 2, 0.1, 1.175, 6, "Penta", "潘塔", "五芒星榴弹炮")},
+                {"PHAGE", new Weapon(WeaponType.Primary, 30, 0.19, 2, 0.31, 1.46, 11, "Phage", "噬菌者", "菲姬噬菌体")},
+                {"PHANTASMA", new Weapon(WeaponType.Shotgun, 75.0, 0.03, 1.5, 0.37, 1, 9, "Phantasma", "幻离子", "幻离子")},
+                {"PLAGUE KEEWAR", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Plague Keewar", "瘟疫 奇沃", "瘟疫 奇沃", "瘟疫奇沃", "奇沃")},
                 {
                     "PLAGUE KRIPATH",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Plague Kripath", "瘟疫克里帕丝", "瘟疫克里帕丝", "瘟疫克里帕斯", "克里帕斯",
-                        "克里帕丝")
+                    new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Plague Kripath", "瘟疫 克里帕丝", "瘟疫 克里帕丝", "瘟疫 克里帕斯", "瘟疫克里帕丝", "瘟疫克里帕斯", "克里帕斯", "克里帕丝")
                 },
-                {"PLASMA SWORD", new Weapon(WeaponType.None, 0, 0, 0, 0, "Plasma Sword", "等离子长剑", "等离子长剑")},
-                {"POX", new Weapon(WeaponType.None, 0, 0, 0, 0, "Pox", "脓痘", "脓痘")},
+                {
+                    "PLASMA SWORD",
+                    new Weapon(WeaponType.Melee, 35, 0.15, 2, 0.15, 1.48, 0, "Plasma Sword", "等离子长剑", "等离子长剑")
+                },
+                {"POX", new Weapon(WeaponType.Secondary, 50, 0.01, 2, 0.35, 0.82, 9, "Pox", "脓痘", "脓痘")},
                 {
                     "PRIME LASER RIFLE",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Prime Laser RIFLE", "激光步枪Prime", "圣装激光步枪", "激光步枪P")
+                    new Weapon(WeaponType.Primary, 12.0, 0.15, 1.5, 0.05, 1.21, 0, "Prime Laser Rifle", "激光步枪Prime",
+                        "圣装激光步枪", "激光步枪P")
                 },
-                {"PRISMA ANGSTRUM", new Weapon(WeaponType.None, 0, 0, 0, 0, "Prisma Angstrum", "棱晶安格斯壮", "棱晶将军手持短炮")},
+                {
+                    "PRISMA ANGSTRUM",
+                    new Weapon(WeaponType.Secondary, 200, 0.18, 2.2, 0.26, 1.4, 8, "Prisma Angstrum", "棱晶安格斯壮",
+                        "棱晶将军手持短炮")
+                },
                 {
                     "PRISMA BURST LASER",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Prisma Burst Laser", "棱晶激光点发", "棱晶激光发射器")
+                    new Weapon(WeaponType.Secondary, 10.0, 0.05, 2, 0.1, 1.45, 0, "Prisma Burst Laser", "棱晶激光点发",
+                        "棱晶激光发射器")
                 },
                 {
                     "PRISMA DUAL CLEAVERS",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Prisma Dual Cleavers", "棱晶斩肉双刀", "棱晶起义者")
+                    new Weapon(WeaponType.Melee, 35.0, 0.25, 3, 0.25, 1, 3, "Prisma Dual Cleavers", "棱晶斩肉双刀", "棱晶起义者")
                 },
-                {"PRISMA GORGON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Prisma Gorgon", "棱晶蛇发女妖", "棱晶蛇发女妖")},
-                {"PRISMA GRAKATA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Prisma Grakata", "棱晶葛拉卡达", "棱晶格拉达火舌")},
-                {"PRISMA MACHETE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Prisma Machete", "棱晶马谢特砍刀", "棱晶精英阔刀")},
-                {"PRISMA OBEX", new Weapon(WeaponType.None, 0, 0, 0, 0, "Prisma Obex", "棱晶奥比克斯", "棱晶惩戒手刺")},
-                {"PRISMA SKANA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Prisma Skana", "棱晶空刃", "棱晶空灵刃")},
-                {"PRISMA TETRA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Prisma Tetra", "棱晶特拉", "棱晶泰特拉")},
+                {
+                    "PRISMA GORGON",
+                    new Weapon(WeaponType.Primary, 23.1, 0.3, 2.3, 0.15, 1.175, 11, "Prisma Gorgon", "棱晶蛇发女妖", "棱晶蛇发女妖")
+                },
+                {
+                    "PRISMA GRAKATA",
+                    new Weapon(WeaponType.Primary, 15, 0.25, 2.5, 0.21, 1.105, 11, "Prisma Grakata", "棱晶葛拉卡达",
+                        "棱晶格拉达火舌")
+                },
+                {
+                    "PRISMA MACHETE",
+                    new Weapon(WeaponType.Melee, 25.0, 0.05, 1.5, 0.1, 1.45, 1, "Prisma Machete", "棱晶马谢特砍刀", "棱晶精英阔刀")
+                },
+                {
+                    "PRISMA OBEX",
+                    new Weapon(WeaponType.Melee, 25.0, 0.25, 2, 0.3, 1.1, 0, "Prisma Obex", "棱晶奥比克斯", "棱晶惩戒手刺")
+                },
+                {
+                    "PRISMA SKANA",
+                    new Weapon(WeaponType.Melee, 35.0, 0.2, 2, 0.1, 1.22, 0, "Prisma Skana", "棱晶空刃", "棱晶空灵刃")
+                },
+                {
+                    "PRISMA TETRA",
+                    new Weapon(WeaponType.Primary, 38.0, 0.1, 2, 0.24, 1.5, 4, "Prisma Tetra", "棱晶特拉", "棱晶泰特拉")
+                },
                 {
                     "PRISMA TWIN GREMLINS",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Prisma Twin Gremlins", "棱晶双子小精灵", "棱晶双子小精灵")
+                    new Weapon(WeaponType.Secondary, 27.0, 0.23, 1.9, 0.23, 1.5, 11, "Prisma Twin Gremlins", "棱晶双子小精灵",
+                        "棱晶双子小精灵")
                 },
-                {"PROVA VANDAL", new Weapon(WeaponType.None, 0, 0, 0, 0, "Prova Vandal", "普罗沃破坏者", "镇暴高压电棒")},
-                {"PROVA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Prova", "普罗沃", "高压电棒")},
-                {"PYRANA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Pyrana", "食人鱼", "派亚脊刺")},
-                {"PYRANA PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Pyrana Prime", "食人鱼Prime", "圣装派亚脊刺", "食人鱼P")},
+                {
+                    "PROVA VANDAL",
+                    new Weapon(WeaponType.Melee, 35, 0.05, 1.5, 0.1, 1.29, 3, "Prova", "普罗沃破坏者", "镇暴高压电棒")
+                },
+                {"PROVA", new Weapon(WeaponType.Melee, 48, 0.05, 1.5, 0.2, 1.29, 3, "Prova Vandal", "普罗沃", "高压电棒")},
+                {"PYRANA", new Weapon(WeaponType.Secondary, 264.0, 0.2, 2, 0.1, 1.2, 12, "Pyrana", "食人鱼", "派亚脊刺")},
+                {
+                    "PYRANA PRIME",
+                    new Weapon(WeaponType.Secondary, 240.0, 0.24, 2.2, 0.12, 1.2, 13, "Pyrana Prime", "食人鱼Prime",
+                        "圣装派亚脊刺", "食人鱼P")
+                },
                 {
                     "QUANTA VANDAL",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Quanta Vandal", "量子切割器破坏者", "镇暴光能量子", "莲花矿枪")
+                    new Weapon(WeaponType.Primary, 26, 0.22, 2.4, 0.3, 0.895, 10, "Quanta Vandal", "量子切割器破坏者", "镇暴光能量子",
+                        "莲花矿枪")
                 },
-                {"QUANTA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Quanta", "量子切割器", "光能量子", "矿枪")},
-                {"QUARTAKK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Quartakk", "夸塔克", "夸塔克")},
+                {
+                    "QUANTA",
+                    new Weapon(WeaponType.Primary, 20, 0.16, 2.2, 0.16, 0.895, 4, "Quanta", "量子切割器", "光能量子", "矿枪")
+                },
+                {"QUARTAKK", new Weapon(WeaponType.Primary, 49.0, 0.19, 2.3, 0.27, 1.2, 10, "Quartakk", "夸塔克", "夸塔克")},
                 {
                     "RAKTA BALLISTICA",
-                    new Weapon(WeaponType.Pistol, 0, 0, 0, 0, "Rakta Ballistica", "绯红布里斯提卡", "拉克塔惊惧手弩", "集团弩")
+                    new Weapon(WeaponType.Secondary, 300, 0.2, 1.5, 0.1, 0.85, 6, "Rakta Ballistica", "绯红布里斯提卡",
+                        "拉克塔惊惧手弩", "集团弩", "绯红 布里斯提卡")
                 },
                 {
                     "RAKTA CERNOS",
-                    new Weapon(WeaponType.Primary, 0, 0, 0, 0, "Rakta Cernos", "绯红西诺斯", "拉克塔瑟诺斯长弓", "集团弓", "血色弓")
+                    new Weapon(WeaponType.Primary, 250.0, 0.35, 2, 0.15, 0.86, 12, "Rakta Cernos", "绯红西诺斯", "拉克塔瑟诺斯长弓",
+                        "集团弓", "血色弓", "绯红 西诺斯")
                 },
                 {
                     "RAKTA DARK DAGGER",
-                    new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Rakta Dark Dagger", "绯红暗黑匕首", "拉克塔暗影匕首", "集团匕")
+                    new Weapon(WeaponType.Melee, 50, 0.05, 1.5, 0.1, 0.5, 8, "Rakta Dark Dagger", "绯红暗黑匕首", "拉克塔暗影匕首",
+                        "集团匕", "绯红 暗黑匕首")
                 },
-                {"REAPER PRIME", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Reaper Prime", "收割者Prime", "圣装收割者", "收割者P")},
-                {"REDEEMER", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Redeemer", "救赎者", "救赎者")},
-                {"RIPKAS", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Ripkas", "锐卡斯", "覆海蛟")},
-                {"RUBICO", new Weapon(WeaponType.Primary, 0, 0, 0, 0, "Rubico", "绝路", "绿陶狙击枪")},
-                {"RUBICO PRIME", new Weapon(WeaponType.Primary, 0, 0, 0, 0, "Rubico Prime", "绝路Prime", "圣装绿陶狙击枪", "绝路p")},
+                {
+                    "REAPER PRIME",
+                    new Weapon(WeaponType.Melee, 75.1, 0.2, 2, 0.12, 1.29, 2, "Reaper Prime", "收割者Prime", "圣装收割者",
+                        "收割者P")
+                },
+                {"REDEEMER", new Weapon(WeaponType.Melee, 300, 0.05, 1.5, 0.1, 1.17, 4, "Redeemer", "救赎者", "救赎者")},
+                {"RIPKAS", new Weapon(WeaponType.Melee, 55.1, 0.2, 2, 0.15, 1.38, 3, "Ripkas", "锐卡斯", "覆海蛟")},
+                {"RUBICO", new Weapon(WeaponType.Primary, 180, 0.3, 3, 0.12, 1.105, 6, "Rubico", "绝路", "绿陶狙击枪")},
+                {
+                    "RUBICO PRIME",
+                    new Weapon(WeaponType.Primary, 187.0, 0.38, 3, 0.16, 1.105, 12, "Rubico Prime", "绝路Prime",
+                        "圣装绿陶狙击枪",
+                        "绝路p")
+                },
                 {
                     "SANCTI CASTANAS",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Sancti Castanas", "圣洁雷爆信镖", "圣洁分体式处理信标", "圣洁雷爆信标",
-                        "圣洁雷暴信镖", "圣洁雷暴信标", "圣洁信镖", "圣洁信标", "集团镖")
+                    new Weapon(WeaponType.Secondary, 300, 0.24, 2, 0.34, 1.42, 10, "Sancti Castanas", "圣洁雷爆信镖",
+                        "圣洁分体式处理信标", "圣洁雷爆信标", "圣洁雷暴信镖", "圣洁雷暴信标", "圣洁信镖", "圣洁信标", "集团镖")
                 },
                 {
                     "SANCTI MAGISTAR",
-                    new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Sancti Magistar", "圣洁执法者", "圣洁真理权杖", "奶锤")
+                    new Weapon(WeaponType.Melee, 120, 0.2, 2, 0.1, 1.09, 8, "Sancti Magistar", "圣洁执法者", "圣洁真理权杖", "奶锤")
                 },
-                {"SANCTI TIGRIS", new Weapon(WeaponType.Shotgun, 0, 0, 0, 0, "Sancti Tigris", "圣洁猛虎", "圣洁泰格里斯", "集团猛虎")},
-                {"SARPA", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Sarpa", "蛇刃", "蛇刃")},
+                {
+                    "SANCTI TIGRIS",
+                    new Weapon(WeaponType.Primary, 1260, 0.15, 1.5, 0.28, 0.5, 12, "Sancti Tigris", "圣洁猛虎", "圣洁泰格里斯",
+                        "集团猛虎")
+                },
+                {"SARPA", new Weapon(WeaponType.Melee, 175.0, 0.05, 1.5, 0.1, 1.24, 8, "Sarpa", "蛇刃", "蛇刃")},
                 {
                     "SCINDO PRIME",
-                    new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Scindo Prime", "分裂斩斧Prime", "圣装神罚巨斧", "分裂斩斧P")
+                    new Weapon(WeaponType.Melee, 130, 0.2, 2, 0.15, 1, 4, "Scindo Prime", "分裂斩斧Prime", "圣装神罚巨斧",
+                        "分裂斩斧P")
                 },
-                {"SCINDO", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Scindo", "分裂斩斧", "神罚巨斧")},
-                {"SCOLIAC", new Weapon(WeaponType.Melee, 0, 0, 0, 0, "Scoliac", "嵴椎节鞭", "腐尾蛟", "嵴椎", "I鞭")},
-                {"SCOURGE", new Weapon(WeaponType.Primary, 0, 0, 0, 0, "Scourge", "祸根", "天罚")},
+                {"SCINDO", new Weapon(WeaponType.Melee, 100, 0.15, 1.5, 0.1, 1, 2, "Scindo", "分裂斩斧", "神罚巨斧")},
+                {
+                    "SCOLIAC",
+                    new Weapon(WeaponType.Melee, 55.0, 0.05, 1.5, 0.15, 1.3, 6, "Scoliac", "嵴椎节鞭", "腐尾蛟", "嵴椎", "I鞭")
+                },
+                {"SCOURGE", new Weapon(WeaponType.Primary, 70, 0.02, 1.5, 0.3, 1, 6, "Scourge", "祸根", "天罚")},
                 {
                     "SECURA DUAL CESTRA",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Secura Dual Cestra", "保障锡斯特双枪", "瑟古拉双持逆转聚能炮")
+                    new Weapon(WeaponType.Secondary, 28.0, 0.16, 1.6, 0.28, 1.35, 10, "Secura Dual Cestra", "保障锡斯特双枪",
+                        "瑟古拉双持逆转聚能炮")
                 },
                 {
                     "SECURA LECTA",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Secura Lecta", "保障勒克塔", "瑟古拉僵直电鞭", "钱鞭", "集团鞭")
+                    new Weapon(WeaponType.Melee, 75, 0.05, 1.5, 0.25, 0.5, 8, "Secura Lecta", "保障勒克塔", "瑟古拉僵直电鞭", "钱鞭",
+                        "集团鞭")
                 },
-                {"SECURA PENTA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Secura Penta", "保障潘塔", "瑟古拉五芒星榴弹炮")},
-                {"SEER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Seer", "预言者", "希尔先知")},
-                {"SERRO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Serro", "电能斩锯", "电能斩锯")},
-                {"SHAKU", new Weapon(WeaponType.None, 0, 0, 0, 0, "Shaku", "双节尺棍", "双节尺棍")},
-                {"SHEEV", new Weapon(WeaponType.None, 0, 0, 0, 0, "Sheev", "希芙", "西弗")},
-                {"SIBEAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Sibear", "西伯利亚冰锤", "冰原重锤", "冰锤")},
+                {
+                    "SECURA PENTA",
+                    new Weapon(WeaponType.Primary, 375, 0.26, 2, 0.26, 1.175, 12, "Secura Penta", "保障潘塔", "瑟古拉五芒星榴弹炮")
+                },
+                {"SEER", new Weapon(WeaponType.Secondary, 101.01, 0.05, 1.5, 0.13, 1.5, 0, "Seer", "预言者", "希尔先知")},
+                {"SERRO", new Weapon(WeaponType.Melee, 75, 0.05, 1.5, 0.25, 1.38, 2, "Serro", "电能斩锯", "电能斩锯")},
+                {"SHAKU", new Weapon(WeaponType.Melee, 55, 0.075, 2, 0.25, 1.35, 0, "Shaku", "双节尺棍", "双节尺棍")},
+                {"SHEEV", new Weapon(WeaponType.Melee, 45.0, 0.05, 2, 0.25, 1.25, 0, "Sheev", "希芙", "西弗")},
+                {"SIBEAR", new Weapon(WeaponType.Melee, 130, 0.15, 2, 0.1, 1.35, 6, "Sibear", "西伯利亚冰锤", "冰原重锤", "冰锤")},
                 {
                     "SICARUS PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Sicarus Prime", "暗杀者Prime", "圣装赛卡洛斯", "暗杀者P")
+                    new Weapon(WeaponType.Secondary, 50, 0.25, 2, 0.2, 1.5, 14, "Sicarus Prime", "暗杀者Prime", "圣装赛卡洛斯",
+                        "暗杀者P")
                 },
-                {"SICARUS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Sicarus", "暗杀者", "赛卡洛斯")},
+                {"SICARUS", new Weapon(WeaponType.Secondary, 30.0, 0.16, 2, 0.06, 1.5, 3, "Sicarus", "暗杀者", "赛卡洛斯")},
                 {
                     "SIGMA & OCTANTIS",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Sigma & Octantis", "西格玛&南极座", "西格玛&南极座", "西格玛南极座")
+                    new Weapon(WeaponType.Melee, 60.0, 0.28, 2.2, 0.16, 1, 0, "Sigma & Octantis", "西格玛&南极座", "西格玛&南极座",
+                        "西格玛南极座")
                 },
                 {
                     "SILVA & AEGIS PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Silva & Aegis Prime", "席瓦&神盾Prime", "圣装席瓦&神盾",
-                        "圣装希瓦·艾奎斯剑盾", "剑盾P", "席瓦&神盾P", "席瓦神盾P", "希瓦神盾")
+                    new Weapon(WeaponType.Melee, 120, 0.15, 2, 0.25, 1, 12, "Silva & Aegis Prime", "席瓦&神盾Prime",
+                        "圣装席瓦&神盾", "圣装希瓦·艾奎斯剑盾", "剑盾P", "席瓦&神盾P", "席瓦神盾P", "希瓦神盾")
                 },
                 {
                     "SILVA & AEGIS",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Silva & Aegis", "席瓦&神盾", "希瓦·艾奎斯剑盾", "剑盾", "席瓦神盾")
+                    new Weapon(WeaponType.Melee, 35, 0.05, 1.5, 0.2, 1, 0, "Silva & Aegis", "席瓦&神盾", "希瓦·艾奎斯剑盾", "剑盾",
+                        "席瓦神盾")
                 },
-                {"SIMULOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Simulor", "重力奇点拟成枪", "重力奇点拟成枪", "重力枪")},
-                {"SKANA PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Skana Prime", "空刃Prime", "圣装空灵刃", "空刃P")},
-                {"SKANA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Skana", "空刃", "空灵刃")},
-                {"SKIAJATI", new Weapon(WeaponType.None, 0, 0, 0, 0, "Skiajati", "影生", "影生")},
+                {
+                    "SIMULOR",
+                    new Weapon(WeaponType.Primary, 50, 0.12, 2, 0.3, 0.5, 5, "Simulor", "重力奇点拟成枪", "重力奇点拟成枪", "重力枪")
+                },
+                {
+                    "SKANA PRIME",
+                    new Weapon(WeaponType.Melee, 35.0, 0.05, 1.5, 0.1, 1.22, 0, "Skana", "空刃Prime", "圣装空灵刃", "空刃P")
+                },
+                {"SKANA", new Weapon(WeaponType.Melee, 42.0, 0.1, 1.5, 0.1, 1.22, 0, "Skana Prime", "空刃", "空灵刃")},
+                {"SKIAJATI", new Weapon(WeaponType.Melee, 77.1, 0.15, 1.9, 0.27, 1, 11, "Skiajati", "影生", "影生")},
                 {
                     "SNIPETRON VANDAL",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Snipetron Vandal", "狙击特昂破坏者", "镇暴特洛恩阳极磁轨枪", "莲花狙")
+                    new Weapon(WeaponType.Primary, 200, 0.28, 2, 0.16, 1.165, 5, "Snipetron Vandal", "狙击特昂破坏者",
+                        "镇暴特洛恩阳极磁轨枪", "莲花狙")
                 },
-                {"SNIPETRON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Snipetron", "狙击特昂", "特洛恩阳极磁轨枪")},
-                {"SOBEK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Sobek", "鳄神", "鳄牙")},
-                {"SOMA PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Soma Prime", "月神Prime", "圣装索玛", "月神P")},
-                {"SOMA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Soma", "月神", "索玛")},
-                {"SONICOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Sonicor", "超音波冲击枪", "超音冲击枪")},
-                {"SPECTRA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Spectra", "光谱切割器", "光谱手枪")},
-                {"SPIRA PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Spira Prime", "旋刃飞刀Prime", "圣装螺旋飞刃", "旋刃飞刀P")},
-                {"SPIRA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Spira", "旋刃飞刀", "小李飞刀")},
-                {"STATICOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Staticor", "静电能量导引枪", "静电势能发射器")},
+                {
+                    "SNIPETRON",
+                    new Weapon(WeaponType.Primary, 180, 0.3, 1.5, 0.12, 1.165, 0, "Snipetron", "狙击特昂", "特洛恩阳极磁轨枪")
+                },
+                {"SOBEK", new Weapon(WeaponType.Primary, 350.0, 0.11, 2, 0.27, 1.33, 7, "Sobek", "鳄神", "鳄牙")},
+                {
+                    "SOMA PRIME",
+                    new Weapon(WeaponType.Primary, 12.0, 0.3, 3, 0.1, 0.5, 7, "Soma Prime", "月神Prime", "圣装索玛", "月神P")
+                },
+                {"SOMA", new Weapon(WeaponType.Primary, 12.0, 0.3, 3, 0.07, 0.5, 6, "Soma", "月神", "索玛")},
+                {"SONICOR", new Weapon(WeaponType.Secondary, 150, 0, 0, 0, 0.5, 2, "Sonicor", "超音波冲击枪", "超音冲击枪")},
+                {"SPECTRA", new Weapon(WeaponType.Secondary, 18.0, 0.14, 2, 0.22, 1.49, 4, "Spectra", "光谱切割器", "光谱手枪")},
+                {
+                    "SPIRA PRIME",
+                    new Weapon(WeaponType.Secondary, 60, 0.3, 3.0, 0.14, 0.66, 10, "Spira Prime", "旋刃飞刀Prime", "圣装螺旋飞刃",
+                        "旋刃飞刀P")
+                },
+                {"SPIRA", new Weapon(WeaponType.Secondary, 82.0, 0.3, 2, 0.08, 0.66, 8, "Spira", "旋刃飞刀", "小李飞刀")},
+                {
+                    "STATICOR",
+                    new Weapon(WeaponType.Secondary, 88, 0.14, 2.2, 0.28, 0.53, 10, "Staticor", "静电能量导引枪", "静电势能发射器")
+                },
                 {
                     "STINGER PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Stinger Prime", "毒刺Prime", "圣装史丁格毒刺", "毒刺P")
+                    new Weapon(WeaponType.Primary, 15, 0.025, 1.5, 0.05, 1.315, 0, "Stinger Prime", "毒刺Prime",
+                        "圣装史丁格毒刺",
+                        "毒刺P")
                 },
-                {"STINGER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Stinger", "毒刺", "史丁格毒刺")},
-                {"STRADAVAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Stradavar", "斯特拉迪瓦", "斯特拉迪瓦")},
-                {"STRUN WRAITH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Strun Wraith", "斯特朗亡魂", "亡魂斯特朗炮")},
-                {"STRUN", new Weapon(WeaponType.None, 0, 0, 0, 0, "Strun", "斯特朗", "斯特朗炮")},
-                {"STUBBA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Stubba", "史度巴", "史度巴")},
-                {"STUG", new Weapon(WeaponType.None, 0, 0, 0, 0, "Stug", "史特克", "斯塔客")},
-                {"SUPRA VANDAL", new Weapon(WeaponType.None, 0, 0, 0, 0, "Supra Vandal", "苏普拉破坏者", "镇暴量子苏普拉")},
-                {"SUPRA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Supra", "苏普拉", "量子苏普拉", "烟花")},
+                {"STINGER", new Weapon(WeaponType.Primary, 15, 0.025, 1.5, 0.05, 1.315, 0, "Stinger", "毒刺", "史丁格毒刺")},
+                {
+                    "STRADAVAR",
+                    new Weapon(WeaponType.Primary, 28.0, 0.24, 2, 0.12, 1.175, 8, "Stradavar", "斯特拉迪瓦", "斯特拉迪瓦")
+                },
+                {
+                    "STRUN WRAITH",
+                    new Weapon(WeaponType.Primary, 400, 0.18, 2.2, 0.4, 1.42, 10, "Strun Wraith", "斯特朗亡魂", "亡魂斯特朗炮")
+                },
+                {"STRUN", new Weapon(WeaponType.Primary, 300, 0.075, 1.5, 0.2, 1.42, 1, "Strun", "斯特朗", "斯特朗炮")},
+                {"STUBBA", new Weapon(WeaponType.Secondary, 33.0, 0.23, 1.9, 0.13, 1.25, 7, "Stubba", "史度巴", "史度巴")},
+                {"STUG", new Weapon(WeaponType.Secondary, 936, 0.05, 1.5, 0, 1.48, 2, "Stug", "史特克", "斯塔客")},
+                {
+                    "SUPRA VANDAL",
+                    new Weapon(WeaponType.Primary, 40, 0.12, 1.8, 0.3, 1.14, 12, "Supra Vandal", "苏普拉破坏者", "镇暴量子苏普拉")
+                },
+                {
+                    "SUPRA",
+                    new Weapon(WeaponType.Primary, 40, 0.16, 2, 0.3, 1.14, 14, "Supra", "苏普拉", "量子苏普拉", "烟花")
+                },
                 {
                     "SWEEPER PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Sweeper Prime", "扫除者Prime", "圣装清道夫", "扫除者P")
+                    new Weapon(WeaponType.Shotgun, 60, 0.05, 2, 0.15, 1, 0, "Sweeper Prime", "扫除者Prime", "圣装清道夫",
+                        "扫除者P")
                 },
-                {"SWEEPER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Sweeper", "扫除者", "清道夫")},
+                {"SWEEPER", new Weapon(WeaponType.Shotgun, 42.0, 0.05, 1.5, 0.14, 1, 0, "Sweeper", "扫除者", "清道夫")},
                 {
                     "SYBARIS PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Sybaris Prime", "席芭莉丝Prime", "圣装远古丧钟", "席芭莉丝P")
+                    new Weapon(WeaponType.Primary, 87.9, 0.3, 2, 0.25, 0.895, 12, "Sybaris Prime", "席芭莉丝Prime",
+                        "圣装远古丧钟",
+                        "席芭莉丝P")
                 },
-                {"SYBARIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Sybaris", "席芭莉丝", "远古丧钟", "席八")},
-                {"SYDON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Sydon", "恶龙", "恶龙三叉戟")},
-                {"SYNAPSE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Synapse", "突触生化枪", "焦灼之须")},
-                {"SYNOID GAMMACOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Synoid Gammacor", "枢议咖玛腕甲枪", "辛诺德射线发生仪")},
+                {
+                    "SYBARIS",
+                    new Weapon(WeaponType.Primary, 80.0, 0.25, 2, 0.1, 0.895, 5, "Sybaris", "席芭莉丝", "远古丧钟", "席八")
+                },
+                {"SYDON", new Weapon(WeaponType.Melee, 75.1, 0.1, 2, 0.25, 0.84, 2, "Sydon", "恶龙", "恶龙三叉戟")},
+                {"SYNAPSE", new Weapon(WeaponType.Primary, 20, 0.39, 2.7, 0.13, 1.315, 11, "Synapse", "突触生化枪", "焦灼之须")},
+                {
+                    "SYNOID GAMMACOR",
+                    new Weapon(WeaponType.Secondary, 20, 0.2, 2, 0.28, 0.53, 7, "Synoid Gammacor", "枢议咖玛腕甲枪",
+                        "辛诺德射线发生仪")
+                },
                 {
                     "SYNOID HELIOCOR",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Synoid Heliocor", "枢议赫利俄光锤", "辛诺德太阳神锤", "扫描锤")
+                    new Weapon(WeaponType.Melee, 120, 0.1, 2, 0.2, 0.94, 9, "Synoid Heliocor", "枢议赫利俄光锤", "辛诺德太阳神锤",
+                        "扫描锤")
                 },
                 {
                     "SYNOID SIMULOR",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Synoid Simulor", "枢议重力奇点拟成枪", "辛诺德重力奇点拟成枪", "黑洞枪")
+                    new Weapon(WeaponType.Primary, 20, 0.05, 2, 0.35, 0.5, 12, "Synoid Simulor", "枢议重力奇点拟成枪",
+                        "辛诺德重力奇点拟成枪", "黑洞枪")
                 },
-                {"TALONS", new Weapon(WeaponType.None, 0, 0, 0, 0, "talons", "鹰爪", "鹰爪")},
-                {"TEKKO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tekko", "铁钩手甲", "刺蛇")},
-                {"TELOS AKBOLTO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Telos Akbolto", "终极螺钉双枪", "终极双持角犀")},
-                {"TELOS BOLTACE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Telos Boltace", "终极螺钉拐刃", "终极螺钉弧月刀", "集团拐")},
-                {"TELOS BOLTOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Telos Boltor", "终极螺钉步枪", "终极波尔托骨刺")},
-                {"TENORA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tenora", "双簧管", "泰诺拉")},
-                {"TETRA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tetra", "特拉", "泰特拉")},
-                {"TIBERON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tiberon", "狂鲨", "狂鲨")},
-                {"TIBERON PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tiberon Prime", "狂鲨p", "圣装狂鲨")},
-                {"TIGRIS PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tigris Prime", "猛虎Prime", "圣装泰格里斯", "猛虎P")},
-                {"TIGRIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tigris", "猛虎", "泰格里斯", "萌虎")},
-                {"TIPEDO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tipedo", "提佩多", "提佩多军铲")},
-                {"TONBO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tonbo", "蜻蛉薙", "龙诞棍", "蜻蜓切", "蜻蜓薙", "蜻蜓")},
-                {"TONKOR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tonkor", "征服榴炮", "征服榴炮", "征服")},
-                {"TORID", new Weapon(WeaponType.None, 0, 0, 0, 0, "Torid", "托里德", "爆裂生化炮", "毒榴弹")},
-                {"TWIN BASOLK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Twin Basolk", "双子巴萨克", "双子巴萨克")},
-                {"TWIN GRAKATAS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Twin Grakatas", "双子葛拉卡达", "双持格拉达火舌")},
-                {"TWIN GREMLINS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Twin Gremlins", "双子小精灵", "双子小精灵")},
-                {"TWIN KOHMAK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Twin Kohmak", "双子宼恩霰机枪", "双子寇玛热能炮")},
-                {"TWIN KROHKUR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Twin Krohkur", "双子克鲁古尔", "双子克鲁古尔")},
-                {"TWIN ROGGA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Twin Rogga", "双子罗格", "双子罗迦霰弹枪")},
+                {"TALONS", new Weapon(WeaponType.Secondary, 120, 0.22, 2, 0.26, 1.44, 8, "Talons", "鹰爪", "鹰爪")},
+                {"TEKKO", new Weapon(WeaponType.Melee, 45.0, 0.3, 2, 0.1, 1.4, 2, "Tekko", "铁钩手甲", "刺蛇")},
+                {
+                    "TELOS AKBOLTO",
+                    new Weapon(WeaponType.Secondary, 47.0, 0.13, 2, 0.29, 0.85, 11, "Telos Akbolto", "终极螺钉双枪", "终极双持角犀")
+                },
+                {
+                    "TELOS BOLTACE",
+                    new Weapon(WeaponType.Melee, 85.0, 0.1, 2, 0.25, 1, 8, "Telos Boltace", "终极螺钉拐刃", "终极螺钉弧月刀", "集团拐")
+                },
+                {
+                    "TELOS BOLTOR",
+                    new Weapon(WeaponType.Primary, 30, 0.3, 2.4, 0.16, 0.79, 12, "Telos Boltor", "终极螺钉步枪", "终极波尔托骨刺")
+                },
+                {"TENORA", new Weapon(WeaponType.Primary, 24.0, 0.28, 2, 0.16, 1, 10, "Tenora", "双簧管", "泰诺拉")},
+                {"TETRA", new Weapon(WeaponType.Primary, 32.0, 0.04, 1.5, 0.2, 1.5, 3, "Tetra", "特拉", "泰特拉")},
+                {"TIBERON", new Weapon(WeaponType.Primary, 44, 0.26, 2.4, 0.16, 1.5, 10, "Tiberon", "狂鲨", "狂鲨")},
+                {
+                    "TIBERON PRIME",
+                    new Weapon(WeaponType.Primary, 46.0, 0.3, 3.4, 0.18, 1.5, 14, "Tiberon Prime", "狂鲨p", "圣装狂鲨")
+                },
+                {
+                    "TIGRIS PRIME",
+                    new Weapon(WeaponType.Primary, 1560, 0.1, 2, 0.3, 0.5, 13, "Tigris Prime", "猛虎Prime", "圣装泰格里斯",
+                        "猛虎P")
+                },
+                {"TIGRIS", new Weapon(WeaponType.Primary, 1050, 0.1, 2, 0.28, 0.5, 7, "Tigris", "猛虎", "泰格里斯", "萌虎")},
+                {"TIPEDO", new Weapon(WeaponType.Melee, 50, 0.2, 2, 0.2, 1.31, 3, "Tipedo", "提佩多", "提佩多军铲")},
+                {
+                    "TONBO",
+                    new Weapon(WeaponType.Melee, 80, 0.05, 2, 0.25, 1.38, 3, "Tonbo", "蜻蛉薙", "龙诞棍", "蜻蜓切", "蜻蜓薙", "蜻蜓")
+                },
+                {"TONKOR", new Weapon(WeaponType.Primary, 75, 0.25, 2.5, 0.1, 0.55, 5, "Tonkor", "征服榴炮", "征服榴炮", "征服")},
+                {"TORID", new Weapon(WeaponType.Primary, 100, 0.15, 2, 0.23, 01.14, 4, "Torid", "托里德", "爆裂生化炮", "毒榴弹")},
+                {
+                    "TWIN BASOLK",
+                    new Weapon(WeaponType.Melee, 65, 0.05, 2, 0.4, 1.18, 3, "Twin Basolk", "双子巴萨克", "双子巴萨克")
+                },
+                {
+                    "TWIN GRAKATAS",
+                    new Weapon(WeaponType.Secondary, 20.0, 0.25, 2.7, 0.11, 0.76, 9, "Twin Grakatas", "双子葛拉卡达",
+                        "双持格拉达火舌")
+                },
+                {
+                    "TWIN GREMLINS",
+                    new Weapon(WeaponType.Secondary, 36.99, 0.15, 1.5, 0.15, 1.5, 5, "Twin Gremlins", "双子小精灵", "双子小精灵")
+                },
+                {
+                    "TWIN KOHMAK",
+                    new Weapon(WeaponType.Secondary, 150, 0.11, 2, 0.23, 1.1, 10, "Twin Kohmak", "双子宼恩霰机枪", "双子寇玛热能炮")
+                },
+                {
+                    "TWIN KROHKUR",
+                    new Weapon(WeaponType.Melee, 70.0, 0.19, 1.7, 0.33, 1.48, 6, "Twin Krohkur", "双子克鲁古尔", "双子克鲁古尔")
+                },
+                {
+                    "TWIN ROGGA",
+                    new Weapon(WeaponType.Secondary, 705.0, 0.1, 2, 0.33, 1, 9, "Twin Rogga", "双子罗格", "双子罗迦霰弹枪")
+                },
                 {
                     "TWIN VIPERS WRAITH",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Twin Vipers Wraith", "双子蝰蛇亡魂", "亡魂双子蝰蛇")
+                    new Weapon(WeaponType.Secondary, 18.0, 0.19, 2, 0.09, 1.41, 7, "Twin Vipers Wraith", "双子蝰蛇亡魂",
+                        "亡魂双子蝰蛇")
                 },
-                {"TWIN VIPERS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Twin Vipers", "双子蝰蛇", "双子蝰蛇")},
-                {"TYSIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Tysis", "啐沫者", "啐沫者")},
-                {"VASTO PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Vasto Prime", "瓦斯托Prime", "圣装瓦斯托", "瓦斯托P")},
-                {"VASTO", new Weapon(WeaponType.None, 0, 0, 0, 0, "Vasto", "瓦斯托", "瓦斯托")},
-                {"VAYKOR HEK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Vaykor Hek", "勇气海克", "维寇恶婴")},
-                {"VAYKOR MARELOK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Vaykor Marelok", "勇气玛瑞火枪", "维寇马洛克")},
-                {"VAYKOR SYDON", new Weapon(WeaponType.None, 0, 0, 0, 0, "Vaykor Sydon", "勇气恶龙", "维寇恶龙三叉戟")},
-                {"VECTIS PRIME", new Weapon(WeaponType.None, 0, 0, 0, 0, "Vectis Prime", "守望者Prime", "圣装守望者", "守望者P")},
-                {"VECTIS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Vectis", "守望者", "守望者", "守望")},
+                {
+                    "TWIN VIPERS",
+                    new Weapon(WeaponType.Secondary, 17.0, 0.15, 1.5, 0.11, 1.41, 5, "Twin Vipers", "双子蝰蛇", "双子蝰蛇")
+                },
+                {"TYSIS", new Weapon(WeaponType.Secondary, 79, 0.03, 1.5, 0.5, 1.51, 9, "Tysis", "啐沫者", "啐沫者")},
+                {
+                    "VASTO PRIME",
+                    new Weapon(WeaponType.Secondary, 66.0, 0.22, 2.4, 0.22, 1.53, 10, "Vasto Prime", "瓦斯托Prime",
+                        "圣装瓦斯托",
+                        "瓦斯托P")
+                },
+                {"VASTO", new Weapon(WeaponType.Secondary, 58.0, 0.2, 1.8, 0.08, 1.53, 4, "Vasto", "瓦斯托", "瓦斯托")},
+                {
+                    "VAYKOR HEK",
+                    new Weapon(WeaponType.Primary, 525.0, 0.25, 2, 0.25, 0.55, 12, "Vaykor Hek", "勇气海克", "维寇恶婴", "勇气 海克")
+                },
+                {
+                    "VAYKOR MARELOK",
+                    new Weapon(WeaponType.Secondary, 160, 0.2, 1.5, 0.35, 0.5, 10, "Vaykor Marelok", "勇气玛瑞火枪", "维寇马洛克", "勇气 玛瑞火枪")
+                },
+                {
+                    "VAYKOR SYDON",
+                    new Weapon(WeaponType.Melee, 85.1, 0.15, 2, 0.25, 0.84, 8, "Vaykor Sydon", "勇气恶龙", "维寇恶龙三叉戟", "勇气 恶龙")
+                },
+                {
+                    "VECTIS PRIME",
+                    new Weapon(WeaponType.Primary, 350.0, 0.3, 2, 0.3, 1, 14, "Vectis Prime", "守望者Prime", "圣装守望者",
+                        "守望者P")
+                },
+                {"VECTIS", new Weapon(WeaponType.Primary, 225.0, 0.25, 2, 0.3, 1, 2, "Vectis", "守望者", "守望者", "守望")},
                 {
                     "VENKA PRIME",
-                    new Weapon(WeaponType.None, 0, 0, 0, 0, "Venka Prime", "凯旋之爪Prime", "圣装钨钢合金爪", "凯旋之爪P")
+                    new Weapon(WeaponType.Melee, 55.0, 0.25, 2.5, 0.15, 0.5, 8, "Venka Prime", "凯旋之爪Prime", "圣装钨钢合金爪",
+                        "凯旋之爪P")
                 },
-                {"VENKA", new Weapon(WeaponType.None, 0, 0, 0, 0, "Venka", "凯旋之爪", "钨钢合金爪")},
-                {"VELDT", new Weapon(WeaponType.None, 0, 0, 0, 0, "Veldt", "草原猎手", "草原猎手")},
-                {"VIPER", new Weapon(WeaponType.None, 0, 0, 0, 0, "Viper", "蝰蛇", "蝰蛇")},
-                {"VIPER WRAITH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Viper Wraith", "蝰蛇亡魂", "亡魂蝰蛇")},
-                {"VOLNUS", new Weapon(WeaponType.None, 0, 0, 0, 0, "Volnus", "创伤", "创伤")},
-                {"VULKAR WRAITH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Vulkar Wraith", "金工火神亡魂", "伏卡尔狙击枪")},
-                {"VULKAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Vulkar", "金工火神", "伏卡尔狙击枪", "钓鱼竿")},
-                {"VULKLOK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Vulklok", "金工火枪", "电弧步枪")},
-                {"WAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "War", "战争之剑", "战争")},
-                {"ZAKTI", new Weapon(WeaponType.None, 0, 0, 0, 0, "Zakti", "毒芽", "毒芽")},
-                {"ZARR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Zarr", "沙皇", "煞皇")},
-                {"ZAW", new Weapon(WeaponType.None, 0, 0, 0, 0, "Zaw", "Zaw", "天工")},
-                {"ZENISTAR", new Weapon(WeaponType.None, 0, 0, 0, 0, "Zenistar", "天顶之星", "天顶之星")},
-                {"ZENITH", new Weapon(WeaponType.None, 0, 0, 0, 0, "Zenith", "天穹之顶", "天穹之顶")},
-                {"ZHUGE", new Weapon(WeaponType.None, 0, 0, 0, 0, "Zhuge", "诸葛连弩", "诸葛连弩", "诸葛")},
-                {"ZYLOK", new Weapon(WeaponType.None, 0, 0, 0, 0, "Zylok", "Zylok", "Zylok")}
+                {"VENKA", new Weapon(WeaponType.Melee, 37.0, 0.15, 2, 0.15, 0.5, 3, "Venka", "凯旋之爪", "钨钢合金爪")},
+                {"VELDT", new Weapon(WeaponType.Primary, 90.0, 0.22, 2.2, 0.22, 1, 8, "Veldt", "草原猎手", "草原猎手")},
+                {"VIPER", new Weapon(WeaponType.Secondary, 17.0, 0.15, 1.5, 0.11, 1.53, 4, "Viper", "蝰蛇", "蝰蛇")},
+                {
+                    "VIPER WRAITH",
+                    new Weapon(WeaponType.Secondary, 18.0, 0.19, 2.0, 0.09, 1.53, 4, "Viper Wraith", "蝰蛇亡魂", "亡魂蝰蛇")
+                },
+                {"VOLNUS", new Weapon(WeaponType.Melee, 100.0, 0.18, 1.6, 0.3, 1.2, 4, "Volnus", "创伤", "创伤")},
+                {
+                    "VULKAR WRAITH",
+                    new Weapon(WeaponType.Primary, 273.0, 0.2, 2, 0.25, 1.45, 7, "Vulkar Wraith", "金工火神亡魂", "伏卡尔狙击枪")
+                },
+                {
+                    "VULKAR",
+                    new Weapon(WeaponType.Primary, 225.0, 0.2, 2, 0.25, 1.45, 3, "Vulkar", "金工火神", "伏卡尔狙击枪", "钓鱼竿")
+                },
+                {"VULKLOK", new Weapon(WeaponType.Primary, 85, 0.35, 2.5, 0.25, 1.245, 0, "Vulklok", "金工火枪", "电弧步枪")},
+                {"WAR", new Weapon(WeaponType.Melee, 140.0, 0.2, 2, 0.2, 0.5, 10, "War", "战争之剑", "战争")},
+                {"ZAKTI", new Weapon(WeaponType.Secondary, 30, 0.02, 1.5, 0.2, 1, 10, "Zakti", "毒芽", "毒芽")},
+                {"ZARR", new Weapon(WeaponType.Primary, 25, 0.17, 2.5, 0.29, 1, 7, "Zarr", "沙皇", "煞皇")},
+                {"ZENISTAR", new Weapon(WeaponType.Melee, 150, 0.05, 2, 0.25, 0.5, 6, "Zenistar", "天顶之星", "天顶之星")},
+                {"ZENITH", new Weapon(WeaponType.Primary, 30.0, 0.1, 2, 0.34, 1, 10, "Zenith", "天穹之顶", "天穹之顶")},
+                {"ZHUGE", new Weapon(WeaponType.Primary, 100, 0.2, 2, 0.35, 1.105, 10, "Zhuge", "诸葛连弩", "诸葛连弩", "诸葛")},
+                {"ZYLOK", new Weapon(WeaponType.Secondary, 140.0, 0.08, 2.0, 0.26, 1, 6, "Zylok", "Zylok", "Zylok")}
             };
         }
     }
