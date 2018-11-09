@@ -541,6 +541,240 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("夜灵晶体蓝图", 1)
                         }
                     }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierATableARewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("奥席金属", 100),
+                            ("现金匣", 1500),
+                            ("内融核心", 50),
+                            ("培训债务债券", 2),
+                            ("现金匣", 3000),
+                            ("Garuda机体蓝图", 1),
+                            ("缇帕瘤", 5),
+                            ("中纪A2遗物", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierATableBRewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("永冻晶矿", 100),
+                            ("现金匣", 1500),
+                            ("内融核心", 50),
+                            ("Thermal Sludge", 2),
+                            ("培训债务债券", 2),
+                            ("现金匣", 3000),
+                            ("Garuda机体蓝图", 1),
+                            ("缇帕瘤", 5),
+                            ("中纪A2遗物", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierATableCRewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("生物质", 100),
+                            ("现金匣", 1500),
+                            ("内融核心", 50),
+                            ("葛嘉里菌孢子", 5),
+                            ("培训债务债券", 2),
+                            ("现金匣", 3000),
+                            ("Garuda机体蓝图", 1),
+                            ("缇帕瘤", 5),
+                            ("中纪A2遗物", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierBTableARewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("Mytocardia Spore", 15),
+                            ("奥席金属", 200),
+                            ("现金匣", 2500),
+                            ("内融核心", 100),
+                            ("庇护债务债券", 2),
+                            ("Garuda系统蓝图", 1),
+                            ("缇帕瘤", 5),
+                            ("后纪B5遗物", 1),
+                            ("Synth Charge", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierBTableBRewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("Thermal Sludge", 15),
+                            ("永冻晶矿", 200),
+                            ("现金匣", 2500),
+                            ("内融核心", 100),
+                            ("庇护债务债券", 2),
+                            ("Garuda系统蓝图", 1),
+                            ("缇帕瘤", 5),
+                            ("后纪B5遗物", 1),
+                            ("Mecha Overdrive", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierBTableCRewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("Gorgaricus Spore", 15),
+                            ("纳米孢子", 200),
+                            ("现金匣", 2500),
+                            ("内融核心", 100),
+                            ("庇护债务债券", 2),
+                            ("Garuda系统蓝图", 1),
+                            ("缇帕瘤", 5),
+                            ("后纪B5遗物", 1),
+                            ("Tek Assault", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierCTableARewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("内融核心", 200),
+                            ("MADIRAI晶体", 1),
+                            ("电路板", 300),
+                            ("医疗债务债券", 2),
+                            ("Garuda头部神经光元蓝图", 1),
+                            ("前纪S8遗物", 1),
+                            ("Synth Deconstruct", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierCTableBRewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("内融核心", 200),
+                            ("UNAIRU晶体", 1),
+                            ("生物质", 300),
+                            ("医疗债务债券", 2),
+                            ("Garuda头部神经光元蓝图", 1),
+                            ("前纪S8遗物", 1),
+                            ("Mecha Recharge", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierCTableCRewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("内融核心", 200),
+                            ("NARAMON晶体", 1),
+                            ("Rubedo", 300),
+                            ("医疗债务债券", 2),
+                            ("Garuda头部神经光元蓝图", 1),
+                            ("前纪S8遗物", 1),
+                            ("Tek Enhance", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierDTableARewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("VAZARIN晶体", 1),
+                            ("内融核心", 300),
+                            ("电磁立场装置", 2),
+                            ("预支债务债券", 2),
+                            ("中纪K2遗物", 1),
+                            ("Tellurium", 1),
+                            ("Synth Fiber", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierDTableBRewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("ZENURIK晶体", 1),
+                            ("内融核心", 300),
+                            ("燃爆喷射器", 2),
+                            ("预支债务债券", 2),
+                            ("中纪G1遗物", 1),
+                            ("Tellurium", 1),
+                            ("Mecha Empowered", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierDTableCRewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("赤毒", 200),
+                            ("内融核心", 300),
+                            ("突变原聚合物", 2),
+                            ("预支债务债券", 2),
+                            ("中纪A2遗物", 1),
+                            ("Tellurium", 1),
+                            ("Tek Gravity", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierETableARewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("内融核心", 400),
+                            ("家族债务债券", 2),
+                            ("现金匣", 10000),
+                            ("后纪A3遗物", 1),
+                            ("赤毒", 500),
+                            ("Synth Reflex", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierETableBRewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("内融核心", 400),
+                            ("家族债务债券", 2),
+                            ("现金匣", 10000),
+                            ("后纪K4遗物", 1),
+                            ("赤毒", 500),
+                            ("Mecha Pulse", 1)
+                        }
+                    }
+                },
+                {
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierETableCRewards", new Reward
+                    {
+                        Rewards = new List<(string Name, int Count)>
+                        {
+                            ("内融核心", 400),
+                            ("神经元", 1),
+                            ("Orokin电池", 1),
+                            ("家族债务债券", 2),
+                            ("后纪A3遗物", 1),
+                            ("赤毒", 500),
+                            ("Tek Collateral", 1)
+                        }
+                    }
                 }
             };
         }
@@ -3131,8 +3365,11 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "SteelMeridianSyndicate", "钢铁防线" },
                 { "CetusSyndicate", "Ostron" },
                 { "EventSyndicate", "行动补给" },
-                { "QuillsSyndicate", "夜羽" }
-            };
+                { "QuillsSyndicate", "夜羽" },
+                { "VentKidsSyndicate", "通风小孩" },
+                { "VoxSyndicate", "Vox 索拉里斯" },
+                { "SolarisSyndicate", "索拉里斯联盟" }
+            }; 
         }
 
         private static void InitTilesets()
