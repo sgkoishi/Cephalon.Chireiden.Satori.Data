@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace Cephalon.Chireiden.Satori.Warframe
 {
@@ -77,6 +77,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     Input = new List<string>
                     {
                         "蓝图",
+                        "总图",
                         "图",
                         "bp"
                     },
@@ -196,6 +197,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     Input = new List<string>
                     {
                         "头部神经光元",
+                        "头部",
                         "头"
                     },
                     Output = new List<string>
@@ -246,7 +248,12 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 new MTranslation
                 {
-                    InputName = "套",
+                    Input = new List<string>
+                    {
+                        "一套",
+                        "全套",
+                        "套"
+                    },
                     OutputName = "Set"
                 }
             };
@@ -263,14 +270,14 @@ namespace Cephalon.Chireiden.Satori.Warframe
                         Rewards = new List<(string Name, int Count)>
                         {
                             ("内融核心", 100),
-                            ("古纪H2遗物", 1),
+                            ("古纪C3遗物", 1),
                             ("猎人肾上腺素", 1),
                             ("加密的日记碎片", 1),
                             ("猎人战备", 1),
                             ("史度巴蓝图", 1),
                             ("希图斯幽魂", 1),
                             ("夜灵之息", 5),
-                            ("古纪T2遗物", 1),
+                            ("古纪B5遗物", 1),
                             ("猎人追踪", 1)
                         }
                     }
@@ -281,14 +288,14 @@ namespace Cephalon.Chireiden.Satori.Warframe
                         Rewards = new List<(string Name, int Count)>
                         {
                             ("内融核心", 300),
-                            ("中纪B4遗物", 1),
+                            ("中纪A2遗物", 1),
                             ("猎人复元", 1),
                             ("加密的日记碎片", 1),
                             ("猎人协力", 1),
                             ("夸塔克蓝图", 1),
                             ("希图斯幽魂", 1),
                             ("夜灵之息", 5),
-                            ("中纪V7遗物", 1),
+                            ("中纪H2遗物", 1),
                             ("猎人命令", 1)
                         }
                     }
@@ -353,7 +360,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("奥席金属", 200),
                             ("现金匣", 2500),
                             ("内融核心", 100),
-                            ("古纪B3遗物", 1),
+                            ("古纪M2遗物", 1),
                             ("Gara系统蓝图", 1),
                             ("蓄力装填", 1),
                             ("炙热黄蜂", 1),
@@ -370,7 +377,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("永冻晶矿", 200),
                             ("现金匣", 2500),
                             ("内融核心", 100),
-                            ("古纪V5遗物", 1),
+                            ("古纪M2遗物", 1),
                             ("Gara系统蓝图", 1),
                             ("灵敏扳机", 1),
                             ("收割螺旋", 1),
@@ -387,7 +394,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("电路", 300),
                             ("现金匣", 2500),
                             ("内融核心", 100),
-                            ("古纪T2遗物", 1),
+                            ("古纪M2遗物", 1),
                             ("Gara系统蓝图", 1),
                             ("耐久强化", 1),
                             ("冷面狂怒", 1),
@@ -404,7 +411,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("MADIRAI晶体", 1),
                             ("希图斯幽魂", 1),
                             ("内融核心", 200),
-                            ("前纪D2遗物", 1),
+                            ("前纪B3遗物", 1),
                             ("Gara头部神经光元蓝图", 1),
                             ("预言协约", 1),
                             ("飞光荒疫", 1),
@@ -421,7 +428,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("VAZARIN晶体", 1),
                             ("UNAIRU晶体", 1),
                             ("内融核心", 200),
-                            ("前纪Z1遗物", 1),
+                            ("前纪B3遗物", 1),
                             ("Gara头部神经光元蓝图", 1),
                             ("角斗士威猛", 1),
                             ("破碎之风", 1),
@@ -438,7 +445,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("NARAMON晶体", 1),
                             ("ZENURIK晶体", 1),
                             ("内融核心", 200),
-                            ("前纪B2遗物", 1),
+                            ("前纪B3遗物", 1),
                             ("Gara头部神经光元蓝图", 1),
                             ("私法热诚", 1),
                             ("旋风虎击", 1),
@@ -455,7 +462,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("UNAIRU晶体", 1),
                             ("MADIRAI晶体", 1),
                             ("内融核心", 300),
-                            ("中纪L1遗物", 1),
+                            ("中纪N9遗物", 1),
                             ("希图斯幽魂", 1),
                             ("预言通灵", 1),
                             ("终焉风暴", 1),
@@ -472,7 +479,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("ZENURIK晶体", 1),
                             ("VAZARIN晶体", 1),
                             ("内融核心", 300),
-                            ("中纪N8遗物", 1),
+                            ("中纪N9遗物", 1),
                             ("希图斯幽魂", 1),
                             ("角斗士决心", 1),
                             ("纵横双子", 1),
@@ -489,7 +496,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("赤毒", 100),
                             ("NARAMON晶体", 1),
                             ("内融核心", 300),
-                            ("中纪V7遗物", 1),
+                            ("中纪N9遗物", 1),
                             ("希图斯幽魂", 1),
                             ("私法追踪", 1),
                             ("沉没之爪", 1),
@@ -503,7 +510,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                         Rewards = new List<(string Name, int Count)>
                         {
                             ("夜灵之息", 5),
-                            ("后纪K3遗物", 1),
+                            ("后纪S4遗物", 1),
                             ("希图斯幽魂", 2),
                             ("赤毒", 300),
                             ("弗拉克斯亡魂左拳套", 1),
@@ -518,7 +525,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                         Rewards = new List<(string Name, int Count)>
                         {
                             ("夜灵之息", 5),
-                            ("后纪O3遗物", 1),
+                            ("后纪A5遗物", 1),
                             ("希图斯幽魂", 2),
                             ("赤毒", 300),
                             ("弗拉克斯亡魂右拳套", 1),
@@ -533,7 +540,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                         Rewards = new List<(string Name, int Count)>
                         {
                             ("夜灵之息", 5),
-                            ("后纪L2遗物", 1),
+                            ("后纪S4遗物", 1),
                             ("希图斯幽魂", 2),
                             ("赤毒", 300),
                             ("弗拉克斯亡魂蓝图", 1),
@@ -554,7 +561,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("现金匣", 3000),
                             ("Garuda机体蓝图", 1),
                             ("缇帕瘤", 5),
-                            ("中纪A2遗物", 1)
+                            ("古纪M2遗物", 1)
                         }
                     }
                 },
@@ -571,7 +578,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("现金匣", 3000),
                             ("Garuda机体蓝图", 1),
                             ("缇帕瘤", 5),
-                            ("中纪A2遗物", 1)
+                            ("古纪M2遗物", 1)
                         }
                     }
                 },
@@ -588,7 +595,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("现金匣", 3000),
                             ("Garuda机体蓝图", 1),
                             ("缇帕瘤", 5),
-                            ("中纪A2遗物", 1)
+                            ("古纪M2遗物", 1)
                         }
                     }
                 },
@@ -604,8 +611,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("庇护债务债券", 2),
                             ("Garuda系统蓝图", 1),
                             ("缇帕瘤", 5),
-                            ("后纪B5遗物", 1),
-                            ("Synth Charge", 1)
+                            ("古纪M2遗物", 1),
+                            ("合成 充能", 1)
                         }
                     }
                 },
@@ -621,8 +628,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("庇护债务债券", 2),
                             ("Garuda系统蓝图", 1),
                             ("缇帕瘤", 5),
-                            ("后纪B5遗物", 1),
-                            ("Mecha Overdrive", 1)
+                            ("古纪M2遗物", 1),
+                            ("机甲 超载", 1)
                         }
                     }
                 },
@@ -638,8 +645,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("庇护债务债券", 2),
                             ("Garuda系统蓝图", 1),
                             ("缇帕瘤", 5),
-                            ("后纪B5遗物", 1),
-                            ("Tek Assault", 1)
+                            ("古纪M2遗物", 1),
+                            ("技法 猛袭", 1)
                         }
                     }
                 },
@@ -653,8 +660,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("电路板", 300),
                             ("医疗债务债券", 2),
                             ("Garuda头部神经光元蓝图", 1),
-                            ("前纪S8遗物", 1),
-                            ("Synth Deconstruct", 1)
+                            ("前纪B3遗物", 1),
+                            ("合成 解构", 1)
                         }
                     }
                 },
@@ -668,8 +675,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("生物质", 300),
                             ("医疗债务债券", 2),
                             ("Garuda头部神经光元蓝图", 1),
-                            ("前纪S8遗物", 1),
-                            ("Mecha Recharge", 1)
+                            ("前纪B3遗物", 1),
+                            ("机甲 充能", 1)
                         }
                     }
                 },
@@ -683,8 +690,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("Rubedo", 300),
                             ("医疗债务债券", 2),
                             ("Garuda头部神经光元蓝图", 1),
-                            ("前纪S8遗物", 1),
-                            ("Tek Enhance", 1)
+                            ("前纪B3遗物", 1),
+                            ("技法 强化", 1)
                         }
                     }
                 },
@@ -697,9 +704,9 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("内融核心", 300),
                             ("电磁立场装置", 2),
                             ("预支债务债券", 2),
-                            ("中纪K2遗物", 1),
-                            ("Tellurium", 1),
-                            ("Synth Fiber", 1)
+                            ("中纪N9遗物", 1),
+                            ("碲", 1),
+                            ("合成 纤维", 1)
                         }
                     }
                 },
@@ -712,9 +719,9 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("内融核心", 300),
                             ("燃爆喷射器", 2),
                             ("预支债务债券", 2),
-                            ("中纪G1遗物", 1),
-                            ("Tellurium", 1),
-                            ("Mecha Empowered", 1)
+                            ("中纪N9遗物", 1),
+                            ("碲", 1),
+                            ("机甲 强化", 1)
                         }
                     }
                 },
@@ -727,9 +734,9 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("内融核心", 300),
                             ("突变原聚合物", 2),
                             ("预支债务债券", 2),
-                            ("中纪A2遗物", 1),
-                            ("Tellurium", 1),
-                            ("Tek Gravity", 1)
+                            ("中纪N9遗物", 1),
+                            ("碲", 1),
+                            ("技法 引力", 1)
                         }
                     }
                 },
@@ -741,9 +748,9 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("内融核心", 400),
                             ("家族债务债券", 2),
                             ("现金匣", 10000),
-                            ("后纪A3遗物", 1),
+                            ("后纪S4遗物", 1),
                             ("赤毒", 500),
-                            ("Synth Reflex", 1)
+                            ("合成 反射", 1)
                         }
                     }
                 },
@@ -755,9 +762,9 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("内融核心", 400),
                             ("家族债务债券", 2),
                             ("现金匣", 10000),
-                            ("后纪K4遗物", 1),
+                            ("后纪A5遗物", 1),
                             ("赤毒", 500),
-                            ("Mecha Pulse", 1)
+                            ("机甲 脉冲", 1)
                         }
                     }
                 },
@@ -770,9 +777,9 @@ namespace Cephalon.Chireiden.Satori.Warframe
                             ("神经元", 1),
                             ("Orokin电池", 1),
                             ("家族债务债券", 2),
-                            ("后纪A3遗物", 1),
+                            ("后纪S4遗物", 1),
                             ("赤毒", 500),
-                            ("Tek Collateral", 1)
+                            ("技法 连带", 1)
                         }
                     }
                 }
@@ -1154,7 +1161,21 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyAss", "消灭一个尸鬼头领" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyHunt", "净化一个巨型尸鬼埋藏地" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyRes", "营救尸鬼叛逃者" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyExt", "清扫尸鬼埋养地" }
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyExt", "清扫尸鬼埋养地" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobSpy", "财政解放" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobResource", "智能操控" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobResource", "分离与裂解" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusWetworkJobAssassinate", "冷餐" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusChaosJobAssassinate", "焦土大地" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusHelpingJobSpy", "貌似合法" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobAssassinate", "网路崩溃" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobExterminate", "猎人杀手" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusArtifactJobExcavation", "考古学" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobDefense", "岗哨职责" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusChaosJobExcavation", "埋葬他们" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusTheftJobResource", "向税务官课税" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobResource", "拆散陷阱" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobRecovery", "保护无辜" }
             };
             JobDesc = new Dictionary<string, string>
             {
@@ -1189,7 +1210,21 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyRes",
                     "钢铁防线已经辨识出一个可能的尸鬼叛逃者, 进行营救, 避免其注定的死亡。"
                 },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyExt", "对Grineer的埋养地发起进攻, 向Vay Hek表明立场。" }
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyExt", "对Grineer的埋养地发起进攻, 向Vay Hek表明立场。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobSpy", "在Nef的索回小组进攻目标通道之前找出并清除关键的债务分类账册。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobResource", "Word是Corpus正准备进行多项行动。我们需要有关这些行动的讯息。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobResource", "引开Corpus的安保, 然后掠夺他们储备的矿物堆。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusWetworkJobAssassinate", "追击并杀死臭名昭著的Corpus战争罪犯。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusChaosJobAssassinate", "锁定他的资产来引诱出这位臭名昭彰的Corpus监工。然后杀死他。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusHelpingJobSpy", "一名轨道代理正等候一艘在行星轨道上且满载补给的船舰。他需要登陆的许可证。帮他伪造一个来。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobAssassinate", "摧毁一个工人控制网络，然后杀死其监工。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobExterminate", "Corpus正在执行他们的部队演习训练。肆意破坏吧。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusArtifactJobExcavation", "在Nef的暴徒走狗们得逞前找到并取回一处挖掘地的遗物。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobDefense", "巡逻山谷。回报任何异常情况。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusChaosJobExcavation", "我们要劫持一些采集机。在他们整备并发射时, Eudico有些工作要你执行。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusTheftJobResource", "偷回我们的税。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobResource", "减少对Corpus补给和研究部门的供应。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobRecovery", "释放被Nef审讯单位抓走的索拉里斯人民。" }
             };
         }
 
@@ -1572,7 +1607,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "SolNode301", new Node("SolNode301", "月球", "月球Grimaldi", "Orokin之月", MissionType.MT_MOBILE_DEFENSE) },
                 { "SolNode302", new Node("SolNode302", "月球", "月球Tycho", "Orokin之月", MissionType.MT_SURVIVAL) },
                 { "SolNode304", new Node("SolNode304", "月球", "月球Copernicus", "Orokin之月", MissionType.MT_CAPTURE) },
-                { "SolNode305", new Node("SolNode305", "月球", "月球Stofler", "Orokin之月", MissionType.MT_DEFENSE) },
+                { "SolNode305", new Node("SolNode305", "月球", "月球StöFler", "Orokin之月", MissionType.MT_DEFENSE) },
                 { "SolNode306", new Node("SolNode306", "月球", "月球Pavlov", "Orokin之月", MissionType.MT_INTEL) },
                 { "SolNode307", new Node("SolNode307", "月球", "月球Zeipel", "Orokin之月", MissionType.MT_RESCUE) },
                 { "SolNode400", new Node("SolNode400", "虚空", "虚空Teshub", "Orokin堡垒", MissionType.MT_EXTERMINATION) },
@@ -3483,6 +3518,15 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     }
                 },
                 {
+                    "GARUDA", new List<string>
+                    {
+                        "garuda",
+                        "garuda prime",
+                        "血甲",
+                        "血妈"
+                    }
+                },
+                {
                     "HARROW", new List<string>
                     {
                         "harrow",
@@ -3828,7 +3872,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 {
                     "BATTACOR",
-                    new Weapon(WeaponType.Primary, 66.0, 0.32, 2.4, 0.18, 1, 10, "Battacor", "Battacor", "Battacor")
+                    new Weapon(WeaponType.Primary, 66.0, 0.32, 2.4, 0.18, 1, 10, "Battacor", "武使之力", "武使之力")
                 },
                 { "BAZA", new Weapon(WeaponType.Primary, 16.0, 0.26, 3, 0.1, 1.1, 7, "Baza", "苍鹰", "苍鹰") },
                 {
@@ -4224,7 +4268,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 {
                     "KRAKEN", new Weapon(WeaponType.Secondary, 49.0, 0.05, 2.0, 0.13, 1.53, 0, "Kraken", "北海巨妖", "北海巨妖")
                 },
-                { "KRESKA", new Weapon(WeaponType.Melee, 70.0, 0.14, 2.0, 0.19, 1, 6, "Kreska", "Kreska", "Kreska") },
+                { "KRESKA", new Weapon(WeaponType.Melee, 70.0, 0.14, 2.0, 0.19, 1, 6, "Kreska", "直刃", "直刃") },
                 { "KROHKUR", new Weapon(WeaponType.Melee, 70.0, 0.29, 1.7, 0.19, 1.22, 5, "Krohkur", "克鲁古尔", "克鲁古尔") },
                 {
                     "KRONEN",
@@ -4331,7 +4375,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 {
                     "NAGANTAKA",
-                    new Weapon(WeaponType.Primary, 159, 0.15, 2.3, 0.39, 1, 9, "Nagantaka", "Nagantaka", "Nagantaka")
+                    new Weapon(WeaponType.Primary, 159, 0.15, 2.3, 0.39, 1, 9, "Nagantaka", "噬蛇弩", "噬蛇弩")
                 },
                 {
                     "NAMI SKYLA PRIME",
@@ -4360,7 +4404,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "OBEX", new Weapon(WeaponType.Melee, 25.0, 0.25, 2, 0.1, 1.10, 0, "Obex", "奥比克斯", "惩戒手刺") },
                 {
                     "OCUCOR",
-                    new Weapon(WeaponType.Secondary, 22.0, 0.16, 1.8, 0.24, 1.0, 8, "Ocucor", "Ocucor", "Ocucor")
+                    new Weapon(WeaponType.Secondary, 22.0, 0.16, 1.8, 0.24, 1.0, 8, "Ocucor", "视使之触", "视使之触")
                 },
                 { "OGRIS", new Weapon(WeaponType.Primary, 100, 0.05, 2, 0.35, 01.245, 9, "Ogris", "食人女魔", "奥基手持火箭炮") },
                 { "OHMA", new Weapon(WeaponType.Melee, 100, 0.15, 2, 0.3, 01, 8, "Ohma", "欧玛", "欧玛电击棍", "欧码") },
