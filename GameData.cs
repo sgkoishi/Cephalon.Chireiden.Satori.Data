@@ -2,260 +2,44 @@ using System.Collections.Generic;
 
 namespace Cephalon.Chireiden.Satori.Warframe
 {
-    public class MTranslation
+    public static partial class GameData
     {
-        public List<string> Input;
-        public List<string> Output;
-
-        public string InputName
-        {
-            get => Input[0];
-            set => Input = new List<string>
-            {
-                value
-            };
-        }
-
-        public string OutputName
-        {
-            get => Output[0];
-            set => Output = new List<string>
-            {
-                value
-            };
-        }
-    }
-
-    public static class GameData
-    {
-        public static Dictionary<string, string> Acolyst;
-        public static Dictionary<string, (string Title, string Detail)> Conclave;
-        public static Dictionary<Faction, string> Faction;
-        public static Dictionary<string, string> Item;
-        public static Dictionary<string, string> JobDesc;
-        public static Dictionary<string, string> JobName;
-        public static Dictionary<MissionType, string> Mission;
-        public static Dictionary<string, Node> Nodes;
-        private static Dictionary<string, string> _planet;
-        public static List<Riven.RivenAttribute> RivenAttributes;
-        public static Dictionary<string, string> RivenRedirection;
-        public static Dictionary<string, string> Sortie;
-        public static Dictionary<string, string> Syndicate;
-        public static Dictionary<string, string> Tileset;
-        public static Dictionary<VoidModifier, string> VoidModifier;
-        public static Dictionary<string, Weapon> Weapons;
-        public static Dictionary<string, List<string>> WarframeAlias;
-        public static Dictionary<WeaponType, List<string>> WeaponTypes;
-        public static Dictionary<string, Reward> BountyRewards;
-        private static List<List<string>> _modList;
-        public static List<MTranslation> WarframeMarket;
-
-        public static void Init()
-        {
-            InitPlanets();
-            InitItems();
-            InitNodes();
-            InitEnums();
-            InitSorties();
-            InitAcolysts();
-            InitConclaves();
-            InitWarframes();
-            InitWeapons();
-            InitTilesets();
-            InitRivens();
-            InitStndicates();
-            InitBounty();
-            InitTranslation(); /* * Instance.Load(); * foreach (var item in Instance.GameNodes) * { *     var name = _planet[item.SystemName] + item.Name; *     if (Nodes.ContainsKey(item.UniqueName)) *     { *         var k = Nodes[item.UniqueName]; *         if (name != k.ToString()) *         { *             Console.WriteLine($"Name conflict: {item.UniqueName} ({name} - {k})"); *         } *     } *     else *     { *         Console.WriteLine($"Node missing: {item.UniqueName} ({name})"); *     } * } */
-        }
-
         private static void InitTranslation()
         {
-            WarframeMarket = new List<MTranslation>
+            WarframeMarket = new List<ComponentTranslation>
             {
-                new MTranslation
-                {
-                    Input = new List<string>
-                    {
-                        "蓝图",
-                        "总图",
-                        "图",
-                        "bp"
-                    },
-                    OutputName = "Blueprint"
-                },
-                new MTranslation
-                {
-                    InputName = "护手",
-                    OutputName = "Guard"
-                },
-                new MTranslation
-                {
-                    InputName = "握柄",
-                    Output = new List<string>
-                    {
-                        "Hilt",
-                        "Handle"
-                    }
-                },
-                new MTranslation
-                {
-                    InputName = "圆盘",
-                    OutputName = "Disc"
-                },
-                new MTranslation
-                {
-                    InputName = "刀刃",
-                    OutputName = "Blade"
-                },
-                new MTranslation
-                {
-                    InputName = "饰物",
-                    OutputName = "Ornament"
-                },
-                new MTranslation
-                {
-                    InputName = "左拳套",
-                    OutputName = "Left Gauntlet"
-                },
-                new MTranslation
-                {
-                    InputName = "右拳套",
-                    OutputName = "Right Gauntlet"
-                },
-                new MTranslation
-                {
-                    InputName = "拳套",
-                    OutputName = "Gauntlet"
-                },
-                new MTranslation
-                {
-                    InputName = "锤头",
-                    OutputName = "Head"
-                },
-                new MTranslation
-                {
-                    InputName = "枪管",
-                    OutputName = "Barrel"
-                },
-                new MTranslation
-                {
-                    InputName = "枪机",
-                    OutputName = "Receiver"
-                },
-                new MTranslation
-                {
-                    InputName = "枪托",
-                    OutputName = "Stock"
-                },
-                new MTranslation
-                {
-                    InputName = "上弓臂",
-                    OutputName = "Upper Limb"
-                },
-                new MTranslation
-                {
-                    InputName = "下弓臂",
-                    OutputName = "Lower Limb"
-                },
-                new MTranslation
-                {
-                    InputName = "弓臂",
-                    OutputName = "Limbs"
-                },
-                new MTranslation
-                {
-                    InputName = "弓身",
-                    OutputName = "Grip"
-                },
-                new MTranslation
-                {
-                    InputName = "弓弦",
-                    OutputName = "String"
-                },
-                new MTranslation
-                {
-                    InputName = "连接器",
-                    OutputName = "Link"
-                },
-                new MTranslation
-                {
-                    InputName = "镖袋",
-                    OutputName = "Pouch"
-                },
-                new MTranslation
-                {
-                    InputName = "散热器",
-                    OutputName = "Heatsink"
-                },
-                new MTranslation
-                {
-                    InputName = "盾",
-                    OutputName = "Aegis"
-                },
-                new MTranslation
-                {
-                    Input = new List<string>
-                    {
-                        "头部神经光元",
-                        "头部",
-                        "头"
-                    },
-                    Output = new List<string>
-                    {
-                        "Neuroptics",
-                        "Cerebrum"
-                    }
-                },
-                new MTranslation
-                {
-                    InputName = "机体",
-                    OutputName = "Chassis"
-                },
-                new MTranslation
-                {
-                    InputName = "系统",
-                    OutputName = "Systems"
-                },
-                new MTranslation
-                {
-                    InputName = "外壳",
-                    OutputName = "Carapace"
-                },
-                new MTranslation
-                {
-                    InputName = "机翼",
-                    OutputName = "Wings"
-                },
-                new MTranslation
-                {
-                    InputName = "外甲",
-                    OutputName = "Harness"
-                },
-                new MTranslation
-                {
-                    InputName = "机身",
-                    OutputName = "Fuselage"
-                },
-                new MTranslation
-                {
-                    InputName = "引擎",
-                    OutputName = "Engines"
-                },
-                new MTranslation
-                {
-                    InputName = "飞航系统",
-                    OutputName = "Acionics"
-                },
-                new MTranslation
-                {
-                    Input = new List<string>
-                    {
-                        "一套",
-                        "全套",
-                        "套"
-                    },
-                    OutputName = "Set"
-                }
+                new ComponentTranslation("蓝图", "总图", "图", "bp").As("Blueprint"),
+                new ComponentTranslation("护手").As("Guard"),
+                new ComponentTranslation("握柄").As("Hilt", "Handle"),
+                new ComponentTranslation("圆盘").As("Disc"),
+                new ComponentTranslation("刀刃").As("Blade"),
+                new ComponentTranslation("饰物").As("Ornament"),
+                new ComponentTranslation("左拳套").As("Left Gauntlet"),
+                new ComponentTranslation("右拳套").As("Right Gauntlet"),
+                new ComponentTranslation("拳套").As("Gauntlet"),
+                new ComponentTranslation("锤头").As("Head"),
+                new ComponentTranslation("枪管").As("Barrel"),
+                new ComponentTranslation("枪机").As("Receiver"),
+                new ComponentTranslation("枪托").As("Stock"),
+                new ComponentTranslation("上弓臂").As("Upper Limb"),
+                new ComponentTranslation("下弓臂").As("Lower Limb"),
+                new ComponentTranslation("弓臂").As("Limbs"),
+                new ComponentTranslation("弓身").As("Grip"),
+                new ComponentTranslation("弓弦").As("String"),
+                new ComponentTranslation("连接器").As("Link"),
+                new ComponentTranslation("镖袋").As("Pouch"),
+                new ComponentTranslation("散热器").As("Heatsink"),
+                new ComponentTranslation("盾").As("Aegis"),
+                new ComponentTranslation("头部神经光元", "头部", "头").As("Neuroptics", "Cerebrum"),
+                new ComponentTranslation("机体").As("Chassis"),
+                new ComponentTranslation("系统").As("Systems"),
+                new ComponentTranslation("外壳").As("Carapace"),
+                new ComponentTranslation("机翼").As("Wings"),
+                new ComponentTranslation("外甲").As("Harness"),
+                new ComponentTranslation("机身").As("Fuselage"),
+                new ComponentTranslation("引擎").As("Engines"),
+                new ComponentTranslation("飞航系统").As("Acionics"),
+                new ComponentTranslation("一套", "全套", "套").As("Set")
             };
         }
 
@@ -265,523 +49,361 @@ namespace Cephalon.Chireiden.Satori.Warframe
             BountyRewards = new Dictionary<string, Reward>
             {
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/GhoulBountyTableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("内融核心", 100),
-                            ("古纪C3遗物", 1),
-                            ("猎人肾上腺素", 1),
-                            ("加密的日记碎片", 1),
-                            ("猎人战备", 1),
-                            ("史度巴蓝图", 1),
-                            ("希图斯幽魂", 1),
-                            ("夜灵之息", 5),
-                            ("古纪B5遗物", 1),
-                            ("猎人追踪", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/GhoulBountyTableARewards", new Reward(
+                        ("内融核心", 100),
+                        ("古纪C3遗物", 1),
+                        ("猎人肾上腺素", 1),
+                        ("加密的日记碎片", 1),
+                        ("猎人战备", 1),
+                        ("史度巴蓝图", 1),
+                        ("希图斯幽魂", 1),
+                        ("夜灵之息", 5),
+                        ("古纪B5遗物", 1),
+                        ("猎人追踪", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/GhoulBountyTableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("内融核心", 300),
-                            ("中纪A2遗物", 1),
-                            ("猎人复元", 1),
-                            ("加密的日记碎片", 1),
-                            ("猎人协力", 1),
-                            ("夸塔克蓝图", 1),
-                            ("希图斯幽魂", 1),
-                            ("夜灵之息", 5),
-                            ("中纪H2遗物", 1),
-                            ("猎人命令", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/GhoulBountyTableBRewards", new Reward(
+                        ("内融核心", 300),
+                        ("中纪A2遗物", 1),
+                        ("猎人复元", 1),
+                        ("加密的日记碎片", 1),
+                        ("猎人协力", 1),
+                        ("夸塔克蓝图", 1),
+                        ("希图斯幽魂", 1),
+                        ("夜灵之息", 5),
+                        ("中纪H2遗物", 1),
+                        ("猎人命令", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierATableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("蓄能重划", 1),
-                            ("奥席金属", 100),
-                            ("现金匣", 1500),
-                            ("内融核心", 50),
-                            ("伊莱体", 15),
-                            ("Gara机体蓝图", 1),
-                            ("抵近射击", 1),
-                            ("简化", 1),
-                            ("非晶态合金", 2)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierATableARewards", new Reward(
+                        ("蓄能重划", 1),
+                        ("奥席金属", 100),
+                        ("现金匣", 1500),
+                        ("内融核心", 50),
+                        ("伊莱体", 15),
+                        ("Gara机体蓝图", 1),
+                        ("抵近射击", 1),
+                        ("简化", 1),
+                        ("非晶态合金", 2))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierATableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("压迫点", 1),
-                            ("永冻晶矿", 100),
-                            ("现金匣", 1500),
-                            ("内融核心", 50),
-                            ("葛克度", 15),
-                            ("Gara机体蓝图", 1),
-                            ("黄蜂蛰刺", 1),
-                            ("延伸", 1),
-                            ("非晶态合金", 2)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierATableBRewards", new Reward(("压迫点", 1),
+                        ("永冻晶矿", 100),
+                        ("现金匣", 1500),
+                        ("内融核心", 50),
+                        ("葛克度", 15),
+                        ("Gara机体蓝图", 1),
+                        ("黄蜂蛰刺", 1),
+                        ("延伸", 1),
+                        ("非晶态合金", 2))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierATableCRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("生命力", 1),
-                            ("生物质", 200),
-                            ("现金匣", 1500),
-                            ("内融核心", 50),
-                            ("尼蒐荚", 15),
-                            ("Gara机体蓝图", 1),
-                            ("抵近射击", 1),
-                            ("聚精会神", 1),
-                            ("镓", 2)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierATableCRewards", new Reward(("生命力", 1),
+                        ("生物质", 200),
+                        ("现金匣", 1500),
+                        ("内融核心", 50),
+                        ("尼蒐荚", 15),
+                        ("Gara机体蓝图", 1),
+                        ("抵近射击", 1),
+                        ("聚精会神", 1),
+                        ("镓", 2))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierBTableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("钢铁纤维", 1),
-                            ("奥席金属", 200),
-                            ("现金匣", 2500),
-                            ("内融核心", 100),
-                            ("古纪M2遗物", 1),
-                            ("Gara系统蓝图", 1),
-                            ("蓄力装填", 1),
-                            ("炙热黄蜂", 1),
-                            ("控制模块", 2)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierBTableARewards", new Reward(
+                        ("钢铁纤维", 1),
+                        ("奥席金属", 200),
+                        ("现金匣", 2500),
+                        ("内融核心", 100),
+                        ("古纪M2遗物", 1),
+                        ("Gara系统蓝图", 1),
+                        ("蓄力装填", 1),
+                        ("炙热黄蜂", 1),
+                        ("控制模块", 2))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierBTableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("能量转化", 1),
-                            ("永冻晶矿", 200),
-                            ("现金匣", 2500),
-                            ("内融核心", 100),
-                            ("古纪M2遗物", 1),
-                            ("Gara系统蓝图", 1),
-                            ("灵敏扳机", 1),
-                            ("收割螺旋", 1),
-                            ("神经传感器", 2)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierBTableBRewards", new Reward(
+                        ("能量转化", 1),
+                        ("永冻晶矿", 200),
+                        ("现金匣", 2500),
+                        ("内融核心", 100),
+                        ("古纪M2遗物", 1),
+                        ("Gara系统蓝图", 1),
+                        ("灵敏扳机", 1),
+                        ("收割螺旋", 1),
+                        ("神经传感器", 2))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierBTableCRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("致命一击", 1),
-                            ("电路", 300),
-                            ("现金匣", 2500),
-                            ("内融核心", 100),
-                            ("古纪M2遗物", 1),
-                            ("Gara系统蓝图", 1),
-                            ("耐久强化", 1),
-                            ("冷面狂怒", 1),
-                            ("Orokin电池", 2)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierBTableCRewards", new Reward(
+                        ("致命一击", 1),
+                        ("电路", 300),
+                        ("现金匣", 2500),
+                        ("内融核心", 100),
+                        ("古纪M2遗物", 1),
+                        ("Gara系统蓝图", 1),
+                        ("耐久强化", 1),
+                        ("冷面狂怒", 1),
+                        ("Orokin电池", 2))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierCTableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("角斗士圣盾", 1),
-                            ("MADIRAI晶体", 1),
-                            ("希图斯幽魂", 1),
-                            ("内融核心", 200),
-                            ("前纪B3遗物", 1),
-                            ("Gara头部神经光元蓝图", 1),
-                            ("预言协约", 1),
-                            ("飞光荒疫", 1),
-                            ("私法补给", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierCTableARewards", new Reward(
+                        ("角斗士圣盾", 1),
+                        ("MADIRAI晶体", 1),
+                        ("希图斯幽魂", 1),
+                        ("内融核心", 200),
+                        ("前纪B3遗物", 1),
+                        ("Gara头部神经光元蓝图", 1),
+                        ("预言协约", 1),
+                        ("飞光荒疫", 1),
+                        ("私法补给", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierCTableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("私法军备", 1),
-                            ("VAZARIN晶体", 1),
-                            ("UNAIRU晶体", 1),
-                            ("内融核心", 200),
-                            ("前纪B3遗物", 1),
-                            ("Gara头部神经光元蓝图", 1),
-                            ("角斗士威猛", 1),
-                            ("破碎之风", 1),
-                            ("预言探求", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierCTableBRewards", new Reward(
+                        ("私法军备", 1),
+                        ("VAZARIN晶体", 1),
+                        ("UNAIRU晶体", 1),
+                        ("内融核心", 200),
+                        ("前纪B3遗物", 1),
+                        ("Gara头部神经光元蓝图", 1),
+                        ("角斗士威猛", 1),
+                        ("破碎之风", 1),
+                        ("预言探求", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierCTableCRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("预言契约", 1),
-                            ("NARAMON晶体", 1),
-                            ("ZENURIK晶体", 1),
-                            ("内融核心", 200),
-                            ("前纪B3遗物", 1),
-                            ("Gara头部神经光元蓝图", 1),
-                            ("私法热诚", 1),
-                            ("旋风虎击", 1),
-                            ("角斗士钳制", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierCTableCRewards", new Reward(
+                        ("预言契约", 1),
+                        ("NARAMON晶体", 1),
+                        ("ZENURIK晶体", 1),
+                        ("内融核心", 200),
+                        ("前纪B3遗物", 1),
+                        ("Gara头部神经光元蓝图", 1),
+                        ("私法热诚", 1),
+                        ("旋风虎击", 1),
+                        ("角斗士钳制", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierDTableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("角斗士猛突", 1),
-                            ("UNAIRU晶体", 1),
-                            ("MADIRAI晶体", 1),
-                            ("内融核心", 300),
-                            ("中纪N9遗物", 1),
-                            ("希图斯幽魂", 1),
-                            ("预言通灵", 1),
-                            ("终焉风暴", 1),
-                            ("私法侵犯", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierDTableARewards", new Reward(
+                        ("角斗士猛突", 1),
+                        ("UNAIRU晶体", 1),
+                        ("MADIRAI晶体", 1),
+                        ("内融核心", 300),
+                        ("中纪N9遗物", 1),
+                        ("希图斯幽魂", 1),
+                        ("预言通灵", 1),
+                        ("终焉风暴", 1),
+                        ("私法侵犯", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierDTableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("私法活力", 1),
-                            ("ZENURIK晶体", 1),
-                            ("VAZARIN晶体", 1),
-                            ("内融核心", 300),
-                            ("中纪N9遗物", 1),
-                            ("希图斯幽魂", 1),
-                            ("角斗士决心", 1),
-                            ("纵横双子", 1),
-                            ("预言神密", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierDTableBRewards", new Reward(
+                        ("私法活力", 1),
+                        ("ZENURIK晶体", 1),
+                        ("VAZARIN晶体", 1),
+                        ("内融核心", 300),
+                        ("中纪N9遗物", 1),
+                        ("希图斯幽魂", 1),
+                        ("角斗士决心", 1),
+                        ("纵横双子", 1),
+                        ("预言神密", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierDTableCRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("预言启示", 1),
-                            ("赤毒", 100),
-                            ("NARAMON晶体", 1),
-                            ("内融核心", 300),
-                            ("中纪N9遗物", 1),
-                            ("希图斯幽魂", 1),
-                            ("私法追踪", 1),
-                            ("沉没之爪", 1),
-                            ("角斗士灵巧", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierDTableCRewards", new Reward(
+                        ("预言启示", 1),
+                        ("赤毒", 100),
+                        ("NARAMON晶体", 1),
+                        ("内融核心", 300),
+                        ("中纪N9遗物", 1),
+                        ("希图斯幽魂", 1),
+                        ("私法追踪", 1),
+                        ("沉没之爪", 1),
+                        ("角斗士灵巧", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierETableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("夜灵之息", 5),
-                            ("后纪S4遗物", 1),
-                            ("希图斯幽魂", 2),
-                            ("赤毒", 300),
-                            ("弗拉克斯亡魂左拳套", 1),
-                            ("雕斩螳螂", 1),
-                            ("夜灵晶体蓝图", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierETableARewards", new Reward(
+                        ("夜灵之息", 5),
+                        ("后纪S4遗物", 1),
+                        ("希图斯幽魂", 2),
+                        ("赤毒", 300),
+                        ("弗拉克斯亡魂左拳套", 1),
+                        ("雕斩螳螂", 1),
+                        ("夜灵晶体蓝图", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierETableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("夜灵之息", 5),
-                            ("后纪A5遗物", 1),
-                            ("希图斯幽魂", 2),
-                            ("赤毒", 300),
-                            ("弗拉克斯亡魂右拳套", 1),
-                            ("猎鹰俯击", 1),
-                            ("夜灵晶体蓝图", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierETableBRewards", new Reward(
+                        ("夜灵之息", 5),
+                        ("后纪A5遗物", 1),
+                        ("希图斯幽魂", 2),
+                        ("赤毒", 300),
+                        ("弗拉克斯亡魂右拳套", 1),
+                        ("猎鹰俯击", 1),
+                        ("夜灵晶体蓝图", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierETableCRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("夜灵之息", 5),
-                            ("后纪S4遗物", 1),
-                            ("希图斯幽魂", 2),
-                            ("赤毒", 300),
-                            ("弗拉克斯亡魂蓝图", 1),
-                            ("回转尖峰", 1),
-                            ("夜灵晶体蓝图", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/EidolonJobMissionRewards/TierETableCRewards", new Reward(
+                        ("夜灵之息", 5),
+                        ("后纪S4遗物", 1),
+                        ("希图斯幽魂", 2),
+                        ("赤毒", 300),
+                        ("弗拉克斯亡魂蓝图", 1),
+                        ("回转尖峰", 1),
+                        ("夜灵晶体蓝图", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierATableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("奥席金属", 100),
-                            ("现金匣", 1500),
-                            ("内融核心", 50),
-                            ("培训债务债券", 2),
-                            ("现金匣", 3000),
-                            ("Garuda机体蓝图", 1),
-                            ("缇帕瘤", 5),
-                            ("古纪M2遗物", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierATableARewards", new Reward(
+                        ("奥席金属", 100),
+                        ("现金匣", 1500),
+                        ("内融核心", 50),
+                        ("培训债务债券", 2),
+                        ("现金匣", 3000),
+                        ("Garuda机体蓝图", 1),
+                        ("缇帕瘤", 5),
+                        ("古纪M2遗物", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierATableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("永冻晶矿", 100),
-                            ("现金匣", 1500),
-                            ("内融核心", 50),
-                            ("Thermal Sludge", 2),
-                            ("培训债务债券", 2),
-                            ("现金匣", 3000),
-                            ("Garuda机体蓝图", 1),
-                            ("缇帕瘤", 5),
-                            ("古纪M2遗物", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierATableBRewards", new Reward(
+                        ("永冻晶矿", 100),
+                        ("现金匣", 1500),
+                        ("内融核心", 50),
+                        ("Thermal Sludge", 2),
+                        ("培训债务债券", 2),
+                        ("现金匣", 3000),
+                        ("Garuda机体蓝图", 1),
+                        ("缇帕瘤", 5),
+                        ("古纪M2遗物", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierATableCRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("生物质", 100),
-                            ("现金匣", 1500),
-                            ("内融核心", 50),
-                            ("葛嘉里菌孢子", 5),
-                            ("培训债务债券", 2),
-                            ("现金匣", 3000),
-                            ("Garuda机体蓝图", 1),
-                            ("缇帕瘤", 5),
-                            ("古纪M2遗物", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierATableCRewards", new Reward(
+                        ("生物质", 100),
+                        ("现金匣", 1500),
+                        ("内融核心", 50),
+                        ("葛嘉里菌孢子", 5),
+                        ("培训债务债券", 2),
+                        ("现金匣", 3000),
+                        ("Garuda机体蓝图", 1),
+                        ("缇帕瘤", 5),
+                        ("古纪M2遗物", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierBTableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("Mytocardia Spore", 15),
-                            ("奥席金属", 200),
-                            ("现金匣", 2500),
-                            ("内融核心", 100),
-                            ("庇护债务债券", 2),
-                            ("Garuda系统蓝图", 1),
-                            ("缇帕瘤", 5),
-                            ("古纪M2遗物", 1),
-                            ("合成 充能", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierBTableARewards", new Reward(
+                        ("Mytocardia Spore", 15),
+                        ("奥席金属", 200),
+                        ("现金匣", 2500),
+                        ("内融核心", 100),
+                        ("庇护债务债券", 2),
+                        ("Garuda系统蓝图", 1),
+                        ("缇帕瘤", 5),
+                        ("古纪M2遗物", 1),
+                        ("合成 充能", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierBTableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("Thermal Sludge", 15),
-                            ("永冻晶矿", 200),
-                            ("现金匣", 2500),
-                            ("内融核心", 100),
-                            ("庇护债务债券", 2),
-                            ("Garuda系统蓝图", 1),
-                            ("缇帕瘤", 5),
-                            ("古纪M2遗物", 1),
-                            ("机甲 超载", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierBTableBRewards", new Reward(
+                        ("Thermal Sludge", 15),
+                        ("永冻晶矿", 200),
+                        ("现金匣", 2500),
+                        ("内融核心", 100),
+                        ("庇护债务债券", 2),
+                        ("Garuda系统蓝图", 1),
+                        ("缇帕瘤", 5),
+                        ("古纪M2遗物", 1),
+                        ("机甲 超载", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierBTableCRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("Gorgaricus Spore", 15),
-                            ("纳米孢子", 200),
-                            ("现金匣", 2500),
-                            ("内融核心", 100),
-                            ("庇护债务债券", 2),
-                            ("Garuda系统蓝图", 1),
-                            ("缇帕瘤", 5),
-                            ("古纪M2遗物", 1),
-                            ("技法 猛袭", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierBTableCRewards", new Reward(
+                        ("Gorgaricus Spore", 15),
+                        ("纳米孢子", 200),
+                        ("现金匣", 2500),
+                        ("内融核心", 100),
+                        ("庇护债务债券", 2),
+                        ("Garuda系统蓝图", 1),
+                        ("缇帕瘤", 5),
+                        ("古纪M2遗物", 1),
+                        ("技法 猛袭", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierCTableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("内融核心", 200),
-                            ("MADIRAI晶体", 1),
-                            ("电路板", 300),
-                            ("医疗债务债券", 2),
-                            ("Garuda头部神经光元蓝图", 1),
-                            ("前纪B3遗物", 1),
-                            ("合成 解构", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierCTableARewards", new Reward(
+                        ("内融核心", 200),
+                        ("MADIRAI晶体", 1),
+                        ("电路板", 300),
+                        ("医疗债务债券", 2),
+                        ("Garuda头部神经光元蓝图", 1),
+                        ("前纪B3遗物", 1),
+                        ("合成 解构", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierCTableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("内融核心", 200),
-                            ("UNAIRU晶体", 1),
-                            ("生物质", 300),
-                            ("医疗债务债券", 2),
-                            ("Garuda头部神经光元蓝图", 1),
-                            ("前纪B3遗物", 1),
-                            ("机甲 充能", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierCTableBRewards", new Reward(
+                        ("内融核心", 200),
+                        ("UNAIRU晶体", 1),
+                        ("生物质", 300),
+                        ("医疗债务债券", 2),
+                        ("Garuda头部神经光元蓝图", 1),
+                        ("前纪B3遗物", 1),
+                        ("机甲 充能", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierCTableCRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("内融核心", 200),
-                            ("NARAMON晶体", 1),
-                            ("Rubedo", 300),
-                            ("医疗债务债券", 2),
-                            ("Garuda头部神经光元蓝图", 1),
-                            ("前纪B3遗物", 1),
-                            ("技法 强化", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierCTableCRewards", new Reward(
+                        ("内融核心", 200),
+                        ("NARAMON晶体", 1),
+                        ("Rubedo", 300),
+                        ("医疗债务债券", 2),
+                        ("Garuda头部神经光元蓝图", 1),
+                        ("前纪B3遗物", 1),
+                        ("技法 强化", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierDTableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("VAZARIN晶体", 1),
-                            ("内融核心", 300),
-                            ("电磁立场装置", 2),
-                            ("预支债务债券", 2),
-                            ("中纪N9遗物", 1),
-                            ("碲", 1),
-                            ("合成 纤维", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierDTableARewards", new Reward(
+                        ("VAZARIN晶体", 1),
+                        ("内融核心", 300),
+                        ("电磁立场装置", 2),
+                        ("预支债务债券", 2),
+                        ("中纪N9遗物", 1),
+                        ("碲", 1),
+                        ("合成 纤维", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierDTableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("ZENURIK晶体", 1),
-                            ("内融核心", 300),
-                            ("燃爆喷射器", 2),
-                            ("预支债务债券", 2),
-                            ("中纪N9遗物", 1),
-                            ("碲", 1),
-                            ("机甲 强化", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierDTableBRewards", new Reward(
+                        ("ZENURIK晶体", 1),
+                        ("内融核心", 300),
+                        ("燃爆喷射器", 2),
+                        ("预支债务债券", 2),
+                        ("中纪N9遗物", 1),
+                        ("碲", 1),
+                        ("机甲 强化", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierDTableCRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("赤毒", 200),
-                            ("内融核心", 300),
-                            ("突变原聚合物", 2),
-                            ("预支债务债券", 2),
-                            ("中纪N9遗物", 1),
-                            ("碲", 1),
-                            ("技法 引力", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierDTableCRewards", new Reward(
+                        ("赤毒", 200),
+                        ("内融核心", 300),
+                        ("突变原聚合物", 2),
+                        ("预支债务债券", 2),
+                        ("中纪N9遗物", 1),
+                        ("碲", 1),
+                        ("技法 引力", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierETableARewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("内融核心", 400),
-                            ("家族债务债券", 2),
-                            ("现金匣", 10000),
-                            ("后纪S4遗物", 1),
-                            ("赤毒", 500),
-                            ("合成 反射", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierETableARewards", new Reward(
+                        ("内融核心", 400),
+                        ("家族债务债券", 2),
+                        ("现金匣", 10000),
+                        ("后纪S4遗物", 1),
+                        ("赤毒", 500),
+                        ("合成 反射", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierETableBRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("内融核心", 400),
-                            ("家族债务债券", 2),
-                            ("现金匣", 10000),
-                            ("后纪A5遗物", 1),
-                            ("赤毒", 500),
-                            ("机甲 脉冲", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierETableBRewards", new Reward(
+                        ("内融核心", 400),
+                        ("家族债务债券", 2),
+                        ("现金匣", 10000),
+                        ("后纪A5遗物", 1),
+                        ("赤毒", 500),
+                        ("机甲 脉冲", 1))
                 },
                 {
-                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierETableCRewards", new Reward
-                    {
-                        Rewards = new List<(string Name, int Count)>
-                        {
-                            ("内融核心", 400),
-                            ("神经元", 1),
-                            ("Orokin电池", 1),
-                            ("家族债务债券", 2),
-                            ("后纪S4遗物", 1),
-                            ("赤毒", 500),
-                            ("技法 连带", 1)
-                        }
-                    }
+                    "/Lotus/Types/Game/MissionDecks/VenusJobMissionRewards/VenusTierETableCRewards", new Reward(
+                        ("内融核心", 400),
+                        ("神经元", 1),
+                        ("Orokin电池", 1),
+                        ("家族债务债券", 2),
+                        ("后纪S4遗物", 1),
+                        ("赤毒", 500),
+                        ("技法 连带", 1))
                 }
             };
         }
@@ -1057,6 +679,9 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/IceStormMod", "冰风暴(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/StunningSpeedMod", "慑人神速(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Rifle/DualStat/HammerShotMod", "重锤射击(噩梦Mod)" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Randomized/PlayerMeleeWeaponRandomModRare", "近战裂罅Mod" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Randomized/PlayerPistolWeaponRandomModRare", "手枪裂罅Mod" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Randomized/PlayerRifleWeaponRandomModRare", "步枪裂罅Mod" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Rifle/DualStat/ShredMod", "撕裂(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Rifle/DualStat/WildfireMod", "野火(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Sentinel/SentinelLootRadarEnemyRadarMod", "动物本能(噩梦Mod)" },
@@ -1138,13 +763,12 @@ namespace Cephalon.Chireiden.Satori.Warframe
             JobName = new Dictionary<string, string>
             {
                 { "/Lotus/Language/G1Quests/FomorianRevengeBattleName", "巴罗尔巨人战舰" },
-                { "/Lotus/Language/Menu/InfestedInvasionGeneric", "Infested爆发" },
-                { "/Lotus/Language/Menu/InfestedInvasionBoss", "Phorid现形" },
-                { "/Lotus/Language/Menu/CorpusInvasionGeneric", "Corpus围攻" },
-                { "/Lotus/Language/Menu/GrineerInvasionGeneric", "Grineer进攻" },
                 { "/Lotus/Language/GameModes/RecurringGhoulAlert", "尸鬼净化" },
                 { "/Lotus/Language/InfestedPlainsEvent/InfestedPlainsBountyName", "瘟疫之星" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/InfestedPlainsBounty", "瘟疫之星" },
+                { "/Lotus/Language/Menu/CorpusInvasionGeneric", "Corpus围攻" },
+                { "/Lotus/Language/Menu/GrineerInvasionGeneric", "Grineer进攻" },
+                { "/Lotus/Language/Menu/InfestedInvasionBoss", "Phorid现形" },
+                { "/Lotus/Language/Menu/InfestedInvasionGeneric", "Infested爆发" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/AssassinateBountyAss", "刺杀指挥官" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/AssassinateBountyCap", "捕获新任Grineer指挥官" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/AttritionBountyCap", "捕获他们的领袖" },
@@ -1153,78 +777,98 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/AttritionBountySab", "破坏Grineer的补给线" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/CaptureBountyCapOne", "捕获Grineer指挥官" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/CaptureBountyCapTwo", "间谍捕手" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyAss", "消灭一个尸鬼头领" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyExt", "清扫尸鬼埋养地" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyHunt", "净化一个巨型尸鬼埋藏地" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyRes", "营救尸鬼叛逃者" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/InfestedPlainsBounty", "瘟疫之星" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyCache", "找出遗失的器物" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyCap", "捕获Grineer特工" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyTheft", "取回被偷的器物" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/RescueBountyResc", "搜索并救援" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/SabotageBountySab", "破坏原型机" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyAss", "消灭一个尸鬼头领" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyHunt", "净化一个巨型尸鬼埋藏地" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyRes", "营救尸鬼叛逃者" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyExt", "清扫尸鬼埋养地" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobSpy", "财政解放" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobResource", "智能操控" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobResource", "分离与裂解" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusWetworkJobAssassinate", "冷餐" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusArtifactJobAmbush", "伏击信使" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusArtifactJobExcavation", "考古学" },
                 { "/Lotus/Types/Gameplay/Venus/Jobs/VenusChaosJobAssassinate", "焦土大地" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusHelpingJobSpy", "貌似合法" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusChaosJobExcavation", "埋葬他们" },
                 { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobAssassinate", "网路崩溃" },
                 { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobExterminate", "猎人杀手" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusArtifactJobExcavation", "考古学" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobResource", "分离与裂解" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusHelpingJobCaches", "鹰嘴板" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusHelpingJobResource", "VenusHelpingJobResource" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusHelpingJobSpy", "貌似合法" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobRecovery", "存活证明" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobResource", "智能操控" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobSpy", "财政解放" },
                 { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobDefense", "岗哨职责" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusChaosJobExcavation", "埋葬他们" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusTheftJobResource", "向税务官课税" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobRecovery", "保护无辜" },
                 { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobResource", "拆散陷阱" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobRecovery", "保护无辜" }
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusSpyJobSpy", "特工的下落" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusTheftJobAmbush", "软件诡计" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusTheftJobResource", "向税务官课税" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusWetworkJobAssassinate", "冷餐" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusWetworkJobSpy", "陨星" }
             };
             JobDesc = new Dictionary<string, string>
             {
+                { "/Lotus/Language/GameModes/RecurringGhoulAlertDesc", "帮助Konzu消灭平野上的Grineer尸鬼" },
                 {
                     "/Lotus/Language/InfestedPlainsEvent/InfestedPlainsBountyDesc",
                     "偷取Vay Hek的Thrax毒素, 混合, 并将毒素送去在平野中部生长的Infested疖瘤。"
                 },
-                {
-                    "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/InfestedPlainsBounty",
-                    "偷取Vay Hek的Thrax毒素, 混合, 并将毒素送去在平野中部生长的Infested疖瘤。"
-                },
-                { "/Lotus/Language/GameModes/RecurringGhoulAlertDesc", "帮助Konzu消灭平野上的Grineer尸鬼" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/AttritionBountyLib", "将Grineer从他们在平野上的外哨赶出去" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/AssassinateBountyAss", "一名Grineer领导者只会在我们干扰其多处前线行动的时候现身。" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/AssassinateBountyCap", "一名新任的Grineer指挥官已经不断在制造麻烦。捉住指挥官。" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/AttritionBountyCap", "捉住他们的指挥官能对Grineer的分遣队造成士气上的打击。" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/AttritionBountyExt", "Grineer的数量已经太多了。削弱他们。" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/AttritionBountyLib", "将Grineer从他们在平野上的外哨赶出去" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/AttritionBountySab", "重创Grineer的补给链。" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/CaptureBountyCapOne", "一名高阶的Grineer已经登陆到平野上。将他们带给Lotus。" },
                 {
                     "/Lotus/Types/Gameplay/Eidolon/Jobs/CaptureBountyCapTwo",
                     "发现一名Grineer的间谍潜藏在希图斯村中。对Grineer施加压力将那位间谍逼出来。"
                 },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyCache", "Grineer夺走了一件Orokin器物。找出他们已埋藏的器物。" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyCap", "一件对夜羽的重要道具已经被Grineer夺取。找出夺走器物的特工并捉住他。" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyTheft", "夜羽表示Grineer偷走了一件珍贵的Orokin器物。把偷它回来。" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/RescueBountyResc", "一名Ostron人在平野上失踪了, 找到他们并带他们回家。" },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/SabotageBountySab", "原型科技正要运送给Grineer。扫遍整个平野直到你找到为止！" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyAss", "猎杀一个尸鬼头领, 并削弱他们在平野上的规模" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyExt", "对Grineer的埋养地发起进攻, 向Vay Hek表明立场。" },
                 { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyHunt", "在尸鬼觉醒前, 找到并消灭尸鬼埋藏地" },
                 {
                     "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyRes",
                     "钢铁防线已经辨识出一个可能的尸鬼叛逃者, 进行营救, 避免其注定的死亡。"
                 },
-                { "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/GhoulAlertBountyExt", "对Grineer的埋养地发起进攻, 向Vay Hek表明立场。" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobSpy", "在Nef的索回小组进攻目标通道之前找出并清除关键的债务分类账册。" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobResource", "Word是Corpus正准备进行多项行动。我们需要有关这些行动的讯息。" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobResource", "引开Corpus的安保, 然后掠夺他们储备的矿物堆。" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusWetworkJobAssassinate", "追击并杀死臭名昭著的Corpus战争罪犯。" },
+                {
+                    "/Lotus/Types/Gameplay/Eidolon/Jobs/Events/InfestedPlainsBounty",
+                    "偷取Vay Hek的Thrax毒素, 混合, 并将毒素送去在平野中部生长的Infested疖瘤。"
+                },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyCache", "Grineer夺走了一件Orokin器物。找出他们已埋藏的器物。" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyCap", "一件对夜羽的重要道具已经被Grineer夺取。找出夺走器物的特工并捉住他。" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyTheft", "夜羽表示Grineer偷走了一件珍贵的Orokin器物。把偷它回来。" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/RescueBountyResc", "一名Ostron人在平野上失踪了, 找到他们并带他们回家。" },
+                { "/Lotus/Types/Gameplay/Eidolon/Jobs/SabotageBountySab", "原型科技正要运送给Grineer。扫遍整个平野直到你找到为止！" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusArtifactJobAmbush", "税务官发现了一个Orokin器物。拦截信使并夺走器物。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusArtifactJobExcavation", "在Nef的暴徒走狗们得逞前找到并取回一处挖掘地的遗物。" },
                 { "/Lotus/Types/Gameplay/Venus/Jobs/VenusChaosJobAssassinate", "锁定他的资产来引诱出这位臭名昭彰的Corpus监工。然后杀死他。" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusHelpingJobSpy", "一名轨道代理正等候一艘在行星轨道上且满载补给的船舰。他需要登陆的许可证。帮他伪造一个来。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusChaosJobExcavation", "我们要劫持一些采集机。在他们整备并发射时, Eudico有些工作要你执行。" },
                 { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobAssassinate", "摧毁一个工人控制网络，然后杀死其监工。" },
                 { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobExterminate", "Corpus正在执行他们的部队演习训练。肆意破坏吧。" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusArtifactJobExcavation", "在Nef的暴徒走狗们得逞前找到并取回一处挖掘地的遗物。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusCullJobResource", "引开Corpus的安保, 然后掠夺他们储备的矿物堆。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusHelpingJobCaches", "通风小子们需要组件来制作K式悬浮板。帮帮他们吧？" },
+                {
+                    "/Lotus/Types/Gameplay/Venus/Jobs/VenusHelpingJobSpy",
+                    "一名轨道代理正等候一艘在行星轨道上且满载补给的船舰。他需要登陆的许可证。帮他伪造一个来。"
+                },
+                {
+                    "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobRecovery",
+                    "一支盯梢Nef特种作战部队的小对于我们失去了联系。找到他们并取回他们探查到的情报。"
+                },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobResource", "Word是Corpus正准备进行多项行动。我们需要有关这些行动的讯息。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusIntelJobSpy", "在Nef的索回小组进攻目标通道之前找出并清除关键的债务分类账册。" },
                 { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobDefense", "巡逻山谷。回报任何异常情况。" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusChaosJobExcavation", "我们要劫持一些采集机。在他们整备并发射时, Eudico有些工作要你执行。" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusTheftJobResource", "偷回我们的税。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobRecovery", "释放被Nef审讯单位抓走的索拉里斯人民。" },
                 { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobResource", "减少对Corpus补给和研究部门的供应。" },
-                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusPreservationJobRecovery", "释放被Nef审讯单位抓走的索拉里斯人民。" }
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusSpyJobSpy", "一名索联的特工失踪了。揭露他们的命运并阻止Nef的计划。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusTheftJobAmbush", "线圈滚轮分配到巡逻哨定期上传资料。骇入一台来上传间谍病毒。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusTheftJobResource", "偷回我们的税。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusWetworkJobAssassinate", "追击并杀死臭名昭著的Corpus战争罪犯。" },
+                { "/Lotus/Types/Gameplay/Venus/Jobs/VenusWetworkJobSpy", "摧毁载有高价值Corpus目标的穿梭艇。" }
             };
         }
 
@@ -1703,1530 +1347,192 @@ namespace Cephalon.Chireiden.Satori.Warframe
         {
             RivenAttributes = new List<Riven.RivenAttribute>
             {
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "visi",
-                    Suffix = "ata",
-                    Text = "[{0:P2}到{1:P2}]近战伤害",
-                    Alias = new List<string>
-                    {
-                        "伤害",
-                        "攻击",
-                        "基伤",
-                        "伤",
-                        "da"
-                    },
-                    Scale = 165
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "magna",
-                    Suffix = "ton",
-                    Text = "[{0:P2}到{1:P2}]冲击伤害",
-                    Alias = new List<string>
-                    {
-                        "冲击伤害",
-                        "冲击",
-                        "冲",
-                        "im"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "insi",
-                    Suffix = "cak",
-                    Text = "[{0:P2}到{1:P2}]穿刺伤害",
-                    Alias = new List<string>
-                    {
-                        "穿刺伤害",
-                        "穿刺",
-                        "pu"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "sci",
-                    Suffix = "sus",
-                    Text = "[{0:P2}到{1:P2}]切割伤害",
-                    Alias = new List<string>
-                    {
-                        "切割伤害",
-                        "切割",
-                        "切",
-                        "sl"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "crita",
-                    Suffix = "cron",
-                    Text = "[{0:P2}到{1:P2}]暴击率",
-                    Alias = new List<string>
-                    {
-                        "暴率",
-                        "暴击率",
-                        "爆率",
-                        "暴击",
-                        "爆击",
-                        "crch",
-                        "cc"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "acri",
-                    Suffix = "tis",
-                    Text = "[{0:P2}到{1:P2}]暴击伤害",
-                    Alias = new List<string>
-                    {
-                        "爆伤",
-                        "暴伤",
-                        "暴击伤害",
-                        "crda",
-                        "cd"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "geli",
-                    Suffix = "do",
-                    Text = "[{0:P2}到{1:P2}]冰冻伤害",
-                    Alias = new List<string>
-                    {
-                        "冰冻伤害",
-                        "冰伤",
-                        "冰冻",
-                        "冰",
-                        "co"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "vexi",
-                    Suffix = "tio",
-                    Text = "[{0:P2}到{1:P2}]电击伤害",
-                    Alias = new List<string>
-                    {
-                        "电击伤害",
-                        "电伤",
-                        "电击",
-                        "电",
-                        "el"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "igni",
-                    Suffix = "pha",
-                    Text = "[{0:P2}到{1:P2}]火焰伤害",
-                    Alias = new List<string>
-                    {
-                        "火焰伤害",
-                        "火焰",
-                        "火伤",
-                        "火",
-                        "he"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "toxi",
-                    Suffix = "tox",
-                    Text = "[{0:P2}到{1:P2}]毒素伤害",
-                    Alias = new List<string>
-                    {
-                        "毒素伤害",
-                        "毒素",
-                        "毒伤",
-                        "毒",
-                        "to"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "hexa",
-                    Suffix = "dex",
-                    Text = "[{0:P2}到{1:P2}]触发几率",
-                    Alias = new List<string>
-                    {
-                        "触发几率",
-                        "触发",
-                        "触发率",
-                        "stch"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "deci",
-                    Suffix = "des",
-                    Text = "[{0:P2}到{1:P2}]触发时间",
-                    Alias = new List<string>
-                    {
-                        "触发时间",
-                        "时间",
-                        "stdu"
-                    },
-                    CanCurse = true,
-                    Scale = 100
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "manti",
-                    Suffix = "tron",
-                    Text = "[{0:P2}到{1:P2}]对Corpus伤害",
-                    Alias = new List<string>
-                    {
-                        "对corpus伤害",
-                        "c佬",
-                        "c系",
-                        "c",
-                        "datoco",
-                        "corpus"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "argi",
-                    Suffix = "con",
-                    Text = "[{0:P2}到{1:P2}]对Grineer伤害",
-                    Alias = new List<string>
-                    {
-                        "对grineer伤害",
-                        "g佬",
-                        "g系",
-                        "g",
-                        "datogr",
-                        "grineer"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "pura",
-                    Suffix = "ada",
-                    Text = "[{0:P2}到{1:P2}]对Infested伤害",
-                    Alias = new List<string>
-                    {
-                        "对infested伤害",
-                        "i佬",
-                        "i系",
-                        "i",
-                        "datoin",
-                        "infested"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "croni",
-                    Suffix = "dra",
-                    Text = "[{0:P2}到{1:P2}]攻击速度",
-                    Alias = new List<string>
-                    {
-                        "攻速",
-                        "攻击速度",
-                        "fira",
-                        "atsp"
-                    },
-                    CanCurse = true,
-                    Scale = 53
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "uti",
-                    Suffix = "tia",
-                    Text = "[{0:P2}到{1:P2}]导引效率",
-                    Alias = new List<string>
-                    {
-                        "引导效率",
-                        "导引效率",
-                        "充能效率",
-                        "效率",
-                        "chef"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "tori",
-                    Suffix = "bo",
-                    Text = "[{0:P2}到{1:P2}]导引伤害",
-                    Alias = new List<string>
-                    {
-                        "引导伤害",
-                        "导引伤害",
-                        "充能伤害",
-                        "充能",
-                        "chda"
-                    },
-                    Scale = 150
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "exi",
-                    Suffix = "cta",
-                    Text = "[{0:P2}到{1:P2}]处决伤害",
-                    Alias = new List<string>
-                    {
-                        "处决伤害",
-                        "终结",
-                        "处决",
-                        "fida"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "locti",
-                    Suffix = "tor",
-                    Text = "[{0:P2}到{1:P2}]攻击范围",
-                    Alias = new List<string>
-                    {
-                        "攻击范围",
-                        "范围",
-                        "ra"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "pleci",
-                    Suffix = "nent",
-                    Text = "滑行攻击有[{0:P2}到{1:P2}]的几率造成暴击",
-                    Alias = new List<string>
-                    {
-                        "滑暴",
-                        "滑爆",
-                        "划爆",
-                        "划暴",
-                        "滑砍",
-                        "划砍",
-                        "sl",
-                        "slat",
-                        "slatha"
-                    },
-                    CanCurse = true,
-                    Scale = 90.0
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Melee,
-                    Prefix = "tempi",
-                    Suffix = "nem",
-                    Text = "连击时间[{0:F2}到{1:F2}]秒",
-                    Alias = new List<string>
-                    {
-                        "连击时间",
-                        "连击",
-                        "codu"
-                    },
-                    CanCurse = true,
-                    Scale = 8.1
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "sati",
-                    Suffix = "can",
-                    Text = "[{0:P2}到{1:P2}]多重射击",
-                    Alias = new List<string>
-                    {
-                        "多重射击",
-                        "多重",
-                        "mu"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "visi",
-                    Suffix = "ata",
-                    Text = "[{0:P2}到{1:P2}]伤害",
-                    Alias = new List<string>
-                    {
-                        "伤害",
-                        "攻击",
-                        "基伤",
-                        "伤",
-                        "da"
-                    },
-                    CanCurse = true,
-                    Scale = 165
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "magna",
-                    Suffix = "ton",
-                    Text = "[{0:P2}到{1:P2}]冲击伤害",
-                    Alias = new List<string>
-                    {
-                        "冲击伤害",
-                        "冲击",
-                        "冲",
-                        "im"
-                    },
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "insi",
-                    Suffix = "cak",
-                    Text = "[{0:P2}到{1:P2}]穿刺伤害",
-                    Alias = new List<string>
-                    {
-                        "穿刺伤害",
-                        "穿刺",
-                        "pu"
-                    },
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "sci",
-                    Suffix = "sus",
-                    Text = "[{0:P2}到{1:P2}]切割伤害",
-                    Alias = new List<string>
-                    {
-                        "切割伤害",
-                        "切割",
-                        "切",
-                        "sl"
-                    },
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "crita",
-                    Suffix = "cron",
-                    Text = "[{0:P2}到{1:P2}]暴击率",
-                    Alias = new List<string>
-                    {
-                        "暴率",
-                        "暴击率",
-                        "爆率",
-                        "暴击",
-                        "爆击",
-                        "crch",
-                        "cc"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "acri",
-                    Suffix = "tis",
-                    Text = "[{0:P2}到{1:P2}]暴击伤害",
-                    Alias = new List<string>
-                    {
-                        "爆伤",
-                        "暴伤",
-                        "暴击伤害",
-                        "crda",
-                        "cd"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "geli",
-                    Suffix = "do",
-                    Text = "[{0:P2}到{1:P2}]冰冻伤害",
-                    Alias = new List<string>
-                    {
-                        "冰冻伤害",
-                        "冰伤",
-                        "冰冻",
-                        "冰",
-                        "co"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "vexi",
-                    Suffix = "tio",
-                    Text = "[{0:P2}到{1:P2}]电击伤害",
-                    Alias = new List<string>
-                    {
-                        "电击伤害",
-                        "电伤",
-                        "电击",
-                        "电",
-                        "el"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "igni",
-                    Suffix = "pha",
-                    Text = "[{0:P2}到{1:P2}]火焰伤害",
-                    Alias = new List<string>
-                    {
-                        "火焰伤害",
-                        "火焰",
-                        "火伤",
-                        "火",
-                        "he"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "toxi",
-                    Suffix = "tox",
-                    Text = "[{0:P2}到{1:P2}]毒素伤害",
-                    Alias = new List<string>
-                    {
-                        "毒素伤害",
-                        "毒素",
-                        "毒伤",
-                        "毒",
-                        "to"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "hexa",
-                    Suffix = "dex",
-                    Text = "[{0:P2}到{1:P2}]触发几率",
-                    Alias = new List<string>
-                    {
-                        "触发几率",
-                        "触发",
-                        "触发率",
-                        "stch"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "deci",
-                    Suffix = "des",
-                    Text = "[{0:P2}到{1:P2}]触发时间",
-                    Alias = new List<string>
-                    {
-                        "触发时间",
-                        "时间",
-                        "stdu"
-                    },
-                    CanCurse = true,
-                    Scale = 100
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "manti",
-                    Suffix = "tron",
-                    Text = "[{0:P2}到{1:P2}]对Corpus伤害",
-                    Alias = new List<string>
-                    {
-                        "对corpus伤害",
-                        "c佬",
-                        "c系",
-                        "c",
-                        "datoco",
-                        "corpus"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "argi",
-                    Suffix = "con",
-                    Text = "[{0:P2}到{1:P2}]对Grineer伤害",
-                    Alias = new List<string>
-                    {
-                        "对grineer伤害",
-                        "g佬",
-                        "g系",
-                        "g",
-                        "datogr",
-                        "grineer"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "pura",
-                    Suffix = "ada",
-                    Text = "[{0:P2}到{1:P2}]对Infested伤害",
-                    Alias = new List<string>
-                    {
-                        "对infested伤害",
-                        "i佬",
-                        "i系",
-                        "i",
-                        "datoin",
-                        "infested"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "croni",
-                    Suffix = "dra",
-                    Text = "[{0:P2}到{1:P2}]射速（弓类武器效果加倍）",
-                    Alias = new List<string>
-                    {
-                        "射速",
-                        "攻速",
-                        "攻击速度",
-                        "fira",
-                        "atsp"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "arma",
-                    Suffix = "tin",
-                    Text = "[{0:P2}到{1:P2}]弹匣容量",
-                    Alias = new List<string>
-                    {
-                        "弹匣容量",
-                        "弹匣",
-                        "弹夹",
-                        "弹夹容量",
-                        "maca",
-                        "masi",
-                        "ma"
-                    },
-                    CanCurse = true,
-                    Scale = 50
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "ampi",
-                    Suffix = "bin",
-                    Text = "[{0:P2}到{1:P2}]弹药最大值",
-                    Alias = new List<string>
-                    {
-                        "弹药",
-                        "amma"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "conci",
-                    Suffix = "nak",
-                    Text = "[{0:P2}到{1:P2}]弹道飞行速度",
-                    Alias = new List<string>
-                    {
-                        "弹道",
-                        "飞行速度",
-                        "飞行",
-                        "prflsp"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "feva",
-                    Suffix = "tak",
-                    Text = "[{0:P2}到{1:P2}]装填速度",
-                    Alias = new List<string>
-                    {
-                        "装填速度",
-                        "换弹",
-                        "装弹",
-                        "装填",
-                        "resp"
-                    },
-                    CanCurse = true,
-                    Scale = 50
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "zeti",
-                    Suffix = "mag",
-                    Text = "[{0:P2}到{1:P2}]武器后坐力",
-                    Alias = new List<string>
-                    {
-                        "后座",
-                        "后座力",
-                        "后坐",
-                        "后坐力",
-                        "were"
-                    },
-                    CanCurse = true,
-                    Scale = -90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Shotgun,
-                    Prefix = "lexi",
-                    Suffix = "nok",
-                    Text = "[{0:F2}到{1:F2}]穿透",
-                    Alias = new List<string>
-                    {
-                        "穿透",
-                        "穿",
-                        "puth"
-                    },
-                    Scale = 2.7
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "sati",
-                    Suffix = "can",
-                    Text = "[{0:P2}到{1:P2}]多重射击",
-                    Alias = new List<string>
-                    {
-                        "多重射击",
-                        "多重",
-                        "mu"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "visi",
-                    Suffix = "ata",
-                    Text = "[{0:P2}到{1:P2}]伤害",
-                    Alias = new List<string>
-                    {
-                        "伤害",
-                        "攻击",
-                        "基伤",
-                        "伤",
-                        "da"
-                    },
-                    CanCurse = true,
-                    Scale = 220
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "magna",
-                    Suffix = "ton",
-                    Text = "[{0:P2}到{1:P2}]冲击伤害",
-                    Alias = new List<string>
-                    {
-                        "冲击伤害",
-                        "冲击",
-                        "冲",
-                        "im"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "insi",
-                    Suffix = "cak",
-                    Text = "[{0:P2}到{1:P2}]穿刺伤害",
-                    Alias = new List<string>
-                    {
-                        "穿刺伤害",
-                        "穿刺",
-                        "pu"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "sci",
-                    Suffix = "sus",
-                    Text = "[{0:P2}到{1:P2}]切割伤害",
-                    Alias = new List<string>
-                    {
-                        "切割伤害",
-                        "切割",
-                        "切",
-                        "sl"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "crita",
-                    Suffix = "cron",
-                    Text = "[{0:P2}到{1:P2}]暴击率",
-                    Alias = new List<string>
-                    {
-                        "暴率",
-                        "暴击率",
-                        "爆率",
-                        "暴击",
-                        "爆击",
-                        "crch",
-                        "cc"
-                    },
-                    CanCurse = true,
-                    Scale = 150
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "acri",
-                    Suffix = "tis",
-                    Text = "[{0:P2}到{1:P2}]暴击伤害",
-                    Alias = new List<string>
-                    {
-                        "爆伤",
-                        "暴伤",
-                        "暴击伤害",
-                        "crda",
-                        "cd"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "geli",
-                    Suffix = "do",
-                    Text = "[{0:P2}到{1:P2}]冰冻伤害",
-                    Alias = new List<string>
-                    {
-                        "冰冻伤害",
-                        "冰伤",
-                        "冰冻",
-                        "冰",
-                        "co"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "vexi",
-                    Suffix = "tio",
-                    Text = "[{0:P2}到{1:P2}]电击伤害",
-                    Alias = new List<string>
-                    {
-                        "电击伤害",
-                        "电伤",
-                        "电击",
-                        "电",
-                        "el"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "igni",
-                    Suffix = "pha",
-                    Text = "[{0:P2}到{1:P2}]火焰伤害",
-                    Alias = new List<string>
-                    {
-                        "火焰伤害",
-                        "火焰",
-                        "火伤",
-                        "火",
-                        "he"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "toxi",
-                    Suffix = "tox",
-                    Text = "[{0:P2}到{1:P2}]毒素伤害",
-                    Alias = new List<string>
-                    {
-                        "毒素伤害",
-                        "毒素",
-                        "毒伤",
-                        "毒",
-                        "to"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "hexa",
-                    Suffix = "dex",
-                    Text = "[{0:P2}到{1:P2}]触发几率",
-                    Alias = new List<string>
-                    {
-                        "触发几率",
-                        "触发",
-                        "触发率",
-                        "stch"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "deci",
-                    Suffix = "des",
-                    Text = "[{0:P2}到{1:P2}]触发时间",
-                    Alias = new List<string>
-                    {
-                        "触发时间",
-                        "时间",
-                        "stdu"
-                    },
-                    CanCurse = true,
-                    Scale = 100
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "manti",
-                    Suffix = "tron",
-                    Text = "[{0:P2}到{1:P2}]对Corpus伤害",
-                    Alias = new List<string>
-                    {
-                        "对corpus伤害",
-                        "c佬",
-                        "c系",
-                        "c",
-                        "datoco",
-                        "corpus"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "argi",
-                    Suffix = "con",
-                    Text = "[{0:P2}到{1:P2}]对Grineer伤害",
-                    Alias = new List<string>
-                    {
-                        "对grineer伤害",
-                        "g佬",
-                        "g系",
-                        "g",
-                        "datogr",
-                        "grineer"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "pura",
-                    Suffix = "ada",
-                    Text = "[{0:P2}到{1:P2}]对Infested伤害",
-                    Alias = new List<string>
-                    {
-                        "对infested伤害",
-                        "i佬",
-                        "i系",
-                        "i",
-                        "datoin",
-                        "infested"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "croni",
-                    Suffix = "dra",
-                    Text = "[{0:P2}到{1:P2}]射速",
-                    Alias = new List<string>
-                    {
-                        "射速",
-                        "攻速",
-                        "攻击速度",
-                        "fira",
-                        "atsp"
-                    },
-                    CanCurse = true,
-                    Scale = 75
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "arma",
-                    Suffix = "tin",
-                    Text = "[{0:P2}到{1:P2}]弹匣容量",
-                    Alias = new List<string>
-                    {
-                        "弹匣容量",
-                        "弹匣",
-                        "弹夹",
-                        "弹夹容量",
-                        "maca",
-                        "masi",
-                        "ma"
-                    },
-                    CanCurse = true,
-                    Scale = 50
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "ampi",
-                    Suffix = "bin",
-                    Text = "[{0:P2}到{1:P2}]弹药最大值",
-                    Alias = new List<string>
-                    {
-                        "弹药",
-                        "amma"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "conci",
-                    Suffix = "nak",
-                    Text = "[{0:P2}到{1:P2}]弹道飞行速度",
-                    Alias = new List<string>
-                    {
-                        "弹道",
-                        "飞行速度",
-                        "飞行",
-                        "prflsp"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "feva",
-                    Suffix = "tak",
-                    Text = "[{0:P2}到{1:P2}]装填速度",
-                    Alias = new List<string>
-                    {
-                        "装填速度",
-                        "换弹",
-                        "装弹",
-                        "装填",
-                        "resp"
-                    },
-                    CanCurse = true,
-                    Scale = 50
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "zeti",
-                    Suffix = "mag",
-                    Text = "[{0:P2}到{1:P2}]武器后坐力",
-                    Alias = new List<string>
-                    {
-                        "后座",
-                        "后座力",
-                        "后坐",
-                        "后坐力",
-                        "were"
-                    },
-                    CanCurse = true,
-                    Scale = -90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "hera",
-                    Suffix = "lis",
-                    Text = "[{0:P2}到{1:P2}]变焦",
-                    Alias = new List<string>
-                    {
-                        "瞄准",
-                        "变焦",
-                        "zo"
-                    },
-                    CanCurse = true,
-                    Scale = 80
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Secondary,
-                    Prefix = "lexi",
-                    Suffix = "nok",
-                    Text = "[{0:F2}到{1:F2}]穿透",
-                    Alias = new List<string>
-                    {
-                        "穿透",
-                        "穿",
-                        "puth"
-                    },
-                    Scale = 2.7
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "sati",
-                    Suffix = "can",
-                    Text = "[{0:P2}到{1:P2}]多重射击",
-                    Alias = new List<string>
-                    {
-                        "多重射击",
-                        "多重",
-                        "mu"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "visi",
-                    Suffix = "ata",
-                    Text = "[{0:P2}到{1:P2}]伤害",
-                    Alias = new List<string>
-                    {
-                        "伤害",
-                        "攻击",
-                        "基伤",
-                        "伤",
-                        "da"
-                    },
-                    CanCurse = true,
-                    Scale = 165
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "magna",
-                    Suffix = "ton",
-                    Text = "[{0:P2}到{1:P2}]冲击伤害",
-                    Alias = new List<string>
-                    {
-                        "冲击伤害",
-                        "冲击",
-                        "冲",
-                        "im"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "insi",
-                    Suffix = "cak",
-                    Text = "[{0:P2}到{1:P2}]穿刺伤害",
-                    Alias = new List<string>
-                    {
-                        "穿刺伤害",
-                        "穿刺",
-                        "pu"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "sci",
-                    Suffix = "sus",
-                    Text = "[{0:P2}到{1:P2}]切割伤害",
-                    Alias = new List<string>
-                    {
-                        "切割伤害",
-                        "切割",
-                        "切",
-                        "sl"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "crita",
-                    Suffix = "cron",
-                    Text = "[{0:P2}到{1:P2}]暴击率",
-                    Alias = new List<string>
-                    {
-                        "暴率",
-                        "暴击率",
-                        "爆率",
-                        "暴击",
-                        "爆击",
-                        "crch",
-                        "cc"
-                    },
-                    CanCurse = true,
-                    Scale = 150
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "acri",
-                    Suffix = "tis",
-                    Text = "[{0:P2}到{1:P2}]暴击伤害",
-                    Alias = new List<string>
-                    {
-                        "爆伤",
-                        "暴伤",
-                        "暴击伤害",
-                        "crda",
-                        "cd"
-                    },
-                    CanCurse = true,
-                    Scale = 120
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "geli",
-                    Suffix = "do",
-                    Text = "[{0:P2}到{1:P2}]冰冻伤害",
-                    Alias = new List<string>
-                    {
-                        "冰冻伤害",
-                        "冰伤",
-                        "冰冻",
-                        "冰",
-                        "co"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "vexi",
-                    Suffix = "tio",
-                    Text = "[{0:P2}到{1:P2}]电击伤害",
-                    Alias = new List<string>
-                    {
-                        "电击伤害",
-                        "电伤",
-                        "电击",
-                        "电",
-                        "el"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "igni",
-                    Suffix = "pha",
-                    Text = "[{0:P2}到{1:P2}]火焰伤害",
-                    Alias = new List<string>
-                    {
-                        "火焰伤害",
-                        "火焰",
-                        "火伤",
-                        "火",
-                        "he"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "toxi",
-                    Suffix = "tox",
-                    Text = "[{0:P2}到{1:P2}]毒素伤害",
-                    Alias = new List<string>
-                    {
-                        "毒素伤害",
-                        "毒素",
-                        "毒伤",
-                        "毒",
-                        "to"
-                    },
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "hexa",
-                    Suffix = "dex",
-                    Text = "[{0:P2}到{1:P2}]触发几率",
-                    Alias = new List<string>
-                    {
-                        "触发几率",
-                        "触发",
-                        "触发率",
-                        "stch"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "deci",
-                    Suffix = "des",
-                    Text = "[{0:P2}到{1:P2}]触发时间",
-                    Alias = new List<string>
-                    {
-                        "触发时间",
-                        "时间",
-                        "stdu"
-                    },
-                    CanCurse = true,
-                    Scale = 100
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "manti",
-                    Suffix = "tron",
-                    Text = "[{0:P2}到{1:P2}]对Corpus伤害",
-                    Alias = new List<string>
-                    {
-                        "对corpus伤害",
-                        "c佬",
-                        "c系",
-                        "c",
-                        "datoco",
-                        "corpus"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "argi",
-                    Suffix = "con",
-                    Text = "[{0:P2}到{1:P2}]对Grineer伤害",
-                    Alias = new List<string>
-                    {
-                        "对grineer伤害",
-                        "g佬",
-                        "g系",
-                        "g",
-                        "datogr",
-                        "grineer"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "pura",
-                    Suffix = "ada",
-                    Text = "[{0:P2}到{1:P2}]对Infested伤害",
-                    Alias = new List<string>
-                    {
-                        "对infested伤害",
-                        "i佬",
-                        "i系",
-                        "i",
-                        "datoin",
-                        "infested"
-                    },
-                    CanCurse = true,
-                    Scale = 45
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "croni",
-                    Suffix = "dra",
-                    Text = "[{0:P2}到{1:P2}]射速（弓类武器效果加倍）",
-                    Alias = new List<string>
-                    {
-                        "射速",
-                        "攻速",
-                        "攻击速度",
-                        "fira",
-                        "atsp"
-                    },
-                    CanCurse = true,
-                    Scale = 60
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "arma",
-                    Suffix = "tin",
-                    Text = "[{0:P2}到{1:P2}]弹匣容量",
-                    Alias = new List<string>
-                    {
-                        "弹匣容量",
-                        "弹匣",
-                        "弹夹",
-                        "弹夹容量",
-                        "maca",
-                        "masi",
-                        "ma"
-                    },
-                    CanCurse = true,
-                    Scale = 50
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "ampi",
-                    Suffix = "bin",
-                    Text = "[{0:P2}到{1:P2}]弹药最大值",
-                    Alias = new List<string>
-                    {
-                        "弹药",
-                        "amma"
-                    },
-                    CanCurse = true,
-                    Scale = 50
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "conci",
-                    Suffix = "nak",
-                    Text = "[{0:P2}到{1:P2}]弹道飞行速度",
-                    Alias = new List<string>
-                    {
-                        "弹道",
-                        "飞行速度",
-                        "飞行",
-                        "prflsp"
-                    },
-                    CanCurse = true,
-                    Scale = 90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "feva",
-                    Suffix = "tak",
-                    Text = "[{0:P2}到{1:P2}]装填速度",
-                    Alias = new List<string>
-                    {
-                        "装填速度",
-                        "换弹",
-                        "装弹",
-                        "装填",
-                        "resp"
-                    },
-                    CanCurse = true,
-                    Scale = 50
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "zeti",
-                    Suffix = "mag",
-                    Text = "[{0:P2}到{1:P2}]武器后坐力",
-                    Alias = new List<string>
-                    {
-                        "后座",
-                        "后座力",
-                        "后坐",
-                        "后坐力",
-                        "were"
-                    },
-                    CanCurse = true,
-                    Scale = -90
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "hera",
-                    Suffix = "lis",
-                    Text = "[{0:P2}到{1:P2}]变焦",
-                    Alias = new List<string>
-                    {
-                        "瞄准",
-                        "变焦",
-                        "zo"
-                    },
-                    CanCurse = true,
-                    Scale = 60
-                },
-                new Riven.RivenAttribute
-                {
-                    Weapon = WeaponType.Primary,
-                    Prefix = "lexi",
-                    Suffix = "nok",
-                    Text = "[{0:F2}到{1:F2}]穿透",
-                    Alias = new List<string>
-                    {
-                        "穿透",
-                        "穿",
-                        "puth"
-                    },
-                    Scale = 2.7
-                }
+                new Riven.RivenAttribute(WeaponType.Melee, "visi", "ata", "[{0:P2}到{1:P2}]近战伤害", 165, false, "伤害", "攻击",
+                    "基伤", "伤", "da"),
+                new Riven.RivenAttribute(WeaponType.Melee, "magna", "ton", "[{0:P2}到{1:P2}]冲击伤害", 120, true, "冲击伤害",
+                    "冲击", "冲", "im"),
+                new Riven.RivenAttribute(WeaponType.Melee, "insi", "cak", "[{0:P2}到{1:P2}]穿刺伤害", 120, true, "穿刺伤害",
+                    "穿刺", "pu"),
+                new Riven.RivenAttribute(WeaponType.Melee, "sci", "sus", "[{0:P2}到{1:P2}]切割伤害", 120, true, "切割伤害", "切割",
+                    "切", "sl"),
+                new Riven.RivenAttribute(WeaponType.Melee, "crita", "cron", "[{0:P2}到{1:P2}]暴击率", 90, true, "暴率", "暴击率",
+                    "爆率", "暴击", "爆击", "crch", "cc"),
+                new Riven.RivenAttribute(WeaponType.Melee, "acri", "tis", "[{0:P2}到{1:P2}]暴击伤害", 90, true, "爆伤", "暴伤",
+                    "暴击伤害", "crda", "cd"),
+                new Riven.RivenAttribute(WeaponType.Melee, "geli", "do", "[{0:P2}到{1:P2}]冰冻伤害", 90, false, "冰冻伤害", "冰伤",
+                    "冰冻", "冰", "co"),
+                new Riven.RivenAttribute(WeaponType.Melee, "vexi", "tio", "[{0:P2}到{1:P2}]电击伤害", 90, false, "电击伤害",
+                    "电伤", "电击", "电", "el"),
+                new Riven.RivenAttribute(WeaponType.Melee, "igni", "pha", "[{0:P2}到{1:P2}]火焰伤害", 90, false, "火焰伤害",
+                    "火焰", "火伤", "火", "he"),
+                new Riven.RivenAttribute(WeaponType.Melee, "toxi", "tox", "[{0:P2}到{1:P2}]毒素伤害", 90, false, "毒素伤害",
+                    "毒素", "毒伤", "毒", "to"),
+                new Riven.RivenAttribute(WeaponType.Melee, "hexa", "dex", "[{0:P2}到{1:P2}]触发几率", 90, true, "触发几率", "触发",
+                    "触发率", "stch"),
+                new Riven.RivenAttribute(WeaponType.Melee, "deci", "des", "[{0:P2}到{1:P2}]触发时间", 100, true, "触发时间",
+                    "时间", "stdu"),
+                new Riven.RivenAttribute(WeaponType.Melee, "manti", "tron", "[{0:P2}到{1:P2}]对Corpus伤害", 45, true,
+                    "对corpus伤害", "c佬", "c系", "c", "datoco", "corpus"),
+                new Riven.RivenAttribute(WeaponType.Melee, "argi", "con", "[{0:P2}到{1:P2}]对Grineer伤害", 45, true,
+                    "对grineer伤害", "g佬", "g系", "g", "datogr", "grineer"),
+                new Riven.RivenAttribute(WeaponType.Melee, "pura", "ada", "[{0:P2}到{1:P2}]对Infested伤害", 45, true,
+                    "对infested伤害", "i佬", "i系", "i", "datoin", "infested"),
+                new Riven.RivenAttribute(WeaponType.Melee, "croni", "dra", "[{0:P2}到{1:P2}]攻击速度", 53, true, "攻速",
+                    "攻击速度", "fira", "atsp"),
+                new Riven.RivenAttribute(WeaponType.Melee, "uti", "tia", "[{0:P2}到{1:P2}]导引效率", 90, false, "引导效率",
+                    "导引效率", "充能效率", "效率", "chef"),
+                new Riven.RivenAttribute(WeaponType.Melee, "tori", "bo", "[{0:P2}到{1:P2}]导引伤害", 150, false, "引导伤害",
+                    "导引伤害", "充能伤害", "充能", "chda"),
+                new Riven.RivenAttribute(WeaponType.Melee, "exi", "cta", "[{0:P2}到{1:P2}]处决伤害", 120, true, "处决伤害", "终结",
+                    "处决", "fida"),
+                new Riven.RivenAttribute(WeaponType.Melee, "locti", "tor", "[{0:P2}到{1:P2}]攻击范围", 120, true, "攻击范围",
+                    "范围", "ra"),
+                new Riven.RivenAttribute(WeaponType.Melee, "pleci", "nent", "滑行攻击有[{0:P2}到{1:P2}]的几率造成暴击", 90.0, true,
+                    "滑暴", "滑爆", "划爆", "划暴", "滑砍", "划砍", "sl", "slat", "slatha"),
+                new Riven.RivenAttribute(WeaponType.Melee, "tempi", "nem", "连击时间[{0:F2}到{1:F2}]秒", 8.1, true, "连击时间",
+                    "连击", "codu"),
+                new Riven.RivenAttribute(WeaponType.Primary, "sati", "can", "[{0:P2}到{1:P2}]多重射击", 90, true, "多重射击",
+                    "多重", "mu"),
+                new Riven.RivenAttribute(WeaponType.Primary, "visi", "ata", "[{0:P2}到{1:P2}]伤害", 165, true, "伤害", "攻击",
+                    "基伤", "伤", "da"),
+                new Riven.RivenAttribute(WeaponType.Primary, "magna", "ton", "[{0:P2}到{1:P2}]冲击伤害", 120, true, "冲击伤害",
+                    "冲击", "冲", "im"),
+                new Riven.RivenAttribute(WeaponType.Primary, "insi", "cak", "[{0:P2}到{1:P2}]穿刺伤害", 120, true, "穿刺伤害",
+                    "穿刺", "pu"),
+                new Riven.RivenAttribute(WeaponType.Primary, "sci", "sus", "[{0:P2}到{1:P2}]切割伤害", 120, true, "切割伤害",
+                    "切割", "切", "sl"),
+                new Riven.RivenAttribute(WeaponType.Primary, "crita", "cron", "[{0:P2}到{1:P2}]暴击率", 150, true, "暴率",
+                    "暴击率", "爆率", "暴击", "爆击", "crch", "cc"),
+                new Riven.RivenAttribute(WeaponType.Primary, "acri", "tis", "[{0:P2}到{1:P2}]暴击伤害", 120, true, "爆伤",
+                    "暴伤", "暴击伤害", "crda", "cd"),
+                new Riven.RivenAttribute(WeaponType.Primary, "geli", "do", "[{0:P2}到{1:P2}]冰冻伤害", 90, false, "冰冻伤害",
+                    "冰伤", "冰冻", "冰", "co"),
+                new Riven.RivenAttribute(WeaponType.Primary, "vexi", "tio", "[{0:P2}到{1:P2}]电击伤害", 90, false, "电击伤害",
+                    "电伤", "电击", "电", "el"),
+                new Riven.RivenAttribute(WeaponType.Primary, "igni", "pha", "[{0:P2}到{1:P2}]火焰伤害", 90, false, "火焰伤害",
+                    "火焰", "火伤", "火", "he"),
+                new Riven.RivenAttribute(WeaponType.Primary, "toxi", "tox", "[{0:P2}到{1:P2}]毒素伤害", 90, false, "毒素伤害",
+                    "毒素", "毒伤", "毒", "to"),
+                new Riven.RivenAttribute(WeaponType.Primary, "hexa", "dex", "[{0:P2}到{1:P2}]触发几率", 90, true, "触发几率",
+                    "触发", "触发率", "stch"),
+                new Riven.RivenAttribute(WeaponType.Primary, "deci", "des", "[{0:P2}到{1:P2}]触发时间", 100, true, "触发时间",
+                    "时间", "stdu"),
+                new Riven.RivenAttribute(WeaponType.Primary, "manti", "tron", "[{0:P2}到{1:P2}]对Corpus伤害", 45, true,
+                    "对corpus伤害", "c佬", "c系", "c", "datoco", "corpus"),
+                new Riven.RivenAttribute(WeaponType.Primary, "argi", "con", "[{0:P2}到{1:P2}]对Grineer伤害", 45, true,
+                    "对grineer伤害", "g佬", "g系", "g", "datogr", "grineer"),
+                new Riven.RivenAttribute(WeaponType.Primary, "pura", "ada", "[{0:P2}到{1:P2}]对Infested伤害", 45, true,
+                    "对infested伤害", "i佬", "i系", "i", "datoin", "infested"),
+                new Riven.RivenAttribute(WeaponType.Primary, "croni", "dra", "[{0:P2}到{1:P2}]射速（弓类武器效果加倍）", 60, true,
+                    "射速", "攻速", "攻击速度", "fira", "atsp"),
+                new Riven.RivenAttribute(WeaponType.Primary, "arma", "tin", "[{0:P2}到{1:P2}]弹匣容量", 50, true, "弹匣容量",
+                    "弹匣", "弹夹", "弹夹容量", "maca", "masi", "ma"),
+                new Riven.RivenAttribute(WeaponType.Primary, "ampi", "bin", "[{0:P2}到{1:P2}]弹药最大值", 50, true, "弹药",
+                    "amma"),
+                new Riven.RivenAttribute(WeaponType.Primary, "conci", "nak", "[{0:P2}到{1:P2}]弹道飞行速度", 90, true, "弹道",
+                    "飞行速度", "飞行", "prflsp"),
+                new Riven.RivenAttribute(WeaponType.Primary, "feva", "tak", "[{0:P2}到{1:P2}]装填速度", 50, true, "装填速度",
+                    "换弹", "装弹", "装填", "resp"),
+                new Riven.RivenAttribute(WeaponType.Primary, "zeti", "mag", "[{0:P2}到{1:P2}]武器后坐力", -90, true, "后座",
+                    "后座力", "后坐", "后坐力", "were"),
+                new Riven.RivenAttribute(WeaponType.Primary, "hera", "lis", "[{0:P2}到{1:P2}]变焦", 60, true, "瞄准", "变焦",
+                    "zo"),
+                new Riven.RivenAttribute(WeaponType.Primary, "lexi", "nok", "[{0:F2}到{1:F2}]穿透", 2.7, false, "穿透", "穿",
+                    "puth"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "sati", "can", "[{0:P2}到{1:P2}]多重射击", 120, true, "多重射击",
+                    "多重", "mu"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "visi", "ata", "[{0:P2}到{1:P2}]伤害", 220, true, "伤害",
+                    "攻击", "基伤", "伤", "da"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "magna", "ton", "[{0:P2}到{1:P2}]冲击伤害", 120, true, "冲击伤害",
+                    "冲击", "冲", "im"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "insi", "cak", "[{0:P2}到{1:P2}]穿刺伤害", 120, true, "穿刺伤害",
+                    "穿刺", "pu"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "sci", "sus", "[{0:P2}到{1:P2}]切割伤害", 120, true, "切割伤害",
+                    "切割", "切", "sl"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "crita", "cron", "[{0:P2}到{1:P2}]暴击率", 150, true, "暴率",
+                    "暴击率", "爆率", "暴击", "爆击", "crch", "cc"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "acri", "tis", "[{0:P2}到{1:P2}]暴击伤害", 90, true, "爆伤",
+                    "暴伤", "暴击伤害", "crda", "cd"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "geli", "do", "[{0:P2}到{1:P2}]冰冻伤害", 90, false, "冰冻伤害",
+                    "冰伤", "冰冻", "冰", "co"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "vexi", "tio", "[{0:P2}到{1:P2}]电击伤害", 90, false, "电击伤害",
+                    "电伤", "电击", "电", "el"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "igni", "pha", "[{0:P2}到{1:P2}]火焰伤害", 90, false, "火焰伤害",
+                    "火焰", "火伤", "火", "he"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "toxi", "tox", "[{0:P2}到{1:P2}]毒素伤害", 90, false, "毒素伤害",
+                    "毒素", "毒伤", "毒", "to"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "hexa", "dex", "[{0:P2}到{1:P2}]触发几率", 90, true, "触发几率",
+                    "触发", "触发率", "stch"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "deci", "des", "[{0:P2}到{1:P2}]触发时间", 100, true, "触发时间",
+                    "时间", "stdu"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "manti", "tron", "[{0:P2}到{1:P2}]对Corpus伤害", 45, true,
+                    "对corpus伤害", "c佬", "c系", "c", "datoco", "corpus"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "argi", "con", "[{0:P2}到{1:P2}]对Grineer伤害", 45, true,
+                    "对grineer伤害", "g佬", "g系", "g", "datogr", "grineer"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "pura", "ada", "[{0:P2}到{1:P2}]对Infested伤害", 45, true,
+                    "对infested伤害", "i佬", "i系", "i", "datoin", "infested"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "croni", "dra", "[{0:P2}到{1:P2}]射速", 75, true, "射速",
+                    "攻速", "攻击速度", "fira", "atsp"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "arma", "tin", "[{0:P2}到{1:P2}]弹匣容量", 50, true, "弹匣容量",
+                    "弹匣", "弹夹", "弹夹容量", "maca", "masi", "ma"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "ampi", "bin", "[{0:P2}到{1:P2}]弹药最大值", 90, true, "弹药",
+                    "amma"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "conci", "nak", "[{0:P2}到{1:P2}]弹道飞行速度", 90, true, "弹道",
+                    "飞行速度", "飞行", "prflsp"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "feva", "tak", "[{0:P2}到{1:P2}]装填速度", 50, true, "装填速度",
+                    "换弹", "装弹", "装填", "resp"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "zeti", "mag", "[{0:P2}到{1:P2}]武器后坐力", -90, true, "后座",
+                    "后座力", "后坐", "后坐力", "were"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "hera", "lis", "[{0:P2}到{1:P2}]变焦", 80, true, "瞄准", "变焦",
+                    "zo"),
+                new Riven.RivenAttribute(WeaponType.Secondary, "lexi", "nok", "[{0:F2}到{1:F2}]穿透", 2.7, false, "穿透",
+                    "穿", "puth"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "sati", "can", "[{0:P2}到{1:P2}]多重射击", 120, true, "多重射击",
+                    "多重", "mu"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "visi", "ata", "[{0:P2}到{1:P2}]伤害", 165, true, "伤害", "攻击",
+                    "基伤", "伤", "da"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "magna", "ton", "[{0:P2}到{1:P2}]冲击伤害", 120, false, "冲击伤害",
+                    "冲击", "冲", "im"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "insi", "cak", "[{0:P2}到{1:P2}]穿刺伤害", 120, false, "穿刺伤害",
+                    "穿刺", "pu"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "sci", "sus", "[{0:P2}到{1:P2}]切割伤害", 120, false, "切割伤害",
+                    "切割", "切", "sl"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "crita", "cron", "[{0:P2}到{1:P2}]暴击率", 90, true, "暴率",
+                    "暴击率", "爆率", "暴击", "爆击", "crch", "cc"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "acri", "tis", "[{0:P2}到{1:P2}]暴击伤害", 90, true, "爆伤", "暴伤",
+                    "暴击伤害", "crda", "cd"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "geli", "do", "[{0:P2}到{1:P2}]冰冻伤害", 90, false, "冰冻伤害",
+                    "冰伤", "冰冻", "冰", "co"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "vexi", "tio", "[{0:P2}到{1:P2}]电击伤害", 90, false, "电击伤害",
+                    "电伤", "电击", "电", "el"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "igni", "pha", "[{0:P2}到{1:P2}]火焰伤害", 90, false, "火焰伤害",
+                    "火焰", "火伤", "火", "he"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "toxi", "tox", "[{0:P2}到{1:P2}]毒素伤害", 90, false, "毒素伤害",
+                    "毒素", "毒伤", "毒", "to"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "hexa", "dex", "[{0:P2}到{1:P2}]触发几率", 90, true, "触发几率",
+                    "触发", "触发率", "stch"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "deci", "des", "[{0:P2}到{1:P2}]触发时间", 100, true, "触发时间",
+                    "时间", "stdu"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "manti", "tron", "[{0:P2}到{1:P2}]对Corpus伤害", 45, true,
+                    "对corpus伤害", "c佬", "c系", "c", "datoco", "corpus"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "argi", "con", "[{0:P2}到{1:P2}]对Grineer伤害", 45, true,
+                    "对grineer伤害", "g佬", "g系", "g", "datogr", "grineer"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "pura", "ada", "[{0:P2}到{1:P2}]对Infested伤害", 45, true,
+                    "对infested伤害", "i佬", "i系", "i", "datoin", "infested"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "croni", "dra", "[{0:P2}到{1:P2}]射速（弓类武器效果加倍）", 90, true,
+                    "射速", "攻速", "攻击速度", "fira", "atsp"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "arma", "tin", "[{0:P2}到{1:P2}]弹匣容量", 50, true, "弹匣容量",
+                    "弹匣", "弹夹", "弹夹容量", "maca", "masi", "ma"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "ampi", "bin", "[{0:P2}到{1:P2}]弹药最大值", 90, true, "弹药",
+                    "amma"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "conci", "nak", "[{0:P2}到{1:P2}]弹道飞行速度", 90, true, "弹道",
+                    "飞行速度", "飞行", "prflsp"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "feva", "tak", "[{0:P2}到{1:P2}]装填速度", 50, true, "装填速度",
+                    "换弹", "装弹", "装填", "resp"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "zeti", "mag", "[{0:P2}到{1:P2}]武器后坐力", -90, true, "后座",
+                    "后座力", "后坐", "后坐力", "were"),
+                new Riven.RivenAttribute(WeaponType.Shotgun, "lexi", "nok", "[{0:F2}到{1:F2}]穿透", 2.7, false, "穿透", "穿",
+                    "puth")
             };
             RivenRedirection = new Dictionary<string, string>
             {
