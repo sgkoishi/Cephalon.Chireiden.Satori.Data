@@ -4,7 +4,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
 {
     public static partial class GameData
     {
-        private static void InitTranslation()
+        public static void InitTranslation()
         {
             WarframeMarket = new List<ComponentTranslation>
             {
@@ -43,9 +43,10 @@ namespace Cephalon.Chireiden.Satori.Warframe
             };
         }
 
-        private static void InitBounty()
+        public static void InitBounty()
         {
             InitJobs();
+            // 本列表即将停止维护，使用实时掉落数据。
             BountyRewards = new Dictionary<string, Reward>
             {
                 {
@@ -408,7 +409,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
             };
         }
 
-        private static void InitAcolysts()
+        public static void InitAcolysts()
         {
             Acolyst = new Dictionary<string, string>
             {
@@ -420,7 +421,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
             };
         }
 
-        private static void InitConclaves()
+        public static void InitConclaves()
         {
             Conclave = new Dictionary<string, (string Title, string Detail)>
             {
@@ -553,7 +554,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
             };
         }
 
-        private static void InitItems()
+        public static void InitItems()
         {
             Item = new Dictionary<string, string>
             {
@@ -673,23 +674,31 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/AlertFusionBundleLarge", "150内融核心" },
                 { "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/AlertFusionBundleMedium", "100内融核心" },
                 { "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/AlertFusionBundleSmall", "80内融核心" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Melee/DualStat/ComboTimeStatusChanceMod", "漂移接触(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Melee/DualStat/FocusEnergyMod", "聚焦能量(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Melee/DualStat/RendingStrikeMod", "撕裂打击(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/GrinderMod", "致命洪流(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/IceStormMod", "冰风暴(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Pistol/DualStat/StunningSpeedMod", "慑人神速(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Rifle/DualStat/HammerShotMod", "重锤射击(噩梦Mod)" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Randomized/LotusMeleeRandomModRare", "近战裂罅Mod" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Randomized/LotusPistolRandomModRare", "手枪裂罅Mod" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Randomized/LotusRifleRandomModRare", "步枪裂罅Mod" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Randomized/LotusShotgunRandomModRare", "霰弹枪裂罅Mod" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Randomized/PlayerMeleeWeaponRandomModRare", "近战裂罅Mod" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Randomized/PlayerPistolWeaponRandomModRare", "手枪裂罅Mod" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Randomized/PlayerRifleWeaponRandomModRare", "步枪裂罅Mod" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Randomized/PlayerShotgunWeaponRandomModRare", "霰弹枪裂罅Mod" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Rifle/DualStat/ShredMod", "撕裂(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Rifle/DualStat/WildfireMod", "野火(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Sentinel/SentinelLootRadarEnemyRadarMod", "动物本能(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/AcceleratedBlastMod", "加速冲击(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/BlazeMod", "烈焰(噩梦Mod)" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/ColdDmgReloadSpeedMod", "激冷装填(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Shotgun/DualStat/ReloadSpeedPunchThroughMod", "狂暴追猎(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Warframe/DualStat/ConstitutionMod", "百折不挠(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Warframe/DualStat/FortitudeMod", "不屈不挠(噩梦Mod)" },
+                { "/Lotus/StoreItems/Upgrades/Mods/Warframe/DualStat/HolsterSpeedSlideBoostMod", "流线外型(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Warframe/DualStat/RunSpeedArmorMod", "灵活装甲(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Mods/Warframe/DualStat/VigorMod", "活力(噩梦Mod)" },
                 { "/Lotus/StoreItems/Upgrades/Skins/Scarves/DexScarf", "DEX 延药睡莲披饰" },
@@ -755,10 +764,11 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "/Lotus/Types/Recipes/Weapons/WeaponParts/TwinVipersWraithReceiver", "双子蝰蛇亡魂 枪机" },
                 { "/Lotus/Types/Recipes/Weapons/WeaponParts/TwinVipersWraithStock", "双子蝰蛇亡魂 枪托" }
             };
-            _modList = new List<List<string>>();
+            ModList = new List<Alias>();
+            ArcaneList = new List<Alias>();
         }
 
-        private static void InitJobs()
+        public static void InitJobs()
         {
             JobName = new Dictionary<string, string>
             {
@@ -872,36 +882,65 @@ namespace Cephalon.Chireiden.Satori.Warframe
             };
         }
 
-        private static void InitNodes()
+        public static void InitNodes()
         {
             Nodes = new Dictionary<string, Node>
             {
-                { "ClanNode0", new Node("ClanNode0", "金星", "金星Romula", "Corpus哨站", MissionType.MT_DEFENSE) },
+                { "ClanNode0", new Node("ClanNode0", "金星", "金星Romula", "Corpus哨站", MissionType.MT_DEFENSE, 6, 8) },
                 { "ClanNode1", new Node("ClanNode1", "金星", "金星Malva", "Corpus飞船", MissionType.MT_SURVIVAL) },
-                { "ClanNode2", new Node("ClanNode2", "地球", "地球Coba", "Grineer丛林", MissionType.MT_DEFENSE) },
-                { "ClanNode3", new Node("ClanNode3", "地球", "地球Tikal", "Grineer丛林", MissionType.MT_EXCAVATE) },
-                { "ClanNode4", new Node("ClanNode4", "木星", "木星Sinai", "Corpus燃气城市", MissionType.MT_DEFENSE) },
+                { "ClanNode2", new Node("ClanNode2", "地球", "地球Coba", "Grineer丛林", MissionType.MT_DEFENSE, 6, 16) },
+                { "ClanNode3", new Node("ClanNode3", "地球", "地球Tikal", "Grineer丛林", MissionType.MT_EXCAVATE, 6, 16, 1) },
+                { "ClanNode4", new Node("ClanNode4", "木星", "木星Sinai", "Corpus燃气城市", MissionType.MT_DEFENSE, 20, 30) },
                 { "ClanNode5", new Node("ClanNode5", "木星", "木星Cameria", "Corpus燃气城市", MissionType.MT_SURVIVAL) },
-                { "ClanNode6", new Node("ClanNode6", "欧罗巴", "欧罗巴Larzac", "Corpus冰原星球", MissionType.MT_DEFENSE) },
-                { "ClanNode7", new Node("ClanNode7", "欧罗巴", "欧罗巴Cholistan", "Corpus冰原星球", MissionType.MT_EXCAVATE) },
-                { "ClanNode8", new Node("ClanNode8", "火星", "火星Kadesh", "Grineer营地", MissionType.MT_DEFENSE) },
+                {
+                    "ClanNode6", new Node("ClanNode6", "欧罗巴", "欧罗巴Larzac", "Corpus冰原星球", MissionType.MT_DEFENSE, 23, 33)
+                },
+                {
+                    "ClanNode7",
+                    new Node("ClanNode7", "欧罗巴", "欧罗巴Cholistan", "Corpus冰原星球", MissionType.MT_EXCAVATE, 23, 33, 3)
+                },
+                { "ClanNode8", new Node("ClanNode8", "火星", "火星Kadesh", "Grineer营地", MissionType.MT_DEFENSE, 10, 20) },
                 { "ClanNode9", new Node("ClanNode9", "火星", "火星Wahiba", "Corpus飞船", MissionType.MT_SURVIVAL) },
-                { "ClanNode10", new Node("ClanNode10", "火卫一", "火卫一Memphis", "Grineer小行星", MissionType.MT_EVACUATION) },
+                {
+                    "ClanNode10",
+                    new Node("ClanNode10", "火卫一", "火卫一Memphis", "Grineer小行星", MissionType.MT_EVACUATION, 15, 25, 1)
+                },
                 { "ClanNode11", new Node("ClanNode11", "火卫一", "火卫一Zeugma", "Grineer小行星", MissionType.MT_SURVIVAL) },
-                { "ClanNode12", new Node("ClanNode12", "土星", "土星Caracol", "Grineer小行星", MissionType.MT_EVACUATION) },
+                {
+                    "ClanNode12",
+                    new Node("ClanNode12", "土星", "土星Caracol", "Grineer小行星", MissionType.MT_EVACUATION, 26, 36, 2)
+                },
                 { "ClanNode13", new Node("ClanNode13", "土星", "土星Piscinas", "Grineer小行星", MissionType.MT_SURVIVAL) },
                 { "ClanNode14", new Node("ClanNode14", "赛德娜", "赛德娜Amarna", "Grineer小行星", MissionType.MT_SURVIVAL) },
-                { "ClanNode15", new Node("ClanNode15", "赛德娜", "赛德娜Sangeru", "Grineer小行星", MissionType.MT_DEFENSE) },
-                { "ClanNode16", new Node("ClanNode16", "天王星", "天王星Ur", "Grineer小行星", MissionType.MT_DEFENSE) },
+                {
+                    "ClanNode15",
+                    new Node("ClanNode15", "赛德娜", "赛德娜Sangeru", "Grineer小行星", MissionType.MT_DEFENSE, 35, 45)
+                },
+                { "ClanNode16", new Node("ClanNode16", "天王星", "天王星Ur", "Grineer小行星", MissionType.MT_DEFENSE, 27, 37) },
                 { "ClanNode17", new Node("ClanNode17", "天王星", "天王星Assur", "Grineer巨舰", MissionType.MT_SURVIVAL) },
-                { "ClanNode18", new Node("ClanNode18", "阋神星", "阋神星Akkad", "Infested飞船", MissionType.MT_DEFENSE) },
+                {
+                    "ClanNode18",
+                    new Node("ClanNode18", "阋神星", "阋神星Akkad", "Infested飞船", MissionType.MT_DEFENSE, 35, 45)
+                },
                 { "ClanNode19", new Node("ClanNode19", "阋神星", "阋神星Zabala", "Infested飞船", MissionType.MT_SURVIVAL) },
                 { "ClanNode20", new Node("ClanNode20", "海王星", "海王星Yursa", "Infested飞船", MissionType.MT_EVACUATION) },
-                { "ClanNode21", new Node("ClanNode21", "海王星", "海王星Kelashin", "Infested飞船", MissionType.MT_SURVIVAL) },
-                { "ClanNode22", new Node("ClanNode22", "谷神星", "谷神星Seimeni", "Grineer船坞", MissionType.MT_DEFENSE) },
+                {
+                    "ClanNode21",
+                    new Node("ClanNode21", "海王星", "海王星Kelashin", "Infested飞船", MissionType.MT_SURVIVAL, 30, 40, 3)
+                },
+                {
+                    "ClanNode22",
+                    new Node("ClanNode22", "谷神星", "谷神星Seimeni", "Grineer船坞", MissionType.MT_DEFENSE, 15, 25)
+                },
                 { "ClanNode23", new Node("ClanNode23", "谷神星", "谷神星Gabii", "Grineer巨舰", MissionType.MT_SURVIVAL) },
-                { "ClanNode24", new Node("ClanNode24", "冥王星", "冥王星Sechura", "Corpus哨站", MissionType.MT_DEFENSE) },
-                { "ClanNode25", new Node("ClanNode25", "冥王星", "冥王星Hieracon", "Corpus哨站", MissionType.MT_EXCAVATE) },
+                {
+                    "ClanNode24",
+                    new Node("ClanNode24", "冥王星", "冥王星Sechura", "Corpus哨站", MissionType.MT_DEFENSE, 32, 36)
+                },
+                {
+                    "ClanNode25",
+                    new Node("ClanNode25", "冥王星", "冥王星Hieracon", "Corpus哨站", MissionType.MT_EXCAVATE, 35, 45, 3)
+                },
                 { "EarthHUB", new Node("EarthHUB", "地球", "地球中继站Strata", "中继站", MissionType.MT_RELAY) },
                 { "ErisHUB", new Node("ErisHUB", "阋神星", "阋神星中继站Kuiper", "中继站", MissionType.MT_RELAY) },
                 { "EuropaHUB", new Node("EuropaHUB", "欧罗巴", "欧罗巴中继站Leonov", "中继站", MissionType.MT_RELAY) },
@@ -911,22 +950,21 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "VenusHUB", new Node("VenusHUB", "金星", "金星中继站Vesper", "中继站", MissionType.MT_RELAY) },
                 {
                     "SettlementNode1",
-                    new Node("SettlementNode1", "火卫一", "火卫一Roche", "Corpus飞船", MissionType.MT_EXTERMINATION)
+                    new Node("SettlementNode1", "火卫一", "火卫一Roche", "Corpus飞船", MissionType.MT_EXTERMINATION, 10, 12, 2)
                 },
                 {
                     "SettlementNode2",
-                    new Node("SettlementNode2", "火卫一", "火卫一Skyresh", "Corpus飞船", MissionType.MT_CAPTURE)
+                    new Node("SettlementNode2", "火卫一", "火卫一Skyresh", "Corpus飞船", MissionType.MT_CAPTURE, 12, 14, 2)
                 },
                 {
                     "SettlementNode3",
-                    new Node("SettlementNode3", "火卫一", "火卫一Stickney", "Corpus飞船", MissionType.MT_SURVIVAL)
+                    new Node("SettlementNode3", "火卫一", "火卫一Stickney", "Corpus飞船", MissionType.MT_SURVIVAL, 10, 15, 1)
                 },
                 {
-                    "SettlementNode4", new Node("SettlementNode4", "火卫一", "火卫一Drunlo", "[数据删除]", MissionType.MT_UNKNOWN)
+                    "SettlementNode4", new Node("SettlementNode4", "火卫一", "火卫一Drunlo", "[数据删除]", MissionType.MT_DEFENSE)
                 },
                 {
-                    "SettlementNode5",
-                    new Node("SettlementNode5", "火卫一", "火卫一Grildrig", "[数据删除]", MissionType.MT_UNKNOWN)
+                    "SettlementNode5", new Node("SettlementNode5", "火卫一", "火卫一Grildrig", "[数据删除]", MissionType.MT_INTEL)
                 },
                 {
                     "SettlementNode6", new Node("SettlementNode6", "火卫一", "火卫一Limtoc", "[数据删除]", MissionType.MT_UNKNOWN)
@@ -946,379 +984,752 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 {
                     "SettlementNode11",
-                    new Node("SettlementNode11", "火卫一", "火卫一Gulliver", "Corpus飞船", MissionType.MT_DEFENSE)
+                    new Node("SettlementNode11", "火卫一", "火卫一Gulliver", "Corpus飞船", MissionType.MT_DEFENSE, 10, 15, 1)
                 },
                 {
                     "SettlementNode12",
-                    new Node("SettlementNode12", "火卫一", "火卫一Monolith", "Corpus飞船", MissionType.MT_RESCUE)
+                    new Node("SettlementNode12", "火卫一", "火卫一Monolith", "Corpus飞船", MissionType.MT_RESCUE, 13, 15)
                 },
                 {
                     "SettlementNode13",
-                    new Node("SettlementNode13", "火卫一D'", "火卫一D'Arrest", "[数据删除]", MissionType.MT_UNKNOWN)
+                    new Node("SettlementNode13", "火卫一", "火卫一D'Arrest", "[数据删除]", MissionType.MT_UNKNOWN)
                 },
                 {
                     "SettlementNode14",
-                    new Node("SettlementNode14", "火卫一", "火卫一Shklovsky", "Corpus飞船", MissionType.MT_INTEL)
+                    new Node("SettlementNode14", "火卫一", "火卫一Shklovsky", "Corpus飞船", MissionType.MT_INTEL, 11, 13, 1)
                 },
                 {
-                    "SettlementNode15",
-                    new Node("SettlementNode15", "火卫一", "火卫一Sharpless", "Corpus飞船", MissionType.MT_MOBILE_DEFENSE)
+                    "SettlementNode15", new Node("SettlementNode15", "火卫一", "火卫一Sharpless", "Corpus飞船",
+                        MissionType.MT_MOBILE_DEFENSE, 11,
+                        13)
                 },
                 {
                     "SettlementNode16",
-                    new Node("SettlementNode16", "火卫一", "火卫一Wendell", "[数据删除]", MissionType.MT_UNKNOWN)
+                    new Node("SettlementNode16", "火卫一", "火卫一Wendell", "[数据删除]", MissionType.MT_EXCAVATE)
                 },
                 {
                     "SettlementNode17",
-                    new Node("SettlementNode17", "火卫一", "火卫一Flimnap", "[数据删除]", MissionType.MT_UNKNOWN)
+                    new Node("SettlementNode17", "火卫一", "火卫一Flimnap", "[数据删除]", MissionType.MT_SURVIVAL)
                 },
                 {
-                    "SettlementNode18", new Node("SettlementNode18", "火卫一", "火卫一Opik", "[数据删除]", MissionType.MT_UNKNOWN)
+                    "SettlementNode18",
+                    new Node("SettlementNode18", "火卫一", "火卫一Opik", "[数据删除]", MissionType.MT_TERRITORY)
                 },
                 {
                     "SettlementNode19", new Node("SettlementNode19", "火卫一", "火卫一Todd", "[数据删除]", MissionType.MT_UNKNOWN)
                 },
                 {
                     "SettlementNode20",
-                    new Node("SettlementNode20", "火卫一", "火卫一Iliad", "Corpus飞船", MissionType.MT_ASSASSINATION)
+                    new Node("SettlementNode20", "火卫一", "火卫一Iliad", "Corpus飞船", MissionType.MT_ASSASSINATION, 13, 15)
                 },
-                { "SolNode1", new Node("SolNode1", "海王星", "海王星Galatea", "Corpus燃气城市", MissionType.MT_CAPTURE) },
-                { "SolNode2", new Node("SolNode2", "金星", "金星Aphrodite", "Corpus哨站", MissionType.MT_MOBILE_DEFENSE) },
+                {
+                    "SolNode1",
+                    new Node("SolNode1", "海王星", "海王星Galatea", "Corpus燃气城市", MissionType.MT_CAPTURE, 27, 29, 3)
+                },
+                {
+                    "SolNode2",
+                    new Node("SolNode2", "金星", "金星Aphrodite", "Corpus哨站", MissionType.MT_MOBILE_DEFENSE, 6, 8)
+                },
                 { "SolNode3", new Node("SolNode3", "天王星", "天王星Cordelia", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode4", new Node("SolNode4", "冥王星", "冥王星Acheron", "Corpus飞船", MissionType.MT_EXTERMINATION) },
+                {
+                    "SolNode4",
+                    new Node("SolNode4", "冥王星", "冥王星Acheron", "Corpus飞船", MissionType.MT_EXTERMINATION, 34, 38)
+                },
                 { "SolNode5", new Node("SolNode5", "天王星", "天王星Perdita", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode6", new Node("SolNode6", "海王星", "海王星Despina", "Corpus哨站", MissionType.MT_EXCAVATE) },
+                {
+                    "SolNode6",
+                    new Node("SolNode6", "海王星", "海王星Despina", "Corpus哨站", MissionType.MT_EXCAVATE, 27, 32, 3)
+                },
                 { "SolNode7", new Node("SolNode7", "土星", "土星Epimetheus", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode8", new Node("SolNode8", "冥王星", "冥王星Nix", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode9", new Node("SolNode9", "天王星", "天王星Rosalind", "Grineer深海研究所", MissionType.MT_INTEL) },
-                { "SolNode10", new Node("SolNode10", "木星", "木星Thebe", "Corpus燃气城市", MissionType.MT_SABOTAGE) },
-                { "SolNode11", new Node("SolNode11", "火星", "火星Tharsis", "Corpus冰原星球", MissionType.MT_RETRIEVAL) },
-                { "SolNode12", new Node("SolNode12", "水星", "水星Elion", "Grineer小行星", MissionType.MT_CAPTURE) },
-                { "SolNode13", new Node("SolNode13", "天王星", "天王星Bianca", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode14", new Node("SolNode14", "火星", "火星Ultor", "Corpus冰原星球", MissionType.MT_EXTERMINATION) },
-                { "SolNode15", new Node("SolNode15", "地球", "地球Pacific", "Grineer巨舰", MissionType.MT_RESCUE) },
-                { "SolNode16", new Node("SolNode16", "火星", "火星Augustus", "Grineer营地", MissionType.MT_EXCAVATE) },
-                { "SolNode17", new Node("SolNode17", "海王星", "海王星Proteus", "Corpus飞船", MissionType.MT_DEFENSE) },
-                { "SolNode18", new Node("SolNode18", "土星", "土星Rhea", "Grineer小行星", MissionType.MT_TERRITORY) },
-                { "SolNode19", new Node("SolNode19", "土星", "土星Enceladus", "Grineer小行星", MissionType.MT_SABOTAGE) },
-                { "SolNode20", new Node("SolNode20", "土星", "土星Telesto", "Grineer巨舰", MissionType.MT_EXTERMINATION) },
-                { "SolNode21", new Node("SolNode21", "冥王星", "冥王星Narcissus", "Corpus哨站", MissionType.MT_EXTERMINATION) },
-                { "SolNode22", new Node("SolNode22", "金星", "金星Tessera", "Corpus哨站", MissionType.MT_DEFENSE) },
-                { "SolNode23", new Node("SolNode23", "金星", "金星Cytherean", "Corpus飞船", MissionType.MT_TERRITORY) },
-                { "SolNode24", new Node("SolNode24", "地球", "地球Oro", "Grineer丛林", MissionType.MT_ASSASSINATION) },
-                { "SolNode25", new Node("SolNode25", "木星", "木星Callisto", "Corpus燃气城市", MissionType.MT_TERRITORY) },
-                { "SolNode26", new Node("SolNode26", "地球", "地球Lith", "Grineer丛林", MissionType.MT_DEFENSE) },
-                { "SolNode27", new Node("SolNode27", "地球", "地球E Prime", "Grineer丛林", MissionType.MT_EXTERMINATION) },
-                { "SolNode28", new Node("SolNode28", "水星", "水星Terminus", "Grineer巨舰", MissionType.MT_SABOTAGE) },
+                {
+                    "SolNode9",
+                    new Node("SolNode9", "天王星", "天王星Rosalind", "Grineer深海研究所", MissionType.MT_INTEL, 27, 29, 3)
+                },
+                {
+                    "SolNode10",
+                    new Node("SolNode10", "木星", "木星Thebe", "Corpus燃气城市", MissionType.MT_SABOTAGE, 18, 20, 2)
+                },
+                {
+                    "SolNode11", new Node("SolNode11", "火星", "火星Tharsis", "Corpus冰原星球", MissionType.MT_RETRIEVAL, 8, 10)
+                },
+                { "SolNode12", new Node("SolNode12", "水星", "水星Elion", "Grineer小行星", MissionType.MT_CAPTURE, 7, 9, 1) },
+                { "SolNode13", new Node("SolNode13", "天王星", "天王星Bianca", "[数据删除]", MissionType.MT_DEFENSE) },
+                {
+                    "SolNode14",
+                    new Node("SolNode14", "火星", "火星Ultor", "Corpus冰原星球", MissionType.MT_EXTERMINATION, 11, 13, 2)
+                },
+                { "SolNode15", new Node("SolNode15", "地球", "地球Pacific", "Grineer巨舰", MissionType.MT_RESCUE, 3, 6) },
+                {
+                    "SolNode16",
+                    new Node("SolNode16", "火星", "火星Augustus", "Grineer营地", MissionType.MT_EXCAVATE, 9, 14, 1)
+                },
+                {
+                    "SolNode17",
+                    new Node("SolNode17", "海王星", "海王星Proteus", "Corpus飞船", MissionType.MT_DEFENSE, 27, 32, 3)
+                },
+                {
+                    "SolNode18",
+                    new Node("SolNode18", "土星", "土星Rhea", "Grineer小行星", MissionType.MT_TERRITORY, 21, 26, 2)
+                },
+                {
+                    "SolNode19",
+                    new Node("SolNode19", "土星", "土星Enceladus", "Grineer小行星", MissionType.MT_SABOTAGE, 23, 25, 2)
+                },
+                {
+                    "SolNode20",
+                    new Node("SolNode20", "土星", "土星Telesto", "Grineer巨舰", MissionType.MT_EXTERMINATION, 22, 24)
+                },
+                {
+                    "SolNode21",
+                    new Node("SolNode21", "冥王星", "冥王星Narcissus", "Corpus哨站", MissionType.MT_EXTERMINATION, 32, 36)
+                },
+                { "SolNode22", new Node("SolNode22", "金星", "金星Tessera", "Corpus哨站", MissionType.MT_DEFENSE, 3, 8, 1) },
+                {
+                    "SolNode23",
+                    new Node("SolNode23", "金星", "金星Cytherean", "Corpus飞船", MissionType.MT_TERRITORY, 3, 8, 1)
+                },
+                {
+                    "SolNode24", new Node("SolNode24", "地球", "地球Oro", "Grineer丛林", MissionType.MT_ASSASSINATION, 20, 25)
+                },
+                {
+                    "SolNode25",
+                    new Node("SolNode25", "木星", "木星Callisto", "Corpus燃气城市", MissionType.MT_TERRITORY, 15, 20, 2)
+                },
+                { "SolNode26", new Node("SolNode26", "地球", "地球Lith", "Grineer丛林", MissionType.MT_DEFENSE, 1, 6, 1) },
+                {
+                    "SolNode27",
+                    new Node("SolNode27", "地球", "地球E Prime", "Grineer丛林", MissionType.MT_EXTERMINATION, 1, 3, 1)
+                },
+                {
+                    "SolNode28",
+                    new Node("SolNode28", "水星", "水星Terminus", "Grineer巨舰", MissionType.MT_SABOTAGE, 8, 10, 1)
+                },
                 { "SolNode29", new Node("SolNode29", "天王星", "天王星Oberon", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode30", new Node("SolNode30", "火星", "火星Olympus", "Grineer营地", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode31", new Node("SolNode31", "土星", "土星Anthe", "Grineer巨舰", MissionType.MT_RESCUE) },
-                { "SolNode32", new Node("SolNode32", "土星", "土星Tethys", "Grineer巨舰", MissionType.MT_ASSASSINATION) },
-                { "SolNode33", new Node("SolNode33", "天王星", "天王星Ariel", "Grineer深海研究所", MissionType.MT_CAPTURE) },
+                {
+                    "SolNode30",
+                    new Node("SolNode30", "火星", "火星Olympus", "Grineer营地", MissionType.MT_MOBILE_DEFENSE, 11, 13)
+                },
+                { "SolNode31", new Node("SolNode31", "土星", "土星Anthe", "Grineer巨舰", MissionType.MT_RESCUE, 22, 24) },
+                {
+                    "SolNode32",
+                    new Node("SolNode32", "土星", "土星Tethys", "Grineer巨舰", MissionType.MT_ASSASSINATION, 24, 26)
+                },
+                {
+                    "SolNode33",
+                    new Node("SolNode33", "天王星", "天王星Ariel", "Grineer深海研究所", MissionType.MT_CAPTURE, 25, 27, 3)
+                },
                 {
                     "SolNode34",
-                    new Node("SolNode34", "天王星", "天王星Sycorax", "Grineer深海研究所", MissionType.MT_EXTERMINATION)
+                    new Node("SolNode34", "天王星", "天王星Sycorax", "Grineer深海研究所", MissionType.MT_EXTERMINATION, 24, 26)
                 },
-                { "SolNode35", new Node("SolNode35", "火星", "火星Arcadia", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode36", new Node("SolNode36", "火星", "火星Martialis", "Grineer营地", MissionType.MT_RESCUE) },
+                { "SolNode35", new Node("SolNode35", "火星", "火星Arcadia", "[数据删除]", MissionType.MT_SURVIVAL) },
+                { "SolNode36", new Node("SolNode36", "火星", "火星Martialis", "Grineer营地", MissionType.MT_RESCUE, 10, 12) },
                 { "SolNode37", new Node("SolNode37", "土星", "土星Pallene", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode38", new Node("SolNode38", "冥王星", "冥王星Minthe", "Corpus哨站", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode39", new Node("SolNode39", "地球", "地球Everest", "Grineer丛林", MissionType.MT_EXCAVATE) },
+                {
+                    "SolNode38",
+                    new Node("SolNode38", "冥王星", "冥王星Minthe", "Corpus哨站", MissionType.MT_MOBILE_DEFENSE, 30, 34)
+                },
+                {
+                    "SolNode39", new Node("SolNode39", "地球", "地球Everest", "Grineer丛林", MissionType.MT_EXCAVATE, 1, 6, 1)
+                },
                 { "SolNode40", new Node("SolNode40", "天王星", "天王星Prospero", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode41", new Node("SolNode41", "火星", "火星Arval", "Grineer营地", MissionType.MT_INTEL) },
-                { "SolNode42", new Node("SolNode42", "土星", "土星Helene", "Grineer巨舰", MissionType.MT_DEFENSE) },
-                { "SolNode43", new Node("SolNode43", "冥王星", "冥王星Cerberus", "Corpus哨站", MissionType.MT_TERRITORY) },
-                { "SolNode44", new Node("SolNode44", "土星", "土星Mimas", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode45", new Node("SolNode45", "火星", "火星Ara", "Grineer营地", MissionType.MT_CAPTURE) },
-                { "SolNode46", new Node("SolNode46", "火星", "火星Spear", "Grineer营地", MissionType.MT_DEFENSE) },
+                { "SolNode41", new Node("SolNode41", "火星", "火星Arval", "Grineer营地", MissionType.MT_INTEL, 9, 11, 1) },
+                {
+                    "SolNode42", new Node("SolNode42", "土星", "土星Helene", "Grineer巨舰", MissionType.MT_DEFENSE, 21, 26, 2)
+                },
+                {
+                    "SolNode43",
+                    new Node("SolNode43", "冥王星", "冥王星Cerberus", "Corpus哨站", MissionType.MT_TERRITORY, 30, 40, 3)
+                },
+                { "SolNode44", new Node("SolNode44", "土星", "土星Mimas", "[数据删除]", MissionType.MT_SURVIVAL) },
+                { "SolNode45", new Node("SolNode45", "火星", "火星Ara", "Grineer营地", MissionType.MT_CAPTURE, 10, 12, 2) },
+                { "SolNode46", new Node("SolNode46", "火星", "火星Spear", "Grineer营地", MissionType.MT_DEFENSE, 8, 13, 1) },
                 { "SolNode47", new Node("SolNode47", "土星", "土星Janus", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode48", new Node("SolNode48", "冥王星", "冥王星Regna", "Corpus哨站", MissionType.MT_RESCUE) },
-                { "SolNode49", new Node("SolNode49", "海王星", "海王星Larissa", "Corpus飞船", MissionType.MT_MOBILE_DEFENSE) },
+                { "SolNode48", new Node("SolNode48", "冥王星", "冥王星Regna", "Corpus哨站", MissionType.MT_RESCUE, 34, 38) },
+                {
+                    "SolNode49",
+                    new Node("SolNode49", "海王星", "海王星Larissa", "Corpus飞船", MissionType.MT_MOBILE_DEFENSE, 29, 31)
+                },
                 { "SolNode50", new Node("SolNode50", "土星", "土星Numa", "Grineer小行星", MissionType.MT_RESCUE) },
-                { "SolNode51", new Node("SolNode51", "冥王星", "冥王星Hades", "Corpus哨站", MissionType.MT_ASSASSINATION) },
+                {
+                    "SolNode51",
+                    new Node("SolNode51", "冥王星", "冥王星Hades", "Corpus哨站", MissionType.MT_ASSASSINATION, 35, 45)
+                },
                 { "SolNode52", new Node("SolNode52", "天王星", "天王星Portia", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode53", new Node("SolNode53", "木星", "木星Themisto", "Corpus燃气城市", MissionType.MT_ASSASSINATION) },
+                {
+                    "SolNode53",
+                    new Node("SolNode53", "木星", "木星Themisto", "Corpus燃气城市", MissionType.MT_ASSASSINATION, 18, 20)
+                },
                 { "SolNode54", new Node("SolNode54", "火星", "火星Silvanus", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode55", new Node("SolNode55", "土星", "土星Methone", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode56", new Node("SolNode56", "冥王星", "冥王星Cypress", "Corpus飞船", MissionType.MT_SABOTAGE) },
-                { "SolNode57", new Node("SolNode57", "海王星", "海王星Sao", "Corpus哨站", MissionType.MT_SABOTAGE) },
-                { "SolNode58", new Node("SolNode58", "火星", "火星Hellas", "Grineer营地", MissionType.MT_EXTERMINATION) },
-                { "SolNode59", new Node("SolNode59", "地球", "地球Eurasia", "Grineer丛林", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode60", new Node("SolNode60", "天王星", "天王星Caliban", "Grineer深海研究所", MissionType.MT_RESCUE) },
-                { "SolNode61", new Node("SolNode61", "金星", "金星Ishtar", "Corpus飞船", MissionType.MT_SABOTAGE) },
-                { "SolNode62", new Node("SolNode62", "海王星", "海王星Neso", "Corpus冰原星球", MissionType.MT_EXTERMINATION) },
-                { "SolNode63", new Node("SolNode63", "地球", "地球Mantle", "Grineer丛林", MissionType.MT_CAPTURE) },
-                { "SolNode64", new Node("SolNode64", "天王星", "天王星Umbriel", "Grineer深海研究所", MissionType.MT_TERRITORY) },
-                { "SolNode65", new Node("SolNode65", "火星", "火星Gradivus", "Corpus飞船", MissionType.MT_SABOTAGE) },
-                { "SolNode66", new Node("SolNode66", "金星", "金星Unda", "Corpus哨站", MissionType.MT_INTEL) },
-                { "SolNode67", new Node("SolNode67", "土星", "土星Dione", "Grineer小行星", MissionType.MT_INTEL) },
-                { "SolNode68", new Node("SolNode68", "火星", "火星Vallis", "Grineer巨舰", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode69", new Node("SolNode69", "天王星", "天王星Ophelia", "Grineer深海研究所", MissionType.MT_SURVIVAL) },
-                { "SolNode70", new Node("SolNode70", "土星", "土星Cassini", "Grineer巨舰", MissionType.MT_CAPTURE) },
-                { "SolNode71", new Node("SolNode71", "[数据删除]", "[数据删除]", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode72", new Node("SolNode72", "冥王星", "冥王星Outer Terminus", "Corpus哨站", MissionType.MT_DEFENSE) },
-                { "SolNode73", new Node("SolNode73", "木星", "木星Ananke", "Corpus燃气城市", MissionType.MT_CAPTURE) },
-                { "SolNode74", new Node("SolNode74", "木星", "木星Carme", "Corpus燃气城市", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode75", new Node("SolNode75", "地球", "地球Cervantes", "Grineer丛林", MissionType.MT_SABOTAGE) },
-                { "SolNode76", new Node("SolNode76", "冥王星", "冥王星Hydra", "Corpus飞船", MissionType.MT_CAPTURE) },
+                {
+                    "SolNode56",
+                    new Node("SolNode56", "冥王星", "冥王星Cypress", "Corpus飞船", MissionType.MT_SABOTAGE, 34, 38, 3)
+                },
+                { "SolNode57", new Node("SolNode57", "海王星", "海王星Sao", "Corpus哨站", MissionType.MT_SABOTAGE, 29, 31, 2) },
+                {
+                    "SolNode58",
+                    new Node("SolNode58", "火星", "火星Hellas", "Grineer营地", MissionType.MT_EXTERMINATION, 8, 10, 1)
+                },
+                {
+                    "SolNode59",
+                    new Node("SolNode59", "地球", "地球Eurasia", "Grineer丛林", MissionType.MT_MOBILE_DEFENSE, 3, 5)
+                },
+                {
+                    "SolNode60",
+                    new Node("SolNode60", "天王星", "天王星Caliban", "Grineer深海研究所", MissionType.MT_RESCUE, 25, 27)
+                },
+                { "SolNode61", new Node("SolNode61", "金星", "金星Ishtar", "Corpus飞船", MissionType.MT_SABOTAGE, 6, 8, 1) },
+                {
+                    "SolNode62",
+                    new Node("SolNode62", "海王星", "海王星Neso", "Corpus冰原星球", MissionType.MT_EXTERMINATION, 29, 31)
+                },
+                { "SolNode63", new Node("SolNode63", "地球", "地球Mantle", "Grineer丛林", MissionType.MT_CAPTURE, 2, 4, 1) },
+                {
+                    "SolNode64",
+                    new Node("SolNode64", "天王星", "天王星Umbriel", "Grineer深海研究所", MissionType.MT_TERRITORY, 24, 29, 2)
+                },
+                {
+                    "SolNode65",
+                    new Node("SolNode65", "火星", "火星Gradivus", "Corpus飞船", MissionType.MT_SABOTAGE, 9, 11, 1)
+                },
+                { "SolNode66", new Node("SolNode66", "金星", "金星Unda", "Corpus哨站", MissionType.MT_INTEL, 4, 6, 1) },
+                { "SolNode67", new Node("SolNode67", "土星", "土星Dione", "Grineer小行星", MissionType.MT_INTEL, 21, 23, 2) },
+                {
+                    "SolNode68",
+                    new Node("SolNode68", "火星", "火星Vallis", "Grineer巨舰", MissionType.MT_MOBILE_DEFENSE, 11, 13)
+                },
+                {
+                    "SolNode69",
+                    new Node("SolNode69", "天王星", "天王星Ophelia", "Grineer深海研究所", MissionType.MT_SURVIVAL, 24, 29, 3)
+                },
+                {
+                    "SolNode70",
+                    new Node("SolNode70", "土星", "土星Cassini", "Grineer巨舰", MissionType.MT_CAPTURE, 21, 23, 3)
+                },
+                { "SolNode71", new Node("SolNode71", "金星", "金星Vesper", "[数据删除]", MissionType.MT_INTEL) },
+                {
+                    "SolNode72",
+                    new Node("SolNode72", "冥王星", "冥王星Outer Terminus", "Corpus哨站", MissionType.MT_DEFENSE, 30, 40, 3)
+                },
+                {
+                    "SolNode73",
+                    new Node("SolNode73", "木星", "木星Ananke", "Corpus燃气城市", MissionType.MT_CAPTURE, 16, 18, 2)
+                },
+                {
+                    "SolNode74",
+                    new Node("SolNode74", "木星", "木星Carme", "Corpus燃气城市", MissionType.MT_MOBILE_DEFENSE, 16, 18)
+                },
+                { "SolNode75", new Node("SolNode75", "地球", "地球Cervantes", "Grineer丛林", MissionType.MT_SABOTAGE, 4, 6) },
+                {
+                    "SolNode76", new Node("SolNode76", "冥王星", "冥王星Hydra", "Corpus飞船", MissionType.MT_CAPTURE, 30, 34, 3)
+                },
                 { "SolNode77", new Node("SolNode77", "天王星", "天王星Cupid", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode78", new Node("SolNode78", "海王星", "海王星Triton", "Corpus飞船", MissionType.MT_RESCUE) },
-                { "SolNode79", new Node("SolNode79", "地球", "地球Cambria", "Grineer丛林", MissionType.MT_INTEL) },
+                { "SolNode78", new Node("SolNode78", "海王星", "海王星Triton", "Corpus飞船", MissionType.MT_RESCUE, 28, 30) },
+                { "SolNode79", new Node("SolNode79", "地球", "地球Cambria", "Grineer丛林", MissionType.MT_INTEL, 2, 4, 1) },
                 { "SolNode80", new Node("SolNode80", "土星", "土星Phoebe", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode81", new Node("SolNode81", "冥王星", "冥王星Palus", "Corpus飞船", MissionType.MT_SURVIVAL) },
-                { "SolNode82", new Node("SolNode82", "土星", "土星Calypso", "Grineer巨舰", MissionType.MT_SABOTAGE) },
+                {
+                    "SolNode81",
+                    new Node("SolNode81", "冥王星", "冥王星Palus", "Corpus飞船", MissionType.MT_SURVIVAL, 30, 40, 3)
+                },
+                {
+                    "SolNode82",
+                    new Node("SolNode82", "土星", "土星Calypso", "Grineer巨舰", MissionType.MT_SABOTAGE, 24, 26, 2)
+                },
                 {
                     "SolNode83",
-                    new Node("SolNode83", "天王星", "天王星Cressida", "Grineer深海研究所", MissionType.MT_MOBILE_DEFENSE)
+                    new Node("SolNode83", "天王星", "天王星Cressida", "Grineer深海研究所", MissionType.MT_MOBILE_DEFENSE, 25, 27)
                 },
-                { "SolNode84", new Node("SolNode84", "海王星", "海王星Nereid", "Corpus冰原星球", MissionType.MT_RETRIEVAL) },
-                { "SolNode85", new Node("SolNode85", "地球", "地球Gaia", "Grineer丛林", MissionType.MT_TERRITORY) },
-                { "SolNode86", new Node("SolNode86", "土星", "土星Aegaeon", "[数据删除]", MissionType.MT_UNKNOWN) },
+                {
+                    "SolNode84",
+                    new Node("SolNode84", "海王星", "海王星Nereid", "Corpus冰原星球", MissionType.MT_RETRIEVAL, 30, 32)
+                },
+                { "SolNode85", new Node("SolNode85", "地球", "地球Gaia", "Grineer丛林", MissionType.MT_TERRITORY, 1, 6, 1) },
+                { "SolNode86", new Node("SolNode86", "土星", "土星Aegaeon", "[数据删除]", MissionType.MT_INTEL) },
                 { "SolNode87", new Node("SolNode87", "木星", "木星Ganymede", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode88", new Node("SolNode88", "木星", "木星Adrastea", "Corpus燃气城市", MissionType.MT_SABOTAGE) },
-                { "SolNode89", new Node("SolNode89", "地球", "地球Mariana", "Grineer深海研究所", MissionType.MT_EXTERMINATION) },
-                { "SolNode90", new Node("SolNode90", "", "Miranda", "[数据删除]", MissionType.MT_UNKNOWN) },
+                {
+                    "SolNode88",
+                    new Node("SolNode88", "木星", "木星Adrastea", "Corpus燃气城市", MissionType.MT_SABOTAGE, 18, 20, 2)
+                },
+                {
+                    "SolNode89",
+                    new Node("SolNode89", "地球", "地球Mariana", "Grineer深海研究所", MissionType.MT_EXTERMINATION, 1, 3, 1)
+                },
+                { "SolNode90", new Node("SolNode90", "天王星", "天王星Miranda", "[数据删除]", MissionType.MT_DEFENSE) },
                 { "SolNode91", new Node("SolNode91", "土星", "土星Iapetus", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode92", new Node("SolNode92", "冥王星", "冥王星Charon", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode93", new Node("SolNode93", "土星", "土星Keeler", "Grineer小行星", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode94", new Node("SolNode94", "水星", "水星Apollodorus", "Grineer巨舰", MissionType.MT_SURVIVAL) },
+                {
+                    "SolNode93",
+                    new Node("SolNode93", "土星", "土星Keeler", "Grineer小行星", MissionType.MT_MOBILE_DEFENSE, 23, 25)
+                },
+                {
+                    "SolNode94",
+                    new Node("SolNode94", "水星", "水星Apollodorus", "Grineer巨舰", MissionType.MT_SURVIVAL, 6, 11, 1)
+                },
                 { "SolNode95", new Node("SolNode95", "海王星", "海王星Thalassa", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode96", new Node("SolNode96", "土星", "土星Titan", "Grineer巨舰", MissionType.MT_SURVIVAL) },
-                { "SolNode97", new Node("SolNode97", "木星", "木星Amalthea", "Corpus燃气城市", MissionType.MT_INTEL) },
-                { "SolNode98", new Node("SolNode98", "天王星", "天王星Desdemona", "Grineer深海研究所", MissionType.MT_SABOTAGE) },
-                { "SolNode99", new Node("SolNode99", "火星", "火星War", "Grineer营地", MissionType.MT_ASSASSINATION) },
-                { "SolNode100", new Node("SolNode100", "木星", "木星Elara", "Corpus燃气城市", MissionType.MT_SURVIVAL) },
-                { "SolNode101", new Node("SolNode101", "金星", "金星Kiliken", "Corpus哨站", MissionType.MT_EXCAVATE) },
-                { "SolNode102", new Node("SolNode102", "冥王星", "冥王星Oceanum", "Corpus哨站", MissionType.MT_INTEL) },
-                { "SolNode103", new Node("SolNode103", "水星", "水星M Prime", "Grineer小行星", MissionType.MT_EXTERMINATION) },
-                { "SolNode104", new Node("SolNode104", "金星", "金星Fossa", "Corpus飞船", MissionType.MT_ASSASSINATION) },
+                {
+                    "SolNode96", new Node("SolNode96", "土星", "土星Titan", "Grineer巨舰", MissionType.MT_SURVIVAL, 21, 26, 2)
+                },
+                {
+                    "SolNode97",
+                    new Node("SolNode97", "木星", "木星Amalthea", "Corpus燃气城市", MissionType.MT_INTEL, 17, 19, 2)
+                },
+                {
+                    "SolNode98",
+                    new Node("SolNode98", "天王星", "天王星Desdemona", "Grineer深海研究所", MissionType.MT_SABOTAGE, 26, 28, 2)
+                },
+                {
+                    "SolNode99", new Node("SolNode99", "火星", "火星War", "Grineer营地", MissionType.MT_ASSASSINATION, 11, 13)
+                },
+                {
+                    "SolNode100",
+                    new Node("SolNode100", "木星", "木星Elara", "Corpus燃气城市", MissionType.MT_SURVIVAL, 15, 20, 2)
+                },
+                {
+                    "SolNode101",
+                    new Node("SolNode101", "金星", "金星Kiliken", "Corpus哨站", MissionType.MT_EXCAVATE, 3, 8, 1)
+                },
+                {
+                    "SolNode102",
+                    new Node("SolNode102", "冥王星", "冥王星Oceanum", "Corpus哨站", MissionType.MT_INTEL, 32, 36, 3)
+                },
+                {
+                    "SolNode103",
+                    new Node("SolNode103", "水星", "水星M Prime", "Grineer小行星", MissionType.MT_EXTERMINATION, 6, 8, 1)
+                },
+                {
+                    "SolNode104",
+                    new Node("SolNode104", "金星", "金星Fossa", "Corpus飞船", MissionType.MT_ASSASSINATION, 6, 8)
+                },
                 {
                     "SolNode105",
-                    new Node("SolNode105", "天王星", "天王星Titania", "Grineer深海研究所", MissionType.MT_ASSASSINATION)
+                    new Node("SolNode105", "天王星", "天王星Titania", "Grineer深海研究所", MissionType.MT_ASSASSINATION, 27, 29)
                 },
-                { "SolNode106", new Node("SolNode106", "火星", "火星Alator", "Grineer营地", MissionType.MT_TERRITORY) },
-                { "SolNode107", new Node("SolNode107", "金星", "金星Venera", "Corpus哨站", MissionType.MT_CAPTURE) },
-                { "SolNode108", new Node("SolNode108", "水星", "水星Tolstoj", "Grineer小行星", MissionType.MT_ASSASSINATION) },
-                { "SolNode109", new Node("SolNode109", "金星", "金星Linea", "Corpus哨站", MissionType.MT_RESCUE) },
+                {
+                    "SolNode106",
+                    new Node("SolNode106", "火星", "火星Alator", "Grineer营地", MissionType.MT_TERRITORY, 8, 13, 1)
+                },
+                { "SolNode107", new Node("SolNode107", "金星", "金星Venera", "Corpus哨站", MissionType.MT_CAPTURE, 5, 7, 1) },
+                {
+                    "SolNode108",
+                    new Node("SolNode108", "水星", "水星Tolstoj", "Grineer小行星", MissionType.MT_ASSASSINATION, 9, 11)
+                },
+                { "SolNode109", new Node("SolNode109", "金星", "金星Linea", "Corpus哨站", MissionType.MT_RESCUE, 5, 7) },
                 { "SolNode110", new Node("SolNode110", "土星", "土星Hyperion", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode111", new Node("SolNode111", "天王星", "天王星Juliet", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode112", new Node("SolNode112", "天王星", "天王星Setebos", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode113", new Node("SolNode113", "火星", "火星Ares", "Grineer营地", MissionType.MT_SABOTAGE) },
                 {
-                    "SolNode114", new Node("SolNode114", "天王星", "天王星Puck", "Grineer深海研究所", MissionType.MT_EXTERMINATION)
+                    "SolNode113", new Node("SolNode113", "火星", "火星Ares", "Grineer营地", MissionType.MT_SABOTAGE, 9, 11, 1)
+                },
+                {
+                    "SolNode114",
+                    new Node("SolNode114", "天王星", "天王星Puck", "Grineer深海研究所", MissionType.MT_EXTERMINATION, 27, 29)
                 },
                 { "SolNode115", new Node("SolNode115", "火星", "火星Quirinus", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode116", new Node("SolNode116", "天王星", "天王星Mab", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode117", new Node("SolNode117", "海王星", "海王星Naiad", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode118", new Node("SolNode118", "海王星", "海王星Laomedeia", "Corpus冰原星球", MissionType.MT_INTEL) },
-                { "SolNode119", new Node("SolNode119", "水星", "水星Caloris", "Grineer小行星", MissionType.MT_RESCUE) },
-                { "SolNode120", new Node("SolNode120", "海王星", "海王星Halimede", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode121", new Node("SolNode121", "木星", "木星Carpo", "Corpus燃气城市", MissionType.MT_EXTERMINATION) },
-                { "SolNode122", new Node("SolNode122", "天王星", "天王星Stephano", "Grineer深海研究所", MissionType.MT_DEFENSE) },
-                { "SolNode123", new Node("SolNode123", "金星", "金星V Prime", "Corpus飞船", MissionType.MT_SURVIVAL) },
-                { "SolNode124", new Node("SolNode124", "天王星", "天王星Trinculo", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode125", new Node("SolNode125", "木星", "木星Io", "Corpus燃气城市", MissionType.MT_DEFENSE) },
-                { "SolNode126", new Node("SolNode126", "木星", "木星Metis", "Corpus燃气城市", MissionType.MT_RESCUE) },
                 {
-                    "SolNode127", new Node("SolNode127", "海王星", "海王星Psamathe", "Corpus飞船", MissionType.MT_ASSASSINATION)
+                    "SolNode118",
+                    new Node("SolNode118", "海王星", "海王星Laomedeia", "Corpus冰原星球", MissionType.MT_INTEL, 30, 32, 3)
                 },
-                { "SolNode128", new Node("SolNode128", "金星", "金星E Gate", "Corpus哨站", MissionType.MT_EXTERMINATION) },
-                { "SolNode129", new Node("SolNode129", "数据删除", "数据删除", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode130", new Node("SolNode130", "水星", "水星Lares", "Grineer小行星", MissionType.MT_DEFENSE) },
-                { "SolNode131", new Node("SolNode131", "谷神星", "谷神星Pallas", "Grineer船坞", MissionType.MT_EXTERMINATION) },
-                { "SolNode132", new Node("SolNode132", "谷神星", "谷神星Bode", "Grineer船坞", MissionType.MT_INTEL) },
+                { "SolNode119", new Node("SolNode119", "水星", "水星Caloris", "Grineer小行星", MissionType.MT_RESCUE, 6, 8) },
+                { "SolNode120", new Node("SolNode120", "海王星", "海王星Halimede", "[数据删除]", MissionType.MT_UNKNOWN) },
+                {
+                    "SolNode121",
+                    new Node("SolNode121", "木星", "木星Carpo", "Corpus燃气城市", MissionType.MT_EXTERMINATION, 17, 19)
+                },
+                {
+                    "SolNode122",
+                    new Node("SolNode122", "天王星", "天王星Stephano", "Grineer深海研究所", MissionType.MT_DEFENSE, 25, 27, 3)
+                },
+                {
+                    "SolNode123",
+                    new Node("SolNode123", "金星", "金星V Prime", "Corpus飞船", MissionType.MT_SURVIVAL, 3, 8, 1)
+                },
+                { "SolNode124", new Node("SolNode124", "天王星", "天王星Trinculo", "[数据删除]", MissionType.MT_UNKNOWN) },
+                { "SolNode125", new Node("SolNode125", "木星", "木星Io", "Corpus燃气城市", MissionType.MT_DEFENSE, 15, 20, 2) },
+                { "SolNode126", new Node("SolNode126", "木星", "木星Metis", "Corpus燃气城市", MissionType.MT_RESCUE, 20, 22) },
+                {
+                    "SolNode127",
+                    new Node("SolNode127", "海王星", "海王星Psamathe", "Corpus飞船", MissionType.MT_ASSASSINATION, 30, 32)
+                },
+                {
+                    "SolNode128",
+                    new Node("SolNode128", "金星", "金星E Gate", "Corpus哨站", MissionType.MT_EXTERMINATION, 3, 5, 1)
+                },
+                {
+                    "SolNode129",
+                    new Node("SolNode129", "", "测试节点Ancient Retribution", "[数据删除]", MissionType.MT_UNKNOWN)
+                },
+                {
+                    "SolNode130",
+                    new Node("SolNode130", "水星", "水星Lares", "Grineer小行星", MissionType.MT_DEFENSE, 6, 11, 1)
+                },
+                {
+                    "SolNode131",
+                    new Node("SolNode131", "谷神星", "谷神星Pallas", "Grineer船坞", MissionType.MT_EXTERMINATION, 12, 14)
+                },
+                {
+                    "SolNode132", new Node("SolNode132", "谷神星", "谷神星Bode", "Grineer船坞", MissionType.MT_INTEL, 12, 14, 2)
+                },
                 { "SolNode133", new Node("SolNode133", "谷神星", "谷神星Vedic", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode134", new Node("SolNode134", "谷神星", "谷神星Varro", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode135", new Node("SolNode135", "谷神星", "谷神星Thon", "Grineer巨舰", MissionType.MT_SABOTAGE) },
+                { "SolNode134", new Node("SolNode134", "谷神星", "谷神星Varro", "[数据删除]", MissionType.MT_DEFENSE) },
+                {
+                    "SolNode135",
+                    new Node("SolNode135", "谷神星", "谷神星Thon", "Grineer巨舰", MissionType.MT_SABOTAGE, 15, 17, 2)
+                },
                 { "SolNode136", new Node("SolNode136", "谷神星", "谷神星Olla", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode137", new Node("SolNode137", "谷神星", "谷神星Nuovo", "Grineer船坞", MissionType.MT_RESCUE) },
-                { "SolNode138", new Node("SolNode138", "谷神星", "谷神星Ludi", "Grineer船坞", MissionType.MT_RETRIEVAL) },
-                { "SolNode139", new Node("SolNode139", "谷神星", "谷神星Lex", "Grineer船坞", MissionType.MT_CAPTURE) },
-                { "SolNode140", new Node("SolNode140", "谷神星", "谷神星Kiste", "Grineer船坞", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode141", new Node("SolNode141", "谷神星", "谷神星Ker", "Grineer船坞", MissionType.MT_SABOTAGE) },
-                { "SolNode142", new Node("SolNode142", "谷神星", "谷神星Hapke", "[数据删除]", MissionType.MT_UNKNOWN) },
+                { "SolNode137", new Node("SolNode137", "谷神星", "谷神星Nuovo", "Grineer船坞", MissionType.MT_RESCUE, 13, 15) },
+                {
+                    "SolNode138",
+                    new Node("SolNode138", "谷神星", "谷神星Ludi", "Grineer船坞", MissionType.MT_RETRIEVAL, 15, 17)
+                },
+                {
+                    "SolNode139",
+                    new Node("SolNode139", "谷神星", "谷神星Lex", "Grineer船坞", MissionType.MT_CAPTURE, 14, 16, 2)
+                },
+                {
+                    "SolNode140",
+                    new Node("SolNode140", "谷神星", "谷神星Kiste", "Grineer船坞", MissionType.MT_MOBILE_DEFENSE, 13, 15)
+                },
+                {
+                    "SolNode141",
+                    new Node("SolNode141", "谷神星", "谷神星Ker", "Grineer船坞", MissionType.MT_SABOTAGE, 14, 16, 1)
+                },
+                { "SolNode142", new Node("SolNode142", "谷神星", "谷神星Hapke", "[数据删除]", MissionType.MT_INTEL) },
                 { "SolNode143", new Node("SolNode143", "谷神星", "谷神星Gefion", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode144", new Node("SolNode144", "谷神星", "谷神星Exta", "Grineer船坞", MissionType.MT_ASSASSINATION) },
-                { "SolNode145", new Node("SolNode145", "谷神星", "谷神星Egeria", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode146", new Node("SolNode146", "谷神星", "谷神星Draco", "Grineer小行星", MissionType.MT_SURVIVAL) },
-                { "SolNode147", new Node("SolNode147", "谷神星", "谷神星Cinxia", "Grineer船坞", MissionType.MT_TERRITORY) },
+                {
+                    "SolNode144",
+                    new Node("SolNode144", "谷神星", "谷神星Exta", "Grineer船坞", MissionType.MT_ASSASSINATION, 14, 16)
+                },
+                { "SolNode145", new Node("SolNode145", "谷神星", "谷神星Egeria", "[数据删除]", MissionType.MT_SURVIVAL) },
+                {
+                    "SolNode146",
+                    new Node("SolNode146", "谷神星", "谷神星Draco", "Grineer小行星", MissionType.MT_SURVIVAL, 12, 17, 2)
+                },
+                {
+                    "SolNode147",
+                    new Node("SolNode147", "谷神星", "谷神星Cinxia", "Grineer船坞", MissionType.MT_TERRITORY, 12, 17, 1)
+                },
                 { "SolNode148", new Node("SolNode148", "谷神星", "谷神星Cerium", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode149", new Node("SolNode149", "谷神星", "谷神星Casta", "Grineer船坞", MissionType.MT_DEFENSE) },
+                {
+                    "SolNode149",
+                    new Node("SolNode149", "谷神星", "谷神星Casta", "Grineer船坞", MissionType.MT_DEFENSE, 12, 17, 1)
+                },
                 { "SolNode150", new Node("SolNode150", "谷神星", "谷神星Albedo", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode151", new Node("SolNode151", "阋神星", "阋神星Acanth", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode152", new Node("SolNode152", "阋神星", "阋神星Ascar", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode153", new Node("SolNode153", "阋神星", "阋神星Brugia", "Infested飞船", MissionType.MT_RESCUE) },
+                {
+                    "SolNode153",
+                    new Node("SolNode153", "阋神星", "阋神星Brugia", "Infested飞船", MissionType.MT_RESCUE, 32, 36)
+                },
                 { "SolNode154", new Node("SolNode154", "阋神星", "阋神星Candiru", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode155", new Node("SolNode155", "阋神星", "阋神星Cosis", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode156", new Node("SolNode156", "阋神星", "阋神星Cyath", "[数据删除]", MissionType.MT_UNKNOWN) },
+                { "SolNode156", new Node("SolNode156", "阋神星", "阋神星Cyath", "[数据删除]", MissionType.MT_INTEL) },
                 { "SolNode157", new Node("SolNode157", "阋神星", "阋神星Giardia", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode158", new Node("SolNode158", "阋神星", "阋神星Gnathos", "[数据删除]", MissionType.MT_UNKNOWN) },
+                { "SolNode158", new Node("SolNode158", "阋神星", "阋神星Gnathos", "[数据删除]", MissionType.MT_INTEL) },
                 { "SolNode159", new Node("SolNode159", "阋神星", "阋神星Lepis", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode160", new Node("SolNode160", "阋神星", "阋神星Histo", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode161", new Node("SolNode161", "阋神星", "阋神星Hymeno", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode162", new Node("SolNode162", "阋神星", "阋神星Isos", "Infested飞船", MissionType.MT_CAPTURE) },
-                { "SolNode163", new Node("SolNode163", "阋神星", "阋神星Ixodes", "[数据删除]", MissionType.MT_UNKNOWN) },
+                { "SolNode161", new Node("SolNode161", "阋神星", "阋神星Hymeno", "[数据删除]", MissionType.MT_SURVIVAL) },
+                {
+                    "SolNode162",
+                    new Node("SolNode162", "阋神星", "阋神星Isos", "Infested飞船", MissionType.MT_CAPTURE, 32, 36, 3)
+                },
+                { "SolNode163", new Node("SolNode163", "阋神星", "阋神星Ixodes", "[数据删除]", MissionType.MT_DEFENSE) },
                 {
                     "SolNode164",
-                    new Node("SolNode164", "阋神星Kala-", "阋神星Kala-azar", "Infested飞船", MissionType.MT_DEFENSE)
+                    new Node("SolNode164", "阋神星Kala-", "阋神星Kala-azar", "Infested飞船", MissionType.MT_DEFENSE, 30, 40, 3)
                 },
                 { "SolNode165", new Node("SolNode165", "阋神星", "阋神星Sporid", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode166", new Node("SolNode166", "阋神星", "阋神星Nimus", "Infested飞船", MissionType.MT_SURVIVAL) },
+                {
+                    "SolNode166",
+                    new Node("SolNode166", "阋神星", "阋神星Nimus", "Infested飞船", MissionType.MT_SURVIVAL, 30, 40, 3)
+                },
                 {
                     "SolNode167",
                     new Node("SolNode167", "阋神星", "阋神星Oestrus", "Infested飞船", MissionType.MT_INFESTEDSALVAGE)
                 },
-                { "SolNode168", new Node("SolNode168", "阋神星", "阋神星Phalan", "[数据删除]", MissionType.MT_UNKNOWN) },
+                { "SolNode168", new Node("SolNode168", "阋神星", "阋神星Phalan", "[数据删除]", MissionType.MT_SURVIVAL) },
                 { "SolNode169", new Node("SolNode169", "阋神星", "阋神星Psoro", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode170", new Node("SolNode170", "阋神星", "阋神星Ranova", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode171", new Node("SolNode171", "阋神星", "阋神星Saxis", "Infested飞船", MissionType.MT_EXTERMINATION) },
-                { "SolNode172", new Node("SolNode172", "阋神星", "阋神星Xini", "Corpus飞船", MissionType.MT_TERRITORY) },
+                {
+                    "SolNode171",
+                    new Node("SolNode171", "阋神星", "阋神星Saxis", "Infested飞船", MissionType.MT_EXTERMINATION, 34, 38)
+                },
+                {
+                    "SolNode172",
+                    new Node("SolNode172", "阋神星", "阋神星Xini", "Corpus飞船", MissionType.MT_TERRITORY, 30, 40, 3)
+                },
                 {
                     "SolNode173",
-                    new Node("SolNode173", "阋神星", "阋神星Solium", "Infested飞船", MissionType.MT_MOBILE_DEFENSE)
+                    new Node("SolNode173", "阋神星", "阋神星Solium", "Infested飞船", MissionType.MT_MOBILE_DEFENSE, 34, 38)
                 },
                 { "SolNode174", new Node("SolNode174", "阋神星", "阋神星Sparga", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode175", new Node("SolNode175", "阋神星", "阋神星Naeglar", "Infested飞船", MissionType.MT_HIVE) },
+                {
+                    "SolNode175", new Node("SolNode175", "阋神星", "阋神星Naeglar", "Infested飞船", MissionType.MT_HIVE, 30, 34)
+                },
                 { "SolNode176", new Node("SolNode176", "阋神星", "阋神星Viver", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode177", new Node("SolNode177", "赛德娜", "赛德娜Kappa", "Grineer巨舰", MissionType.MT_INTEL) },
+                {
+                    "SolNode177",
+                    new Node("SolNode177", "赛德娜", "赛德娜Kappa", "Grineer巨舰", MissionType.MT_INTEL, 34, 38, 3)
+                },
                 { "SolNode178", new Node("SolNode178", "赛德娜", "赛德娜Hyosube", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode179", new Node("SolNode179", "赛德娜", "赛德娜Jengu", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode180", new Node("SolNode180", "赛德娜", "赛德娜Undine", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode181", new Node("SolNode181", "赛德娜", "赛德娜Adaro", "Grineer小行星", MissionType.MT_EXTERMINATION) },
+                {
+                    "SolNode181",
+                    new Node("SolNode181", "赛德娜", "赛德娜Adaro", "Grineer小行星", MissionType.MT_EXTERMINATION, 32, 36)
+                },
                 { "SolNode182", new Node("SolNode182", "赛德娜", "赛德娜Camenae", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode183", new Node("SolNode183", "赛德娜", "赛德娜Vodyanoi", "Grineer深海研究所", MissionType.MT_ARENA) },
-                { "SolNode184", new Node("SolNode184", "赛德娜", "赛德娜Rusalka", "Grineer巨舰", MissionType.MT_CAPTURE) },
-                { "SolNode185", new Node("SolNode185", "赛德娜", "赛德娜Berehynia", "Grineer船坞", MissionType.MT_TERRITORY) },
-                { "SolNode186", new Node("SolNode186", "赛德娜", "赛德娜Phithale", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode187", new Node("SolNode187", "赛德娜", "赛德娜Selkie", "Grineer小行星", MissionType.MT_SURVIVAL) },
-                { "SolNode188", new Node("SolNode188", "赛德娜", "赛德娜Kelpie", "Grineer巨舰", MissionType.MT_SABOTAGE) },
-                { "SolNode189", new Node("SolNode189", "赛德娜", "赛德娜Naga", "Grineer巨舰", MissionType.MT_RESCUE) },
-                { "SolNode190", new Node("SolNode190", "赛德娜", "赛德娜Nakki", "Grineer船坞", MissionType.MT_ARENA) },
-                { "SolNode191", new Node("SolNode191", "赛德娜", "赛德娜Marid", "Grineer船坞", MissionType.MT_RETRIEVAL) },
-                { "SolNode192", new Node("SolNode192", "赛德娜", "赛德娜Tikoloshe", "[数据删除]", MissionType.MT_UNKNOWN) },
                 {
-                    "SolNode193", new Node("SolNode193", "赛德娜", "赛德娜Merrow", "Grineer小行星", MissionType.MT_ASSASSINATION)
+                    "SolNode184",
+                    new Node("SolNode184", "赛德娜", "赛德娜Rusalka", "Grineer巨舰", MissionType.MT_CAPTURE, 32, 36, 3)
+                },
+                {
+                    "SolNode185",
+                    new Node("SolNode185", "赛德娜", "赛德娜Berehynia", "Grineer船坞", MissionType.MT_TERRITORY, 30, 40, 3)
+                },
+                { "SolNode186", new Node("SolNode186", "赛德娜", "赛德娜Phithale", "[数据删除]", MissionType.MT_UNKNOWN) },
+                {
+                    "SolNode187",
+                    new Node("SolNode187", "赛德娜", "赛德娜Selkie", "Grineer小行星", MissionType.MT_SURVIVAL, 30, 40, 3)
+                },
+                {
+                    "SolNode188",
+                    new Node("SolNode188", "赛德娜", "赛德娜Kelpie", "Grineer巨舰", MissionType.MT_SABOTAGE, 36, 40, 3)
+                },
+                { "SolNode189", new Node("SolNode189", "赛德娜", "赛德娜Naga", "Grineer巨舰", MissionType.MT_RESCUE, 30, 34) },
+                { "SolNode190", new Node("SolNode190", "赛德娜", "赛德娜Nakki", "Grineer船坞", MissionType.MT_ARENA) },
+                {
+                    "SolNode191",
+                    new Node("SolNode191", "赛德娜", "赛德娜Marid", "Grineer船坞", MissionType.MT_RETRIEVAL, 34, 38)
+                },
+                { "SolNode192", new Node("SolNode192", "赛德娜", "赛德娜Tikoloshe", "[数据删除]", MissionType.MT_INTEL) },
+                {
+                    "SolNode193",
+                    new Node("SolNode193", "赛德娜", "赛德娜Merrow", "Grineer小行星", MissionType.MT_ASSASSINATION, 35, 40)
                 },
                 { "SolNode194", new Node("SolNode194", "赛德娜", "赛德娜Ponaturi", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode195", new Node("SolNode195", "赛德娜", "赛德娜Hydron", "Grineer巨舰", MissionType.MT_DEFENSE) },
+                {
+                    "SolNode195",
+                    new Node("SolNode195", "赛德娜", "赛德娜Hydron", "Grineer巨舰", MissionType.MT_DEFENSE, 30, 40, 3)
+                },
                 {
                     "SolNode196",
-                    new Node("SolNode196", "赛德娜", "赛德娜Charybdis", "Grineer巨舰", MissionType.MT_MOBILE_DEFENSE)
+                    new Node("SolNode196", "赛德娜", "赛德娜Charybdis", "Grineer巨舰", MissionType.MT_MOBILE_DEFENSE, 34, 38)
                 },
                 { "SolNode197", new Node("SolNode197", "赛德娜", "赛德娜Graeae", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode198", new Node("SolNode198", "赛德娜", "赛德娜Scylla", "[数据删除]", MissionType.MT_UNKNOWN) },
+                { "SolNode198", new Node("SolNode198", "赛德娜", "赛德娜Scylla", "[数据删除]", MissionType.MT_INTEL) },
                 { "SolNode199", new Node("SolNode199", "赛德娜", "赛德娜Yam", "Grineer深海研究所", MissionType.MT_ARENA) },
                 { "SolNode200", new Node("SolNode200", "赛德娜", "赛德娜Veles", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode201", new Node("SolNode201", "赛德娜", "赛德娜Tiamat", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode202", new Node("SolNode202", "赛德娜", "赛德娜Yemaja", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode203", new Node("SolNode203", "欧罗巴", "欧罗巴Abaddon", "Corpus冰原星球", MissionType.MT_CAPTURE) },
+                { "SolNode202", new Node("SolNode202", "赛德娜", "赛德娜Yemaja", "[数据删除]", MissionType.MT_SURVIVAL) },
+                {
+                    "SolNode203",
+                    new Node("SolNode203", "欧罗巴", "欧罗巴Abaddon", "Corpus冰原星球", MissionType.MT_CAPTURE, 21, 23, 3)
+                },
                 {
                     "SolNode204",
-                    new Node("SolNode204", "欧罗巴", "欧罗巴Armaros", "Infested飞船", MissionType.MT_EXTERMINATION)
+                    new Node("SolNode204", "欧罗巴", "欧罗巴Armaros", "Infested飞船", MissionType.MT_EXTERMINATION, 18, 20)
                 },
-                { "SolNode205", new Node("SolNode205", "欧罗巴", "欧罗巴Baal", "Corpus冰原星球", MissionType.MT_EXTERMINATION) },
-                { "SolNode206", new Node("SolNode206", "欧罗巴", "欧罗巴Eligor", "[数据删除]", MissionType.MT_UNKNOWN) },
+                {
+                    "SolNode205",
+                    new Node("SolNode205", "欧罗巴", "欧罗巴Baal", "Corpus冰原星球", MissionType.MT_EXTERMINATION, 21, 23)
+                },
+                { "SolNode206", new Node("SolNode206", "欧罗巴", "欧罗巴Eligor", "[数据删除]", MissionType.MT_DEFENSE) },
                 { "SolNode207", new Node("SolNode207", "欧罗巴", "欧罗巴Gamygyn", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode208", new Node("SolNode208", "欧罗巴", "欧罗巴Lillith", "[数据删除]", MissionType.MT_UNKNOWN) },
                 {
-                    "SolNode209", new Node("SolNode209", "欧罗巴", "欧罗巴Morax", "Corpus冰原星球", MissionType.MT_MOBILE_DEFENSE)
+                    "SolNode209",
+                    new Node("SolNode209", "欧罗巴", "欧罗巴Morax", "Corpus冰原星球", MissionType.MT_MOBILE_DEFENSE, 18, 20)
                 },
                 {
-                    "SolNode210", new Node("SolNode210", "欧罗巴", "欧罗巴Naamah", "Corpus冰原星球", MissionType.MT_ASSASSINATION)
+                    "SolNode210",
+                    new Node("SolNode210", "欧罗巴", "欧罗巴Naamah", "Corpus冰原星球", MissionType.MT_ASSASSINATION, 21, 23)
                 },
-                { "SolNode211", new Node("SolNode211", "欧罗巴", "欧罗巴Ose", "Corpus冰原星球", MissionType.MT_TERRITORY) },
-                { "SolNode212", new Node("SolNode212", "欧罗巴", "欧罗巴Paimon", "Corpus冰原星球", MissionType.MT_DEFENSE) },
+                {
+                    "SolNode211",
+                    new Node("SolNode211", "欧罗巴", "欧罗巴Ose", "Corpus冰原星球", MissionType.MT_TERRITORY, 18, 23, 2)
+                },
+                {
+                    "SolNode212",
+                    new Node("SolNode212", "欧罗巴", "欧罗巴Paimon", "Corpus冰原星球", MissionType.MT_DEFENSE, 18, 23, 2)
+                },
                 { "SolNode213", new Node("SolNode213", "欧罗巴", "欧罗巴Shax", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode214", new Node("SolNode214", "欧罗巴", "欧罗巴Sorath", "Corpus冰原星球", MissionType.MT_RETRIEVAL) },
-                { "SolNode215", new Node("SolNode215", "欧罗巴", "欧罗巴Valac", "Corpus飞船", MissionType.MT_INTEL) },
-                { "SolNode216", new Node("SolNode216", "欧罗巴", "欧罗巴Valefor", "Corpus冰原星球", MissionType.MT_EXCAVATE) },
-                { "SolNode217", new Node("SolNode217", "欧罗巴", "欧罗巴Orias", "Corpus冰原星球", MissionType.MT_RESCUE) },
-                { "SolNode218", new Node("SolNode218", "欧罗巴", "欧罗巴Zagan", "[数据删除]", MissionType.MT_UNKNOWN) },
+                {
+                    "SolNode214",
+                    new Node("SolNode214", "欧罗巴", "欧罗巴Sorath", "Corpus冰原星球", MissionType.MT_RETRIEVAL, 19, 21)
+                },
+                {
+                    "SolNode215", new Node("SolNode215", "欧罗巴", "欧罗巴Valac", "Corpus飞船", MissionType.MT_INTEL, 18, 20, 2)
+                },
+                {
+                    "SolNode216",
+                    new Node("SolNode216", "欧罗巴", "欧罗巴Valefor", "Corpus冰原星球", MissionType.MT_EXCAVATE, 18, 23, 2)
+                },
+                {
+                    "SolNode217", new Node("SolNode217", "欧罗巴", "欧罗巴Orias", "Corpus冰原星球", MissionType.MT_RESCUE, 20, 22)
+                },
+                { "SolNode218", new Node("SolNode218", "欧罗巴", "欧罗巴Zagan", "[数据删除]", MissionType.MT_SURVIVAL) },
                 { "SolNode219", new Node("SolNode219", "欧罗巴", "欧罗巴Beleth", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode220", new Node("SolNode220", "欧罗巴", "欧罗巴Kokabiel", "Corpus冰原星球", MissionType.MT_SABOTAGE) },
+                {
+                    "SolNode220",
+                    new Node("SolNode220", "欧罗巴", "欧罗巴Kokabiel", "Corpus冰原星球", MissionType.MT_SABOTAGE, 20, 22, 2)
+                },
                 { "SolNode221", new Node("SolNode221", "水星", "水星Neruda", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode222", new Node("SolNode222", "水星", "水星Eminescu", "[数据删除]", MissionType.MT_UNKNOWN) },
                 {
                     "SolNode223",
-                    new Node("SolNode223", "水星", "水星Boethius", "Grineer小行星", MissionType.MT_MOBILE_DEFENSE)
+                    new Node("SolNode223", "水星", "水星Boethius", "Grineer小行星", MissionType.MT_MOBILE_DEFENSE, 8, 10)
                 },
-                { "SolNode224", new Node("SolNode224", "水星", "水星Odin", "Grineer巨舰", MissionType.MT_TERRITORY) },
-                { "SolNode225", new Node("SolNode225", "水星", "水星Suisei", "Grineer巨舰", MissionType.MT_INTEL) },
-                { "SolNode226", new Node("SolNode226", "水星", "水星Pantheon", "Grineer巨舰", MissionType.MT_EXTERMINATION) },
+                {
+                    "SolNode224",
+                    new Node("SolNode224", "水星", "水星Odin", "Grineer巨舰", MissionType.MT_TERRITORY, 6, 11, 1)
+                },
+                { "SolNode225", new Node("SolNode225", "水星", "水星Suisei", "Grineer巨舰", MissionType.MT_INTEL, 8, 10, 1) },
+                {
+                    "SolNode226",
+                    new Node("SolNode226", "水星", "水星Pantheon", "Grineer巨舰", MissionType.MT_EXTERMINATION, 6, 8, 1)
+                },
                 { "SolNode227", new Node("SolNode227", "水星", "水星Verdi", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode228", new Node("SolNode228", "地球", "地球夜灵平野", "夜灵平野", MissionType.MT_LANDSCAPE) },
-                { "SolNode300", new Node("SolNode300", "月球", "月球Plato", "Orokin之月", MissionType.MT_EXTERMINATION) },
-                { "SolNode301", new Node("SolNode301", "月球", "月球Grimaldi", "Orokin之月", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode302", new Node("SolNode302", "月球", "月球Tycho", "Orokin之月", MissionType.MT_SURVIVAL) },
-                { "SolNode304", new Node("SolNode304", "月球", "月球Copernicus", "Orokin之月", MissionType.MT_CAPTURE) },
-                { "SolNode305", new Node("SolNode305", "月球", "月球StöFler", "Orokin之月", MissionType.MT_DEFENSE) },
-                { "SolNode306", new Node("SolNode306", "月球", "月球Pavlov", "Orokin之月", MissionType.MT_INTEL) },
-                { "SolNode307", new Node("SolNode307", "月球", "月球Zeipel", "Orokin之月", MissionType.MT_RESCUE) },
-                { "SolNode400", new Node("SolNode400", "虚空", "虚空Teshub", "Orokin堡垒", MissionType.MT_EXTERMINATION) },
-                { "SolNode401", new Node("SolNode401", "虚空", "虚空Hepit", "Orokin堡垒", MissionType.MT_CAPTURE) },
-                { "SolNode402", new Node("SolNode402", "虚空", "虚空Taranis", "Orokin堡垒", MissionType.MT_DEFENSE) },
-                { "SolNode403", new Node("SolNode403", "虚空", "虚空Tiwaz", "Orokin堡垒", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode404", new Node("SolNode404", "虚空", "虚空Stribog", "Orokin堡垒", MissionType.MT_SABOTAGE) },
-                { "SolNode405", new Node("SolNode405", "虚空", "虚空Ani", "Orokin堡垒", MissionType.MT_SURVIVAL) },
-                { "SolNode406", new Node("SolNode406", "虚空", "虚空Ukko", "Orokin堡垒", MissionType.MT_CAPTURE) },
-                { "SolNode407", new Node("SolNode407", "虚空", "虚空Oxomoco", "Orokin堡垒", MissionType.MT_EXTERMINATION) },
-                { "SolNode408", new Node("SolNode408", "虚空", "虚空Belenus", "Orokin堡垒", MissionType.MT_DEFENSE) },
-                { "SolNode409", new Node("SolNode409", "虚空", "虚空Mot", "Orokin堡垒", MissionType.MT_SURVIVAL) },
-                { "SolNode410", new Node("SolNode410", "虚空", "虚空Aten", "Orokin堡垒", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode411", new Node("SolNode411", "虚空", "虚空Marduk", "Orokin堡垒", MissionType.MT_SABOTAGE) },
-                { "SolNode412", new Node("SolNode412", "虚空", "虚空Mithra", "Orokin堡垒", MissionType.MT_TERRITORY) },
                 {
-                    "SolNode706",
-                    new Node("SolNode706", "被遗弃的Orokin船只", "被遗弃的Orokin船只 捕获", "被遗弃的Orokin船只", MissionType.MT_CAPTURE)
+                    "SolNode300",
+                    new Node("SolNode300", "月球", "月球Plato", "Orokin之月", MissionType.MT_EXTERMINATION, 25, 30)
                 },
                 {
-                    "SolNode707",
-                    new Node("SolNode707", "被遗弃的Orokin船只", "被遗弃的Orokin船只 防御", "被遗弃的Orokin船只", MissionType.MT_DEFENSE)
+                    "SolNode301",
+                    new Node("SolNode301", "月球", "月球Grimaldi", "Orokin之月", MissionType.MT_MOBILE_DEFENSE, 25, 30)
                 },
                 {
-                    "SolNode708",
-                    new Node("SolNode708", "被遗弃的Orokin船只", "被遗弃的Orokin船只 歼灭", "被遗弃的Orokin船只",
-                        MissionType.MT_EXTERMINATION)
+                    "SolNode302",
+                    new Node("SolNode302", "月球", "月球Tycho", "Orokin之月", MissionType.MT_SURVIVAL, 25, 30, 3)
                 },
                 {
-                    "SolNode709",
-                    new Node("SolNode709", "被遗弃的Orokin船只", "被遗弃的Orokin船只 移动防御", "被遗弃的Orokin船只",
-                        MissionType.MT_MOBILE_DEFENSE)
+                    "SolNode304",
+                    new Node("SolNode304", "月球", "月球Copernicus", "Orokin之月", MissionType.MT_CAPTURE, 25, 30, 3)
                 },
                 {
-                    "SolNode710",
-                    new Node("SolNode710", "被遗弃的Orokin船只", "被遗弃的Orokin船只 破坏", "被遗弃的Orokin船只", MissionType.MT_SABOTAGE)
+                    "SolNode305",
+                    new Node("SolNode305", "月球", "月球StöFler", "Orokin之月", MissionType.MT_DEFENSE, 25, 30, 3)
+                },
+                { "SolNode306", new Node("SolNode306", "月球", "月球Pavlov", "Orokin之月", MissionType.MT_INTEL, 25, 30) },
+                { "SolNode307", new Node("SolNode307", "月球", "月球Zeipel", "Orokin之月", MissionType.MT_RESCUE, 25, 30) },
+                {
+                    "SolNode400",
+                    new Node("SolNode400", "虚空", "虚空Teshub", "Orokin堡垒", MissionType.MT_EXTERMINATION, 10, 15)
                 },
                 {
-                    "SolNode711",
-                    new Node("SolNode711", "被遗弃的Orokin船只", "被遗弃的Orokin船只 生存", "被遗弃的Orokin船只", MissionType.MT_SURVIVAL)
+                    "SolNode401", new Node("SolNode401", "虚空", "虚空Hepit", "Orokin堡垒", MissionType.MT_CAPTURE, 10, 15, 2)
                 },
                 {
-                    "SolNode712",
-                    new Node("SolNode712", "被遗弃的Orokin船只", "被遗弃的Orokin船只 刺杀", "被遗弃的Orokin船只",
-                        MissionType.MT_ASSASSINATION)
+                    "SolNode402",
+                    new Node("SolNode402", "虚空", "虚空Taranis", "Orokin堡垒", MissionType.MT_DEFENSE, 10, 15, 1)
                 },
-                { "SolNode741", new Node("SolNode741", "赤毒要塞", "赤毒要塞Koro", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode742", new Node("SolNode742", "赤毒要塞", "赤毒要塞Nabuk", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode743", new Node("SolNode743", "赤毒要塞", "赤毒要塞Rotuma", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode744", new Node("SolNode744", "赤毒要塞", "赤毒要塞Taveuni", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode745", new Node("SolNode745", "赤毒要塞", "赤毒要塞Tamu", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode746", new Node("SolNode746", "赤毒要塞", "赤毒要塞Dakata", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode747", new Node("SolNode747", "赤毒要塞", "赤毒要塞Pago", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode748", new Node("SolNode748", "赤毒要塞", "赤毒要塞Garus", "[数据删除]", MissionType.MT_UNKNOWN) },
+                {
+                    "SolNode403",
+                    new Node("SolNode403", "虚空", "虚空Tiwaz", "Orokin堡垒", MissionType.MT_MOBILE_DEFENSE, 20, 25)
+                },
+                {
+                    "SolNode404", new Node("SolNode404", "虚空", "虚空Stribog", "Orokin堡垒", MissionType.MT_SABOTAGE, 20, 25)
+                },
+                { "SolNode405", new Node("SolNode405", "虚空", "虚空Ani", "Orokin堡垒", MissionType.MT_SURVIVAL, 20, 24, 2) },
+                { "SolNode406", new Node("SolNode406", "虚空", "虚空Ukko", "Orokin堡垒", MissionType.MT_CAPTURE, 30, 35, 3) },
+                {
+                    "SolNode407",
+                    new Node("SolNode407", "虚空", "虚空Oxomoco", "Orokin堡垒", MissionType.MT_EXTERMINATION, 30, 35)
+                },
+                {
+                    "SolNode408",
+                    new Node("SolNode408", "虚空", "虚空Belenus", "Orokin堡垒", MissionType.MT_DEFENSE, 30, 35, 3)
+                },
+                { "SolNode409", new Node("SolNode409", "虚空", "虚空Mot", "Orokin堡垒", MissionType.MT_SURVIVAL, 40, 45) },
+                {
+                    "SolNode410",
+                    new Node("SolNode410", "虚空", "虚空Aten", "Orokin堡垒", MissionType.MT_MOBILE_DEFENSE, 40, 45)
+                },
+                { "SolNode411", new Node("SolNode411", "虚空", "虚空Marduk", "Orokin堡垒", MissionType.MT_SABOTAGE, 40, 45) },
+                {
+                    "SolNode412",
+                    new Node("SolNode412", "虚空", "虚空Mithra", "Orokin堡垒", MissionType.MT_TERRITORY, 40, 45, 3)
+                },
+                {
+                    "SolNode706", new Node("SolNode706", "被遗弃的Orokin船只", "被遗弃的Orokin船只 捕获", "被遗弃的Orokin船只",
+                        MissionType.MT_CAPTURE,
+                        25, 35)
+                },
+                {
+                    "SolNode707", new Node("SolNode707", "被遗弃的Orokin船只", "被遗弃的Orokin船只 防御", "被遗弃的Orokin船只",
+                        MissionType.MT_DEFENSE,
+                        25, 35)
+                },
+                {
+                    "SolNode708", new Node("SolNode708", "被遗弃的Orokin船只", "被遗弃的Orokin船只 歼灭", "被遗弃的Orokin船只",
+                        MissionType.MT_EXTERMINATION, 25, 35)
+                },
+                {
+                    "SolNode709", new Node("SolNode709", "被遗弃的Orokin船只", "被遗弃的Orokin船只 移动防御", "被遗弃的Orokin船只",
+                        MissionType.MT_MOBILE_DEFENSE, 25, 35)
+                },
+                {
+                    "SolNode710", new Node("SolNode710", "被遗弃的Orokin船只", "被遗弃的Orokin船只 破坏", "被遗弃的Orokin船只",
+                        MissionType.MT_SABOTAGE,
+                        25, 35)
+                },
+                {
+                    "SolNode711", new Node("SolNode711", "被遗弃的Orokin船只", "被遗弃的Orokin船只 生存", "被遗弃的Orokin船只",
+                        MissionType.MT_SURVIVAL,
+                        25, 35)
+                },
+                {
+                    "SolNode712", new Node("SolNode712", "被遗弃的Orokin船只", "被遗弃的Orokin船只 刺杀", "被遗弃的Orokin船只",
+                        MissionType.MT_ASSASSINATION, 25, 35)
+                },
+                { "SolNode741", new Node("SolNode741", "赤毒要塞", "赤毒要塞Koro", "赤毒要塞", MissionType.MT_UNKNOWN) },
+                {
+                    "SolNode742", new Node("SolNode742", "赤毒要塞", "赤毒要塞Nabuk", "赤毒要塞", MissionType.MT_CAPTURE, 30, 32, 3)
+                },
+                {
+                    "SolNode743",
+                    new Node("SolNode743", "赤毒要塞", "赤毒要塞Rotuma", "赤毒要塞", MissionType.MT_MOBILE_DEFENSE, 30, 32)
+                },
+                {
+                    "SolNode744",
+                    new Node("SolNode744", "赤毒要塞", "赤毒要塞Taveuni", "赤毒要塞", MissionType.MT_SURVIVAL, 32, 34, 3)
+                },
+                { "SolNode745", new Node("SolNode745", "赤毒要塞", "赤毒要塞Tamu", "赤毒要塞", MissionType.MT_DEFENSE, 32, 34, 3) },
+                {
+                    "SolNode746",
+                    new Node("SolNode746", "赤毒要塞", "赤毒要塞Dakata", "赤毒要塞", MissionType.MT_EXTERMINATION, 38, 40)
+                },
+                { "SolNode747", new Node("SolNode747", "赤毒要塞", "赤毒要塞Pago", "赤毒要塞", MissionType.MT_INTEL, 31, 33) },
+                { "SolNode748", new Node("SolNode748", "赤毒要塞", "赤毒要塞Garus", "赤毒要塞", MissionType.MT_RESCUE, 31, 33) },
                 { "SolNode802", new Node("SolNode802", "[数据删除]", "[数据删除]", "[数据删除]", MissionType.MT_UNKNOWN) },
                 { "SolNode901", new Node("SolNode901", "", "Caduceus", "[数据删除]", MissionType.MT_UNKNOWN) },
-                { "SolNode902", new Node("SolNode902", "金星", "金星Montes", "Corpus飞船", MissionType.MT_EXTERMINATION) },
-                { "SolNode903", new Node("SolNode903", "地球", "地球Erpo", "外太空", MissionType.MT_MOBILE_DEFENSE) },
-                { "SolNode904", new Node("SolNode904", "火星", "火星Syrtis", "外太空", MissionType.MT_EXTERMINATION) },
+                {
+                    "SolNode902",
+                    new Node("SolNode902", "金星", "金星Montes", "Corpus飞船", MissionType.MT_EXTERMINATION, 3, 8, 1)
+                },
+                { "SolNode903", new Node("SolNode903", "地球", "地球Erpo", "外太空", MissionType.MT_MOBILE_DEFENSE, 1, 6) },
+                {
+                    "SolNode904",
+                    new Node("SolNode904", "火星", "火星Syrtis", "外太空", MissionType.MT_EXTERMINATION, 8, 13, 1)
+                },
                 { "SolNode905", new Node("SolNode905", "木星", "木星Galilea", "Corpus飞船", MissionType.MT_SABOTAGE) },
                 { "SolNode906", new Node("SolNode906", "土星", "土星Pandora", "外太空", MissionType.MT_PURSUIT) },
-                { "SolNode907", new Node("SolNode907", "天王星", "天王星Caelus", "外太空", MissionType.MT_TERRITORY) },
-                { "SolNode908", new Node("SolNode908", "海王星", "海王星Salacia", "Corpus飞船", MissionType.MT_MOBILE_DEFENSE) }
+                {
+                    "SolNode907", new Node("SolNode907", "天王星", "天王星Caelus", "外太空", MissionType.MT_TERRITORY, 24, 29, 0)
+                },
+                {
+                    "SolNode908",
+                    new Node("SolNode908", "海王星", "海王星Salacia", "Corpus飞船", MissionType.MT_MOBILE_DEFENSE, 27, 32)
+                }
             };
         }
 
-        private static void InitPlanets()
+        public static void InitPlanets()
         {
             _planet = new Dictionary<string, string>
             {
@@ -1390,6 +1801,50 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 new Riven.RivenAttribute(WeaponType.Melee, "pleci", "nent", "滑行攻击有[{0:P2}到{1:P2}]的几率造成暴击", 90.0, true,
                     "滑暴", "滑爆", "划爆", "划暴", "滑砍", "划砍", "sl", "slat", "slatha"),
                 new Riven.RivenAttribute(WeaponType.Melee, "tempi", "nem", "连击时间[{0:F2}到{1:F2}]秒", 8.1, true, "连击时间",
+                    "连击", "codu"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "visi", "ata", "[{0:P2}到{1:P2}]近战伤害", 165, false, "伤害", "攻击",
+                    "基伤", "伤", "da"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "magna", "ton", "[{0:P2}到{1:P2}]冲击伤害", 120, true, "冲击伤害",
+                    "冲击", "冲", "im"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "insi", "cak", "[{0:P2}到{1:P2}]穿刺伤害", 120, true, "穿刺伤害",
+                    "穿刺", "pu"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "sci", "sus", "[{0:P2}到{1:P2}]切割伤害", 120, true, "切割伤害", "切割",
+                    "切", "sl"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "crita", "cron", "[{0:P2}到{1:P2}]暴击率", 90, true, "暴率", "暴击率",
+                    "爆率", "暴击", "爆击", "crch", "cc"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "acri", "tis", "[{0:P2}到{1:P2}]暴击伤害", 90, true, "爆伤", "暴伤",
+                    "暴击伤害", "crda", "cd"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "geli", "do", "[{0:P2}到{1:P2}]冰冻伤害", 90, false, "冰冻伤害", "冰伤",
+                    "冰冻", "冰", "co"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "vexi", "tio", "[{0:P2}到{1:P2}]电击伤害", 90, false, "电击伤害",
+                    "电伤", "电击", "电", "el"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "igni", "pha", "[{0:P2}到{1:P2}]火焰伤害", 90, false, "火焰伤害",
+                    "火焰", "火伤", "火", "he"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "toxi", "tox", "[{0:P2}到{1:P2}]毒素伤害", 90, false, "毒素伤害",
+                    "毒素", "毒伤", "毒", "to"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "hexa", "dex", "[{0:P2}到{1:P2}]触发几率", 90, true, "触发几率", "触发",
+                    "触发率", "stch"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "deci", "des", "[{0:P2}到{1:P2}]触发时间", 100, true, "触发时间",
+                    "时间", "stdu"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "manti", "tron", "[{0:P2}到{1:P2}]对Corpus伤害", 45, true,
+                    "对corpus伤害", "c佬", "c系", "c", "datoco", "corpus"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "argi", "con", "[{0:P2}到{1:P2}]对Grineer伤害", 45, true,
+                    "对grineer伤害", "g佬", "g系", "g", "datogr", "grineer"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "pura", "ada", "[{0:P2}到{1:P2}]对Infested伤害", 45, true,
+                    "对infested伤害", "i佬", "i系", "i", "datoin", "infested"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "croni", "dra", "[{0:P2}到{1:P2}]攻击速度", 53, true, "攻速",
+                    "攻击速度", "fira", "atsp"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "uti", "tia", "[{0:P2}到{1:P2}]导引效率", 90, false, "引导效率",
+                    "导引效率", "充能效率", "效率", "chef"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "tori", "bo", "[{0:P2}到{1:P2}]导引伤害", 150, false, "引导伤害",
+                    "导引伤害", "充能伤害", "充能", "chda"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "exi", "cta", "[{0:P2}到{1:P2}]处决伤害", 120, true, "处决伤害", "终结",
+                    "处决", "fida"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "locti", "tor", "[{0:P2}到{1:P2}]攻击范围", 120, true, "攻击范围",
+                    "范围", "ra"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "pleci", "nent", "滑行攻击有[{0:P2}到{1:P2}]的几率造成暴击", 90.0, true,
+                    "滑暴", "滑爆", "划爆", "划暴", "滑砍", "划砍", "sl", "slat", "slatha"),
+                new Riven.RivenAttribute(WeaponType.Zaw, "tempi", "nem", "连击时间[{0:F2}到{1:F2}]秒", 8.1, true, "连击时间",
                     "连击", "codu"),
                 new Riven.RivenAttribute(WeaponType.Primary, "sati", "can", "[{0:P2}到{1:P2}]多重射击", 90, true, "多重射击",
                     "多重", "mu"),
@@ -1486,6 +1941,54 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 new Riven.RivenAttribute(WeaponType.Secondary, "hera", "lis", "[{0:P2}到{1:P2}]变焦", 80, true, "瞄准", "变焦",
                     "zo"),
                 new Riven.RivenAttribute(WeaponType.Secondary, "lexi", "nok", "[{0:F2}到{1:F2}]穿透", 2.7, false, "穿透",
+                    "穿", "puth"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "sati", "can", "[{0:P2}到{1:P2}]多重射击", 120, true, "多重射击",
+                    "多重", "mu"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "visi", "ata", "[{0:P2}到{1:P2}]伤害", 220, true, "伤害",
+                    "攻击", "基伤", "伤", "da"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "magna", "ton", "[{0:P2}到{1:P2}]冲击伤害", 120, true, "冲击伤害",
+                    "冲击", "冲", "im"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "insi", "cak", "[{0:P2}到{1:P2}]穿刺伤害", 120, true, "穿刺伤害",
+                    "穿刺", "pu"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "sci", "sus", "[{0:P2}到{1:P2}]切割伤害", 120, true, "切割伤害",
+                    "切割", "切", "sl"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "crita", "cron", "[{0:P2}到{1:P2}]暴击率", 150, true, "暴率",
+                    "暴击率", "爆率", "暴击", "爆击", "crch", "cc"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "acri", "tis", "[{0:P2}到{1:P2}]暴击伤害", 90, true, "爆伤",
+                    "暴伤", "暴击伤害", "crda", "cd"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "geli", "do", "[{0:P2}到{1:P2}]冰冻伤害", 90, false, "冰冻伤害",
+                    "冰伤", "冰冻", "冰", "co"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "vexi", "tio", "[{0:P2}到{1:P2}]电击伤害", 90, false, "电击伤害",
+                    "电伤", "电击", "电", "el"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "igni", "pha", "[{0:P2}到{1:P2}]火焰伤害", 90, false, "火焰伤害",
+                    "火焰", "火伤", "火", "he"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "toxi", "tox", "[{0:P2}到{1:P2}]毒素伤害", 90, false, "毒素伤害",
+                    "毒素", "毒伤", "毒", "to"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "hexa", "dex", "[{0:P2}到{1:P2}]触发几率", 90, true, "触发几率",
+                    "触发", "触发率", "stch"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "deci", "des", "[{0:P2}到{1:P2}]触发时间", 100, true, "触发时间",
+                    "时间", "stdu"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "manti", "tron", "[{0:P2}到{1:P2}]对Corpus伤害", 45, true,
+                    "对corpus伤害", "c佬", "c系", "c", "datoco", "corpus"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "argi", "con", "[{0:P2}到{1:P2}]对Grineer伤害", 45, true,
+                    "对grineer伤害", "g佬", "g系", "g", "datogr", "grineer"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "pura", "ada", "[{0:P2}到{1:P2}]对Infested伤害", 45, true,
+                    "对infested伤害", "i佬", "i系", "i", "datoin", "infested"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "croni", "dra", "[{0:P2}到{1:P2}]射速", 75, true, "射速",
+                    "攻速", "攻击速度", "fira", "atsp"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "arma", "tin", "[{0:P2}到{1:P2}]弹匣容量", 50, true, "弹匣容量",
+                    "弹匣", "弹夹", "弹夹容量", "maca", "masi", "ma"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "ampi", "bin", "[{0:P2}到{1:P2}]弹药最大值", 90, true, "弹药",
+                    "amma"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "conci", "nak", "[{0:P2}到{1:P2}]弹道飞行速度", 90, true, "弹道",
+                    "飞行速度", "飞行", "prflsp"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "feva", "tak", "[{0:P2}到{1:P2}]装填速度", 50, true, "装填速度",
+                    "换弹", "装弹", "装填", "resp"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "zeti", "mag", "[{0:P2}到{1:P2}]武器后坐力", -90, true, "后座",
+                    "后座力", "后坐", "后坐力", "were"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "hera", "lis", "[{0:P2}到{1:P2}]变焦", 80, true, "瞄准", "变焦",
+                    "zo"),
+                new Riven.RivenAttribute(WeaponType.Kitgun, "lexi", "nok", "[{0:F2}到{1:F2}]穿透", 2.7, false, "穿透",
                     "穿", "puth"),
                 new Riven.RivenAttribute(WeaponType.Shotgun, "sati", "can", "[{0:P2}到{1:P2}]多重射击", 120, true, "多重射击",
                     "多重", "mu"),
@@ -1641,7 +2144,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
             };
         }
 
-        private static void InitSorties()
+        public static void InitSorties()
         {
             Sortie = new Dictionary<string, string>
             {
@@ -1693,7 +2196,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
             };
         }
 
-        private static void InitStndicates()
+        public static void InitStndicates()
         {
             Syndicate = new Dictionary<string, string>
             {
@@ -1713,18 +2216,20 @@ namespace Cephalon.Chireiden.Satori.Warframe
             };
         }
 
-        private static void InitTilesets()
+        public static void InitTilesets()
         {
             Tileset = new Dictionary<string, string>
             {
                 { "GrineerAsteroidTileset", "Grineer小行星" },
                 { "GrineerGalleonTileset", "Grineer巨舰" },
                 { "GrineerFortressTileset", "Grineer要塞" },
+                { "GrineerOceanTileset", "Grineer海底实验室" },
                 { "CorpusIcePlanetTilesetCaves", "Corpus冰原星球(洞穴)" },
                 { "CorpusIcePlanetTileset", "Corpus冰原星球" },
                 { "CorpusGasCityTileset", "Corpus燃气城市" },
                 { "CorpusShipTileset", "Corpus飞船" },
                 { "OrokinMoonTilesetCorpus", "Orokin之月(Corpus)" },
+                { "OrokinMoonTilesetGrineer", "Orokin之月(Grineer)" },
                 { "OrokinMoonTileset", "Orokin之月" },
                 { "OrokinVoidTileset", "Orokin虚空" }
             };
@@ -1732,326 +2237,43 @@ namespace Cephalon.Chireiden.Satori.Warframe
 
         public static void InitWarframes()
         {
-            WarframeAlias = new Dictionary<string, List<string>>
+            WarframeAlias = new List<Alias>
             {
-                {
-                    "WARFRAME_PLACEHOLDER", new List<string>
-                    {
-                        "official name",
-                        "prime name",
-                        "alias"
-                    }
-                },
-                {
-                    "ASH", new List<string>
-                    {
-                        "ash",
-                        "ash prime",
-                        "ashp"
-                    }
-                },
-                {
-                    "ATLAS", new List<string>
-                    {
-                        "atlas",
-                        "atlas prime",
-                        "土甲"
-                    }
-                },
-                {
-                    "BANSHEE", new List<string>
-                    {
-                        "banshee",
-                        "banshee prime",
-                        "bansheep",
-                        "音妈",
-                        "音妈p"
-                    }
-                },
-                {
-                    "CHROMA", new List<string>
-                    {
-                        "chroma",
-                        "chroma prime",
-                        "龙甲",
-                        "龙",
-                        "龙甲p",
-                        "龙p"
-                    }
-                },
-                {
-                    "EMBER", new List<string>
-                    {
-                        "ember",
-                        "ember prime",
-                        "火鸡"
-                    }
-                },
-                {
-                    "EQUINOX", new List<string>
-                    {
-                        "equinox",
-                        "equinox prime",
-                        "扶她",
-                        "阴阳"
-                    }
-                },
-                {
-                    "EXCALIBUR", new List<string>
-                    {
-                        "excalibur",
-                        "excalibur prime",
-                        "咖喱",
-                        "圣剑"
-                    }
-                },
-                {
-                    "FROST", new List<string>
-                    {
-                        "frost",
-                        "frost prime",
-                        "冰男",
-                        "冰",
-                        "冰队"
-                    }
-                },
-                {
-                    "GARA", new List<string>
-                    {
-                        "gara",
-                        "gara prime",
-                        "玻璃"
-                    }
-                },
-                {
-                    "GARUDA", new List<string>
-                    {
-                        "garuda",
-                        "garuda prime",
-                        "血甲",
-                        "血妈"
-                    }
-                },
-                {
-                    "HARROW", new List<string>
-                    {
-                        "harrow",
-                        "harrow prime",
-                        "主教"
-                    }
-                },
-                {
-                    "HYDROID", new List<string>
-                    {
-                        "hydroid",
-                        "hydroid prime",
-                        "水男"
-                    }
-                },
-                {
-                    "INAROS", new List<string>
-                    {
-                        "inaros",
-                        "inaros prime",
-                        "沙甲"
-                    }
-                },
-                {
-                    "IVARA", new List<string>
-                    {
-                        "ivara",
-                        "ivara prime",
-                        "弓妹",
-                        "弓甲"
-                    }
-                },
-                {
-                    "LIMBO", new List<string>
-                    {
-                        "limbo",
-                        "limbo prime",
-                        "小明",
-                        "李明博",
-                        "小明p",
-                        "李明博p"
-                    }
-                },
-                {
-                    "LOKI", new List<string>
-                    {
-                        "loki",
-                        "loki prime",
-                        "弱鸡",
-                        "洛基",
-                        "弱鸡p",
-                        "洛基p"
-                    }
-                },
-                {
-                    "MAG", new List<string>
-                    {
-                        "mag",
-                        "mag prime",
-                        "磁力",
-                        "磁妹"
-                    }
-                },
-                {
-                    "MESA", new List<string>
-                    {
-                        "mesa",
-                        "mesa prime",
-                        "女枪"
-                    }
-                },
-                {
-                    "MIRAGE", new List<string>
-                    {
-                        "mirage",
-                        "mirage prime",
-                        "小丑"
-                    }
-                },
-                {
-                    "NEKROS", new List<string>
-                    {
-                        "nekros",
-                        "nekros prime",
-                        "摸尸",
-                        "死灵"
-                    }
-                },
-                {
-                    "NEZHA", new List<string>
-                    {
-                        "nezha",
-                        "nezha prime",
-                        "哪吒"
-                    }
-                },
-                {
-                    "NIDUS", new List<string>
-                    {
-                        "nidus",
-                        "nidus prime",
-                        "虫甲",
-                        "蛆甲",
-                        "蛆"
-                    }
-                },
-                {
-                    "NOVA", new List<string>
-                    {
-                        "nova",
-                        "nova prime"
-                    }
-                },
-                {
-                    "NYX", new List<string>
-                    {
-                        "nyx",
-                        "nyx prime",
-                        "脑淤血"
-                    }
-                },
-                {
-                    "OBERON", new List<string>
-                    {
-                        "oberon",
-                        "oberon prime",
-                        "奶爸",
-                        "龙王",
-                        "奥博"
-                    }
-                },
-                {
-                    "OCTAVIA", new List<string>
-                    {
-                        "octavia",
-                        "octavia prime",
-                        "dj",
-                        "音乐"
-                    }
-                },
-                {
-                    "RHINO", new List<string>
-                    {
-                        "rhino",
-                        "rhino prime",
-                        "牛",
-                        "犀牛"
-                    }
-                },
-                {
-                    "SARYN", new List<string>
-                    {
-                        "saryn",
-                        "saryn prime",
-                        "毒妈"
-                    }
-                },
-                {
-                    "TITANIA", new List<string>
-                    {
-                        "titania",
-                        "titania prime",
-                        "蝶甲",
-                        "蝶妹"
-                    }
-                },
-                {
-                    "TRINITY", new List<string>
-                    {
-                        "trinity",
-                        "trinity prime",
-                        "奶妈"
-                    }
-                },
-                {
-                    "VALKYR", new List<string>
-                    {
-                        "valkyr",
-                        "valkyr prime",
-                        "瓦基尔",
-                        "女武神",
-                        "女汉子",
-                        "瓦喵"
-                    }
-                },
-                {
-                    "VAUBAN", new List<string>
-                    {
-                        "vauban",
-                        "vauban prime",
-                        "工程"
-                    }
-                },
-                {
-                    "VOLT", new List<string>
-                    {
-                        "volt",
-                        "volt prime",
-                        "电男",
-                        "电队"
-                    }
-                },
-                {
-                    "WUKONG", new List<string>
-                    {
-                        "wukong",
-                        "wukong prime",
-                        "悟空",
-                        "大圣"
-                    }
-                },
-                {
-                    "ZEPHYR", new List<string>
-                    {
-                        "zephyr",
-                        "zephyr prime",
-                        "鸟姐"
-                    }
-                }
+                new Alias("ash", "ash prime", "ashp"),
+                new Alias("atlas", "atlas prime", "土甲"),
+                new Alias("banshee", "banshee prime", "bansheep", "音妈", "音妈p"),
+                new Alias("chroma", "chroma prime", "龙甲", "龙", "龙甲p", "龙p"),
+                new Alias("ember", "ember prime", "火鸡"),
+                new Alias("equinox", "equinox prime", "扶她", "阴阳"),
+                new Alias("excalibur", "excalibur prime", "咖喱", "圣剑"),
+                new Alias("frost", "frost prime", "冰男", "冰", "冰队"),
+                new Alias("gara", "gara prime", "玻璃"),
+                new Alias("garuda", "garuda prime", "血甲", "血妈"),
+                new Alias("harrow", "harrow prime", "主教"),
+                new Alias("hydroid", "hydroid prime", "水男"),
+                new Alias("inaros", "inaros prime", "沙甲"),
+                new Alias("ivara", "ivara prime", "弓妹", "弓甲"),
+                new Alias("limbo", "limbo prime", "小明", "李明博", "小明p", "李明博p"),
+                new Alias("loki", "loki prime", "弱鸡", "洛基", "弱鸡p", "洛基p"),
+                new Alias("mag", "mag prime", "磁力", "磁妹"),
+                new Alias("mesa", "mesa prime", "女枪"),
+                new Alias("mirage", "mirage prime", "小丑"),
+                new Alias("nekros", "nekros prime", "摸尸", "死灵"),
+                new Alias("nezha", "nezha prime", "哪吒"),
+                new Alias("nidus", "nidus prime", "虫甲", "蛆甲", "蛆"),
+                new Alias("nova", "nova prime"),
+                new Alias("nyx", "nyx prime", "脑淤血"),
+                new Alias("oberon", "oberon prime", "奶爸", "龙王", "奥博"),
+                new Alias("octavia", "octavia prime", "dj", "音乐"),
+                new Alias("rhino", "rhino prime", "牛", "犀牛"),
+                new Alias("saryn", "saryn prime", "毒妈"),
+                new Alias("titania", "titania prime", "蝶甲", "蝶妹"),
+                new Alias("trinity", "trinity prime", "奶妈"),
+                new Alias("valkyr", "valkyr prime", "瓦基尔", "女武神", "女汉子", "瓦喵"),
+                new Alias("vauban", "vauban prime", "工程"),
+                new Alias("volt", "volt prime", "电男", "电队"),
+                new Alias("wukong", "wukong prime", "悟空", "大圣"),
+                new Alias("zephyr", "zephyr prime", "鸟姐")
             };
         }
 
@@ -2067,17 +2289,16 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "ACRID", new Weapon(WeaponType.Secondary, 35, 0.05, 2, 0.1, 1.33, 7, "Acrid", "阿克里德", "刻薄毒镖") },
                 { "AFURIS", new Weapon(WeaponType.Secondary, 20, 0.05, 2, 0.12, 1.39, 4, "Afuris", "盗贼双枪", "双持弗里斯手枪") },
                 {
-                    "AKBOLTO PRIME",
-                    new Weapon(WeaponType.Secondary, 32.0, 0.36, 2.8, 0.14, 0.8, 13, "Akbolto Prime", "螺钉双枪Prime",
+                    "AKBOLTO PRIME", new Weapon(WeaponType.Secondary, 32.0, 0.36, 2.8, 0.14, 0.8, 13, "Akbolto Prime",
+                        "螺钉双枪Prime",
                         "圣装双持角犀", "螺钉双枪P", "螺双")
                 },
                 {
-                    "AKBOLTO",
-                    new Weapon(WeaponType.Secondary, 40, 0.16, 2.4, 0.022, 0.8, 9, "Akbolto", "螺钉双枪", "双持角犀")
+                    "AKBOLTO", new Weapon(WeaponType.Secondary, 40, 0.16, 2.4, 0.022, 0.8, 9, "Akbolto", "螺钉双枪", "双持角犀")
                 },
                 {
-                    "AKBRONCO PRIME",
-                    new Weapon(WeaponType.Secondary, 350, 0.06, 2, 0.3, 1.2, 10, "Akbronco Prime", "野马双枪Prime",
+                    "AKBRONCO PRIME", new Weapon(WeaponType.Secondary, 350, 0.06, 2, 0.3, 1.2, 10, "Akbronco Prime",
+                        "野马双枪Prime",
                         "圣装双持布隆克烈驹", "野马双枪P")
                 },
                 {
@@ -2085,13 +2306,17 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Secondary, 280, 0.06, 2, 0.22, 1.2, 2, "Akbronco", "野马双枪", "双持布隆克烈驹")
                 },
                 {
-                    "AKJAGARA",
-                    new Weapon(WeaponType.Secondary, 300, 0.06, 2, 0.28, 1.43, 8, "Akjagara", "觉醒双枪", "觉醒双枪")
+                    "AKJAGARA", new Weapon(WeaponType.Secondary, 30, 0.06, 2, 0.28, 1.43, 8, "Akjagara", "觉醒双枪", "觉醒双枪")
+                },
+                {
+                    "AKJAGARA PRIME", new Weapon(WeaponType.Secondary, 36, 0.18, 2.2, 0.32, 1.43, 12, "Akjagara Prime",
+                        "觉醒双枪Prime",
+                        "觉醒双枪P")
                 },
                 { "AKLATO", new Weapon(WeaponType.Secondary, 30.0, 0.1, 1.8, 0.06, 1.52, 3, "Aklato", "拉托双枪", "双持拉托") },
                 {
-                    "AKLEX PRIME",
-                    new Weapon(WeaponType.Secondary, 150, 0.25, 2, 0.25, 0.92, 15, "Aklex Prime", "雷克斯双枪Prime",
+                    "AKLEX PRIME", new Weapon(WeaponType.Secondary, 150, 0.25, 2, 0.25, 0.92, 15, "Aklex Prime",
+                        "雷克斯双枪Prime",
                         "圣装双持秩序之握",
                         "雷克斯双枪P", "雷双")
                 },
@@ -2105,8 +2330,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Secondary, 18.0, 0.24, 3, 0.08, 1.2, 9, "Aksomati", "轻灵月神双枪", "轻灵索玛双枪")
                 },
                 {
-                    "AKSTILETTO PRIME",
-                    new Weapon(WeaponType.Secondary, 36.0, 0.15, 2, 0.3, 0.5, 10, "Akstiletto Prime", "史提托双枪Prime",
+                    "AKSTILETTO PRIME", new Weapon(WeaponType.Secondary, 36.0, 0.15, 2, 0.3, 0.5, 10,
+                        "Akstiletto Prime", "史提托双枪Prime",
                         "圣装双持西提列托", "史提托双枪P", "史提托", "尸体拖")
                 },
                 {
@@ -2114,8 +2339,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Secondary, 28.0, 0.18, 1.8, 0.18, 0.5, 8, "Akstiletto", "史提托双枪", "双持西提列托")
                 },
                 {
-                    "AKVASTO PRIME",
-                    new Weapon(WeaponType.Secondary, 58.0, 0.16, 1.8, 0.12, 1.3, 8, "Akvasto Prime", "瓦斯托双枪Prime",
+                    "AKVASTO PRIME", new Weapon(WeaponType.Secondary, 58.0, 0.16, 1.8, 0.12, 1.3, 8, "Akvasto Prime",
+                        "瓦斯托双枪Prime",
                         "圣装瓦斯托双枪")
                 },
                 {
@@ -2134,14 +2359,14 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "ANKU", new Weapon(WeaponType.Melee, 70.0, 0.2, 2, 0.1, 1.46, 3, "Anku", "夺魂死神", "噬魂镰") },
                 {
-                    "ANKYROS PRIME",
-                    new Weapon(WeaponType.Melee, 38.0, 0.2, 2, 0.15, 1.45, 0, "Ankyros Prime", "甲龙双拳Prime", "圣装安奇洛斯拳套",
+                    "ANKYROS PRIME", new Weapon(WeaponType.Melee, 38.0, 0.2, 2, 0.15, 1.45, 0, "Ankyros Prime",
+                        "甲龙双拳Prime", "圣装安奇洛斯拳套",
                         "甲龙双拳P")
                 },
                 { "ANKYROS", new Weapon(WeaponType.Melee, 30.0, 0.2, 2, 0.1, 1.45, 0, "Ankyros", "甲龙双拳", "安奇洛斯拳套") },
                 {
-                    "ARCA PLASMOR",
-                    new Weapon(WeaponType.Primary, 600, 0.22, 1.6, 0.28, 0.7, 10, "Arca Plasmor", "弧电离子枪", "弧电离子枪",
+                    "ARCA PLASMOR", new Weapon(WeaponType.Primary, 600, 0.22, 1.6, 0.28, 0.7, 10, "Arca Plasmor",
+                        "弧电离子枪", "弧电离子枪",
                         "弧电喷")
                 },
                 {
@@ -2155,8 +2380,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "ARGONAK", new Weapon(WeaponType.Primary, 57.0, 0.09, 1.5, 0.27, 1.1, 7, "Argonak", "氩格纳克", "氩格纳克") },
                 { "ARTAX", new Weapon(WeaponType.Primary, 5, 0.02, 1.5, 0.03, 1, 0, "Artax", "阿塔克斯", "阿塔克斯") },
                 {
-                    "ASTILLA",
-                    new Weapon(WeaponType.Primary, 70.0, 0.17, 1.9, 0.33, 1.1, 10, "Astilla", "碎裂者", "碎晶霰弹枪", "玻璃炮",
+                    "ASTILLA", new Weapon(WeaponType.Primary, 70.0, 0.17, 1.9, 0.33, 1.1, 10, "Astilla", "碎裂者", "碎晶霰弹枪",
+                        "玻璃炮",
                         "玻璃喷")
                 },
                 { "ATOMOS", new Weapon(WeaponType.Secondary, 29, 0.15, 1.7, 0.21, 0.8, 5, "Atomos", "原子矿融炮", "原子矿融炮") },
@@ -2168,8 +2393,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "AZIMA", new Weapon(WeaponType.Secondary, 20, 0.16, 2, 0.16, 1.25, 6, "Azima", "方位角", "日冕") },
                 { "BALLA", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Balla", "宝拉", "轻短刃") },
                 {
-                    "BALLISTICA PRIME",
-                    new Weapon(WeaponType.Secondary, 304.0, 0.2, 2, 0.2, 0.95, 14, "Ballistica Prime", "布里斯提卡Prime",
+                    "BALLISTICA PRIME", new Weapon(WeaponType.Secondary, 304.0, 0.2, 2, 0.2, 0.95, 14,
+                        "Ballistica Prime", "布里斯提卡Prime",
                         "圣装惊惧手弩", "布里斯提卡P")
                 },
                 {
@@ -2177,19 +2402,18 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Secondary, 100, 0.15, 1.5, 0.1, 0.95, 2, "Ballistica", "布里斯提卡", "惊惧手弩")
                 },
                 {
-                    "BATTACOR",
-                    new Weapon(WeaponType.Primary, 66.0, 0.32, 2.4, 0.18, 1, 10, "Battacor", "武使之力", "武使之力")
+                    "BATTACOR", new Weapon(WeaponType.Primary, 66.0, 0.32, 2.4, 0.18, 1, 10, "Battacor", "武使之力", "武使之力")
                 },
                 { "BAZA", new Weapon(WeaponType.Primary, 16.0, 0.26, 3, 0.1, 1.1, 7, "Baza", "苍鹰", "苍鹰") },
                 {
-                    "BO PRIME",
-                    new Weapon(WeaponType.Melee, 75.0, 0.125, 2, 0.25, 1.29, 5, "Bo Prime", "珀之武杖Prime", "圣装破禅武杖",
+                    "BO PRIME", new Weapon(WeaponType.Melee, 75.0, 0.125, 2, 0.25, 1.29, 5, "Bo Prime", "珀之武杖Prime",
+                        "圣装破禅武杖",
                         "珀之武杖P")
                 },
                 { "BO", new Weapon(WeaponType.Melee, 50, 0.125, 2, 0.2, 1.29, 0, "Bo", "珀之武杖", "破禅武杖", "珀", "武杖") },
                 {
-                    "BOAR PRIME",
-                    new Weapon(WeaponType.Primary, 320, 0.15, 2, 0.3, 1.34, 11, "Boar Prime", "野猪Prime", "圣装雄猪霰弹枪",
+                    "BOAR PRIME", new Weapon(WeaponType.Primary, 320, 0.15, 2, 0.3, 1.34, 11, "Boar Prime", "野猪Prime",
+                        "圣装雄猪霰弹枪",
                         "野猪P")
                 },
                 { "BOAR", new Weapon(WeaponType.Primary, 176.0, 0.1, 1.5, 0.2, 1.34, 2, "Boar", "野猪", "雄猪霰弹枪") },
@@ -2199,8 +2423,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "BOLTO", new Weapon(WeaponType.Secondary, 40, 0.16, 2.4, 0.022, 1.51, 7, "Bolto", "螺钉手枪", "角犀") },
                 {
-                    "BOLTOR PRIME",
-                    new Weapon(WeaponType.Primary, 46.0, 0.12, 2, 0.34, 0.79, 13, "Boltor Prime", "螺钉步枪Prime",
+                    "BOLTOR PRIME", new Weapon(WeaponType.Primary, 46.0, 0.12, 2, 0.34, 0.79, 13, "Boltor Prime",
+                        "螺钉步枪Prime",
                         "圣装波尔托骨刺", "螺钉步枪P", "螺钉P", "鱼骨P")
                 },
                 {
@@ -2209,8 +2433,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "BRAKK", new Weapon(WeaponType.Secondary, 200, 0.17, 2, 0.17, 0.95, 6, "Brakk", "布拉克", "布拉克") },
                 {
-                    "BRATON PRIME",
-                    new Weapon(WeaponType.Primary, 35.0, 0.12, 2, 0.26, 1.01, 8, "Braton Prime", "布莱顿Prime", "圣装制式步枪",
+                    "BRATON PRIME", new Weapon(WeaponType.Primary, 35.0, 0.12, 2, 0.26, 1.01, 8, "Braton Prime",
+                        "布莱顿Prime", "圣装制式步枪",
                         "布莱顿P")
                 },
                 {
@@ -2227,14 +2451,14 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Melee, 90, 0.15, 1.5, 0.1, 0.79, 10, "Broken War", "破碎的战争之剑", "破碎战争", "破剑")
                 },
                 {
-                    "BRONCO PRIME",
-                    new Weapon(WeaponType.Secondary, 350, 0.06, 2, 0.3, 1.3, 4, "Bronco Prime", "野马Prime", "圣装布隆克烈驹",
+                    "BRONCO PRIME", new Weapon(WeaponType.Secondary, 350, 0.06, 2, 0.3, 1.3, 4, "Bronco Prime",
+                        "野马Prime", "圣装布隆克烈驹",
                         "野马P")
                 },
                 { "BRONCO", new Weapon(WeaponType.Secondary, 280, 0.06, 2, 0.22, 1.3, 0, "Bronco", "野马", "布隆克烈驹") },
                 {
-                    "BURST LASER PRIME",
-                    new Weapon(WeaponType.Secondary, 7.0, 0.025, 1.3, 0.02, 1.45, 0, "Burst Laser Prime", "激光点发Prime",
+                    "BURST LASER PRIME", new Weapon(WeaponType.Secondary, 7.0, 0.025, 1.3, 0.02, 1.45, 0,
+                        "Burst Laser Prime", "激光点发Prime",
                         "圣装激光发射器")
                 },
                 {
@@ -2242,8 +2466,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Secondary, 7.0, 0.025, 1.3, 0.02, 1.45, 0, "Burst Laser", "激光点发", "激光发射器")
                 },
                 {
-                    "BURSTON PRIME",
-                    new Weapon(WeaponType.Primary, 36.0, 0.18, 1.8, 0.3, 1.25, 12, "Burston Prime", "伯斯顿Prime",
+                    "BURSTON PRIME", new Weapon(WeaponType.Primary, 36.0, 0.18, 1.8, 0.3, 1.25, 12, "Burston Prime",
+                        "伯斯顿Prime",
                         "圣装伯斯顿步枪", "伯斯顿P")
                 },
                 { "BURSTON", new Weapon(WeaponType.Primary, 30, 0.06, 1.6, 0.18, 1.25, 0, "Burston", "伯斯顿", "伯斯顿步枪") },
@@ -2255,8 +2479,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "CASSOWAR", new Weapon(WeaponType.Melee, 70.0, 0.06, 1.4, 0.28, 1, 5, "Cassowar", "鹤鸵长戟", "鹤鸵长戟") },
                 {
-                    "CASTANAS",
-                    new Weapon(WeaponType.Secondary, 160, 0.08, 1.5, 0.22, 1.35, 3, "Castanas", "雷爆信镖", "分体式处理信标",
+                    "CASTANAS", new Weapon(WeaponType.Secondary, 160, 0.08, 1.5, 0.22, 1.35, 3, "Castanas", "雷爆信镖",
+                        "分体式处理信标",
                         "雷爆信标", "雷暴信镖", "雷暴信标")
                 },
                 { "CATCHMOON", new Weapon(WeaponType.KitGun, 0, 0, 0, 0, 1, 0, "Catchmoon", "捕月", "捕月") },
@@ -2269,8 +2493,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "CERATA", new Weapon(WeaponType.Melee, 44, 0.15, 2, 0.3, 1.36, 3, "Cerata", "裸鳃刃", "蛟鳃刃") },
                 {
-                    "CERNOS PRIME",
-                    new Weapon(WeaponType.Primary, 360, 0.35, 2, 0.3, 0.92, 12, "Cernos Prime", "西诺斯Prime", "圣装瑟诺斯长弓",
+                    "CERNOS PRIME", new Weapon(WeaponType.Primary, 360, 0.35, 2, 0.3, 0.92, 12, "Cernos Prime",
+                        "西诺斯Prime", "圣装瑟诺斯长弓",
                         "西诺斯P")
                 },
                 { "CERNOS", new Weapon(WeaponType.Primary, 220, 0.36, 2, 0.18, 0.92, 6, "Cernos", "西诺斯", "瑟诺斯长弓") },
@@ -2290,8 +2514,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     "DAIKYU", new Weapon(WeaponType.Primary, 460, 0.2, 2, 0.5, 1.21, 10, "Daikyu", "大久和弓", "大久和弓", "大久")
                 },
                 {
-                    "DAKRA PRIME",
-                    new Weapon(WeaponType.Melee, 60, 0.15, 1.5, 0.1, 1.15, 6, "Dakra Prime", "达克拉Prime", "圣装达克拉",
+                    "DAKRA PRIME", new Weapon(WeaponType.Melee, 60, 0.15, 1.5, 0.1, 1.15, 6, "Dakra Prime", "达克拉Prime",
+                        "圣装达克拉",
                         "达克拉P")
                 },
                 {
@@ -2299,13 +2523,13 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Melee, 35, 0.05, 1.5, 0.1, 0.5, 0, "Dark Dagger", "暗黑匕首", "暗影匕首")
                 },
                 {
-                    "DARK SPLIT-SWORD DUAL SWORDS",
-                    new Weapon(WeaponType.Melee, 65, 0.25, 2.5, 0.15, 1.21, 5, "Dark Split-Sword", "暗黑分合剑双剑", "暗影子母剑",
+                    "DARK SPLIT-SWORD DUAL SWORDS", new Weapon(WeaponType.Melee, 65, 0.25, 2.5, 0.15, 1.21, 5,
+                        "Dark Split-Sword", "暗黑分合剑双剑", "暗影子母剑",
                         "暗黑分和剑")
                 },
                 {
-                    "DARK SPLIT-SWORD HEAVY BLADE",
-                    new Weapon(WeaponType.Melee, 90, 0.1, 2, 0.25, 1.21, 5, "Dark Split-Sword", "暗黑分合剑巨刃", "暗影子母剑",
+                    "DARK SPLIT-SWORD HEAVY BLADE", new Weapon(WeaponType.Melee, 90, 0.1, 2, 0.25, 1.21, 5,
+                        "Dark Split-Sword", "暗黑分合剑巨刃", "暗影子母剑",
                         "暗黑分和剑")
                 },
                 {
@@ -2313,8 +2537,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Melee, 37, 0.05, 1.5, 0.1, 1.48, 0, "Dark Sword", "暗黑长剑", "暗影长剑")
                 },
                 {
-                    "DECONSTRUCTOR PRIME",
-                    new Weapon(WeaponType.Melee, 75, 0, 0, 0.25, 1.25, 8, "Deconstructor Prime", "分离Prime", "圣装爆能分解",
+                    "DECONSTRUCTOR PRIME", new Weapon(WeaponType.Melee, 75, 0, 0, 0.25, 1.25, 8, "Deconstructor Prime",
+                        "分离Prime", "圣装爆能分解",
                         "分离P")
                 },
                 {
@@ -2334,8 +2558,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Melee, 76.0, 0.24, 3, 0.18, 1.14, 10, "Destreza Prime", "技巧之剑Prime", "圣装护手刺剑")
                 },
                 {
-                    "DETH MACHINE RIFLE PRIME",
-                    new Weapon(WeaponType.Primary, 5.1, 0.05, 2, 0.01, 1.455, 0, "Deth Machine Rifle Prime",
+                    "DETH MACHINE RIFLE PRIME", new Weapon(WeaponType.Primary, 5.1, 0.05, 2, 0.01, 1.455, 0,
+                        "Deth Machine Rifle Prime",
                         "死亡机枪Prime", "圣装致死机枪", "死亡机枪P")
                 },
                 {
@@ -2382,8 +2606,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     "DUAL ICHOR", new Weapon(WeaponType.Melee, 35, 0.25, 3, 0.15, 1.16, 6, "Dual Ichor", "恶脓双斧", "恶脓双斧")
                 },
                 {
-                    "DUAL KAMAS PRIME",
-                    new Weapon(WeaponType.Melee, 42.0, 0.05, 1.5, 0.075, 0.81, 1, "Dual Kamas", "双短柄战镰Prime", "圣装迦摩双镰",
+                    "DUAL KAMAS PRIME", new Weapon(WeaponType.Melee, 42.0, 0.05, 1.5, 0.075, 0.81, 1, "Dual Kamas",
+                        "双短柄战镰Prime", "圣装迦摩双镰",
                         "双短柄战镰P")
                 },
                 {
@@ -2424,13 +2648,17 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Melee, 37.0, 0.05, 1.5, 0.1, 1.44, 0, "Ether Sword", "苍穹之剑", "苍穹之剑")
                 },
                 {
-                    "EUPHONA PRIME",
-                    new Weapon(WeaponType.Secondary, 325.0, 0.3, 2.5, 0.02, 0.7, 14, "Euphona Prime", "悦音Prime",
+                    "EXERGIS",
+                    new Weapon(WeaponType.Shotgun, 1620, 0.08, 1.4, 0.36, 1, 8, "Ether Sword", "苍穹之剑", "苍穹之剑")
+                },
+                {
+                    "EUPHONA PRIME", new Weapon(WeaponType.Secondary, 325.0, 0.3, 2.5, 0.02, 0.7, 14, "Euphona Prime",
+                        "悦音Prime",
                         "圣装仙乐奏鸣", "悦音P")
                 },
                 {
-                    "FANG PRIME",
-                    new Weapon(WeaponType.Melee, 36.0, 0.05, 1.5, 0.05, 1.36, 0, "Fang Prime", "狼牙Prime", "圣装狼牙双刃",
+                    "FANG PRIME", new Weapon(WeaponType.Melee, 36.0, 0.05, 1.5, 0.05, 1.36, 0, "Fang Prime", "狼牙Prime",
+                        "圣装狼牙双刃",
                         "狼牙P")
                 },
                 { "FALCOR", new Weapon(WeaponType.Melee, 78.0, 0.12, 1.6, 0.28, 1, 8, "Falcor", "猎鹰轮", "猎鹰轮") },
@@ -2444,8 +2672,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Primary, 22.0, 0.1, 2, 0.24, 1.55, 6, "Flux Rifle", "通量射线步枪", "热能步枪")
                 },
                 {
-                    "FRAGOR PRIME",
-                    new Weapon(WeaponType.Melee, 130.0, 0.35, 2.5, 0.1, 0.96, 7, "Fragor Prime", "重击巨锤Prime", "圣装悲悯",
+                    "FRAGOR PRIME", new Weapon(WeaponType.Melee, 130.0, 0.35, 2.5, 0.1, 0.96, 7, "Fragor Prime",
+                        "重击巨锤Prime", "圣装悲悯",
                         "重击巨锤P", "大锤P")
                 },
                 { "FRAGOR", new Weapon(WeaponType.Melee, 115.0, 0.2, 2, 0.1, 0.96, 2, "Fragor", "重击巨锤", "悲悯", "大锤") },
@@ -2460,8 +2688,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Secondary, 77.0, 0.23, 1.7, 0.29, 1.3, 7, "Fusilai", "齐射玻刃", "齐射玻刃", "玻璃飞刀")
                 },
                 {
-                    "GALATINE PRIME",
-                    new Weapon(WeaponType.Melee, 125.0, 0.1, 2, 0.2, 0.5, 3, "Galatine Prime", "迦伦提恩Prime", "圣装加拉丁暗影",
+                    "GALATINE PRIME", new Weapon(WeaponType.Melee, 125.0, 0.1, 2, 0.2, 0.5, 3, "Galatine Prime",
+                        "迦伦提恩Prime", "圣装加拉丁暗影",
                         "迦伦提恩P", "大剑P")
                 },
                 {
@@ -2478,14 +2706,14 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "GAZE", new Weapon(WeaponType.KitGun, 0, 0, 0, 0, 1, 0, "Gaze", "凝目", "凝目") },
                 {
-                    "GLAIVE PRIME",
-                    new Weapon(WeaponType.Melee, 50.0, 0.15, 2, 0.3, 1.22, 10, "Glaive Prime", "战刃Prime", "圣装回旋刃",
+                    "GLAIVE PRIME", new Weapon(WeaponType.Melee, 50.0, 0.15, 2, 0.3, 1.22, 10, "Glaive Prime",
+                        "战刃Prime", "圣装回旋刃",
                         "战刃P")
                 },
                 { "GLAIVE", new Weapon(WeaponType.Melee, 35.0, 0.1, 2, 0.1, 1.22, 1, "Glaive", "战刃", "回旋刃") },
                 {
-                    "GLAXION",
-                    new Weapon(WeaponType.Primary, 26, 0.08, 2, 0.34, 1.35, 8, "Glaxion", "冷冻光束步枪", "急冻冰枪", "冷冻射线步枪",
+                    "GLAXION", new Weapon(WeaponType.Primary, 26, 0.08, 2, 0.34, 1.35, 8, "Glaxion", "冷冻光束步枪", "急冻冰枪",
+                        "冷冻射线步枪",
                         "冰冻射线步枪", "冰冻光束步枪")
                 },
                 {
@@ -2496,8 +2724,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "GRAKATA", new Weapon(WeaponType.Primary, 11.0, 0.25, 2, 0.2, 1.15, 5, "Grakata", "葛拉卡达", "格拉达火舌") },
                 { "GRAM", new Weapon(WeaponType.Melee, 100, 0.15, 2, 0.15, 1.44, 2, "Gram", "格拉姆", "格拉姆") },
                 {
-                    "GRAM PRIME",
-                    new Weapon(WeaponType.Melee, 180, 0.32, 2.6, 0.32, 1.44, 14, "Gram Prime", "格拉姆Prime", "圣装格拉姆",
+                    "GRAM PRIME", new Weapon(WeaponType.Melee, 180, 0.32, 2.6, 0.32, 1.44, 14, "Gram Prime", "格拉姆Prime",
+                        "圣装格拉姆",
                         "格拉姆P")
                 },
                 {
@@ -2524,8 +2752,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "HEMA", new Weapon(WeaponType.Primary, 47, 0.11, 2, 0.25, 1.1, 7, "Hema", "血肢", "希玛嗜血体") },
                 {
-                    "HIKOU PRIME",
-                    new Weapon(WeaponType.Secondary, 36.0, 0.06, 1.8, 0.28, 0.75, 4, "Hikou Prime", "飞扬Prime", "圣装星镖",
+                    "HIKOU PRIME", new Weapon(WeaponType.Secondary, 36.0, 0.06, 1.8, 0.28, 0.75, 4, "Hikou Prime",
+                        "飞扬Prime", "圣装星镖",
                         "飞扬P")
                 },
                 { "HIKOU", new Weapon(WeaponType.Secondary, 26.0, 0.04, 1.6, 0.1, 0.75, 2, "Hikou", "飞扬", "星镖") },
@@ -2533,8 +2761,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "HIRUDO", new Weapon(WeaponType.Melee, 55.0, 0.15, 3, 0.05, 0.5, 7, "Hirudo", "蚂蝗", "血蛭") },
                 { "HYSTRIX", new Weapon(WeaponType.Secondary, 36.1, 0.24, 2.2, 0.1, 1.05, 7, "Hystrix", "豪猪", "猬刺") },
                 {
-                    "IGNIS WRAITH",
-                    new Weapon(WeaponType.Primary, 35, 0.17, 2.5, 0.29, 0.7, 9, "Ignis Wraith", "伊格尼斯亡魂", "亡魂爆燃喷射器",
+                    "IGNIS WRAITH", new Weapon(WeaponType.Primary, 35, 0.17, 2.5, 0.29, 0.7, 9, "Ignis Wraith",
+                        "伊格尼斯亡魂", "亡魂爆燃喷射器",
                         "喷火器亡魂", "亡魂喷火器")
                 },
                 { "IGNIS", new Weapon(WeaponType.Primary, 33, 0.11, 2, 0.27, 0.7, 5, "Ignis", "伊格尼斯", "爆燃喷射器", "喷火器") },
@@ -2559,8 +2787,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "KESTREL", new Weapon(WeaponType.Melee, 35.0, 0.1, 2, 0.1, 1.45, 0, "Kestrel", "红隼", "红隼") },
                 { "KNELL", new Weapon(WeaponType.Secondary, 150, 0.2, 1.5, 0.05, 1.15, 10, "Knell", "丧钟", "噩兆") },
                 {
-                    "KOGAKE PRIME",
-                    new Weapon(WeaponType.Melee, 70.0, 0.16, 1.8, 0.34, 1.46, 10, "Kogake Prime", "科加基Prime", "圣装牢笼拳套",
+                    "KOGAKE PRIME", new Weapon(WeaponType.Melee, 70.0, 0.16, 1.8, 0.34, 1.46, 10, "Kogake Prime",
+                        "科加基Prime", "圣装牢笼拳套",
                         "科加基P")
                 },
                 { "KOGAKE", new Weapon(WeaponType.Melee, 35.0, 0.2, 2, 0.1, 1.46, 0, "Kogake", "科加基", "牢笼拳套") },
@@ -2581,8 +2809,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Melee, 65.0, 0.05, 1.5, 0.2, 1.43, 3, "Kronen", "皇家拐刃", "弧月刀", "皇家拐")
                 },
                 {
-                    "KRONEN PRIME",
-                    new Weapon(WeaponType.Melee, 66.0, 0.12, 2, 0.24, 1.43, 8, "Kronen Prime", "皇家拐刃Prime", "圣装弧月刀",
+                    "KRONEN PRIME", new Weapon(WeaponType.Melee, 66.0, 0.12, 2, 0.24, 1.43, 8, "Kronen Prime",
+                        "皇家拐刃Prime", "圣装弧月刀",
                         "皇家拐刃P", "拐p", "皇家拐p")
                 },
                 { "KRONSH", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Kronsh", "客隆什", "重弯刀") },
@@ -2598,8 +2826,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Primary, 8.0, 0.025, 1.3, 0.02, 1.21, 0, "Laser Rifle", "激光步枪", "激光步枪")
                 },
                 {
-                    "LATO PRIME",
-                    new Weapon(WeaponType.Secondary, 48.0, 0.3, 2, 0.2, 1.4, 14, "Lato Prime", "拉托Prime", "圣装拉托",
+                    "LATO PRIME", new Weapon(WeaponType.Secondary, 48.0, 0.3, 2, 0.2, 1.4, 14, "Lato Prime", "拉托Prime",
+                        "圣装拉托",
                         "拉托P")
                 },
                 {
@@ -2608,8 +2836,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "LATO", new Weapon(WeaponType.Secondary, 30.0, 0.1, 1.8, 0.06, 1.4, 0, "Lato", "拉托", "拉托") },
                 {
-                    "LATRON PRIME",
-                    new Weapon(WeaponType.Primary, 90, 0.22, 2.8, 0.26, 1.15, 10, "Latron Prime", "拉特昂Prime",
+                    "LATRON PRIME", new Weapon(WeaponType.Primary, 90, 0.22, 2.8, 0.26, 1.15, 10, "Latron Prime",
+                        "拉特昂Prime",
                         "圣装拉特龙半自动步枪", "拉特昂P")
                 },
                 {
@@ -2621,8 +2849,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "LENZ", new Weapon(WeaponType.Primary, 50, 0.5, 2, 0.05, 0.9, 8, "Lenz", "楞次弓", "楞次弓", "楞次") },
                 { "LESION", new Weapon(WeaponType.Melee, 100, 0.05, 2, 0.3, 0.5, 7, "Lesion", "病变", "病变") },
                 {
-                    "LEX PRIME",
-                    new Weapon(WeaponType.Secondary, 150, 0.25, 2, 0.25, 0.5, 8, "Lex Prime", "雷克斯Prime", "圣装秩序之握",
+                    "LEX PRIME", new Weapon(WeaponType.Secondary, 150, 0.25, 2, 0.25, 0.5, 8, "Lex Prime", "雷克斯Prime",
+                        "圣装秩序之握",
                         "雷克斯P")
                 },
                 { "LEX", new Weapon(WeaponType.Secondary, 130, 0.2, 2, 0.1, 0.5, 3, "Lex", "雷克斯", "秩序之握") },
@@ -2675,30 +2903,27 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Primary, 225.0, 0.15, 2, 0.49, 1.26, 7, "Mutalist Cernos", "异融西诺斯", "异融瑟诺斯长弓")
                 },
                 {
-                    "MUTALIST QUANTA",
-                    new Weapon(WeaponType.Primary, 25.0, 0.025, 1.5, 0.15, 1.55, 2, "Mutalist Quanta", "异融量子枪",
+                    "MUTALIST QUANTA", new Weapon(WeaponType.Primary, 25.0, 0.025, 1.5, 0.15, 1.55, 2,
+                        "Mutalist Quanta", "异融量子枪",
                         "异融光能量子")
                 },
+                { "NAGANTAKA", new Weapon(WeaponType.Primary, 159, 0.15, 2.3, 0.39, 1, 9, "Nagantaka", "噬蛇弩", "噬蛇弩") },
                 {
-                    "NAGANTAKA",
-                    new Weapon(WeaponType.Primary, 159, 0.15, 2.3, 0.39, 1, 9, "Nagantaka", "噬蛇弩", "噬蛇弩")
-                },
-                {
-                    "NAMI SKYLA PRIME",
-                    new Weapon(WeaponType.Melee, 60, 0.2, 1.5, 0.3, 1.175, 11, "Nami Skyla Prime", "海波斯库拉对剑Prime",
+                    "NAMI SKYLA PRIME", new Weapon(WeaponType.Melee, 60, 0.2, 1.5, 0.3, 1.175, 11, "Nami Skyla Prime",
+                        "海波斯库拉对剑Prime",
                         "圣装纳米斯凯拉", "海波斯库拉对剑P", "海波对剑P", "海波双剑P")
                 },
                 {
-                    "NAMI SKYLA",
-                    new Weapon(WeaponType.Melee, 50.0, 0.05, 1.5, 0.1, 1.175, 0, "Nami Skyla", "海波斯库拉对剑", "纳米斯凯拉",
+                    "NAMI SKYLA", new Weapon(WeaponType.Melee, 50.0, 0.05, 1.5, 0.1, 1.175, 0, "Nami Skyla", "海波斯库拉对剑",
+                        "纳米斯凯拉",
                         "海波对剑", "海波双剑")
                 },
                 {
                     "NAMI SOLO", new Weapon(WeaponType.Melee, 35.0, 0.15, 2, 0.25, 1.43, 0, "Nami Solo", "海波单剑", "纳米索隆")
                 },
                 {
-                    "NIKANA PRIME",
-                    new Weapon(WeaponType.Melee, 95.0, 0.2, 2, 0.2, 0.5, 0, "Nikana Prime", "侍刃Prime", "圣装侍刃", "侍刃P",
+                    "NIKANA PRIME", new Weapon(WeaponType.Melee, 95.0, 0.2, 2, 0.2, 0.5, 0, "Nikana Prime", "侍刃Prime",
+                        "圣装侍刃", "侍刃P",
                         "装逼刀P")
                 },
                 { "NIKANA", new Weapon(WeaponType.Melee, 45.0, 0.1, 2, 0.1, 0.5, 4, "Nikana", "侍刃", "虎之侍刃", "装逼刀") },
@@ -2708,10 +2933,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "NUKOR", new Weapon(WeaponType.Secondary, 22, 0.03, 4, 0.29, 1.450, 4, "Nukor", "努寇微波枪", "努寇微波") },
                 { "OBEX", new Weapon(WeaponType.Melee, 25.0, 0.25, 2, 0.1, 1.10, 0, "Obex", "奥比克斯", "惩戒手刺") },
-                {
-                    "OCUCOR",
-                    new Weapon(WeaponType.Secondary, 22.0, 0.16, 1.8, 0.24, 1.0, 8, "Ocucor", "视使之触", "视使之触")
-                },
+                { "OCUCOR", new Weapon(WeaponType.Secondary, 22.0, 0.16, 1.8, 0.24, 1.0, 8, "Ocucor", "视使之触", "视使之触") },
                 { "OGRIS", new Weapon(WeaponType.Primary, 100, 0.05, 2, 0.35, 01.245, 9, "Ogris", "食人女魔", "奥基手持火箭炮") },
                 { "OHMA", new Weapon(WeaponType.Melee, 100, 0.15, 2, 0.3, 01, 8, "Ohma", "欧玛", "欧玛电击棍", "欧码") },
                 { "OKINA", new Weapon(WeaponType.Melee, 40, 0.05, 2, 0.15, 01.31, 5, "Okina", "翁", "三叉刺") },
@@ -2721,8 +2943,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Primary, 1000, 0.2, 2.5, 0.2, 1.15, 14, "Opticor", "奥堤克光子枪", "热熔镭射炮", "O炮")
                 },
                 {
-                    "ORTHOS PRIME",
-                    new Weapon(WeaponType.Melee, 65.0, 0.1, 2, 0.15, 0.5, 2, "Orthos Prime", "欧特鲁斯Prime", "圣装双尾鲨",
+                    "ORTHOS PRIME", new Weapon(WeaponType.Melee, 65.0, 0.1, 2, 0.15, 0.5, 2, "Orthos Prime",
+                        "欧特鲁斯Prime", "圣装双尾鲨",
                         "欧特鲁斯P", "OP")
                 },
                 { "ORTHOS", new Weapon(WeaponType.Melee, 50.0, 0.05, 1.5, 0.15, 0.5, 2, "Orthos", "欧特鲁斯", "双尾鲨") },
@@ -2735,8 +2957,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "PANTHERA", new Weapon(WeaponType.Primary, 100, 0.12, 2, 0.24, 1.5, 7, "Panthera", "猎豹", "猎豹") },
                 { "PARACYST", new Weapon(WeaponType.Primary, 33, 0.1, 2, 0.3, 1.315, 7, "Paracyst", "附肢寄生者", "附肢寄生者") },
                 {
-                    "PARIS PRIME",
-                    new Weapon(WeaponType.Primary, 260.0, 0.45, 2, 0.2, 1.05, 8, "Paris Prime", "帕里斯Prime", "圣装帕里斯长弓",
+                    "PARIS PRIME", new Weapon(WeaponType.Primary, 260.0, 0.45, 2, 0.2, 1.05, 8, "Paris Prime",
+                        "帕里斯Prime", "圣装帕里斯长弓",
                         "帕里斯P", "PP")
                 },
                 { "PARIS", new Weapon(WeaponType.Primary, 180, 0.3, 2, 0.1, 1.05, 3, "Paris", "帕里斯", "帕里斯长弓") },
@@ -2748,8 +2970,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Plague Keewar", "瘟疫 奇沃", "瘟疫 奇沃", "瘟疫奇沃", "奇沃")
                 },
                 {
-                    "PLAGUE KRIPATH",
-                    new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Plague Kripath", "瘟疫 克里帕丝", "瘟疫 克里帕丝",
+                    "PLAGUE KRIPATH", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Plague Kripath", "瘟疫 克里帕丝",
+                        "瘟疫 克里帕丝",
                         "瘟疫 克里帕斯", "瘟疫克里帕丝", "瘟疫克里帕斯", "克里帕斯", "克里帕丝")
                 },
                 {
@@ -2758,18 +2980,18 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "POX", new Weapon(WeaponType.Secondary, 50, 0.01, 2, 0.35, 0.95, 9, "Pox", "脓痘", "脓痘") },
                 {
-                    "PRIME LASER RIFLE",
-                    new Weapon(WeaponType.Primary, 12.0, 0.15, 1.5, 0.05, 1.21, 0, "Prime Laser Rifle", "激光步枪Prime",
+                    "PRIME LASER RIFLE", new Weapon(WeaponType.Primary, 12.0, 0.15, 1.5, 0.05, 1.21, 0,
+                        "Prime Laser Rifle", "激光步枪Prime",
                         "圣装激光步枪", "激光步枪P")
                 },
                 {
-                    "PRISMA ANGSTRUM",
-                    new Weapon(WeaponType.Secondary, 200, 0.18, 2.2, 0.26, 1.4, 8, "Prisma Angstrum", "棱晶安格斯壮",
+                    "PRISMA ANGSTRUM", new Weapon(WeaponType.Secondary, 200, 0.18, 2.2, 0.26, 1.4, 8, "Prisma Angstrum",
+                        "棱晶安格斯壮",
                         "棱晶将军手持短炮")
                 },
                 {
-                    "PRISMA BURST LASER",
-                    new Weapon(WeaponType.Secondary, 10.0, 0.05, 2, 0.1, 1.45, 0, "Prisma Burst Laser", "棱晶激光点发",
+                    "PRISMA BURST LASER", new Weapon(WeaponType.Secondary, 10.0, 0.05, 2, 0.1, 1.45, 0,
+                        "Prisma Burst Laser", "棱晶激光点发",
                         "棱晶激光发射器")
                 },
                 {
@@ -2781,8 +3003,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Primary, 23.1, 0.3, 2.3, 0.15, 1.175, 11, "Prisma Gorgon", "棱晶蛇发女妖", "棱晶蛇发女妖")
                 },
                 {
-                    "PRISMA GRAKATA",
-                    new Weapon(WeaponType.Primary, 15, 0.25, 2.5, 0.21, 1.15, 11, "Prisma Grakata", "棱晶葛拉卡达",
+                    "PRISMA GRAKATA", new Weapon(WeaponType.Primary, 15, 0.25, 2.5, 0.21, 1.15, 11, "Prisma Grakata",
+                        "棱晶葛拉卡达",
                         "棱晶格拉达火舌")
                 },
                 {
@@ -2802,8 +3024,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Primary, 38.0, 0.1, 2, 0.24, 1.5, 4, "Prisma Tetra", "棱晶特拉", "棱晶泰特拉")
                 },
                 {
-                    "PRISMA TWIN GREMLINS",
-                    new Weapon(WeaponType.Secondary, 27.0, 0.23, 1.9, 0.23, 1.4, 11, "Prisma Twin Gremlins", "棱晶双子小精灵",
+                    "PRISMA TWIN GREMLINS", new Weapon(WeaponType.Secondary, 27.0, 0.23, 1.9, 0.23, 1.4, 11,
+                        "Prisma Twin Gremlins", "棱晶双子小精灵",
                         "棱晶双子小精灵")
                 },
                 {
@@ -2814,18 +3036,17 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "PUPACYST", new Weapon(WeaponType.Melee, 90, 0.13, 1.5, 0.27, 1, 7, "Pupacyst", "毒囊骨茧", "毒囊骨茧") },
                 { "PYRANA", new Weapon(WeaponType.Secondary, 264.0, 0.2, 2, 0.1, 1.0, 12, "Pyrana", "食人鱼", "派亚脊刺") },
                 {
-                    "PYRANA PRIME",
-                    new Weapon(WeaponType.Secondary, 240.0, 0.24, 2.2, 0.12, 1.0, 13, "Pyrana Prime", "食人鱼Prime",
+                    "PYRANA PRIME", new Weapon(WeaponType.Secondary, 240.0, 0.24, 2.2, 0.12, 1.0, 13, "Pyrana Prime",
+                        "食人鱼Prime",
                         "圣装派亚脊刺", "食人鱼P")
                 },
                 {
-                    "QUANTA VANDAL",
-                    new Weapon(WeaponType.Primary, 26, 0.22, 2.4, 0.3, 1, 10, "Quanta Vandal", "量子切割器破坏者", "镇暴光能量子",
+                    "QUANTA VANDAL", new Weapon(WeaponType.Primary, 26, 0.22, 2.4, 0.3, 1, 10, "Quanta Vandal",
+                        "量子切割器破坏者", "镇暴光能量子",
                         "莲花矿枪")
                 },
                 {
-                    "QUANTA",
-                    new Weapon(WeaponType.Primary, 20, 0.16, 2.2, 0.16, 1, 4, "Quanta", "量子切割器", "光能量子", "矿枪")
+                    "QUANTA", new Weapon(WeaponType.Primary, 20, 0.16, 2.2, 0.16, 1, 4, "Quanta", "量子切割器", "光能量子", "矿枪")
                 },
                 {
                     "QUARTAKK",
@@ -2833,37 +3054,38 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "RABVEE", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Rabvee", "拉比威", "拉比威") },
                 {
-                    "RAKTA BALLISTICA",
-                    new Weapon(WeaponType.Secondary, 300, 0.2, 1.5, 0.1, 0.95, 6, "Rakta Ballistica", "绯红布里斯提卡",
+                    "RAKTA BALLISTICA", new Weapon(WeaponType.Secondary, 300, 0.2, 1.5, 0.1, 0.95, 6,
+                        "Rakta Ballistica", "绯红布里斯提卡",
                         "拉克塔惊惧手弩", "集团弩", "绯红 布里斯提卡")
                 },
                 {
-                    "RAKTA CERNOS",
-                    new Weapon(WeaponType.Primary, 250.0, 0.35, 2, 0.15, 0.92, 12, "Rakta Cernos", "绯红西诺斯", "拉克塔瑟诺斯长弓",
+                    "RAKTA CERNOS", new Weapon(WeaponType.Primary, 250.0, 0.35, 2, 0.15, 0.92, 12, "Rakta Cernos",
+                        "绯红西诺斯", "拉克塔瑟诺斯长弓",
                         "集团弓", "血色弓", "绯红 西诺斯")
                 },
                 {
-                    "RAKTA DARK DAGGER",
-                    new Weapon(WeaponType.Melee, 50, 0.05, 1.5, 0.1, 0.5, 8, "Rakta Dark Dagger", "绯红暗黑匕首", "拉克塔暗影匕首",
+                    "RAKTA DARK DAGGER", new Weapon(WeaponType.Melee, 50, 0.05, 1.5, 0.1, 0.5, 8, "Rakta Dark Dagger",
+                        "绯红暗黑匕首", "拉克塔暗影匕首",
                         "集团匕", "绯红 暗黑匕首")
                 },
                 { "RATTLEGUTS", new Weapon(WeaponType.KitGun, 0, 0, 0, 0, 1, 0, "Rattleguts", "响胆", "响胆") },
                 {
-                    "REAPER PRIME",
-                    new Weapon(WeaponType.Melee, 75.1, 0.2, 2, 0.12, 1.29, 2, "Reaper Prime", "收割者Prime", "圣装收割者",
+                    "REAPER PRIME", new Weapon(WeaponType.Melee, 75.1, 0.2, 2, 0.12, 1.29, 2, "Reaper Prime",
+                        "收割者Prime", "圣装收割者",
                         "收割者P")
                 },
-                { "REDEEMER", new Weapon(WeaponType.Melee, 300, 0.05, 1.5, 0.1, 1.17, 4, "Redeemer", "救赎者", "救赎者") },
+                { "REDEEMER", new Weapon(WeaponType.Melee, 60, 0.05, 1.5, 0.1, 1.17, 4, "Redeemer", "救赎者", "救赎者") },
+                { "REDEEMER PRIME", new Weapon(WeaponType.Melee, 80, 0.16, 2.2, 0.28, 1.17, 4, "Redeemer Prime", "救赎者Prime", "圣装救赎者", "救赎者P") },
                 { "RIPKAS", new Weapon(WeaponType.Melee, 55.1, 0.2, 2, 0.15, 1.38, 3, "Ripkas", "锐卡斯", "覆海蛟") },
                 { "RUBICO", new Weapon(WeaponType.Primary, 180, 0.3, 3, 0.12, 0.95, 6, "Rubico", "绝路", "绿陶狙击枪") },
                 {
-                    "RUBICO PRIME",
-                    new Weapon(WeaponType.Primary, 187.0, 0.38, 3, 0.16, 0.95, 12, "Rubico Prime", "绝路Prime",
+                    "RUBICO PRIME", new Weapon(WeaponType.Primary, 187.0, 0.38, 3, 0.16, 0.95, 12, "Rubico Prime",
+                        "绝路Prime",
                         "圣装绿陶狙击枪", "绝路p")
                 },
                 {
-                    "SANCTI CASTANAS",
-                    new Weapon(WeaponType.Secondary, 300, 0.24, 2, 0.34, 1.35, 10, "Sancti Castanas", "圣洁雷爆信镖",
+                    "SANCTI CASTANAS", new Weapon(WeaponType.Secondary, 300, 0.24, 2, 0.34, 1.35, 10, "Sancti Castanas",
+                        "圣洁雷爆信镖",
                         "圣洁分体式处理信标", "圣洁雷爆信标", "圣洁雷暴信镖", "圣洁雷暴信标", "圣洁信镖", "圣洁信标", "集团镖")
                 },
                 {
@@ -2871,14 +3093,14 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Melee, 120, 0.2, 2, 0.1, 1.09, 8, "Sancti Magistar", "圣洁执法者", "圣洁真理权杖", "奶锤")
                 },
                 {
-                    "SANCTI TIGRIS",
-                    new Weapon(WeaponType.Primary, 1260, 0.15, 1.5, 0.28, 0.5, 12, "Sancti Tigris", "圣洁猛虎", "圣洁泰格里斯",
+                    "SANCTI TIGRIS", new Weapon(WeaponType.Primary, 1260, 0.15, 1.5, 0.28, 0.5, 12, "Sancti Tigris",
+                        "圣洁猛虎", "圣洁泰格里斯",
                         "集团猛虎")
                 },
                 { "SARPA", new Weapon(WeaponType.Melee, 175.0, 0.05, 1.5, 0.1, 1.24, 8, "Sarpa", "蛇刃", "蛇刃") },
                 {
-                    "SCINDO PRIME",
-                    new Weapon(WeaponType.Melee, 130, 0.2, 2, 0.15, 1, 4, "Scindo Prime", "分裂斩斧Prime", "圣装神罚巨斧",
+                    "SCINDO PRIME", new Weapon(WeaponType.Melee, 130, 0.2, 2, 0.15, 1, 4, "Scindo Prime", "分裂斩斧Prime",
+                        "圣装神罚巨斧",
                         "分裂斩斧P")
                 },
                 { "SCINDO", new Weapon(WeaponType.Melee, 100, 0.15, 1.5, 0.1, 1, 2, "Scindo", "分裂斩斧", "神罚巨斧") },
@@ -2888,13 +3110,13 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "SCOURGE", new Weapon(WeaponType.Primary, 70, 0.02, 1.5, 0.3, 1.1, 6, "Scourge", "祸根", "天罚") },
                 {
-                    "SECURA DUAL CESTRA",
-                    new Weapon(WeaponType.Secondary, 28.0, 0.16, 1.6, 0.28, 1.3, 10, "Secura Dual Cestra", "保障锡斯特双枪",
+                    "SECURA DUAL CESTRA", new Weapon(WeaponType.Secondary, 28.0, 0.16, 1.6, 0.28, 1.3, 10,
+                        "Secura Dual Cestra", "保障锡斯特双枪",
                         "瑟古拉双持逆转聚能炮")
                 },
                 {
-                    "SECURA LECTA",
-                    new Weapon(WeaponType.Melee, 75, 0.05, 1.5, 0.25, 0.5, 8, "Secura Lecta", "保障勒克塔", "瑟古拉僵直电鞭", "钱鞭",
+                    "SECURA LECTA", new Weapon(WeaponType.Melee, 75, 0.05, 1.5, 0.25, 0.5, 8, "Secura Lecta", "保障勒克塔",
+                        "瑟古拉僵直电鞭", "钱鞭",
                         "集团鞭")
                 },
                 {
@@ -2910,24 +3132,24 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     "SIBEAR", new Weapon(WeaponType.Melee, 130, 0.15, 2, 0.1, 1.35, 6, "Sibear", "西伯利亚冰锤", "冰原重锤", "冰锤")
                 },
                 {
-                    "SICARUS PRIME",
-                    new Weapon(WeaponType.Secondary, 50, 0.25, 2, 0.2, 1.3, 14, "Sicarus Prime", "暗杀者Prime", "圣装赛卡洛斯",
+                    "SICARUS PRIME", new Weapon(WeaponType.Secondary, 50, 0.25, 2, 0.2, 1.3, 14, "Sicarus Prime",
+                        "暗杀者Prime", "圣装赛卡洛斯",
                         "暗杀者P")
                 },
                 { "SICARUS", new Weapon(WeaponType.Secondary, 30.0, 0.16, 2, 0.06, 1.3, 3, "Sicarus", "暗杀者", "赛卡洛斯") },
                 {
-                    "SIGMA & OCTANTIS",
-                    new Weapon(WeaponType.Melee, 60.0, 0.28, 2.2, 0.16, 1, 0, "Sigma & Octantis", "西格玛&南极座", "西格玛&南极座",
+                    "SIGMA & OCTANTIS", new Weapon(WeaponType.Melee, 60.0, 0.28, 2.2, 0.16, 1, 0, "Sigma & Octantis",
+                        "西格玛&南极座", "西格玛&南极座",
                         "西格玛南极座")
                 },
                 {
-                    "SILVA & AEGIS PRIME",
-                    new Weapon(WeaponType.Melee, 120, 0.15, 2, 0.25, 1, 12, "Silva & Aegis Prime", "席瓦&神盾Prime",
+                    "SILVA & AEGIS PRIME", new Weapon(WeaponType.Melee, 120, 0.15, 2, 0.25, 1, 12,
+                        "Silva & Aegis Prime", "席瓦&神盾Prime",
                         "圣装席瓦&神盾", "圣装希瓦·艾奎斯剑盾", "剑盾P", "席瓦&神盾P", "席瓦神盾P", "希瓦神盾")
                 },
                 {
-                    "SILVA & AEGIS",
-                    new Weapon(WeaponType.Melee, 35, 0.05, 1.5, 0.2, 1, 0, "Silva & Aegis", "席瓦&神盾", "希瓦·艾奎斯剑盾", "剑盾",
+                    "SILVA & AEGIS", new Weapon(WeaponType.Melee, 35, 0.05, 1.5, 0.2, 1, 0, "Silva & Aegis", "席瓦&神盾",
+                        "希瓦·艾奎斯剑盾", "剑盾",
                         "席瓦神盾")
                 },
                 {
@@ -2941,8 +3163,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "SKANA", new Weapon(WeaponType.Melee, 42.0, 0.1, 1.5, 0.1, 1.22, 0, "Skana Prime", "空刃", "空灵刃") },
                 { "SKIAJATI", new Weapon(WeaponType.Melee, 77.1, 0.15, 1.9, 0.27, 1, 11, "Skiajati", "影生", "影生") },
                 {
-                    "SNIPETRON VANDAL",
-                    new Weapon(WeaponType.Primary, 200, 0.28, 2, 0.16, 1.165, 5, "Snipetron Vandal", "狙击特昂破坏者",
+                    "SNIPETRON VANDAL", new Weapon(WeaponType.Primary, 200, 0.28, 2, 0.16, 1.165, 5, "Snipetron Vandal",
+                        "狙击特昂破坏者",
                         "镇暴特洛恩阳极磁轨枪", "莲花狙")
                 },
                 {
@@ -2961,8 +3183,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Secondary, 18.0, 0.14, 2, 0.22, 1.49, 4, "Spectra", "光谱切割器", "光谱手枪")
                 },
                 {
-                    "SPIRA PRIME",
-                    new Weapon(WeaponType.Secondary, 60, 0.3, 3.0, 0.14, 0.85, 10, "Spira Prime", "旋刃飞刀Prime", "圣装螺旋飞刃",
+                    "SPIRA PRIME", new Weapon(WeaponType.Secondary, 60, 0.3, 3.0, 0.14, 0.85, 10, "Spira Prime",
+                        "旋刃飞刀Prime", "圣装螺旋飞刃",
                         "旋刃飞刀P")
                 },
                 { "SPIRA", new Weapon(WeaponType.Secondary, 82.0, 0.3, 2, 0.08, 0.85, 8, "Spira", "旋刃飞刀", "小李飞刀") },
@@ -2971,8 +3193,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Secondary, 88, 0.14, 2.2, 0.28, 0.53, 10, "Staticor", "静电能量导引枪", "静电势能发射器")
                 },
                 {
-                    "STINGER PRIME",
-                    new Weapon(WeaponType.Primary, 15, 0.025, 1.5, 0.05, 1.315, 0, "Stinger Prime", "毒刺Prime",
+                    "STINGER PRIME", new Weapon(WeaponType.Primary, 15, 0.025, 1.5, 0.05, 1.315, 0, "Stinger Prime",
+                        "毒刺Prime",
                         "圣装史丁格毒刺", "毒刺P")
                 },
                 { "STINGER", new Weapon(WeaponType.Primary, 15, 0.025, 1.5, 0.05, 1.315, 0, "Stinger", "毒刺", "史丁格毒刺") },
@@ -2993,14 +3215,14 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "SUPRA", new Weapon(WeaponType.Primary, 40, 0.16, 2, 0.3, 1, 14, "Supra", "苏普拉", "量子苏普拉", "烟花") },
                 {
-                    "SWEEPER PRIME",
-                    new Weapon(WeaponType.Shotgun, 60, 0.05, 2, 0.15, 1, 0, "Sweeper Prime", "扫除者Prime", "圣装清道夫",
+                    "SWEEPER PRIME", new Weapon(WeaponType.Shotgun, 60, 0.05, 2, 0.15, 1, 0, "Sweeper Prime",
+                        "扫除者Prime", "圣装清道夫",
                         "扫除者P")
                 },
                 { "SWEEPER", new Weapon(WeaponType.Shotgun, 42.0, 0.05, 1.5, 0.14, 1, 0, "Sweeper", "扫除者", "清道夫") },
                 {
-                    "SYBARIS PRIME",
-                    new Weapon(WeaponType.Primary, 87.9, 0.3, 2, 0.25, 0.895, 12, "Sybaris Prime", "席芭莉丝Prime",
+                    "SYBARIS PRIME", new Weapon(WeaponType.Primary, 87.9, 0.3, 2, 0.25, 0.895, 12, "Sybaris Prime",
+                        "席芭莉丝Prime",
                         "圣装远古丧钟", "席芭莉丝P")
                 },
                 {
@@ -3013,18 +3235,18 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Primary, 20, 0.39, 2.7, 0.13, 1.315, 11, "Synapse", "突触生化枪", "焦灼之须")
                 },
                 {
-                    "SYNOID GAMMACOR",
-                    new Weapon(WeaponType.Secondary, 20, 0.2, 2, 0.28, 0.65, 7, "Synoid Gammacor", "枢议咖玛腕甲枪",
+                    "SYNOID GAMMACOR", new Weapon(WeaponType.Secondary, 20, 0.2, 2, 0.28, 0.65, 7, "Synoid Gammacor",
+                        "枢议咖玛腕甲枪",
                         "辛诺德射线发生仪")
                 },
                 {
-                    "SYNOID HELIOCOR",
-                    new Weapon(WeaponType.Melee, 120, 0.1, 2, 0.2, 0.94, 9, "Synoid Heliocor", "枢议赫利俄光锤", "辛诺德太阳神锤",
+                    "SYNOID HELIOCOR", new Weapon(WeaponType.Melee, 120, 0.1, 2, 0.2, 0.94, 9, "Synoid Heliocor",
+                        "枢议赫利俄光锤", "辛诺德太阳神锤",
                         "扫描锤")
                 },
                 {
-                    "SYNOID SIMULOR",
-                    new Weapon(WeaponType.Primary, 20, 0.05, 2, 0.35, 0.7, 12, "Synoid Simulor", "枢议重力奇点拟成枪",
+                    "SYNOID SIMULOR", new Weapon(WeaponType.Primary, 20, 0.05, 2, 0.35, 0.7, 12, "Synoid Simulor",
+                        "枢议重力奇点拟成枪",
                         "辛诺德重力奇点拟成枪", "黑洞枪")
                 },
                 { "TALONS", new Weapon(WeaponType.Secondary, 120, 0.22, 2, 0.26, 1.44, 8, "Talons", "鹰爪", "鹰爪") },
@@ -3050,8 +3272,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Primary, 46.0, 0.3, 3.4, 0.18, 1.3, 14, "Tiberon Prime", "狂鲨p", "圣装狂鲨")
                 },
                 {
-                    "TIGRIS PRIME",
-                    new Weapon(WeaponType.Primary, 1560, 0.1, 2, 0.3, 0.5, 13, "Tigris Prime", "猛虎Prime", "圣装泰格里斯",
+                    "TIGRIS PRIME", new Weapon(WeaponType.Primary, 1560, 0.1, 2, 0.3, 0.5, 13, "Tigris Prime",
+                        "猛虎Prime", "圣装泰格里斯",
                         "猛虎P")
                 },
                 { "TIGRIS", new Weapon(WeaponType.Primary, 1050, 0.1, 2, 0.28, 0.5, 7, "Tigris", "猛虎", "泰格里斯", "萌虎") },
@@ -3065,17 +3287,14 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     "TONKOR",
                     new Weapon(WeaponType.Primary, 75, 0.25, 2.5, 0.1, 0.75, 5, "Tonkor", "征服榴炮", "征服榴炮", "征服")
                 },
-                {
-                    "TORID",
-                    new Weapon(WeaponType.Primary, 100, 0.15, 2, 0.23, 1.2, 4, "Torid", "托里德", "爆裂生化炮", "毒榴弹")
-                },
+                { "TORID", new Weapon(WeaponType.Primary, 100, 0.15, 2, 0.23, 1.2, 4, "Torid", "托里德", "爆裂生化炮", "毒榴弹") },
                 {
                     "TWIN BASOLK",
                     new Weapon(WeaponType.Melee, 65, 0.05, 2, 0.4, 1.18, 3, "Twin Basolk", "双子巴萨克", "双子巴萨克")
                 },
                 {
-                    "TWIN GRAKATAS",
-                    new Weapon(WeaponType.Secondary, 20.0, 0.25, 2.7, 0.11, 0.85, 9, "Twin Grakatas", "双子葛拉卡达",
+                    "TWIN GRAKATAS", new Weapon(WeaponType.Secondary, 20.0, 0.25, 2.7, 0.11, 0.85, 9, "Twin Grakatas",
+                        "双子葛拉卡达",
                         "双持格拉达火舌")
                 },
                 {
@@ -3095,8 +3314,8 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Secondary, 705.0, 0.1, 2, 0.33, 1.15, 9, "Twin Rogga", "双子罗格", "双子罗迦霰弹枪")
                 },
                 {
-                    "TWIN VIPERS WRAITH",
-                    new Weapon(WeaponType.Secondary, 18.0, 0.19, 2, 0.09, 1.41, 7, "Twin Vipers Wraith", "双子蝰蛇亡魂",
+                    "TWIN VIPERS WRAITH", new Weapon(WeaponType.Secondary, 18.0, 0.19, 2, 0.09, 1.41, 7,
+                        "Twin Vipers Wraith", "双子蝰蛇亡魂",
                         "亡魂双子蝰蛇")
                 },
                 {
@@ -3105,38 +3324,38 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 { "TYSIS", new Weapon(WeaponType.Secondary, 79, 0.03, 1.5, 0.5, 1.51, 9, "Tysis", "啐沫者", "啐沫者") },
                 {
-                    "VASTO PRIME",
-                    new Weapon(WeaponType.Secondary, 66.0, 0.22, 2.4, 0.22, 1.4, 10, "Vasto Prime", "瓦斯托Prime",
+                    "VASTO PRIME", new Weapon(WeaponType.Secondary, 66.0, 0.22, 2.4, 0.22, 1.4, 10, "Vasto Prime",
+                        "瓦斯托Prime",
                         "圣装瓦斯托", "瓦斯托P")
                 },
                 { "VASTO", new Weapon(WeaponType.Secondary, 58.0, 0.2, 1.8, 0.08, 1.4, 4, "Vasto", "瓦斯托", "瓦斯托") },
                 { "PARACESIS", new Weapon(WeaponType.Melee, 144, 0.31, 2.6, 0.12, 1, 10, "Paracesis", "心智之殁", "心智之殁") },
                 {
-                    "VAYKOR HEK",
-                    new Weapon(WeaponType.Primary, 525.0, 0.25, 2, 0.25, 0.7, 12, "Vaykor Hek", "勇气海克", "维寇恶婴",
+                    "VAYKOR HEK", new Weapon(WeaponType.Primary, 525.0, 0.25, 2, 0.25, 0.7, 12, "Vaykor Hek", "勇气海克",
+                        "维寇恶婴",
                         "勇气 海克")
                 },
                 {
-                    "VAYKOR MARELOK",
-                    new Weapon(WeaponType.Secondary, 160, 0.2, 1.5, 0.35, 0.65, 10, "Vaykor Marelok", "勇气玛瑞火枪", "维寇马洛克",
+                    "VAYKOR MARELOK", new Weapon(WeaponType.Secondary, 160, 0.2, 1.5, 0.35, 0.65, 10, "Vaykor Marelok",
+                        "勇气玛瑞火枪", "维寇马洛克",
                         "勇气 玛瑞火枪")
                 },
                 {
-                    "VAYKOR SYDON",
-                    new Weapon(WeaponType.Melee, 85.1, 0.15, 2, 0.25, 0.84, 8, "Vaykor Sydon", "勇气恶龙", "维寇恶龙三叉戟",
+                    "VAYKOR SYDON", new Weapon(WeaponType.Melee, 85.1, 0.15, 2, 0.25, 0.84, 8, "Vaykor Sydon", "勇气恶龙",
+                        "维寇恶龙三叉戟",
                         "勇气 恶龙")
                 },
                 {
-                    "VECTIS PRIME",
-                    new Weapon(WeaponType.Primary, 350.0, 0.3, 2, 0.3, 0.92, 14, "Vectis Prime", "守望者Prime", "圣装守望者",
+                    "VECTIS PRIME", new Weapon(WeaponType.Primary, 350.0, 0.3, 2, 0.3, 0.92, 14, "Vectis Prime",
+                        "守望者Prime", "圣装守望者",
                         "守望者P")
                 },
                 {
                     "VECTIS", new Weapon(WeaponType.Primary, 225.0, 0.25, 2, 0.3, 0.92, 2, "Vectis", "守望者", "守望者", "守望")
                 },
                 {
-                    "VENKA PRIME",
-                    new Weapon(WeaponType.Melee, 55.0, 0.25, 2.5, 0.15, 0.5, 8, "Venka Prime", "凯旋之爪Prime", "圣装钨钢合金爪",
+                    "VENKA PRIME", new Weapon(WeaponType.Melee, 55.0, 0.25, 2.5, 0.15, 0.5, 8, "Venka Prime",
+                        "凯旋之爪Prime", "圣装钨钢合金爪",
                         "凯旋之爪P")
                 },
                 { "VENKA", new Weapon(WeaponType.Melee, 37.0, 0.15, 2, 0.15, 0.5, 3, "Venka", "凯旋之爪", "钨钢合金爪") },
