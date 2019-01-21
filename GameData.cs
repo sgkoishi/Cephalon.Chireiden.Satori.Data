@@ -2795,7 +2795,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     "KOHM",
                     new Weapon(WeaponType.Primary, 360, 0.11, 2.3, 0.25, 1.4, 5, "Kohm", "寇恩热能枪", "聚能瓦斯炮", "吹风机")
                 },
-                { "KOHMAK", new Weapon(WeaponType.Secondary, 150, 0.11, 2, 0.23, 1.3, 5, "Kohmak", "宼恩霰机枪", "寇恩热能炮") },
+                { "KOHMAK", new Weapon(WeaponType.Secondary, 150, 0.11, 2, 0.23, 1.3, 5, "Kohmak", "寇恩霰机枪", "寇恩热能炮") },
                 { "KRAKEN", new Weapon(WeaponType.Secondary, 49, 0.05, 2, 0.13, 1.53, 0, "Kraken", "北海巨妖", "北海巨妖") },
                 { "KRESKA", new Weapon(WeaponType.Melee, 70, 0.14, 2, 0.19, 1, 6, "Kreska", "直刃", "直刃") },
                 { "KROHKUR", new Weapon(WeaponType.Melee, 70, 0.29, 1.7, 0.19, 1.22, 5, "Krohkur", "克鲁古尔", "克鲁古尔") },
@@ -3287,7 +3287,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 {
                     "TWIN KOHMAK",
-                    new Weapon(WeaponType.Secondary, 150, 0.11, 2, 0.23, 1.2, 10, "Twin Kohmak", "双子宼恩霰机枪", "双子寇玛热能炮")
+                    new Weapon(WeaponType.Secondary, 150, 0.11, 2, 0.23, 1.2, 10, "Twin Kohmak", "双子寇恩霰机枪", "双子寇玛热能炮")
                 },
                 {
                     "TWIN KROHKUR",
