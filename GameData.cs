@@ -2495,8 +2495,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "CESTRA", new Weapon(WeaponType.Secondary, 26, 0.06, 1.6, 0.2, 1.52, 4, "Cestra", "锡斯特", "逆转聚能炮") },
                 {
                     "COBRA & CRANE",
-                    new Weapon(WeaponType.Melee, 100, 0.1, 1.5, 0.36, 1, 10, "Cobra & Crane", "Cobra & Crane",
-                        "Cobra & Crane")
+                    new Weapon(WeaponType.Melee, 100, 0.1, 1.5, 0.36, 1, 10, "Cobra & Crane", "眼镜蛇&鹤", "眼镜蛇&鹤")
                 },
                 {
                     "CONVECTRIX",
@@ -2505,7 +2504,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 { "CORINTH", new Weapon(WeaponType.Primary, 540, 0.3, 2.8, 0.12, 1.05, 10, "Corinth", "科林斯", "科林斯") },
                 { "CRONUS", new Weapon(WeaponType.Melee, 35, 0.05, 1.5, 0.1, 1.48, 0, "Cronus", "克洛诺斯", "克洛诺斯") },
                 { "CYATH", new Weapon(WeaponType.ZawStrike, 0, 0, 0, 0, 1, 0, "Cyath", "西亚什", "弯刃") },
-                { "CRYOTRA", new Weapon(WeaponType.Primary, 10, 0.05, 2, 0.35, 1, 3, "Cryotra", "Cryotra", "Cryotra") },
+                { "CRYOTRA", new Weapon(WeaponType.Primary, 10, 0.05, 2, 0.35, 1, 3, "Cryotra", "急冻喷枪", "急冻喷枪") },
                 {
                     "CYCRON", new Weapon(WeaponType.Secondary, 23, 0.12, 1.8, 0.3, 1.1, 8, "Cycron", "循环离子枪", "循环式电浆手枪")
                 },
@@ -2615,7 +2614,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 {
                     "DUAL KERES",
-                    new Weapon(WeaponType.Melee, 44, 0.28, 2.6, 0.14, 1.48, 7, "Dual Keres", "双持凯瑞斯", "双持凯瑞斯")
+                    new Weapon(WeaponType.Melee, 44, 0.28, 2.6, 0.14, 1.48, 7, "Dual Keres", "凯瑞斯双刀", "双持凯瑞斯")
                 },
                 { "DUAL RAZA", new Weapon(WeaponType.Melee, 48, 0.2, 3, 0.05, 1.4, 6, "Dual Raza", "锋月双斧", "锋月双斧") },
                 {
@@ -2647,7 +2646,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 {
                     "EXERGIS",
-                    new Weapon(WeaponType.Shotgun, 1620, 0.08, 1.4, 0.36, 1, 8, "Exergis", "Exergis", "Exergis")
+                    new Weapon(WeaponType.Shotgun, 1620, 0.08, 1.4, 0.36, 1, 8, "Exergis", "晶能放射器", "晶能放射器")
                 },
                 {
                     "EUPHONA PRIME",
@@ -2695,7 +2694,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                 },
                 {
                     "GALVACORD",
-                    new Weapon(WeaponType.Melee, 80, 0.12, 1.8, 0.3, 1, 6, "Galvacord", "Galvacord", "Galvacord")
+                    new Weapon(WeaponType.Melee, 80, 0.12, 1.8, 0.3, 1, 6, "Galvacord", "电流刺索", "电流刺索")
                 },
                 {
                     "GAMMACOR",
@@ -2967,7 +2966,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Melee, 35, 0.15, 2, 0.15, 1.48, 0, "Plasma Sword", "等离子长剑", "等离子长剑")
                 },
                 { "POX", new Weapon(WeaponType.Secondary, 50, 0.01, 2, 0.35, 0.95, 9, "Pox", "脓痘", "脓痘") },
-                { "PLINX", new Weapon(WeaponType.Secondary, 46, 0.32, 3, 0.04, 1, 6, "Plinx", "Plinx", "Plinx") },
+                { "PLINX", new Weapon(WeaponType.Secondary, 46, 0.32, 3, 0.04, 1, 6, "Plinx", "漫射者", "漫射者") },
                 {
                     "PRIME LASER RIFLE",
                     new Weapon(WeaponType.Primary, 12, 0.15, 1.5, 0.05, 1.21, 0, "Prime Laser Rifle", "激光步枪Prime",
@@ -3235,7 +3234,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                         "辛诺德重力奇点拟成枪", "黑洞枪")
                 },
                 { "TALONS", new Weapon(WeaponType.Secondary, 120, 0.22, 2, 0.26, 1.44, 8, "Talons", "鹰爪", "鹰爪") },
-                { "TAZICOR", new Weapon(WeaponType.Primary, 0, 0, 0, 0, 1, 0, "Tazicor", "Tazicor", "Tazicor") },
+                { "TAZICOR", new Weapon(WeaponType.Primary, 6, 0.02, 1.5, 0.15, 1, 3, "Tazicor", "泰瑟步枪", "泰瑟步枪") },
                 { "TEKKO", new Weapon(WeaponType.Melee, 45, 0.3, 2, 0.1, 1.4, 2, "Tekko", "铁钩手甲", "刺蛇") },
                 {
                     "TELOS AKBOLTO",
@@ -3346,7 +3345,7 @@ namespace Cephalon.Chireiden.Satori.Warframe
                     new Weapon(WeaponType.Secondary, 18, 0.19, 2, 0.09, 1.45, 4, "Viper Wraith", "蝰蛇亡魂", "亡魂蝰蛇")
                 },
                 { "VOLNUS", new Weapon(WeaponType.Melee, 100, 0.18, 1.6, 0.3, 1.2, 4, "Volnus", "创伤", "创伤") },
-                { "VULCAX", new Weapon(WeaponType.Primary, 0, 0, 0, 0, 1, 0, "Vulcax", "Vulcax", "Vulcax") },
+                { "VULCAX", new Weapon(WeaponType.Primary, 35, 0.2, 2.5, 0.1, 1, 14, "Vulcax", "金工火舌", "金工火舌") },
                 {
                     "VULKAR WRAITH",
                     new Weapon(WeaponType.Primary, 273, 0.2, 2, 0.25, 1.45, 7, "Vulkar Wraith", "金工火神亡魂", "伏卡尔狙击枪")
